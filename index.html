@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>初星心練習｜聽見自己的心聲</title>
-<meta name="description" content="初星心練習第一季：用顏色、靜心與創作三種方式，留一段時間陪伴自己、聆聽自己的情緒與心聲。" />
+<title>初星心練習｜用創作，聽見現在的自己</title>
+<meta name="description" content="初星心練習第一季：用顏色、自由書寫與繪畫創作三種方式，練習停下來陪伴自己、聽見現在的自己。" />
 <style>
 :root{
   --bg:#f6efe7;
@@ -458,6 +458,387 @@ h3{letter-spacing:.035em}
   .workshop{padding:21px 19px}
 }
 
+
+/* ===== Visual hierarchy refinement ===== */
+:root{
+  --ink:#403630;
+  --muted:#786b63;
+  --paper-solid:#fffdfa;
+  --terra-fog:rgba(239,216,207,.58);
+  --sage-fog:rgba(228,234,219,.62);
+  --rose-fog:rgba(238,225,227,.62);
+  --amber-fog:rgba(244,231,204,.62);
+}
+
+body{
+  background:
+    radial-gradient(52rem 36rem at -8% 0%, rgba(246,204,179,.33), transparent 69%),
+    radial-gradient(44rem 32rem at 108% 8%, rgba(250,224,174,.32), transparent 70%),
+    radial-gradient(38rem 28rem at 20% 55%, rgba(238,211,214,.20), transparent 72%),
+    radial-gradient(42rem 30rem at 94% 67%, rgba(218,227,204,.18), transparent 72%),
+    radial-gradient(40rem 28rem at 50% 100%, rgba(246,218,185,.20), transparent 74%),
+    linear-gradient(180deg,#fffaf5 0%,#faf4ed 42%,#f7efe5 100%);
+}
+
+/* 導覽改成更輕的文字式 */
+.tabs{
+  gap:19px;
+  padding:0;
+  background:transparent;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+}
+.tab{
+  border:0;
+  border-bottom:1px solid transparent;
+  background:transparent;
+  color:#807269;
+  padding:10px 1px 8px;
+  border-radius:0;
+  font-size:11.5px;
+  font-weight:650;
+  letter-spacing:.075em;
+}
+.tab:hover{
+  color:var(--ink);
+  border-bottom-color:rgba(184,119,100,.32);
+}
+.tab.active{
+  background:transparent;
+  color:var(--ink);
+  border-bottom-color:var(--terra);
+}
+
+/* 標題節奏 */
+h1{
+  letter-spacing:.095em;
+  line-height:1.45;
+}
+h2{
+  letter-spacing:.065em;
+}
+.section-title{
+  margin-bottom:40px;
+}
+.section-title .eyebrow{
+  margin-bottom:13px;
+}
+.section-title p{
+  margin-top:12px;
+}
+
+/* 首頁三個視覺層級：首屏 / 三種方式 / 六週成果 */
+.hero{
+  padding-top:72px;
+  padding-bottom:42px;
+}
+.hero-copy{
+  max-width:760px;
+}
+.quick-meta{
+  margin-top:30px;
+}
+.quick-meta span{
+  background:rgba(255,253,249,.78);
+  border-color:rgba(91,70,56,.065);
+}
+
+.three-angle{
+  position:relative;
+  margin-top:62px;
+  padding:40px 42px 42px;
+  background:rgba(255,253,249,.90);
+  border:1px solid rgba(255,255,255,.94);
+  box-shadow:
+    0 30px 80px rgba(100,73,53,.075),
+    inset 0 1px 0 rgba(255,255,255,.95);
+  overflow:hidden;
+}
+.three-angle:before{
+  content:"";
+  position:absolute;
+  inset:-35% auto auto -12%;
+  width:360px;
+  height:260px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(245,217,191,.34),transparent 68%);
+  pointer-events:none;
+}
+.angle-title,.angle-grid{position:relative;z-index:1}
+.angle-grid{gap:18px}
+.angle{
+  border:0;
+  box-shadow:0 12px 34px rgba(100,73,53,.045);
+}
+.angle:nth-child(1){
+  background:linear-gradient(155deg,rgba(247,228,218,.92),rgba(255,248,242,.88));
+}
+.angle:nth-child(2){
+  background:linear-gradient(155deg,rgba(234,239,225,.94),rgba(250,251,244,.88));
+}
+.angle:nth-child(3){
+  background:linear-gradient(155deg,rgba(241,226,230,.94),rgba(255,247,248,.88));
+}
+
+.outcome-block{
+  position:relative;
+  margin-top:90px;
+  padding:54px 0 8px;
+  border-top:1px solid rgba(91,70,56,.08);
+}
+.outcome-block:before{
+  content:"";
+  position:absolute;
+  width:430px;
+  height:300px;
+  right:-140px;
+  top:-40px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(239,225,196,.32),transparent 70%);
+  pointer-events:none;
+}
+.outcome-block > *{position:relative;z-index:1}
+.outcome-grid{
+  gap:0 34px;
+}
+.outcome{
+  padding:24px 0 25px;
+  border:0;
+  border-top:1px solid rgba(91,70,56,.10);
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  backdrop-filter:none;
+}
+.outcome:nth-child(-n+2){border-top:0}
+.outcome h3{font-size:18px}
+
+/* 工作坊特色：取消「一樣重」的白卡，改成段落層次 */
+.signal-strip{
+  background:rgba(255,253,249,.54);
+  border-radius:26px;
+  border:1px solid rgba(91,70,56,.065);
+  padding-inline:24px;
+}
+.feature-grid-3{
+  gap:0;
+  border-top:1px solid rgba(91,70,56,.10);
+}
+.feature-grid-3 .feature{
+  background:transparent;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  min-height:0;
+  padding:30px 28px;
+}
+.feature-grid-3 .feature + .feature{
+  border-left:1px solid rgba(91,70,56,.10);
+}
+.feature-grid-3 .feature:nth-child(1){background:linear-gradient(180deg,rgba(239,216,207,.19),transparent)}
+.feature-grid-3 .feature:nth-child(2){background:linear-gradient(180deg,rgba(228,234,219,.20),transparent)}
+.feature-grid-3 .feature:nth-child(3){background:linear-gradient(180deg,rgba(238,225,227,.20),transparent)}
+
+/* 同行者：三個角色用三種淡色層次 */
+.companion-grid{gap:20px}
+.companion-card{
+  border-color:rgba(91,70,56,.065);
+  box-shadow:0 20px 58px rgba(100,73,53,.052);
+}
+.companion-card:nth-child(1){
+  background:linear-gradient(155deg,rgba(255,253,249,.96),rgba(248,231,222,.62));
+}
+.companion-card:nth-child(2){
+  background:linear-gradient(155deg,rgba(255,253,249,.96),rgba(235,240,227,.66));
+}
+.companion-card:nth-child(3){
+  background:linear-gradient(155deg,rgba(255,253,249,.96),rgba(244,231,233,.68));
+}
+
+/* 三場小聚：讓每一場有自己的色層，不再三張白卡糊在一起 */
+.workshop-grid{gap:20px}
+.workshop{
+  border-color:rgba(91,70,56,.065);
+  box-shadow:0 20px 58px rgba(100,73,53,.05);
+}
+.workshop:nth-child(1){
+  background:linear-gradient(160deg,rgba(255,253,249,.95),rgba(248,231,222,.57));
+}
+.workshop:nth-child(2){
+  background:linear-gradient(160deg,rgba(255,253,249,.95),rgba(235,240,227,.59));
+}
+.workshop:nth-child(3){
+  background:linear-gradient(160deg,rgba(255,253,249,.95),rgba(244,231,233,.60));
+}
+.closing-card{
+  margin-top:34px;
+  background:linear-gradient(145deg,rgba(255,253,249,.95),rgba(244,231,204,.48));
+}
+
+/* 月曆與費用：主體白、輔助區暖色，避免全頁同一層 */
+.calendar-sheet{
+  background:rgba(255,253,249,.93);
+  box-shadow:0 24px 70px rgba(100,73,53,.065);
+}
+.detail-card{
+  background:linear-gradient(155deg,rgba(255,253,249,.96),rgba(248,232,222,.64));
+}
+.rhythm-card{
+  background:rgba(255,253,249,.70);
+}
+.price-box{
+  background:linear-gradient(155deg,rgba(255,253,249,.98),rgba(246,231,216,.66));
+  box-shadow:0 28px 76px rgba(100,73,53,.07);
+}
+.info-box{background:rgba(255,253,249,.72)}
+.faq-item{background:rgba(255,253,249,.82)}
+
+/* 桌機內容不要鋪滿 */
+.page > .shell{
+  max-width:1080px;
+}
+#page-home > .shell{
+  max-width:980px;
+}
+#page-features > .shell,
+#page-companions > .shell{
+  max-width:980px;
+}
+
+/* 手機：以留白做分段，減少卡片堆疊 */
+@media(max-width:680px){
+  .shell{padding-inline:27px}
+  main{padding-top:28px;padding-bottom:74px}
+  h1{
+    font-size:26px;
+    line-height:1.56;
+    letter-spacing:.10em;
+    margin-top:17px;
+    margin-bottom:22px;
+  }
+  h2{
+    font-size:21px;
+    line-height:1.58;
+    letter-spacing:.07em;
+  }
+  .lead{
+    font-size:13px;
+    line-height:2.05;
+  }
+  .hero{
+    padding-top:42px;
+    padding-bottom:22px;
+  }
+  .quick-meta{
+    margin-top:24px;
+    gap:7px;
+  }
+
+  .three-angle{
+    margin-top:54px;
+    padding:28px 20px 24px;
+    border-radius:30px;
+    background:rgba(255,253,249,.87);
+    box-shadow:0 22px 62px rgba(100,73,53,.06);
+  }
+  .three-angle:before{
+    width:250px;height:190px;left:-90px;top:-70px;
+  }
+  .angle-title{margin-bottom:23px}
+  .angle-grid{gap:12px}
+  .angle{
+    padding:19px 18px;
+    border-radius:23px;
+    box-shadow:none;
+  }
+  .angle h3{font-size:16px}
+  .angle p{font-size:11.8px}
+
+  .outcome-block{
+    margin-top:72px;
+    padding-top:42px;
+  }
+  .outcome-grid{display:block}
+  .outcome{
+    padding:21px 0 22px;
+    border-top:1px solid rgba(91,70,56,.11);
+  }
+  .outcome:first-child{border-top:0}
+  .outcome:nth-child(2){border-top:1px solid rgba(91,70,56,.11)}
+  .outcome h3{font-size:16px}
+
+  .signal-strip{
+    margin-top:4px;
+    margin-bottom:46px;
+    padding:0 18px;
+    border-radius:24px;
+  }
+  .feature-grid-3{
+    border-top:1px solid rgba(91,70,56,.10);
+  }
+  .feature-grid-3 .feature{
+    padding:24px 0;
+    background:transparent !important;
+    border-left:0 !important;
+  }
+  .feature-grid-3 .feature + .feature{
+    border-top:1px solid rgba(91,70,56,.10);
+  }
+
+  .companion-grid,.workshop-grid{gap:18px}
+  .companion-card,.workshop{
+    border-radius:27px;
+    box-shadow:0 17px 46px rgba(100,73,53,.045);
+  }
+  .companion-card{
+    padding:23px 21px;
+  }
+  .workshop{
+    padding:22px 20px;
+  }
+
+  .calendar-sheet{
+    background:rgba(255,253,249,.90);
+  }
+  .detail-card,.rhythm-card,.price-box,.info-box,.faq-item{
+    box-shadow:0 14px 42px rgba(100,73,53,.04);
+  }
+}
+
+/* 很窄手機再多一點安全距離 */
+@media(max-width:390px){
+  .shell{padding-inline:23px}
+  h1{font-size:24px}
+}
+
+
+/* NIKI free-writing update: quieter editorial rhythm */
+.companion-card p,.workshop .desc{line-height:1.92}
+.companion-way{letter-spacing:.035em}
+.workshop .question{margin-top:18px;letter-spacing:.08em;color:#8b7568}
+.workshop .result{background:rgba(255,255,255,.38);padding:14px 15px;border-radius:16px;border-top:0;margin-top:18px}
+@media(max-width:680px){
+  .workshop .question{margin-top:16px;font-size:10.5px}
+  .workshop .result{padding:12px 13px;border-radius:14px}
+  .companion-card p,.workshop .desc{line-height:1.95}
+}
+
+
+/* Final title hierarchy */
+.hero-subtitle{
+  margin:-4px 0 22px;
+  font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;
+  font-size:clamp(19px,2.6vw,28px);
+  line-height:1.6;
+  letter-spacing:.12em;
+  color:#765d52;
+  font-weight:600;
+}
+@media(max-width:680px){
+  .hero-subtitle{font-size:17px;line-height:1.7;letter-spacing:.11em;margin:-2px 0 20px;}
+}
+
 </style>
 </head>
 <body>
@@ -482,9 +863,10 @@ h3{letter-spacing:.035em}
   <div class="shell">
     <div class="hero">
       <div class="hero-copy">
-        <div class="eyebrow">2026 秋季 · 第一季</div>
-        <h1>初星心練習<br>聽見自己的心聲</h1>
-        <p class="lead">生活一直往前，我們常常在處理事情，卻很少留一點時間給自己。這六週，用顏色、靜心與創作，練習停下來陪伴自己、聽聽心裡正在發生什麼。</p>
+        <div class="eyebrow">2026 秋季 · 第一季｜聽見自己的心聲</div>
+        <h1>初星心練習</h1>
+        <div class="hero-subtitle">用創作，聽見現在的自己</div>
+        <p class="lead">生活一直往前，我們常常在處理事情，卻很少留一點時間給自己。這六週，用顏色、自由書寫與繪畫創作，練習停下來陪伴自己，也更聽見現在的感受與需要。</p>
         <div class="quick-meta">
           <span>6 週一季</span><span>3 堂線上小聚＋1 次回望夜</span><span>每堂後 7 天延伸</span><span>創始季 NT$888</span><span>6 人開班・最多 12 人</span>
         </div>
@@ -493,13 +875,13 @@ h3{letter-spacing:.035em}
 
     <section class="three-angle">
       <div class="angle-title">
-        <div><div class="eyebrow">3 WAYS TO NOTICE YOURSELF</div><h2>三種方式，練習聆聽自己</h2></div>
-        <p>不用急著把自己想明白。三位同行者用各自熟悉的方式，陪你從顏色、安靜與創作裡，多聽見自己一點。</p>
+        <div><div class="eyebrow">3 WAYS TO NOTICE YOURSELF</div><h2>三種創作方式，練習聽見自己</h2></div>
+        <p>不用急著把自己想明白。三位同行者從顏色、自由書寫與繪畫創作出發，陪你用不同媒介感受自己，也多聽見自己一點。</p>
       </div>
       <div class="angle-grid">
-        <article class="angle"><div class="icon">●</div><h3>從顏色陪自己停一下</h3><p>先不急著分析，從直覺有感的顏色開始，看看此刻的心情想讓你注意什麼。</p></article>
-        <article class="angle"><div class="icon">◌</div><h3>從安靜聽見自己</h3><p>暫時把注意力從外面的事情收回來，感受呼吸、身體與內在正在發生什麼。</p></article>
-        <article class="angle"><div class="icon">✦</div><h3>從創作陪心情說話</h3><p>有些感受不用先說清楚，讓線條、顏色與畫面替此刻的自己留下一點痕跡。</p></article>
+        <article class="angle"><div class="icon">●</div><h3>用顏色，看見自己</h3><p>先不急著分析，從直覺有感的顏色開始，看看此刻的心情想讓你注意什麼。</p></article>
+        <article class="angle"><div class="icon">◌</div><h3>用自由書寫，聽見自己</h3><p>讓腦中混在一起的念頭先落到紙上，不追求寫得好，只練習在文字裡辨認自己的感受與需要。</p></article>
+        <article class="angle"><div class="icon">✦</div><h3>用創作，與自己連結</h3><p>有些感受不用先說清楚，讓線條、顏色與畫面替此刻的自己留下一點痕跡。</p></article>
       </div>
     </section>
 
@@ -518,12 +900,12 @@ h3{letter-spacing:.035em}
         <article class="outcome">
           <div class="small">3 WAYS</div>
           <h3>練習三種靠近自己的方式</h3>
-          <p>親自走過顏色、靜心與創作，知道哪一種方式自己最有感。</p>
+          <p>親自練習色彩視覺、自由書寫與繪畫創作，看看哪一種方式最能幫你靠近自己。</p>
         </article>
         <article class="outcome">
           <div class="small">CREATE</div>
           <h3>留下三份自己的紀錄</h3>
-          <p>一張情緒桌布、一段靜心觀察，以及一幅自我對話創作。</p>
+          <p>一張情緒桌布、一段屬於自己的自由書寫，以及一幅自我對話創作。</p>
         </article>
         <article class="outcome">
           <div class="small">LOOK BACK</div>
@@ -553,7 +935,7 @@ h3{letter-spacing:.035em}
       <h2>這六週，練習把自己放回生活裡</h2>
     </div>
     <div class="feature-grid feature-grid-3">
-      <article class="feature"><div class="feature-num">01</div><h3>三位同行者，三種陪伴方式</h3><p>顏色、靜心、創作各自從不同入口，陪你聽見最近的情緒與心情。</p></article>
+      <article class="feature"><div class="feature-num">01</div><h3>三位同行者，三種陪伴方式</h3><p>色彩視覺、自由書寫、繪畫創作從不同入口，陪你感受最近的情緒與心情。</p></article>
       <article class="feature"><div class="feature-num">02</div><h3>課堂有實作，課後有 7 天自由練習</h3><p>每堂都會留下作品或練習；想繼續時，再把它輕輕帶回日常。沒有追進度，也不用補。</p></article>
       <article class="feature"><div class="feature-num">03</div><h3>最後一起回望</h3><p>11/6 線上分享作品與心得，看看這段時間自己聽見了什麼，也一起選下一季。</p></article>
     </div>
@@ -570,17 +952,17 @@ h3{letter-spacing:.035em}
     <div class="companion-grid">
       <article class="companion-card">
         <div class="companion-symbol terra">●</div>
-        <div class="companion-role">策展・色彩與視覺同行者</div>
+        <div class="companion-role">策展者・引導者</div>
         <h3>青青</h3>
-        <p>用情緒色票、自我對話與 Canva，陪你先從一個顏色開始，看見此刻的心情。六週課程之間的 VIP 小群，也由青青陪大家自由練習與交流。</p>
-        <div class="companion-way">陪你的方式｜顏色・自我對話・課間陪伴</div>
+        <p>負責策展這一季的主題與整體體驗，串連三種不同的創作方式。第一場從情緒色票、自我對話與 Canva 出發；課程之間，也在 VIP 小群用輕量提問與自由練習，引導大家把注意力帶回自己。</p>
+        <div class="companion-way">引導你的方式｜色彩・提問・課間練習・整季串連</div>
       </article>
       <article class="companion-card">
         <div class="companion-symbol sage">◌</div>
-        <div class="companion-role">人生教練・靜心同行者</div>
+        <div class="companion-role">生命教練・自由書寫同行者</div>
         <h3>NIKI</h3>
-        <p>用靜心與身體感受，陪你暫時把注意力從外面的事情收回來，留一段安靜，聽聽內在此刻正在發生什麼。</p>
-        <div class="companion-way">陪你的方式｜靜心・身體感受・內在聆聽</div>
+        <p>用自由書寫與教練式提問，陪你把平常一閃而過、來不及整理的念頭寫下來。在文字裡，慢慢辨認哪些是應該、擔心，哪些更靠近自己真正的感受與需要。</p>
+        <div class="companion-way">陪你的方式｜自由書寫・教練式提問・內在梳理</div>
       </article>
       <article class="companion-card">
         <div class="companion-symbol rose">✦</div>
@@ -599,7 +981,7 @@ h3{letter-spacing:.035em}
     <div class="section-title">
       <div class="eyebrow">3 HEART GATHERINGS</div>
       <h2>三場與心的小聚</h2>
-      <p>三位同行者不替你找答案，各自帶一種練習，陪你從顏色、靜心與創作裡聽見自己。</p>
+      <p>三位同行者不替你找答案，而是透過顏色、自由書寫與繪畫創作，陪你從不同方向感受自己、聽見自己。</p>
     </div>
     <div class="workshop-grid">
       <article class="workshop">
@@ -616,15 +998,15 @@ h3{letter-spacing:.035em}
       </article>
       <article class="workshop">
         <div class="date">10.09 FRI · 20:00–22:00</div>
-        <div class="teacher">同行者｜NIKI（人生教練）</div>
-        <div class="angle-note">從靜心切入：把注意力從外面的事情收回來，聽聽身體與內在正在發生什麼。</div>
-        <h3>NIKI｜聽見內在聲音</h3>
+        <div class="teacher">同行者｜NIKI（生命教練・自由書寫）</div>
+        <div class="angle-note">從自由書寫切入：先讓腦中混在一起的想法落到紙上，再慢慢辨認哪些話真正屬於現在的自己。</div>
+        <h3>NIKI｜用自由書寫，聽見自己</h3>
         <div class="question">這堂想陪你看見</div>
-        <p class="desc">當外面的聲音小一點，我的身體、感受與內在其實正在告訴我什麼？</p>
+        <p class="desc">當我不用急著把事情想清楚，寫下來之後，哪些話最接近我現在真正的感受？</p>
         <div class="question">現場會做</div>
-        <p class="desc">由 NIKI 用自己的靜心方式帶領，把注意力收回當下，並留下一段自己的內在觀察。</p>
-        <div class="tags"><span class="tag">靜心</span><span class="tag">身體感受</span><span class="tag">內在觀察</span></div>
-        <div class="result"><b>帶走</b>一個能再使用的靜心方式＋一段內在札記</div>
+        <p class="desc">由 NIKI 用自由書寫與教練式提問帶領，不需要文筆，也不用寫得漂亮；讓想法先落到紙上，再從文字裡找到現在最想聽見的一句話。</p>
+        <div class="tags"><span class="tag">自由書寫</span><span class="tag">教練式提問</span><span class="tag">內在梳理</span></div>
+        <div class="result"><b>帶走</b>一段屬於自己的自由書寫＋一張「內在聲音小卡」</div>
       </article>
       <article class="workshop">
         <div class="date">10.23 FRI · 20:00–22:00</div>
@@ -646,7 +1028,7 @@ h3{letter-spacing:.035em}
       <div>
         <div class="teacher">三位同行者與大家一起回望</div>
         <h3>心練習回望夜｜分享作品，也整理這六週的自己</h3>
-        <p>不再上新內容。把情緒桌布、靜心觀察與創作帶回來，彼此分享最有感的一段經驗；最後一起票選下一季想體驗的方向。</p>
+        <p>不再上新內容。把情緒桌布、自由書寫與創作帶回來，彼此分享最有感的一段經驗；最後一起票選下一季想體驗的方向。</p>
       </div>
     </section>
   </div>
@@ -714,7 +1096,7 @@ h3{letter-spacing:.035em}
         <div class="includes">
           <div class="include"><span class="checkmark">✓</span><span>3 場週五晚上的線上「與心小聚」＋課程回放</span></div>
           <div class="include"><span class="checkmark">✓</span><span>每場課後 7 天自由練習＋VIP 群課後延伸（每天約 3–5 分鐘，自由參與）</span></div>
-          <div class="include"><span class="checkmark">✓</span><span>留下 3 份成果：情緒桌布、自己的靜心方式、自我對話畫作</span></div>
+          <div class="include"><span class="checkmark">✓</span><span>留下 3 份成果：情緒桌布、自由書寫／內在聲音小卡、自我對話畫作</span></div>
           <div class="include"><span class="checkmark">✓</span><span>11/6 線上「心練習回望夜」</span></div>
           <div class="include"><span class="checkmark">✓</span><span>11/13 自由參加實體聚餐（餐費自付）</span></div>
         </div>
@@ -746,7 +1128,7 @@ h3{letter-spacing:.035em}
         </details>
         <details class="faq-item">
           <summary>這是心理治療、情緒診斷或療癒課程嗎？</summary>
-          <div class="faq-answer"><b>不是。</b> 初星心練習不替你分析、診斷或解釋情緒。這一季只是透過顏色、靜心與創作，提供三種觀察當下狀態的入口；真正怎麼理解自己的感受，仍由你自己決定。</div>
+          <div class="faq-answer"><b>不是。</b> 初星心練習不替你分析、診斷或解釋情緒。這一季只是透過顏色、自由書寫與創作，提供三種觀察當下狀態的入口；真正怎麼理解自己的感受，仍由你自己決定。</div>
         </details>
         <details class="faq-item">
           <summary>課程之間的 VIP 群組是什麼？</summary>
@@ -761,12 +1143,12 @@ h3{letter-spacing:.035em}
           <div class="faq-answer"><b>6 人開班，最多 12 人。</b> 希望維持一個可以看見彼此、又不會太有壓力的精緻小群。</div>
         </details>
         <details class="faq-item">
-          <summary>完全沒有 Canva、靜心或畫畫經驗，也可以參加嗎？</summary>
+          <summary>完全沒有 Canva、自由書寫或畫畫經驗，也可以參加嗎？</summary>
           <div class="faq-answer">可以。三場都以<b>第一次也能進入</b>為設計前提，不要求技巧，也不是作品競賽。重點是透過不同方式多認識自己一點。</div>
         </details>
         <details class="faq-item">
           <summary>三場小聚是彼此獨立的嗎？</summary>
-          <div class="faq-answer">每位同行者會用自己熟悉的方式陪伴，但三場都圍繞同一件事：<b>從不同角度理解最近的情緒、心情與當下狀態。</b> 顏色、靜心與創作是三個不同入口，不需要用同一套方法。</div>
+          <div class="faq-answer">每位同行者會用自己熟悉的方式陪伴，但三場都圍繞同一件事：<b>從不同角度理解最近的情緒、心情與當下狀態。</b> 顏色、自由書寫與創作是三個不同入口，不需要用同一套方法。</div>
         </details>
         <details class="faq-item">
           <summary>小聚中會一直介紹同行者的後續服務嗎？</summary>
@@ -811,14 +1193,14 @@ const events={
  '2026-09-30':{type:'check',label:'想改什麼',title:'Day 5｜如果現在重做一次',desc:'看著桌布，你會想改顏色、文字，還是保持原樣？選一個最想調整的地方，或回答「我想保留現在的版本」。'},
  '2026-10-01':{type:'check',label:'完成版本',title:'Day 6｜完成自己的情緒桌布',desc:'花 10–20 分鐘做最後微調。願意的話，把完成版放進群組；不用追求漂亮，只要是現在的你願意留下的版本。'},
  '2026-10-02':{type:'check',label:'一週回顧',title:'Day 7｜這一週，我看見自己什麼？',desc:'回頭看第一天到今天：顏色、句子或心情有沒有變？用一句「這週我比較注意到自己＿＿＿＿」做收尾。'},
- '2026-10-09':{type:'course',label:'第2場',title:'第二場｜NIKI｜聽見內在聲音',desc:'20:00–22:00。透過 NIKI 的靜心帶領，把注意力收回身體與當下，聽聽內在正在發生什麼。'},
- '2026-10-10':{type:'check',label:'三分鐘靜',title:'Day 1｜先安靜三分鐘',desc:'找一個今天做得到的時間，安靜坐三分鐘。結束後只記下一件你最先注意到的事：呼吸、身體、念頭或感受都可以。'},
- '2026-10-11':{type:'check',label:'身體訊號',title:'Day 2｜身體今天怎麼了？',desc:'不用改變它。只觀察：今天身體哪裡最有感？是緊、鬆、累、麻、暖，還是沒有特別感覺？'},
- '2026-10-12':{type:'check',label:'外界聲音',title:'Day 3｜今天最吵的是什麼？',desc:'今天最容易把注意力拉走的是什麼？工作、別人的期待、手機、腦中的想法？只要辨認，不急著解決。'},
- '2026-10-13':{type:'check',label:'我需要什麼',title:'Day 4｜如果先聽自己一下',desc:'今天的自己比較需要什麼：安靜、休息、陪伴、行動、空間，或其他？選一個最接近的就好。'},
- '2026-10-14':{type:'check',label:'再靜一次',title:'Day 5｜再做一次靜心',desc:'用課堂裡最適合你的方式，再做一次短短的靜心。和第一天相比，今天你注意到什麼不同？'},
- '2026-10-15':{type:'check',label:'留一句話',title:'Day 6｜今天想對自己說什麼？',desc:'靜下來後，如果只留一句話給今天的自己，你會寫什麼？不用勵志，只要真實。'},
- '2026-10-16':{type:'check',label:'一週回顧',title:'Day 7｜我開始聽見什麼？',desc:'回頭看這七天，用一句話整理：這週我更常注意到自己＿＿＿＿。'},
+ '2026-10-09':{type:'course',label:'第2場',title:'第二場｜NIKI｜用自由書寫，聽見自己',desc:'20:00–22:00。透過自由書寫與教練式提問，讓腦中混在一起的想法先落到紙上，再慢慢聽見現在真正想說的話。'},
+ '2026-10-10':{type:'check',label:'不停筆',title:'Day 1｜先寫三分鐘',desc:'找一個安靜的三分鐘，不停筆寫下：最近腦中最常出現的是什麼？不用整理，也不用寫得好。'},
+ '2026-10-11':{type:'check',label:'現在想說',title:'Day 2｜如果不用寫得好',desc:'今天只寫一句開頭：如果不用顧慮別人，我現在最想說的是＿＿＿＿。接著自由寫五分鐘。'},
+ '2026-10-12':{type:'check',label:'三個詞',title:'Day 3｜圈出三個有感的詞',desc:'回頭看前兩天寫下的文字，圈出三個讓你停一下的詞。先不要解釋，只看看它們為什麼被你注意到。'},
+ '2026-10-13':{type:'check',label:'應該／想要',title:'Day 4｜分一分「應該」和「想要」',desc:'各寫三句：「我覺得我應該＿＿＿」和「如果不用證明，我其實想＿＿＿」。不用立刻做決定。'},
+ '2026-10-14':{type:'check',label:'寫給自己',title:'Day 5｜寫一小段給現在的自己',desc:'以「我想讓你知道……」開頭，寫五分鐘。可以很普通、很零碎，只要是現在真正想對自己說的。'},
+ '2026-10-15':{type:'check',label:'留一句話',title:'Day 6｜留下最想聽見的一句話',desc:'從這幾天的文字裡挑一句最有感的，或重新寫一句。它不用勵志，只要是你現在願意相信或陪伴自己的話。'},
+ '2026-10-16':{type:'check',label:'一週回顧',title:'Day 7｜這週，我開始聽見什麼？',desc:'回頭看這七天的文字：哪個主題重複出現？用一句話整理：「這週，我開始聽見自己＿＿＿＿。」'},
  '2026-10-23':{type:'course',label:'第3場',title:'第三場｜宗芸｜不用說清楚，也可以畫出來',desc:'20:00–22:00。從顏色、線條與自由創作出發，把這段時間還說不清楚的感受，留在一幅作品裡。'},
  '2026-10-24':{type:'check',label:'先看作品',title:'Day 1｜隔一天，再看看它',desc:'今天再看昨天的作品，不急著改。你的視線第一個停在哪裡？只記下那個地方與感覺。'},
  '2026-10-25':{type:'check',label:'今天的色',title:'Day 2｜今天想靠近哪個顏色？',desc:'如果今天要從作品裡挑一個最有感的顏色，會是哪個？它讓你想到什麼？'},
@@ -827,7 +1209,7 @@ const events={
  '2026-10-28':{type:'check',label:'加或不加',title:'Day 5｜我還想加什麼？',desc:'你可以花 10 分鐘繼續畫，也可以決定不再修改。今天的重點不是完成度，而是知道自己想留下什麼。'},
  '2026-10-29':{type:'check',label:'為它命名',title:'Day 6｜替作品取一個名字',desc:'替這幅作品取一個現在覺得合適的名字。不需要解釋得很完整，讓名字成為這段時間的一個小標記。'},
  '2026-10-30':{type:'check',label:'一週回顧',title:'Day 7｜這幅作品讓我看見什麼？',desc:'分享完成版或局部都可以，再寫一句：這一週，這幅作品讓我更注意到自己＿＿＿＿。'},
- '2026-11-06':{type:'reflect',label:'回望夜',title:'心練習回望夜｜分享作品，也整理這六週的自己',desc:'20:00–21:15。不是第四堂課，也不再上新內容。彼此分享情緒桌布、靜心觀察或創作，整理這六週最有感的發現，最後一起票選下一季。'},
+ '2026-11-06':{type:'reflect',label:'回望夜',title:'心練習回望夜｜分享作品，也整理這六週的自己',desc:'20:00–21:15。不是第四堂課，也不再上新內容。彼此分享情緒桌布、自由書寫或創作，整理這六週最有感的發現，最後一起票選下一季。'},
  '2026-11-13':{type:'dinner',label:'一起吃飯',title:'季後聚餐｜一起吃飯、聊天',desc:'自由參加，餐費自付。這不是成果發表，就是讓線上一起走過這一季的人，輕鬆見面、吃飯、聊天。'}
 };
 function addRange(start,end){
