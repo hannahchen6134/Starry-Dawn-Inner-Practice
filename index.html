@@ -47,11 +47,11 @@ a{color:inherit}
 .topbar-inner{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-size:14px;font-weight:800;letter-spacing:.07em;white-space:nowrap}
 .brand-mark{width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--amber),var(--terra));box-shadow:0 0 0 6px rgba(196,155,88,.10)}
-.tabs{display:flex;align-items:center;gap:18px;padding:0;background:transparent;border:0;border-radius:0;overflow:auto;scrollbar-width:none;box-shadow:none}
+.tabs{display:flex;align-items:center;gap:4px;padding:6px;background:rgba(255,254,250,.72);border:1px solid rgba(74,64,57,.07);border-radius:999px;overflow:auto;scrollbar-width:none;box-shadow:0 10px 26px rgba(95,76,60,.05)}
 .tabs::-webkit-scrollbar{display:none}
-.tab{border:0;border-bottom:1px solid transparent;background:transparent;color:var(--muted);padding:10px 2px 8px;border-radius:0;font-size:12px;font-weight:650;letter-spacing:.08em;cursor:pointer;white-space:nowrap;transition:.2s ease}
-.tab:hover{color:var(--ink);border-bottom-color:rgba(184,119,100,.35)}
-.tab.active{background:transparent;color:var(--ink);border-bottom-color:var(--terra)}
+.tab{border:0;background:transparent;color:var(--muted);padding:8px 13px;border-radius:999px;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;transition:.2s ease}
+.tab:hover{color:var(--ink)}
+.tab.active{background:#51463f;color:#fff}
 .mobile-nav{display:none;position:relative}
 .mobile-nav select{appearance:none;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:9px 34px 9px 14px;font-size:13px;font-weight:700}
 .mobile-nav:after{content:"⌄";position:absolute;right:12px;top:50%;transform:translateY(-56%);color:var(--muted);pointer-events:none}
@@ -61,9 +61,9 @@ main{padding:54px 0 78px}
 @keyframes fade{from{opacity:.25;transform:translateY(5px)}to{opacity:1;transform:none}}
 .eyebrow{font-size:11px;font-weight:850;letter-spacing:.16em;color:#8a705d;text-transform:uppercase;display:block;margin-bottom:8px}
 h1,h2,h3{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif}
-h1{font-size:clamp(28px,4.1vw,46px);line-height:1.32;letter-spacing:.06em;margin:16px 0 22px;font-weight:700;max-width:10.2em}
-h2{font-size:clamp(28px,3.4vw,40px);line-height:1.34;letter-spacing:.035em;margin:7px 0 12px}
-h3{font-size:21px;line-height:1.48;letter-spacing:.025em;margin:0}
+h1{font-size:clamp(28px,4.1vw,46px);line-height:1.24;letter-spacing:-.03em;margin:16px 0 20px;font-weight:700;max-width:9.2em}
+h2{font-size:clamp(28px,3.4vw,40px);line-height:1.3;margin:7px 0 12px}
+h3{font-size:21px;line-height:1.45;margin:0}
 .lead{font-size:16px;color:#675d56;max-width:700px;margin:0}
 .section-title{max-width:760px;margin-bottom:30px}
 .section-title p{font-size:15px;color:var(--muted);margin:8px 0 0}
@@ -262,6 +262,202 @@ h3{font-size:21px;line-height:1.48;letter-spacing:.025em;margin:0}
   .signal-strip>div+div{border-left:0;border-top:1px solid var(--line);padding-left:0}
   .feature-grid-3{grid-template-columns:1fr}
 }
+
+
+/* ===== Refined responsive editorial layer ===== */
+:root{
+  --bg:#faf6f0;
+  --bg-soft:#fffaf5;
+  --paper:rgba(255,254,250,.82);
+  --paper-2:rgba(255,250,244,.72);
+  --line:rgba(91,70,56,.09);
+  --shadow:0 20px 60px rgba(100,73,53,.065);
+}
+body{
+  background-color:#faf6f0;
+  background-image:
+    radial-gradient(46rem 34rem at 8% 4%, rgba(242,198,170,.30), transparent 66%),
+    radial-gradient(38rem 30rem at 93% 8%, rgba(249,222,165,.30), transparent 68%),
+    radial-gradient(36rem 28rem at 12% 42%, rgba(231,196,193,.22), transparent 70%),
+    radial-gradient(42rem 32rem at 92% 48%, rgba(224,225,198,.18), transparent 72%),
+    radial-gradient(42rem 34rem at 52% 78%, rgba(246,218,184,.22), transparent 72%),
+    linear-gradient(180deg,#fffaf5 0%,#fbf5ed 42%,#f8f1e7 100%);
+  color:#493f39;
+}
+.shell{max-width:1080px;padding-inline:clamp(30px,7vw,88px)}
+.topbar{background:rgba(252,248,242,.74);backdrop-filter:blur(24px) saturate(1.08);border-bottom:1px solid rgba(91,70,56,.045)}
+.topbar-inner{min-height:64px}
+.brand{font-size:13px;font-weight:750;letter-spacing:.10em}
+.brand-mark{width:9px;height:9px;box-shadow:0 0 0 5px rgba(196,155,88,.08),0 0 28px rgba(203,151,95,.34)}
+.mobile-nav select{border:0;border-bottom:1px solid rgba(91,70,56,.14);background:transparent;border-radius:0;padding:8px 24px 7px 3px;font-size:12px;font-weight:650;letter-spacing:.055em;box-shadow:none}
+.mobile-nav:after{right:2px;font-size:12px;color:#8b7a70}
+main{padding:46px 0 86px}
+.eyebrow{font-size:10px;letter-spacing:.20em;color:#9b7660;margin-bottom:10px}
+h1{font-size:clamp(30px,4vw,44px);line-height:1.38;letter-spacing:.075em;margin:18px 0 22px;max-width:11.5em}
+h2{font-size:clamp(25px,3vw,34px);line-height:1.44;letter-spacing:.055em}
+h3{letter-spacing:.035em}
+.lead{font-size:15px;line-height:2;color:#6f625a;max-width:690px}
+.section-title{max-width:680px;margin-bottom:34px}
+.section-title p{font-size:14px;line-height:1.9}
+.hero{max-width:800px;padding:58px 0 30px}
+.hero-copy{padding:0}
+.quick-meta{gap:7px;margin-top:26px}
+.quick-meta span{padding:6px 10px;background:rgba(255,255,252,.60);border-color:rgba(91,70,56,.07);box-shadow:0 8px 28px rgba(100,73,53,.03);font-size:11px}
+.hero-card,.paper-card,.three-angle,.outcome,.feature,.workshop,.calendar-sheet,.detail-card,.rhythm-card,.price-box,.info-box,.faq-item,.companion-card,.closing-card{
+  backdrop-filter:blur(18px) saturate(1.05);
+}
+.three-angle{margin-top:48px;padding:32px 34px 34px;background:rgba(255,254,250,.72);border-color:rgba(255,255,255,.76);box-shadow:0 24px 72px rgba(100,73,53,.055)}
+.angle-title{margin-bottom:25px}
+.angle-title h2{font-size:27px}
+.angle-title p{font-size:13px;line-height:1.9}
+.angle-grid{gap:16px}
+.angle{padding:24px 22px;border-radius:28px;border-color:rgba(91,70,56,.055);box-shadow:inset 0 1px rgba(255,255,255,.55)}
+.angle:nth-child(1){background:linear-gradient(145deg,rgba(247,226,216,.86),rgba(251,239,233,.72))}
+.angle:nth-child(2){background:linear-gradient(145deg,rgba(234,239,225,.88),rgba(245,246,237,.72))}
+.angle:nth-child(3){background:linear-gradient(145deg,rgba(241,226,229,.86),rgba(249,239,240,.72))}
+.angle .icon{background:rgba(255,255,255,.76);box-shadow:0 9px 24px rgba(95,70,55,.05)}
+.angle h3{font-size:18px}
+.angle p{font-size:12.5px;line-height:1.85}
+.outcome-block{margin-top:58px}
+.outcome-grid{gap:12px}
+.outcome{background:rgba(255,254,250,.70);border-color:rgba(91,70,56,.07);box-shadow:0 14px 42px rgba(100,73,53,.04);padding:22px 24px}
+.fit-panel,.companion-card,.workshop,.calendar-sheet,.detail-card,.rhythm-card,.price-box,.info-box,.faq-item,.closing-card{background:rgba(255,254,250,.76);border-color:rgba(91,70,56,.075);box-shadow:0 18px 56px rgba(100,73,53,.05)}
+.feature{background:rgba(255,254,250,.70);border-color:rgba(91,70,56,.065);box-shadow:0 14px 42px rgba(100,73,53,.038)}
+.companion-card{border-radius:32px;padding:30px 28px;min-height:0}
+.companion-symbol{box-shadow:0 12px 30px rgba(100,73,53,.06)}
+.companion-card p{font-size:13.5px;line-height:1.95}
+.companion-way{font-size:11.5px;line-height:1.75}
+.workshop{padding:28px 27px;border-radius:30px;min-height:0}
+.workshop .angle-note{font-size:12px;line-height:1.75}
+.workshop .desc{font-size:13.5px;line-height:1.9}
+.calendar-sheet{border-radius:32px}
+.price-box,.info-box{border-radius:32px}
+
+@media(max-width:920px){
+  .shell{padding-inline:clamp(26px,6vw,54px)}
+  main{padding-top:34px}
+  .topbar-inner{min-height:60px}
+}
+
+@media(max-width:680px){
+  body{line-height:1.78;background-image:
+    radial-gradient(28rem 22rem at 0% 3%, rgba(242,198,170,.31), transparent 66%),
+    radial-gradient(24rem 20rem at 100% 11%, rgba(249,222,165,.28), transparent 68%),
+    radial-gradient(25rem 20rem at 8% 47%, rgba(231,196,193,.20), transparent 70%),
+    radial-gradient(26rem 22rem at 100% 60%, rgba(224,225,198,.17), transparent 72%),
+    linear-gradient(180deg,#fffaf5 0%,#fbf6ef 52%,#f7f0e7 100%)}
+  .shell{padding-inline:28px}
+  .topbar{background:rgba(253,249,244,.82)}
+  .topbar-inner{min-height:58px;gap:12px}
+  .brand{font-size:12px;letter-spacing:.08em}
+  .brand-mark{width:8px;height:8px;box-shadow:0 0 0 4px rgba(196,155,88,.075),0 0 22px rgba(203,151,95,.28)}
+  .mobile-nav select{max-width:132px;font-size:11.5px;padding-top:7px;padding-bottom:6px}
+  main{padding:24px 0 64px}
+  .eyebrow{font-size:9px;letter-spacing:.19em;margin-bottom:8px}
+  h1{font-size:28px;line-height:1.48;letter-spacing:.08em;margin:14px 0 18px;max-width:none}
+  h2{font-size:24px;line-height:1.52;letter-spacing:.055em;margin:5px 0 10px}
+  h3{font-size:18px;line-height:1.55}
+  .lead{font-size:13.5px;line-height:1.95;max-width:31em}
+  .section-title{margin-bottom:26px;max-width:32em}
+  .section-title p{font-size:12.5px;line-height:1.9}
+  .hero{padding:34px 0 16px;gap:16px}
+  .quick-meta{margin-top:18px;gap:6px}
+  .quick-meta span{font-size:10px;padding:5px 8px}
+  .quick-meta span:nth-child(3),.quick-meta span:nth-child(5){display:none}
+
+  /* Home: reduce card stacking */
+  .three-angle{margin-top:44px;padding:0;background:transparent;border:0;box-shadow:none;backdrop-filter:none}
+  .angle-title{margin-bottom:20px;gap:8px}
+  .angle-title h2{font-size:23px}
+  .angle-title p{font-size:12.5px;line-height:1.85}
+  .angle-grid{gap:14px}
+  .angle{padding:22px 20px;border-radius:26px;box-shadow:0 16px 44px rgba(100,73,53,.035)}
+  .angle .icon{width:31px;height:31px;margin-bottom:13px}
+  .angle h3{font-size:17px}
+  .angle p{font-size:12px;line-height:1.8}
+
+  .outcome-block{margin-top:54px}
+  .outcome-grid{display:block}
+  .outcome{padding:19px 0;background:transparent;border:0;border-top:1px solid rgba(91,70,56,.11);border-radius:0;box-shadow:none;backdrop-filter:none}
+  .outcome:first-child{border-top:0;padding-top:5px}
+  .outcome .small{font-size:9px;letter-spacing:.16em}
+  .outcome h3{font-size:17px;margin-top:6px}
+  .outcome p{font-size:12.5px;line-height:1.85;margin-top:5px}
+
+  /* Features: editorial lines rather than boxed cards */
+  .signal-strip{margin:4px 0 44px}
+  .signal-strip>div{padding:16px 0}
+  .signal-strip b{font-size:16px}
+  .signal-strip span{font-size:12px;line-height:1.8}
+  .feature-grid-3{display:block}
+  .feature-grid-3 .feature{padding:20px 0;background:transparent;border:0;border-top:1px solid rgba(91,70,56,.11);border-radius:0;box-shadow:none;backdrop-filter:none;min-height:0}
+  .feature-grid-3 .feature:first-child{border-top:0;padding-top:4px}
+  .feature-num{font-size:9px}
+  .feature h3{font-size:17px;margin-top:8px}
+  .feature p{font-size:12.5px;line-height:1.85}
+
+  /* Companions */
+  .companions-heading{margin-bottom:24px}
+  .companion-grid{gap:22px;margin-top:22px}
+  .companion-card{padding:24px 22px 22px;border-radius:30px;background:rgba(255,254,250,.72);box-shadow:0 18px 50px rgba(100,73,53,.045)}
+  .companion-symbol{width:36px;height:36px;margin-bottom:14px}
+  .companion-role{font-size:9.5px;letter-spacing:.10em}
+  .companion-card h3{font-size:22px;margin-bottom:8px}
+  .companion-card p{font-size:12.5px;line-height:1.9}
+  .companion-way{font-size:10.5px;padding-top:14px;margin-top:18px}
+  .companion-note{font-size:11.5px;line-height:1.8;background:transparent;border:0;padding:8px 4px;margin-top:18px}
+
+  /* Classes */
+  .workshop-grid{gap:22px}
+  .workshop{padding:23px 21px;border-radius:29px;background:rgba(255,254,250,.74)}
+  .workshop .date{font-size:9.5px}
+  .workshop .teacher{font-size:11.5px}
+  .workshop .angle-note{font-size:11.5px;line-height:1.75;margin-top:8px}
+  .workshop h3{font-size:19px;margin-top:14px}
+  .workshop .question{font-size:11.5px;margin-top:15px}
+  .workshop .desc{font-size:12.5px;line-height:1.85}
+  .tag{font-size:9.5px;padding:5px 8px}
+  .result{font-size:11.5px;line-height:1.8;padding-top:15px}
+  .closing-card{padding:22px 20px;border-radius:28px;background:rgba(255,254,250,.72)}
+  .closing-card h3{font-size:18px}
+  .closing-card p{font-size:12.5px;line-height:1.85}
+
+  /* Calendar */
+  .calendar-sheet{padding:22px 10px 18px;border-radius:28px;background:rgba(255,254,250,.76)}
+  .month-head{padding-inline:10px}
+  .month-head h3{font-size:19px}
+  .month-head span{font-size:8.5px}
+  .week div{font-size:9px}
+  .day{min-height:62px}
+  .date-dot{width:29px;height:29px;font-size:9.5px}
+  .day-label{font-size:7.5px;max-width:40px;line-height:1.22}
+  .legend{font-size:9.5px;gap:9px;padding-inline:10px}
+  .detail-card,.rhythm-card{padding:21px 19px;border-radius:27px}
+  .detail-card h3{font-size:18px}
+  .detail-card p,.rhythm-row{font-size:11.5px;line-height:1.8}
+
+  /* Price / FAQ */
+  .price-box,.info-box{padding:23px 21px;border-radius:29px;background:rgba(255,254,250,.74)}
+  .price{font-size:40px}
+  .includes{gap:9px}
+  .include{font-size:12px;line-height:1.8}
+  .faq-list{gap:9px}
+  .faq-item{padding-inline:18px;border-radius:22px;background:rgba(255,254,250,.72);box-shadow:0 13px 40px rgba(100,73,53,.035)}
+  .faq-item summary{font-size:14px;line-height:1.6;padding-block:15px}
+  .faq-answer{font-size:12px;line-height:1.85;padding-bottom:17px}
+}
+
+@media(max-width:390px){
+  .shell{padding-inline:24px}
+  h1{font-size:26px}
+  h2{font-size:22px}
+  .brand{font-size:11.5px}
+  .mobile-nav select{max-width:118px;font-size:11px}
+  .angle{padding:20px 18px}
+  .companion-card{padding:22px 20px}
+  .workshop{padding:21px 19px}
+}
+
 </style>
 </head>
 <body>
