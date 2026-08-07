@@ -4,1188 +4,500 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>初星心練習｜用創作，聽見現在的自己</title>
-<meta name="description" content="初星心練習第一季：用顏色、自由書寫與繪畫創作三種方式，練習停下來陪伴自己、聽見現在的自己。" />
+<meta name="description" content="初星心練習：六週，用顏色、自由書寫與繪畫創作，練習停下來感受自己、聽見現在的自己。" />
 <style>
 :root{
-  --bg:#f6efe7;
-  --bg-soft:#fbf7f2;
-  --paper:#fffefa;
-  --paper-2:#fcf8f3;
-  --ink:#4a4039;
-  --muted:#7d7067;
-  --line:rgba(74,64,57,.12);
-  --terra:#b87764;
-  --terra-soft:#efd8cf;
-  --amber:#c49b58;
-  --amber-soft:#f1e5ca;
-  --sage:#899574;
-  --sage-soft:#e4eadb;
-  --rose:#a7858b;
-  --rose-soft:#eee1e3;
-  --shadow:0 22px 70px rgba(95,76,60,.08);
-  --radius:30px;
-  --max:1120px;
+  --bg:#fbf7f1;
+  --paper:#fffdf9;
+  --ink:#413730;
+  --muted:#7d7068;
+  --soft:#9b8b80;
+  --line:rgba(65,55,48,.10);
+  --terra:#b97b66;
+  --terra-pale:#f4dfd5;
+  --sage:#899777;
+  --sage-pale:#e9eee2;
+  --rose:#a98b91;
+  --rose-pale:#f1e5e7;
+  --amber:#c39a5c;
+  --amber-pale:#f5ead3;
+  --shadow:0 22px 64px rgba(97,72,54,.065);
+  --radius:28px;
+  --content:1040px;
+  --narrow:820px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
   color:var(--ink);
-  background:
-    radial-gradient(circle at 12% 8%, rgba(233,198,179,.52), transparent 26%),
-    radial-gradient(circle at 88% 10%, rgba(245,223,184,.48), transparent 24%),
-    radial-gradient(circle at 50% 0%, rgba(255,255,255,.78), transparent 30%),
-    radial-gradient(circle at 50% 24%, rgba(255,251,245,.88), transparent 42%),
-    linear-gradient(180deg,#faf4ee 0%,#f6efe6 48%,#f3ebdf 100%);
   font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
-  line-height:1.75;
+  line-height:1.8;
+  background:
+    radial-gradient(46rem 34rem at -8% -3%, rgba(240,197,174,.30), transparent 69%),
+    radial-gradient(40rem 30rem at 106% 4%, rgba(248,221,173,.27), transparent 70%),
+    radial-gradient(34rem 28rem at 86% 66%, rgba(217,226,204,.15), transparent 74%),
+    radial-gradient(30rem 25rem at 10% 78%, rgba(236,209,214,.14), transparent 72%),
+    linear-gradient(180deg,#fffaf5 0%,#fbf7f1 48%,#f8f1e8 100%);
 }
-button,a{font:inherit}
-a{color:inherit}
-.shell{width:min(100%,var(--max));margin:0 auto;padding-inline:clamp(26px,6vw,76px)}
-.topbar{position:sticky;top:0;z-index:30;background:rgba(250,244,237,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(74,64,57,.06)}
-.topbar-inner{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-size:14px;font-weight:800;letter-spacing:.07em;white-space:nowrap}
-.brand-mark{width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--amber),var(--terra));box-shadow:0 0 0 6px rgba(196,155,88,.10)}
-.tabs{display:flex;align-items:center;gap:4px;padding:6px;background:rgba(255,254,250,.72);border:1px solid rgba(74,64,57,.07);border-radius:999px;overflow:auto;scrollbar-width:none;box-shadow:0 10px 26px rgba(95,76,60,.05)}
-.tabs::-webkit-scrollbar{display:none}
-.tab{border:0;background:transparent;color:var(--muted);padding:8px 13px;border-radius:999px;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;transition:.2s ease}
-.tab:hover{color:var(--ink)}
-.tab.active{background:#51463f;color:#fff}
-.mobile-nav{display:none;position:relative}
-.mobile-nav select{appearance:none;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:9px 34px 9px 14px;font-size:13px;font-weight:700}
-.mobile-nav:after{content:"⌄";position:absolute;right:12px;top:50%;transform:translateY(-56%);color:var(--muted);pointer-events:none}
-main{padding:54px 0 78px}
-.page{display:none;animation:fade .24s ease}
+button,a{font:inherit;color:inherit}
+button{cursor:pointer}
+.shell{width:min(100%,var(--content));margin:0 auto;padding-inline:clamp(26px,5vw,58px)}
+.narrow{width:min(100%,var(--narrow));margin-inline:auto}
+
+/* top navigation */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,250,245,.84);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(65,55,48,.055);
+}
+.topbar-inner{min-height:64px;display:flex;align-items:center;gap:30px}
+.brand{display:flex;align-items:center;gap:10px;white-space:nowrap;font-size:14px;font-weight:800;letter-spacing:.08em}
+.brand-dot{width:9px;height:9px;border-radius:50%;background:linear-gradient(145deg,#d6aa65,#b97b66);box-shadow:0 0 0 5px rgba(211,170,105,.12)}
+.nav{margin-left:auto;display:flex;gap:22px;overflow:auto;scrollbar-width:none;padding:0 1px}
+.nav::-webkit-scrollbar{display:none}
+.nav-btn{
+  appearance:none;border:0;background:transparent;padding:21px 0 17px;
+  color:#84766d;font-size:12px;font-weight:650;letter-spacing:.075em;
+  white-space:nowrap;border-bottom:1px solid transparent;transition:.2s ease;
+}
+.nav-btn:hover{color:var(--ink);border-bottom-color:rgba(185,123,102,.35)}
+.nav-btn.active{color:var(--ink);border-bottom-color:var(--terra)}
+
+main{padding:0 0 92px}
+.page{display:none;animation:fade .22s ease}
 .page.active{display:block}
-@keyframes fade{from{opacity:.25;transform:translateY(5px)}to{opacity:1;transform:none}}
-.eyebrow{font-size:11px;font-weight:850;letter-spacing:.16em;color:#8a705d;text-transform:uppercase;display:block;margin-bottom:8px}
-h1,h2,h3{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif}
-h1{font-size:clamp(28px,4.1vw,46px);line-height:1.24;letter-spacing:-.03em;margin:16px 0 20px;font-weight:700;max-width:9.2em}
-h2{font-size:clamp(28px,3.4vw,40px);line-height:1.3;margin:7px 0 12px}
-h3{font-size:21px;line-height:1.45;margin:0}
-.lead{font-size:16px;color:#675d56;max-width:700px;margin:0}
-.section-title{max-width:760px;margin-bottom:30px}
-.section-title p{font-size:15px;color:var(--muted);margin:8px 0 0}
-.hero{display:grid;grid-template-columns:1fr;gap:24px;align-items:center;padding:62px 0 34px;max-width:860px}
-.hero-copy{padding:22px 0 10px}
-.hero-card,.paper-card{background:rgba(255,254,250,.95);border:1px solid rgba(255,255,255,.92);box-shadow:var(--shadow)}
-.hero-card{border-radius:34px;padding:30px}
-.hero-kicker{display:inline-flex;padding:7px 11px;border-radius:999px;background:var(--amber-soft);font-size:12px;font-weight:800;color:#725f3e;margin-bottom:14px}
-.hero-points{display:grid;gap:11px;margin-top:20px}
-.hero-point{display:grid;grid-template-columns:12px 1fr;gap:10px;font-size:14px;align-items:start}
-.dot{width:8px;height:8px;border-radius:50%;margin-top:8px}
-.price-label{font-size:11px;letter-spacing:.14em;font-weight:850;color:#8a7667}
-.price{font-size:48px;font-weight:800;line-height:1.08;margin:8px 0 8px;color:#755649}
-.price small{font-size:14px;font-weight:650;color:var(--muted)}
-.three-angle{margin-top:30px;padding:28px 30px 30px;border-radius:34px;background:rgba(255,254,250,.94);border:1px solid rgba(255,255,255,.92);box-shadow:var(--shadow)}
-.angle-title{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:22px}
-.angle-title h2{font-size:28px;margin:0}
-.angle-title p{max-width:480px;margin:0;font-size:14px;color:var(--muted)}
-.angle-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.angle{padding:22px 20px;border-radius:24px;min-height:160px;border:1px solid rgba(74,64,57,.07)}
-.angle:nth-child(1){background:#f7eae3}
-.angle:nth-child(2){background:#eef1e7}
-.angle:nth-child(3){background:#f3e8e9}
-.angle .icon{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:16px;background:rgba(255,255,255,.7);margin-bottom:16px}
-.angle h3{font-size:19px}
-.angle p{font-size:13px;color:#756a62;margin:7px 0 0}
+@keyframes fade{from{opacity:.2;transform:translateY(4px)}to{opacity:1;transform:none}}
 
-.quick-meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
-.quick-meta span{display:inline-flex;align-items:center;gap:6px;padding:7px 11px;border-radius:999px;background:rgba(255,254,250,.72);border:1px solid rgba(74,64,57,.08);font-size:12px;color:#74685f;box-shadow:0 8px 24px rgba(95,76,60,.035)}
-.fit-panel{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:start;margin-bottom:28px;padding:28px 30px;border-radius:30px;background:rgba(255,254,250,.95);border:1px solid rgba(255,255,255,.9);box-shadow:var(--shadow)}
-.fit-panel h3{font-size:24px}
-.fit-panel p{font-size:14px;color:var(--muted);margin:8px 0 0}
-.fit-list{display:grid;gap:10px}
-.fit-item{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:#685f58}
-.fit-item:before{content:"·";font-size:22px;line-height:1;color:var(--terra);margin-top:-1px}
-.outcome-block{margin-top:30px}
-.outcome-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.outcome{padding:22px 23px;border-radius:24px;background:rgba(255,254,250,.94);border:1px solid rgba(74,64,57,.08);box-shadow:0 12px 34px rgba(79,61,47,.04)}
-.outcome .small{font-size:11px;font-weight:850;letter-spacing:.11em;color:#987b69;text-transform:uppercase}
-.outcome h3{font-size:18px;margin-top:7px}
-.outcome p{font-size:13px;color:var(--muted);margin:6px 0 0}
-.opening-note{margin-top:18px;display:flex;gap:10px;align-items:center;padding:12px 14px;border-radius:17px;background:rgba(255,254,250,.66);border:1px solid rgba(74,64,57,.08);font-size:12px;color:#766a62}
-.opening-note b{color:#66574e}
+/* type */
+.eyebrow{font-size:10.5px;font-weight:850;letter-spacing:.18em;color:#9a7663;text-transform:uppercase}
+h1,h2,h3{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-weight:650;color:var(--ink)}
+h1{font-size:clamp(36px,5vw,58px);line-height:1.32;letter-spacing:.09em;margin:14px 0 12px}
+h2{font-size:clamp(27px,3.3vw,39px);line-height:1.42;letter-spacing:.045em;margin:8px 0 12px}
+h3{font-size:21px;line-height:1.5;letter-spacing:.025em;margin:0}
+p{margin:0}
+.lead{font-size:16px;line-height:2;color:#695e57;max-width:650px}
+.section-head{margin-bottom:38px}
+.section-head p{margin-top:10px;color:var(--muted);font-size:14px;line-height:1.95;max-width:680px}
 
-.feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-.feature{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:26px;min-height:168px;box-shadow:0 12px 35px rgba(79,61,47,.045)}
-.feature-num{font-size:11px;letter-spacing:.18em;font-weight:900;color:#997e6b}
-.feature h3{margin-top:11px}
-.feature p{font-size:14px;color:var(--muted);margin:8px 0 0}
-.workshop-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.workshop{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:25px;min-height:390px;display:flex;flex-direction:column;box-shadow:0 14px 40px rgba(79,61,47,.05)}
-.workshop .date{font-size:11px;font-weight:850;letter-spacing:.08em;color:#8b7768}
-.workshop .teacher{font-size:13px;color:#776b63;margin-top:8px}
-.workshop .angle-note{font-size:12.5px;line-height:1.65;color:#8a7d74;margin:7px 0 2px;padding-left:10px;border-left:2px solid rgba(184,119,100,.22)}
-.workshop h3{font-size:22px;margin-top:12px}
-.workshop .question{font-size:13px;font-weight:800;color:#7b6258;margin-top:17px}
-.workshop .desc{font-size:14px;color:var(--muted);margin:5px 0 0}
-.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}
-.tag{font-size:11px;padding:6px 10px;border-radius:999px;background:var(--paper-2);border:1px solid var(--line)}
-.result{margin-top:auto;padding-top:18px;border-top:1px solid var(--line);font-size:13px}
-.result b{display:block;margin-bottom:4px}
-.closing-card{margin-top:20px;background:linear-gradient(145deg,#fffefa,#f8efe5);border:1px solid var(--line);border-radius:28px;padding:24px 26px;box-shadow:0 14px 40px rgba(79,61,47,.045);display:grid;grid-template-columns:170px 1fr;gap:22px;align-items:start}
-.closing-card .date{font-size:11px;font-weight:850;letter-spacing:.08em;color:#8b7768}
-.closing-card h3{font-size:21px;margin:4px 0 8px}
-.closing-card p{font-size:14px;color:var(--muted);margin:0}
-@media(max-width:680px){.closing-card{grid-template-columns:1fr;gap:8px;padding:22px}}
-.calendar-layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(250px,.75fr);gap:28px;align-items:start}
-.calendar-sheet{background:rgba(255,254,250,.96);border:1px solid rgba(74,64,57,.09);border-radius:36px;padding:30px 28px 26px;box-shadow:var(--shadow)}
-.calendar-sheet + .calendar-sheet{margin-top:24px}
-.month-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:18px;padding-inline:4px}
-.month-head h3{font-size:24px}
-.month-head span{font-size:11px;letter-spacing:.18em;color:#9a8a7f}
-.week,.days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));text-align:center}
-.week{margin-bottom:5px}
-.week div{font-size:10px;color:#9a8d84;padding:5px 0}
-.day{min-height:78px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:6px 2px;position:relative}
-.date-dot{width:37px;height:37px;border-radius:50%;display:grid;place-items:center;font-size:11px;color:#6e655f;position:relative;transition:.18s ease;flex:0 0 auto}
+/* home */
+.hero{padding:92px 0 58px;position:relative}
+.hero:after{
+  content:"";position:absolute;right:-50px;top:26px;width:330px;height:250px;border-radius:50%;
+  background:radial-gradient(circle,rgba(248,219,177,.25),transparent 70%);pointer-events:none
+}
+.hero-inner{position:relative;z-index:1}
+.hero-sub{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-size:clamp(24px,3vw,34px);letter-spacing:.075em;line-height:1.5;color:#5e4e44;margin-bottom:22px}
+.meta-row{display:flex;flex-wrap:wrap;gap:12px 18px;margin-top:28px;font-size:12px;color:#756860}
+.meta-row span{position:relative;padding-left:13px}
+.meta-row span:before{content:"";position:absolute;left:0;top:.9em;width:4px;height:4px;border-radius:50%;background:var(--terra)}
+.hero-links{display:flex;flex-wrap:wrap;gap:22px;margin-top:34px}
+.text-link{border:0;background:transparent;padding:4px 0 5px;font-size:13px;font-weight:750;letter-spacing:.05em;border-bottom:1px solid rgba(65,55,48,.28)}
+.text-link.primary{border-bottom-color:var(--terra)}
+
+.home-block{padding:78px 0;border-top:1px solid rgba(65,55,48,.075)}
+.soft-state{display:grid;grid-template-columns:1fr 1fr;gap:18px 44px;margin-top:28px}
+.state-line{padding:17px 0;border-top:1px solid var(--line)}
+.state-line:nth-child(-n+2){border-top:0}
+.state-line b{display:block;font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-size:18px;letter-spacing:.025em;margin-bottom:5px}
+.state-line span{font-size:13px;color:var(--muted)}
+
+.three-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+.mode-card{padding:28px 26px 26px;border-radius:26px;min-height:210px;border:1px solid rgba(65,55,48,.045)}
+.mode-card:nth-child(1){background:linear-gradient(155deg,rgba(247,228,218,.92),rgba(255,249,244,.82))}
+.mode-card:nth-child(2){background:linear-gradient(155deg,rgba(234,239,225,.94),rgba(251,252,247,.82))}
+.mode-card:nth-child(3){background:linear-gradient(155deg,rgba(241,226,230,.94),rgba(255,248,249,.82))}
+.mode-icon{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.68);margin-bottom:18px;font-size:14px}
+.mode-card h3{font-size:20px;margin-bottom:8px}
+.mode-card p{font-size:13px;color:#72665f;line-height:1.9}
+
+.outcomes{display:grid;grid-template-columns:1fr 1fr;gap:0 36px;margin-top:26px}
+.outcome{padding:24px 0;border-top:1px solid var(--line)}
+.outcome:nth-child(-n+2){border-top:0}
+.outcome small{display:block;font-size:9.5px;font-weight:850;letter-spacing:.16em;color:#a07d69;margin-bottom:8px}
+.outcome h3{font-size:18px;margin-bottom:7px}
+.outcome p{font-size:13px;color:var(--muted);line-height:1.9}
+
+/* journey */
+.journey-wrap{padding:80px 0 0}
+.timeline{margin:42px auto 60px;max-width:900px}
+.timeline-track{display:grid;grid-template-columns:repeat(4,1fr);position:relative;gap:18px}
+.timeline-track:before{content:"";position:absolute;top:17px;left:9%;right:9%;height:1px;background:rgba(65,55,48,.14)}
+.milestone{position:relative;z-index:1;text-align:center}
+.milestone-dot{width:35px;height:35px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;font-size:10px;font-weight:800;color:#6e584c;border:1px solid rgba(65,55,48,.08);background:var(--paper);box-shadow:0 8px 26px rgba(97,72,54,.06)}
+.milestone:nth-child(1) .milestone-dot{background:var(--terra-pale)}
+.milestone:nth-child(2) .milestone-dot{background:var(--sage-pale)}
+.milestone:nth-child(3) .milestone-dot{background:var(--rose-pale)}
+.milestone:nth-child(4) .milestone-dot{background:var(--amber-pale)}
+.milestone time{display:block;font-size:11px;font-weight:800;letter-spacing:.08em;color:#8d7668}
+.milestone b{display:block;font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-size:17px;line-height:1.5;margin:5px 0 5px}
+.milestone span{font-size:11.5px;color:var(--muted);line-height:1.65}
+.between-note{margin:0 auto 62px;max-width:700px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:13px;color:#776b63;text-align:center}
+.between-note b{color:var(--ink)}
+
+.calendar-details{margin-top:20px}
+.calendar-details > summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);cursor:pointer;font-weight:750;font-size:14px}
+.calendar-details > summary::-webkit-details-marker{display:none}
+.calendar-details > summary span:last-child{font-size:20px;font-weight:400;color:#9a897d;transition:.2s}
+.calendar-details[open] > summary span:last-child{transform:rotate(45deg)}
+.calendar-body{padding:34px 0 0}
+.calendar-layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:30px;align-items:start}
+.calendar-stack{display:grid;gap:18px}
+.calendar-sheet{background:rgba(255,253,249,.90);border:1px solid rgba(65,55,48,.065);border-radius:28px;padding:24px 22px 20px;box-shadow:0 16px 44px rgba(97,72,54,.04)}
+.month-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:16px}
+.month-head h3{font-size:20px}
+.month-head span{font-size:9.5px;letter-spacing:.14em;color:#a18f83}
+.week,.days{display:grid;grid-template-columns:repeat(7,1fr)}
+.week{margin-bottom:7px}
+.week div{text-align:center;font-size:10px;color:#9b8c82}
+.days{gap:7px}
+.day{min-height:65px;border-radius:18px;padding:7px 5px 5px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:4px;transition:.18s ease}
 .day.event{cursor:pointer}
-.day.event .date-dot{font-weight:850;box-shadow:inset 0 0 0 1px rgba(74,64,57,.045)}
-.day.event:hover .date-dot{transform:translateY(-1px) scale(1.03)}
-.day.course .date-dot{background:var(--terra-soft);color:#704d43}
-.day.check .date-dot{background:var(--sage-soft);color:#52604a}
-.day.rest .date-dot{background:transparent;box-shadow:inset 0 0 0 1px rgba(196,155,88,.24);color:#88714b}
-.day.reflect .date-dot{background:var(--amber-soft);color:#75603c}
-.day.dinner .date-dot{background:var(--rose-soft);color:#6c565c}
-.day-label{font-size:9px;line-height:1.25;color:#7d7169;margin-top:6px;max-width:58px;min-height:23px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.day.check .day-label{color:#62705a;font-weight:700}
-.day.course .day-label{color:#835d51;font-weight:800}
-.day.reflect .day-label{color:#79633f;font-weight:800}
-.day.dinner .day-label{color:#765d64;font-weight:800}
-.legend{display:flex;flex-wrap:wrap;gap:13px;margin-top:18px;padding-inline:4px;font-size:11px;color:var(--muted)}
-.legend span{display:flex;align-items:center;gap:6px}
-.legend i{width:8px;height:8px;border-radius:50%;display:inline-block}
-.calendar-side{position:sticky;top:94px;display:grid;gap:15px}
-.detail-card,.rhythm-card{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:24px;box-shadow:0 12px 34px rgba(79,61,47,.045)}
-.detail-card{background:linear-gradient(145deg,#fffefa,#faf2ea)}
-.detail-date{font-size:11px;font-weight:900;letter-spacing:.1em;color:#8a766a}
-.detail-card h3{font-size:22px;margin-top:8px}
-.detail-card p{font-size:14px;color:var(--muted);margin:9px 0 0}
-.rhythm-card h3{font-size:19px;margin-bottom:6px}
-.rhythm-row{display:grid;grid-template-columns:80px 1fr;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:13px}
-.rhythm-row:last-child{border-bottom:0;padding-bottom:0}
-.rhythm-row b{font-size:11px;color:#7e6d63}
-.price-layout{display:grid;grid-template-columns:minmax(0,720px);justify-content:center;gap:22px;align-items:start}
-.price-box,.info-box{background:var(--paper);border:1px solid var(--line);border-radius:30px;padding:30px;box-shadow:0 13px 38px rgba(79,61,47,.05)}
-.price-box{background:linear-gradient(145deg,#fffefa,#fbf1e7)}
-.includes{display:grid;gap:10px;margin-top:20px}
-.include{display:flex;gap:10px;align-items:flex-start;font-size:14px}
-.checkmark{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:var(--sage-soft);font-size:11px;font-weight:900;flex:0 0 auto;margin-top:2px}
-.info-box h3{margin-bottom:12px}
-.info-box p{font-size:14px;color:var(--muted);margin:7px 0}
-.note{margin-top:20px;padding:15px 17px;border-radius:18px;background:rgba(255,253,249,.58);border:1px solid rgba(74,64,57,.08);font-size:12px;color:#776d66}
+.day.event:hover{transform:translateY(-1px);background:rgba(255,255,255,.62)}
+.date-dot{width:27px;height:27px;border-radius:50%;display:grid;place-items:center;font-size:11px}
+.day.course .date-dot{background:var(--terra-pale)}
+.day.check .date-dot{background:var(--sage-pale)}
+.day.rest .date-dot{border:1px solid rgba(195,154,92,.25)}
+.day.reflect .date-dot{background:var(--amber-pale)}
+.day.dinner .date-dot{background:var(--rose-pale)}
+.day-label{font-size:8.5px;line-height:1.25;color:#807168;text-align:center}
+.legend{display:flex;flex-wrap:wrap;gap:9px 14px;margin-top:14px;font-size:9.5px;color:#8f8076}
+.legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;vertical-align:middle}
+.calendar-side{position:sticky;top:92px}
+.detail-card{padding:22px 20px;background:linear-gradient(145deg,rgba(255,253,249,.90),rgba(249,240,232,.78));border:1px solid rgba(65,55,48,.065);border-radius:24px}
+.detail-date{font-size:9.5px;font-weight:850;letter-spacing:.14em;color:#967b6a;text-transform:uppercase}
+.detail-card h3{font-size:18px;margin:7px 0 5px}
+.detail-card p{font-size:12.5px;color:var(--muted);line-height:1.85}
 
-.faq-wrap{max-width:820px;margin:0 auto}
-.faq-list{display:grid;gap:12px;margin-top:24px}
-.faq-item{background:rgba(255,254,250,.96);border:1px solid rgba(74,64,57,.09);border-radius:22px;padding:0 22px;box-shadow:0 10px 30px rgba(95,76,60,.04)}
-.faq-item summary{list-style:none;cursor:pointer;padding:19px 30px 19px 0;font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-size:17px;font-weight:700;position:relative}
+/* gatherings */
+.gatherings{padding:80px 0 0}
+.gathering-list{display:grid;gap:18px;margin-top:34px}
+.gathering{border:1px solid rgba(65,55,48,.07);border-radius:28px;background:rgba(255,253,249,.78);overflow:hidden;box-shadow:0 16px 42px rgba(97,72,54,.045)}
+.gathering:nth-child(1){background:linear-gradient(150deg,rgba(255,253,249,.94),rgba(247,229,219,.55))}
+.gathering:nth-child(2){background:linear-gradient(150deg,rgba(255,253,249,.94),rgba(235,240,227,.58))}
+.gathering:nth-child(3){background:linear-gradient(150deg,rgba(255,253,249,.94),rgba(244,231,233,.58))}
+.gathering summary{list-style:none;display:grid;grid-template-columns:86px 1fr auto;gap:18px;align-items:center;padding:26px 28px;cursor:pointer}
+.gathering summary::-webkit-details-marker{display:none}
+.g-date{font-size:10px;font-weight:850;letter-spacing:.11em;color:#967d6d}
+.g-name{font-size:14px;font-weight:750;color:#6e5f57;margin-bottom:4px}
+.g-topic{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-size:24px;line-height:1.45;letter-spacing:.025em}
+.plus{font-size:22px;color:#9a897e;font-weight:300;transition:.2s}
+.gathering[open] .plus{transform:rotate(45deg)}
+.gathering-detail{padding:0 28px 28px 132px;border-top:1px solid rgba(65,55,48,.06)}
+.gathering-detail .intro{padding-top:20px;font-size:13px;color:#74675f;line-height:1.95}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px}
+.detail-block{padding-top:14px;border-top:1px solid rgba(65,55,48,.08)}
+.detail-block b{display:block;font-size:11px;letter-spacing:.06em;color:#83695e;margin-bottom:7px}
+.detail-block p{font-size:13px;color:var(--muted);line-height:1.85}
+.takeaway{margin-top:22px;padding:15px 0 0;border-top:1px solid rgba(65,55,48,.08);font-size:13px}
+.takeaway b{color:#6c554a}
+
+/* companions */
+.companions{padding:80px 0 0}
+.companion-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.companion{padding:30px 26px;border-radius:28px;border:1px solid rgba(65,55,48,.055);min-height:330px;display:flex;flex-direction:column}
+.companion:nth-child(1){background:linear-gradient(155deg,rgba(255,253,249,.96),rgba(247,228,218,.58))}
+.companion:nth-child(2){background:linear-gradient(155deg,rgba(255,253,249,.96),rgba(234,239,225,.62))}
+.companion:nth-child(3){background:linear-gradient(155deg,rgba(255,253,249,.96),rgba(241,226,230,.62))}
+.companion-symbol{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.74);font-size:14px;margin-bottom:22px}
+.companion-role{font-size:10px;font-weight:800;letter-spacing:.08em;color:#917769;margin-bottom:8px}
+.companion h3{font-size:28px;margin-bottom:12px}
+.companion p{font-size:13px;color:#71645d;line-height:1.95}
+.companion-way{margin-top:auto;padding-top:18px;border-top:1px solid rgba(65,55,48,.08);font-size:11px;color:#85756b}
+.companion-note{margin-top:42px;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-size:18px;letter-spacing:.035em;color:#5f5148}
+
+/* info */
+.info{padding:80px 0 0}
+.price-block{display:grid;grid-template-columns:.8fr 1.2fr;gap:42px;align-items:start;margin-top:34px}
+.price-big{padding:6px 0}
+.price-label{font-size:10px;font-weight:850;letter-spacing:.13em;color:#9a7865}
+.price{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-size:54px;line-height:1.15;margin:10px 0 8px}
+.price small{font-size:14px;font-family:inherit;color:#8a7b71}
+.opening{font-size:12px;color:#746860}
+.includes{display:grid;gap:0;border-top:1px solid var(--line)}
+.include{display:grid;grid-template-columns:24px 1fr;gap:10px;padding:15px 0;border-bottom:1px solid var(--line);font-size:13px;color:#675b54}
+.tick{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:var(--sage-pale);font-size:10px;font-weight:900}
+.info-note{margin-top:22px;font-size:11.5px;color:#88786e;line-height:1.8}
+
+.faq{margin-top:76px}
+.faq-list{border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item summary{list-style:none;display:flex;justify-content:space-between;gap:18px;padding:20px 0;cursor:pointer;font-size:14px;font-weight:750}
 .faq-item summary::-webkit-details-marker{display:none}
-.faq-item summary:after{content:"＋";position:absolute;right:0;top:50%;transform:translateY(-50%);font-family:system-ui,sans-serif;font-size:18px;font-weight:400;color:#9a7b68}
-.faq-item[open] summary:after{content:"－"}
-.faq-answer{padding:0 0 20px;color:var(--muted);font-size:14px;line-height:1.8;max-width:700px}
-.faq-answer b{color:var(--ink)}
-@media(max-width:680px){.faq-item{padding-inline:18px}.faq-item summary{font-size:16px;padding-block:17px}.faq-answer{font-size:13px}}
+.faq-plus{font-size:20px;font-weight:300;color:#9a897e;transition:.2s}
+.faq-item[open] .faq-plus{transform:rotate(45deg)}
+.faq-answer{padding:0 32px 20px 0;font-size:13px;color:var(--muted);line-height:1.9}
 
-.footer{padding:0 0 46px;text-align:center;color:#8b7e74;font-size:12px}
-@media(max-width:920px){
-  .shell{padding-inline:clamp(24px,5vw,44px)}
-  .tabs{display:none}.mobile-nav{display:block}
-  .hero{grid-template-columns:1fr;gap:28px;padding-top:34px}
-  .hero-card{max-width:610px}
-  .fit-panel{grid-template-columns:1fr}
-  .angle-title{align-items:flex-start;flex-direction:column}
-  .workshop-grid{grid-template-columns:1fr}
-  .workshop{min-height:0}
+footer{padding:70px 0 40px;text-align:center;font-size:11px;color:#94857b;letter-spacing:.05em}
+
+/* responsive */
+@media(max-width:860px){
+  .topbar-inner{display:block;padding-top:14px}
+  .brand{padding-bottom:8px}
+  .nav{margin-left:0;gap:18px}
+  .nav-btn{padding:10px 0 12px;font-size:11px}
+  .three-cards,.companion-grid{grid-template-columns:1fr}
+  .mode-card{min-height:0}
   .calendar-layout{grid-template-columns:1fr}
   .calendar-side{position:static}
-  .price-layout{grid-template-columns:1fr}
+  .price-block{grid-template-columns:1fr;gap:26px}
+  .timeline-track{grid-template-columns:1fr;gap:0;padding-left:24px}
+  .timeline-track:before{top:18px;bottom:18px;left:16px;right:auto;width:1px;height:auto}
+  .milestone{display:grid;grid-template-columns:36px 1fr;gap:16px;text-align:left;padding-bottom:28px}
+  .milestone-dot{margin:0}
+  .milestone-copy{padding-top:1px}
 }
 @media(max-width:680px){
-  .shell{padding-inline:22px}
-  main{padding-top:36px}
-  h1{font-size:38px}
-  .lead{font-size:15px}
-  .hero-card,.three-angle,.feature,.workshop,.calendar-sheet,.detail-card,.rhythm-card,.price-box,.info-box{border-radius:24px}
-  .angle-grid{grid-template-columns:1fr;gap:12px}
-  .angle{min-height:0}
-  .feature-grid{grid-template-columns:1fr;gap:13px}
-  .outcome-grid{grid-template-columns:1fr}
-  .feature{min-height:0;padding:22px}
-  .calendar-sheet{padding:23px 12px 20px}
-  .day{min-height:70px;padding-inline:0}
-  .date-dot{width:33px;height:33px;font-size:10px}
-  .day-label{font-size:8px;max-width:44px;margin-top:5px}
-  .month-head{padding-inline:8px}
-  .month-head h3{font-size:21px}
-  .legend{padding-inline:8px}
-}
-@media(max-width:390px){
-  .shell{padding-inline:18px}
+  .shell{padding-inline:25px}
+  main{padding-bottom:72px}
+  .topbar-inner{padding-inline:0}
   .brand{font-size:13px}
-  h1{font-size:34px}
-  .hero-card{padding:24px}
-  .three-angle{padding:24px}
-  .calendar-sheet{padding-inline:8px}
-  .day{min-height:66px}
-  .date-dot{width:31px;height:31px}
-  .day-label{max-width:40px}
+  h1{font-size:29px;line-height:1.48;letter-spacing:.10em}
+  h2{font-size:23px;line-height:1.55;letter-spacing:.055em}
+  h3{font-size:18px}
+  .eyebrow{font-size:9.5px}
+  .lead{font-size:13.5px;line-height:2}
+  .hero{padding:58px 0 38px}
+  .hero-sub{font-size:22px;line-height:1.65;letter-spacing:.08em;margin-bottom:18px}
+  .meta-row{gap:7px 14px;margin-top:22px;font-size:11px}
+  .hero-links{margin-top:26px}
+  .home-block{padding:62px 0}
+  .section-head{margin-bottom:28px}
+  .section-head p{font-size:13px}
+  .soft-state{grid-template-columns:1fr;gap:0}
+  .state-line{padding:18px 0;border-top:1px solid var(--line)!important}
+  .state-line:first-child{border-top:0!important}
+  .state-line b{font-size:16px}
+  .three-cards{gap:12px;margin-top:24px}
+  .mode-card{padding:21px 19px 20px;border-radius:22px}
+  .mode-card h3{font-size:17px}
+  .mode-card p{font-size:12.5px}
+  .outcomes{grid-template-columns:1fr;gap:0;margin-top:18px}
+  .outcome{padding:21px 0;border-top:1px solid var(--line)!important}
+  .outcome:first-child{border-top:0!important}
+  .journey-wrap,.gatherings,.companions,.info{padding-top:58px}
+  .timeline{margin-top:30px;margin-bottom:42px}
+  .between-note{margin-bottom:42px;font-size:12px;line-height:1.8}
+  .calendar-details > summary{font-size:13px;padding:17px 0}
+  .calendar-body{padding-top:24px}
+  .calendar-sheet{padding:20px 16px 17px;border-radius:24px}
+  .month-head h3{font-size:18px}
+  .days{gap:5px}
+  .day{min-height:60px;padding:6px 3px;border-radius:16px}
+  .date-dot{width:25px;height:25px;font-size:10.5px}
+  .day-label{font-size:7.8px}
+  .detail-card{padding:18px 16px;border-radius:21px}
+  .gathering-list{gap:14px;margin-top:26px}
+  .gathering{border-radius:24px}
+  .gathering summary{grid-template-columns:66px 1fr auto;gap:12px;padding:21px 19px}
+  .g-date{font-size:9.5px}
+  .g-name{font-size:12px}
+  .g-topic{font-size:19px;line-height:1.5}
+  .gathering-detail{padding:0 19px 22px 19px}
+  .gathering-detail .intro{font-size:12.5px}
+  .detail-grid{grid-template-columns:1fr;gap:12px}
+  .detail-block{padding-top:12px}
+  .companion-grid{gap:14px;margin-top:26px}
+  .companion{padding:23px 20px;border-radius:24px;min-height:0}
+  .companion h3{font-size:24px}
+  .companion p{font-size:12.5px}
+  .companion-note{font-size:16px;line-height:1.8;margin-top:32px}
+  .price{font-size:48px}
+  .faq{margin-top:56px}
+  .faq-item summary{font-size:13px;padding:18px 0}
+  .faq-answer{font-size:12.5px;padding-right:12px}
 }
-
-.compact-title{margin-bottom:22px}
-.signal-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:8px 0 52px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.signal-strip>div{padding:22px 24px 22px 0;display:flex;flex-direction:column;gap:4px}
-.signal-strip>div+div{border-left:1px solid var(--line);padding-left:24px}
-.signal-strip b{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-size:18px;font-weight:700}
-.signal-strip span{font-size:13px;color:var(--muted)}
-.feature-heading{margin-top:0}
-.feature-grid-3{grid-template-columns:repeat(3,1fr)}
-.feature-grid-3 .feature{min-height:150px;padding:24px}
-.companions-heading{max-width:720px}
-.companion-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:28px}
-.companion-card{background:rgba(255,254,250,.95);border:1px solid rgba(74,64,57,.09);border-radius:28px;padding:27px 25px;box-shadow:0 14px 38px rgba(79,61,47,.045);min-height:320px;display:flex;flex-direction:column}
-.companion-symbol{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-size:17px;margin-bottom:17px}
-.companion-symbol.terra{background:var(--terra-soft);color:#765044}
-.companion-symbol.sage{background:var(--sage-soft);color:#56624e}
-.companion-symbol.rose{background:var(--rose-soft);color:#715b61}
-.companion-role{font-size:11px;font-weight:850;letter-spacing:.08em;color:#917c6f;margin-bottom:6px}
-.companion-card h3{font-size:24px;margin-bottom:10px}
-.companion-card p{font-size:14px;color:var(--muted);margin:0;line-height:1.85}
-.companion-way{margin-top:auto;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:#776a62}
-.companion-note{max-width:760px;margin:22px auto 0;text-align:center;font-size:13px;color:#81736a;padding:16px 20px;border-radius:20px;background:rgba(255,254,250,.58);border:1px solid rgba(74,64,57,.07)}
-@media(max-width:760px){
-  .companion-grid{grid-template-columns:1fr}
-  .companion-card{min-height:0}
-  .signal-strip{grid-template-columns:1fr;margin-bottom:38px}
-  .signal-strip>div{padding:17px 0}
-  .signal-strip>div+div{border-left:0;border-top:1px solid var(--line);padding-left:0}
-  .feature-grid-3{grid-template-columns:1fr}
-}
-
-
-/* ===== Refined responsive editorial layer ===== */
-:root{
-  --bg:#faf6f0;
-  --bg-soft:#fffaf5;
-  --paper:rgba(255,254,250,.82);
-  --paper-2:rgba(255,250,244,.72);
-  --line:rgba(91,70,56,.09);
-  --shadow:0 20px 60px rgba(100,73,53,.065);
-}
-body{
-  background-color:#faf6f0;
-  background-image:
-    radial-gradient(46rem 34rem at 8% 4%, rgba(242,198,170,.30), transparent 66%),
-    radial-gradient(38rem 30rem at 93% 8%, rgba(249,222,165,.30), transparent 68%),
-    radial-gradient(36rem 28rem at 12% 42%, rgba(231,196,193,.22), transparent 70%),
-    radial-gradient(42rem 32rem at 92% 48%, rgba(224,225,198,.18), transparent 72%),
-    radial-gradient(42rem 34rem at 52% 78%, rgba(246,218,184,.22), transparent 72%),
-    linear-gradient(180deg,#fffaf5 0%,#fbf5ed 42%,#f8f1e7 100%);
-  color:#493f39;
-}
-.shell{max-width:1080px;padding-inline:clamp(30px,7vw,88px)}
-.topbar{background:rgba(252,248,242,.74);backdrop-filter:blur(24px) saturate(1.08);border-bottom:1px solid rgba(91,70,56,.045)}
-.topbar-inner{min-height:64px}
-.brand{font-size:13px;font-weight:750;letter-spacing:.10em}
-.brand-mark{width:9px;height:9px;box-shadow:0 0 0 5px rgba(196,155,88,.08),0 0 28px rgba(203,151,95,.34)}
-.mobile-nav select{border:0;border-bottom:1px solid rgba(91,70,56,.14);background:transparent;border-radius:0;padding:8px 24px 7px 3px;font-size:12px;font-weight:650;letter-spacing:.055em;box-shadow:none}
-.mobile-nav:after{right:2px;font-size:12px;color:#8b7a70}
-main{padding:46px 0 86px}
-.eyebrow{font-size:10px;letter-spacing:.20em;color:#9b7660;margin-bottom:10px}
-h1{font-size:clamp(30px,4vw,44px);line-height:1.38;letter-spacing:.075em;margin:18px 0 22px;max-width:11.5em}
-h2{font-size:clamp(25px,3vw,34px);line-height:1.44;letter-spacing:.055em}
-h3{letter-spacing:.035em}
-.lead{font-size:15px;line-height:2;color:#6f625a;max-width:690px}
-.section-title{max-width:680px;margin-bottom:34px}
-.section-title p{font-size:14px;line-height:1.9}
-.hero{max-width:800px;padding:58px 0 30px}
-.hero-copy{padding:0}
-.quick-meta{gap:7px;margin-top:26px}
-.quick-meta span{padding:6px 10px;background:rgba(255,255,252,.60);border-color:rgba(91,70,56,.07);box-shadow:0 8px 28px rgba(100,73,53,.03);font-size:11px}
-.hero-card,.paper-card,.three-angle,.outcome,.feature,.workshop,.calendar-sheet,.detail-card,.rhythm-card,.price-box,.info-box,.faq-item,.companion-card,.closing-card{
-  backdrop-filter:blur(18px) saturate(1.05);
-}
-.three-angle{margin-top:48px;padding:32px 34px 34px;background:rgba(255,254,250,.72);border-color:rgba(255,255,255,.76);box-shadow:0 24px 72px rgba(100,73,53,.055)}
-.angle-title{margin-bottom:25px}
-.angle-title h2{font-size:27px}
-.angle-title p{font-size:13px;line-height:1.9}
-.angle-grid{gap:16px}
-.angle{padding:24px 22px;border-radius:28px;border-color:rgba(91,70,56,.055);box-shadow:inset 0 1px rgba(255,255,255,.55)}
-.angle:nth-child(1){background:linear-gradient(145deg,rgba(247,226,216,.86),rgba(251,239,233,.72))}
-.angle:nth-child(2){background:linear-gradient(145deg,rgba(234,239,225,.88),rgba(245,246,237,.72))}
-.angle:nth-child(3){background:linear-gradient(145deg,rgba(241,226,229,.86),rgba(249,239,240,.72))}
-.angle .icon{background:rgba(255,255,255,.76);box-shadow:0 9px 24px rgba(95,70,55,.05)}
-.angle h3{font-size:18px}
-.angle p{font-size:12.5px;line-height:1.85}
-.outcome-block{margin-top:58px}
-.outcome-grid{gap:12px}
-.outcome{background:rgba(255,254,250,.70);border-color:rgba(91,70,56,.07);box-shadow:0 14px 42px rgba(100,73,53,.04);padding:22px 24px}
-.fit-panel,.companion-card,.workshop,.calendar-sheet,.detail-card,.rhythm-card,.price-box,.info-box,.faq-item,.closing-card{background:rgba(255,254,250,.76);border-color:rgba(91,70,56,.075);box-shadow:0 18px 56px rgba(100,73,53,.05)}
-.feature{background:rgba(255,254,250,.70);border-color:rgba(91,70,56,.065);box-shadow:0 14px 42px rgba(100,73,53,.038)}
-.companion-card{border-radius:32px;padding:30px 28px;min-height:0}
-.companion-symbol{box-shadow:0 12px 30px rgba(100,73,53,.06)}
-.companion-card p{font-size:13.5px;line-height:1.95}
-.companion-way{font-size:11.5px;line-height:1.75}
-.workshop{padding:28px 27px;border-radius:30px;min-height:0}
-.workshop .angle-note{font-size:12px;line-height:1.75}
-.workshop .desc{font-size:13.5px;line-height:1.9}
-.calendar-sheet{border-radius:32px}
-.price-box,.info-box{border-radius:32px}
-
-@media(max-width:920px){
-  .shell{padding-inline:clamp(26px,6vw,54px)}
-  main{padding-top:34px}
-  .topbar-inner{min-height:60px}
-}
-
-@media(max-width:680px){
-  body{line-height:1.78;background-image:
-    radial-gradient(28rem 22rem at 0% 3%, rgba(242,198,170,.31), transparent 66%),
-    radial-gradient(24rem 20rem at 100% 11%, rgba(249,222,165,.28), transparent 68%),
-    radial-gradient(25rem 20rem at 8% 47%, rgba(231,196,193,.20), transparent 70%),
-    radial-gradient(26rem 22rem at 100% 60%, rgba(224,225,198,.17), transparent 72%),
-    linear-gradient(180deg,#fffaf5 0%,#fbf6ef 52%,#f7f0e7 100%)}
-  .shell{padding-inline:28px}
-  .topbar{background:rgba(253,249,244,.82)}
-  .topbar-inner{min-height:58px;gap:12px}
-  .brand{font-size:12px;letter-spacing:.08em}
-  .brand-mark{width:8px;height:8px;box-shadow:0 0 0 4px rgba(196,155,88,.075),0 0 22px rgba(203,151,95,.28)}
-  .mobile-nav select{max-width:132px;font-size:11.5px;padding-top:7px;padding-bottom:6px}
-  main{padding:24px 0 64px}
-  .eyebrow{font-size:9px;letter-spacing:.19em;margin-bottom:8px}
-  h1{font-size:28px;line-height:1.48;letter-spacing:.08em;margin:14px 0 18px;max-width:none}
-  h2{font-size:24px;line-height:1.52;letter-spacing:.055em;margin:5px 0 10px}
-  h3{font-size:18px;line-height:1.55}
-  .lead{font-size:13.5px;line-height:1.95;max-width:31em}
-  .section-title{margin-bottom:26px;max-width:32em}
-  .section-title p{font-size:12.5px;line-height:1.9}
-  .hero{padding:34px 0 16px;gap:16px}
-  .quick-meta{margin-top:18px;gap:6px}
-  .quick-meta span{font-size:10px;padding:5px 8px}
-  .quick-meta span:nth-child(3),.quick-meta span:nth-child(5){display:none}
-
-  /* Home: reduce card stacking */
-  .three-angle{margin-top:44px;padding:0;background:transparent;border:0;box-shadow:none;backdrop-filter:none}
-  .angle-title{margin-bottom:20px;gap:8px}
-  .angle-title h2{font-size:23px}
-  .angle-title p{font-size:12.5px;line-height:1.85}
-  .angle-grid{gap:14px}
-  .angle{padding:22px 20px;border-radius:26px;box-shadow:0 16px 44px rgba(100,73,53,.035)}
-  .angle .icon{width:31px;height:31px;margin-bottom:13px}
-  .angle h3{font-size:17px}
-  .angle p{font-size:12px;line-height:1.8}
-
-  .outcome-block{margin-top:54px}
-  .outcome-grid{display:block}
-  .outcome{padding:19px 0;background:transparent;border:0;border-top:1px solid rgba(91,70,56,.11);border-radius:0;box-shadow:none;backdrop-filter:none}
-  .outcome:first-child{border-top:0;padding-top:5px}
-  .outcome .small{font-size:9px;letter-spacing:.16em}
-  .outcome h3{font-size:17px;margin-top:6px}
-  .outcome p{font-size:12.5px;line-height:1.85;margin-top:5px}
-
-  /* Features: editorial lines rather than boxed cards */
-  .signal-strip{margin:4px 0 44px}
-  .signal-strip>div{padding:16px 0}
-  .signal-strip b{font-size:16px}
-  .signal-strip span{font-size:12px;line-height:1.8}
-  .feature-grid-3{display:block}
-  .feature-grid-3 .feature{padding:20px 0;background:transparent;border:0;border-top:1px solid rgba(91,70,56,.11);border-radius:0;box-shadow:none;backdrop-filter:none;min-height:0}
-  .feature-grid-3 .feature:first-child{border-top:0;padding-top:4px}
-  .feature-num{font-size:9px}
-  .feature h3{font-size:17px;margin-top:8px}
-  .feature p{font-size:12.5px;line-height:1.85}
-
-  /* Companions */
-  .companions-heading{margin-bottom:24px}
-  .companion-grid{gap:22px;margin-top:22px}
-  .companion-card{padding:24px 22px 22px;border-radius:30px;background:rgba(255,254,250,.72);box-shadow:0 18px 50px rgba(100,73,53,.045)}
-  .companion-symbol{width:36px;height:36px;margin-bottom:14px}
-  .companion-role{font-size:9.5px;letter-spacing:.10em}
-  .companion-card h3{font-size:22px;margin-bottom:8px}
-  .companion-card p{font-size:12.5px;line-height:1.9}
-  .companion-way{font-size:10.5px;padding-top:14px;margin-top:18px}
-  .companion-note{font-size:11.5px;line-height:1.8;background:transparent;border:0;padding:8px 4px;margin-top:18px}
-
-  /* Classes */
-  .workshop-grid{gap:22px}
-  .workshop{padding:23px 21px;border-radius:29px;background:rgba(255,254,250,.74)}
-  .workshop .date{font-size:9.5px}
-  .workshop .teacher{font-size:11.5px}
-  .workshop .angle-note{font-size:11.5px;line-height:1.75;margin-top:8px}
-  .workshop h3{font-size:19px;margin-top:14px}
-  .workshop .question{font-size:11.5px;margin-top:15px}
-  .workshop .desc{font-size:12.5px;line-height:1.85}
-  .tag{font-size:9.5px;padding:5px 8px}
-  .result{font-size:11.5px;line-height:1.8;padding-top:15px}
-  .closing-card{padding:22px 20px;border-radius:28px;background:rgba(255,254,250,.72)}
-  .closing-card h3{font-size:18px}
-  .closing-card p{font-size:12.5px;line-height:1.85}
-
-  /* Calendar */
-  .calendar-sheet{padding:22px 10px 18px;border-radius:28px;background:rgba(255,254,250,.76)}
-  .month-head{padding-inline:10px}
-  .month-head h3{font-size:19px}
-  .month-head span{font-size:8.5px}
-  .week div{font-size:9px}
-  .day{min-height:62px}
-  .date-dot{width:29px;height:29px;font-size:9.5px}
-  .day-label{font-size:7.5px;max-width:40px;line-height:1.22}
-  .legend{font-size:9.5px;gap:9px;padding-inline:10px}
-  .detail-card,.rhythm-card{padding:21px 19px;border-radius:27px}
-  .detail-card h3{font-size:18px}
-  .detail-card p,.rhythm-row{font-size:11.5px;line-height:1.8}
-
-  /* Price / FAQ */
-  .price-box,.info-box{padding:23px 21px;border-radius:29px;background:rgba(255,254,250,.74)}
-  .price{font-size:40px}
-  .includes{gap:9px}
-  .include{font-size:12px;line-height:1.8}
-  .faq-list{gap:9px}
-  .faq-item{padding-inline:18px;border-radius:22px;background:rgba(255,254,250,.72);box-shadow:0 13px 40px rgba(100,73,53,.035)}
-  .faq-item summary{font-size:14px;line-height:1.6;padding-block:15px}
-  .faq-answer{font-size:12px;line-height:1.85;padding-bottom:17px}
-}
-
-@media(max-width:390px){
-  .shell{padding-inline:24px}
-  h1{font-size:26px}
-  h2{font-size:22px}
-  .brand{font-size:11.5px}
-  .mobile-nav select{max-width:118px;font-size:11px}
-  .angle{padding:20px 18px}
-  .companion-card{padding:22px 20px}
-  .workshop{padding:21px 19px}
-}
-
-
-/* ===== Visual hierarchy refinement ===== */
-:root{
-  --ink:#403630;
-  --muted:#786b63;
-  --paper-solid:#fffdfa;
-  --terra-fog:rgba(239,216,207,.58);
-  --sage-fog:rgba(228,234,219,.62);
-  --rose-fog:rgba(238,225,227,.62);
-  --amber-fog:rgba(244,231,204,.62);
-}
-
-body{
-  background:
-    radial-gradient(52rem 36rem at -8% 0%, rgba(246,204,179,.33), transparent 69%),
-    radial-gradient(44rem 32rem at 108% 8%, rgba(250,224,174,.32), transparent 70%),
-    radial-gradient(38rem 28rem at 20% 55%, rgba(238,211,214,.20), transparent 72%),
-    radial-gradient(42rem 30rem at 94% 67%, rgba(218,227,204,.18), transparent 72%),
-    radial-gradient(40rem 28rem at 50% 100%, rgba(246,218,185,.20), transparent 74%),
-    linear-gradient(180deg,#fffaf5 0%,#faf4ed 42%,#f7efe5 100%);
-}
-
-/* 導覽改成更輕的文字式 */
-.tabs{
-  gap:19px;
-  padding:0;
-  background:transparent;
-  border:0;
-  border-radius:0;
-  box-shadow:none;
-}
-.tab{
-  border:0;
-  border-bottom:1px solid transparent;
-  background:transparent;
-  color:#807269;
-  padding:10px 1px 8px;
-  border-radius:0;
-  font-size:11.5px;
-  font-weight:650;
-  letter-spacing:.075em;
-}
-.tab:hover{
-  color:var(--ink);
-  border-bottom-color:rgba(184,119,100,.32);
-}
-.tab.active{
-  background:transparent;
-  color:var(--ink);
-  border-bottom-color:var(--terra);
-}
-
-/* 標題節奏 */
-h1{
-  letter-spacing:.095em;
-  line-height:1.45;
-}
-h2{
-  letter-spacing:.065em;
-}
-.section-title{
-  margin-bottom:40px;
-}
-.section-title .eyebrow{
-  margin-bottom:13px;
-}
-.section-title p{
-  margin-top:12px;
-}
-
-/* 首頁三個視覺層級：首屏 / 三種方式 / 六週成果 */
-.hero{
-  padding-top:72px;
-  padding-bottom:42px;
-}
-.hero-copy{
-  max-width:760px;
-}
-.quick-meta{
-  margin-top:30px;
-}
-.quick-meta span{
-  background:rgba(255,253,249,.78);
-  border-color:rgba(91,70,56,.065);
-}
-
-.three-angle{
-  position:relative;
-  margin-top:62px;
-  padding:40px 42px 42px;
-  background:rgba(255,253,249,.90);
-  border:1px solid rgba(255,255,255,.94);
-  box-shadow:
-    0 30px 80px rgba(100,73,53,.075),
-    inset 0 1px 0 rgba(255,255,255,.95);
-  overflow:hidden;
-}
-.three-angle:before{
-  content:"";
-  position:absolute;
-  inset:-35% auto auto -12%;
-  width:360px;
-  height:260px;
-  border-radius:50%;
-  background:radial-gradient(circle,rgba(245,217,191,.34),transparent 68%);
-  pointer-events:none;
-}
-.angle-title,.angle-grid{position:relative;z-index:1}
-.angle-grid{gap:18px}
-.angle{
-  border:0;
-  box-shadow:0 12px 34px rgba(100,73,53,.045);
-}
-.angle:nth-child(1){
-  background:linear-gradient(155deg,rgba(247,228,218,.92),rgba(255,248,242,.88));
-}
-.angle:nth-child(2){
-  background:linear-gradient(155deg,rgba(234,239,225,.94),rgba(250,251,244,.88));
-}
-.angle:nth-child(3){
-  background:linear-gradient(155deg,rgba(241,226,230,.94),rgba(255,247,248,.88));
-}
-
-.outcome-block{
-  position:relative;
-  margin-top:90px;
-  padding:54px 0 8px;
-  border-top:1px solid rgba(91,70,56,.08);
-}
-.outcome-block:before{
-  content:"";
-  position:absolute;
-  width:430px;
-  height:300px;
-  right:-140px;
-  top:-40px;
-  border-radius:50%;
-  background:radial-gradient(circle,rgba(239,225,196,.32),transparent 70%);
-  pointer-events:none;
-}
-.outcome-block > *{position:relative;z-index:1}
-.outcome-grid{
-  gap:0 34px;
-}
-.outcome{
-  padding:24px 0 25px;
-  border:0;
-  border-top:1px solid rgba(91,70,56,.10);
-  border-radius:0;
-  background:transparent;
-  box-shadow:none;
-  backdrop-filter:none;
-}
-.outcome:nth-child(-n+2){border-top:0}
-.outcome h3{font-size:18px}
-
-/* 工作坊特色：取消「一樣重」的白卡，改成段落層次 */
-.signal-strip{
-  background:rgba(255,253,249,.54);
-  border-radius:26px;
-  border:1px solid rgba(91,70,56,.065);
-  padding-inline:24px;
-}
-.feature-grid-3{
-  gap:0;
-  border-top:1px solid rgba(91,70,56,.10);
-}
-.feature-grid-3 .feature{
-  background:transparent;
-  border:0;
-  border-radius:0;
-  box-shadow:none;
-  min-height:0;
-  padding:30px 28px;
-}
-.feature-grid-3 .feature + .feature{
-  border-left:1px solid rgba(91,70,56,.10);
-}
-.feature-grid-3 .feature:nth-child(1){background:linear-gradient(180deg,rgba(239,216,207,.19),transparent)}
-.feature-grid-3 .feature:nth-child(2){background:linear-gradient(180deg,rgba(228,234,219,.20),transparent)}
-.feature-grid-3 .feature:nth-child(3){background:linear-gradient(180deg,rgba(238,225,227,.20),transparent)}
-
-/* 同行者：三個角色用三種淡色層次 */
-.companion-grid{gap:20px}
-.companion-card{
-  border-color:rgba(91,70,56,.065);
-  box-shadow:0 20px 58px rgba(100,73,53,.052);
-}
-.companion-card:nth-child(1){
-  background:linear-gradient(155deg,rgba(255,253,249,.96),rgba(248,231,222,.62));
-}
-.companion-card:nth-child(2){
-  background:linear-gradient(155deg,rgba(255,253,249,.96),rgba(235,240,227,.66));
-}
-.companion-card:nth-child(3){
-  background:linear-gradient(155deg,rgba(255,253,249,.96),rgba(244,231,233,.68));
-}
-
-/* 三場小聚：讓每一場有自己的色層，不再三張白卡糊在一起 */
-.workshop-grid{gap:20px}
-.workshop{
-  border-color:rgba(91,70,56,.065);
-  box-shadow:0 20px 58px rgba(100,73,53,.05);
-}
-.workshop:nth-child(1){
-  background:linear-gradient(160deg,rgba(255,253,249,.95),rgba(248,231,222,.57));
-}
-.workshop:nth-child(2){
-  background:linear-gradient(160deg,rgba(255,253,249,.95),rgba(235,240,227,.59));
-}
-.workshop:nth-child(3){
-  background:linear-gradient(160deg,rgba(255,253,249,.95),rgba(244,231,233,.60));
-}
-.closing-card{
-  margin-top:34px;
-  background:linear-gradient(145deg,rgba(255,253,249,.95),rgba(244,231,204,.48));
-}
-
-/* 月曆與費用：主體白、輔助區暖色，避免全頁同一層 */
-.calendar-sheet{
-  background:rgba(255,253,249,.93);
-  box-shadow:0 24px 70px rgba(100,73,53,.065);
-}
-.detail-card{
-  background:linear-gradient(155deg,rgba(255,253,249,.96),rgba(248,232,222,.64));
-}
-.rhythm-card{
-  background:rgba(255,253,249,.70);
-}
-.price-box{
-  background:linear-gradient(155deg,rgba(255,253,249,.98),rgba(246,231,216,.66));
-  box-shadow:0 28px 76px rgba(100,73,53,.07);
-}
-.info-box{background:rgba(255,253,249,.72)}
-.faq-item{background:rgba(255,253,249,.82)}
-
-/* 桌機內容不要鋪滿 */
-.page > .shell{
-  max-width:1080px;
-}
-#page-home > .shell{
-  max-width:980px;
-}
-#page-features > .shell,
-#page-companions > .shell{
-  max-width:980px;
-}
-
-/* 手機：以留白做分段，減少卡片堆疊 */
-@media(max-width:680px){
-  .shell{padding-inline:27px}
-  main{padding-top:28px;padding-bottom:74px}
-  h1{
-    font-size:26px;
-    line-height:1.56;
-    letter-spacing:.10em;
-    margin-top:17px;
-    margin-bottom:22px;
-  }
-  h2{
-    font-size:21px;
-    line-height:1.58;
-    letter-spacing:.07em;
-  }
-  .lead{
-    font-size:13px;
-    line-height:2.05;
-  }
-  .hero{
-    padding-top:42px;
-    padding-bottom:22px;
-  }
-  .quick-meta{
-    margin-top:24px;
-    gap:7px;
-  }
-
-  .three-angle{
-    margin-top:54px;
-    padding:28px 20px 24px;
-    border-radius:30px;
-    background:rgba(255,253,249,.87);
-    box-shadow:0 22px 62px rgba(100,73,53,.06);
-  }
-  .three-angle:before{
-    width:250px;height:190px;left:-90px;top:-70px;
-  }
-  .angle-title{margin-bottom:23px}
-  .angle-grid{gap:12px}
-  .angle{
-    padding:19px 18px;
-    border-radius:23px;
-    box-shadow:none;
-  }
-  .angle h3{font-size:16px}
-  .angle p{font-size:11.8px}
-
-  .outcome-block{
-    margin-top:72px;
-    padding-top:42px;
-  }
-  .outcome-grid{display:block}
-  .outcome{
-    padding:21px 0 22px;
-    border-top:1px solid rgba(91,70,56,.11);
-  }
-  .outcome:first-child{border-top:0}
-  .outcome:nth-child(2){border-top:1px solid rgba(91,70,56,.11)}
-  .outcome h3{font-size:16px}
-
-  .signal-strip{
-    margin-top:4px;
-    margin-bottom:46px;
-    padding:0 18px;
-    border-radius:24px;
-  }
-  .feature-grid-3{
-    border-top:1px solid rgba(91,70,56,.10);
-  }
-  .feature-grid-3 .feature{
-    padding:24px 0;
-    background:transparent !important;
-    border-left:0 !important;
-  }
-  .feature-grid-3 .feature + .feature{
-    border-top:1px solid rgba(91,70,56,.10);
-  }
-
-  .companion-grid,.workshop-grid{gap:18px}
-  .companion-card,.workshop{
-    border-radius:27px;
-    box-shadow:0 17px 46px rgba(100,73,53,.045);
-  }
-  .companion-card{
-    padding:23px 21px;
-  }
-  .workshop{
-    padding:22px 20px;
-  }
-
-  .calendar-sheet{
-    background:rgba(255,253,249,.90);
-  }
-  .detail-card,.rhythm-card,.price-box,.info-box,.faq-item{
-    box-shadow:0 14px 42px rgba(100,73,53,.04);
-  }
-}
-
-/* 很窄手機再多一點安全距離 */
-@media(max-width:390px){
-  .shell{padding-inline:23px}
-  h1{font-size:24px}
-}
-
-
-/* NIKI free-writing update: quieter editorial rhythm */
-.companion-card p,.workshop .desc{line-height:1.92}
-.companion-way{letter-spacing:.035em}
-.workshop .question{margin-top:18px;letter-spacing:.08em;color:#8b7568}
-.workshop .result{background:rgba(255,255,255,.38);padding:14px 15px;border-radius:16px;border-top:0;margin-top:18px}
-@media(max-width:680px){
-  .workshop .question{margin-top:16px;font-size:10.5px}
-  .workshop .result{padding:12px 13px;border-radius:14px}
-  .companion-card p,.workshop .desc{line-height:1.95}
-}
-
-
-/* Final title hierarchy */
-.hero-subtitle{
-  margin:-4px 0 22px;
-  font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;
-  font-size:clamp(19px,2.6vw,28px);
-  line-height:1.6;
-  letter-spacing:.12em;
-  color:#765d52;
-  font-weight:600;
-}
-@media(max-width:680px){
-  .hero-subtitle{font-size:17px;line-height:1.7;letter-spacing:.11em;margin:-2px 0 20px;}
-}
-
+@media(max-width:390px){.shell{padding-inline:22px}.nav{gap:15px}.nav-btn{font-size:10.5px}}
 </style>
 </head>
 <body>
 <header class="topbar">
   <div class="shell topbar-inner">
-    <a class="brand" href="#home" data-route="home"><span class="brand-mark"></span>初星心練習</a>
-    <nav class="tabs" aria-label="網站分頁">
-      <button class="tab active" data-page="home">首頁</button>
-      <button class="tab" data-page="features">工作坊特色</button>
-      <button class="tab" data-page="companions">三位同行者</button>
-      <button class="tab" data-page="classes">三場小聚</button>
-      <button class="tab" data-page="calendar">六週行事曆</button>
-      <button class="tab" data-page="price">費用</button>
-      <button class="tab" data-page="faq">FAQ</button>
+    <div class="brand"><span class="brand-dot"></span><span>初星心練習</span></div>
+    <nav class="nav" aria-label="網站導覽">
+      <button class="nav-btn active" data-page="home">首頁</button>
+      <button class="nav-btn" data-page="journey">六週怎麼走</button>
+      <button class="nav-btn" data-page="gatherings">三場小聚</button>
+      <button class="nav-btn" data-page="companions">三位同行者</button>
+      <button class="nav-btn" data-page="info">費用與 FAQ</button>
     </nav>
-    <div class="mobile-nav"><select id="mobileSelect" aria-label="切換分頁"><option value="home">首頁</option><option value="features">工作坊特色</option><option value="companions">三位同行者</option><option value="classes">三場小聚</option><option value="calendar">六週行事曆</option><option value="price">費用</option><option value="faq">FAQ</option></select></div>
   </div>
 </header>
 
 <main>
-<section class="page active" data-page="home" id="page-home">
+<section class="page active" id="page-home" data-page="home">
   <div class="shell">
-    <div class="hero">
-      <div class="hero-copy">
-        <div class="eyebrow">2026 秋季 · 第一季｜聽見自己的心聲</div>
+    <section class="hero narrow">
+      <div class="hero-inner">
+        <div class="eyebrow">2026 秋季 · 第一季</div>
         <h1>初星心練習</h1>
-        <div class="hero-subtitle">用創作，聽見現在的自己</div>
-        <p class="lead">生活一直往前，我們常常在處理事情，卻很少留一點時間給自己。這六週，用顏色、自由書寫與繪畫創作，練習停下來陪伴自己，也更聽見現在的感受與需要。</p>
-        <div class="quick-meta">
-          <span>6 週一季</span><span>3 堂線上小聚＋1 次回望夜</span><span>每堂後 7 天延伸</span><span>創始季 NT$888</span><span>6 人開班・最多 12 人</span>
-        </div>
-      </div>
-    </div>
-
-    <section class="three-angle">
-      <div class="angle-title">
-        <div><div class="eyebrow">3 WAYS TO NOTICE YOURSELF</div><h2>三種創作方式，練習聽見自己</h2></div>
-        <p>不用急著把自己想明白。三位同行者從顏色、自由書寫與繪畫創作出發，陪你用不同媒介感受自己，也多聽見自己一點。</p>
-      </div>
-      <div class="angle-grid">
-        <article class="angle"><div class="icon">●</div><h3>用顏色，看見自己</h3><p>先不急著分析，從直覺有感的顏色開始，看看此刻的心情想讓你注意什麼。</p></article>
-        <article class="angle"><div class="icon">◌</div><h3>用自由書寫，聽見自己</h3><p>讓腦中混在一起的念頭先落到紙上，不追求寫得好，只練習在文字裡辨認自己的感受與需要。</p></article>
-        <article class="angle"><div class="icon">✦</div><h3>用創作，與自己連結</h3><p>有些感受不用先說清楚，讓線條、顏色與畫面替此刻的自己留下一點痕跡。</p></article>
+        <div class="hero-sub">用創作，聽見現在的自己</div>
+        <p class="lead">生活一直往前，我們常常在處理事情，卻很少留一點時間給自己。這六週，用顏色、自由書寫與繪畫創作，練習停下來感受自己，也多聽見現在的自己一點。</p>
+        <div class="meta-row"><span>6 週</span><span>3 場線上小聚＋1 次回望夜</span><span>6–12 人精緻小群</span></div>
+        <div class="hero-links"><button class="text-link primary" data-go="journey">看看這六週怎麼走</button><button class="text-link" data-go="gatherings">看看三場小聚</button></div>
       </div>
     </section>
 
-    <section class="outcome-block">
-      <div class="section-title compact-title">
+    <section class="home-block narrow">
+      <div class="section-head">
+        <div class="eyebrow">IS THIS FOR YOU?</div>
+        <h2>也許你最近只是……</h2>
+      </div>
+      <div class="soft-state">
+        <div class="state-line"><b>常常在處理事情</b><span>事情一件接一件，很少停下來感受自己。</span></div>
+        <div class="state-line"><b>有些心情說不上來</b><span>沒有發生什麼大事，但最近好像有點滿、有點亂。</span></div>
+        <div class="state-line"><b>想更了解自己</b><span>卻不想把自我探索做得很沉重。</span></div>
+      </div>
+    </section>
+
+    <section class="home-block">
+      <div class="section-head narrow">
+        <div class="eyebrow">3 CREATIVE WAYS</div>
+        <h2>不急著找答案，先用三種創作方式陪自己停一下</h2>
+      </div>
+      <div class="three-cards">
+        <article class="mode-card"><div class="mode-icon">●</div><h3>用顏色，看見自己</h3><p>從一個此刻有感覺的顏色開始，看看現在的心情想讓你注意什麼。</p></article>
+        <article class="mode-card"><div class="mode-icon">◌</div><h3>用自由書寫，聽見自己</h3><p>讓腦中的念頭先落到紙上，在文字裡慢慢辨認自己的感受與需要。</p></article>
+        <article class="mode-card"><div class="mode-icon">✦</div><h3>用創作，與自己連結</h3><p>不一定要先說清楚，讓線條、顏色與畫面替此刻的自己留下一點痕跡。</p></article>
+      </div>
+    </section>
+
+    <section class="home-block narrow">
+      <div class="section-head">
         <div class="eyebrow">WHAT YOU TAKE WITH YOU</div>
         <h2>六週後，你會帶走什麼？</h2>
-        <p>不一定找到一個標準答案，但會多一些線索，知道最近的自己正在感受什麼、需要什麼。</p>
+        <p>不一定得到一個標準答案，但會多一些線索，知道最近的自己正在感受什麼、需要什麼。</p>
       </div>
-      <div class="outcome-grid">
-        <article class="outcome">
-          <div class="small">NOTICE</div>
-          <h3>更能說出最近的狀態</h3>
-          <p>從「我也不知道怎麼了」，慢慢比較能辨認自己的情緒、心情與需要。</p>
-        </article>
-        <article class="outcome">
-          <div class="small">3 WAYS</div>
-          <h3>練習三種靠近自己的方式</h3>
-          <p>親自練習色彩視覺、自由書寫與繪畫創作，看看哪一種方式最能幫你靠近自己。</p>
-        </article>
-        <article class="outcome">
-          <div class="small">CREATE</div>
-          <h3>留下三份自己的紀錄</h3>
-          <p>一張情緒桌布、一段屬於自己的自由書寫，以及一幅自我對話創作。</p>
-        </article>
-        <article class="outcome">
-          <div class="small">LOOK BACK</div>
-          <h3>完成一次六週回望</h3>
-          <p>在回望夜整理：這段時間，我多知道自己一點什麼？</p>
-        </article>
+      <div class="outcomes">
+        <div class="outcome"><small>NOTICE</small><h3>更能說出最近的狀態</h3><p>從「我也不知道怎麼了」，慢慢比較能辨認自己的情緒、心情與需要。</p></div>
+        <div class="outcome"><small>3 WAYS</small><h3>練習三種靠近自己的方式</h3><p>親自練習色彩視覺、自由書寫與繪畫創作，看看哪一種方式自己最有感。</p></div>
+        <div class="outcome"><small>CREATE</small><h3>留下三份自己的紀錄</h3><p>一張情緒桌布、一段自由書寫，以及一幅自我對話創作。</p></div>
+        <div class="outcome"><small>LOOK BACK</small><h3>完成一次六週回望</h3><p>最後一起整理：這段時間，我多知道自己一點什麼？</p></div>
       </div>
     </section>
   </div>
 </section>
 
-<section class="page" data-page="features" id="page-features">
-  <div class="shell">
-    <div class="section-title compact-title">
-      <div class="eyebrow">IS THIS FOR YOU?</div>
-      <h2>想要更了解自己</h2>
+<section class="page" id="page-journey" data-page="journey">
+  <div class="shell journey-wrap">
+    <div class="section-head narrow">
+      <div class="eyebrow">THE 6-WEEK RHYTHM</div>
+      <h2>六週怎麼走</h2>
+      <p>每兩週一場小聚。課後有 7 天自由練習，接著留一週空白，讓體驗真正有時間進入生活。</p>
     </div>
 
-    <div class="signal-strip">
-      <div><b>有點累、有點亂</b><span>但不太知道怎麼形容。</span></div>
-      <div><b>常常在處理事情</b><span>卻很少停下來感受自己。</span></div>
-      <div><b>想靠近自己</b><span>但不想把自我探索做得很沉重。</span></div>
+    <div class="timeline">
+      <div class="timeline-track">
+        <div class="milestone"><div class="milestone-dot">01</div><div class="milestone-copy"><time>09.25 FRI</time><b>顏色｜看見自己</b><span>情緒色票 × Canva 情緒桌布</span></div></div>
+        <div class="milestone"><div class="milestone-dot">02</div><div class="milestone-copy"><time>10.09 FRI</time><b>自由書寫｜聽見自己</b><span>NIKI 自由書寫 × 教練式提問</span></div></div>
+        <div class="milestone"><div class="milestone-dot">03</div><div class="milestone-copy"><time>10.23 FRI</time><b>創作｜與自己連結</b><span>宗芸 自我對話繪畫創作</span></div></div>
+        <div class="milestone"><div class="milestone-dot">04</div><div class="milestone-copy"><time>11.06 FRI</time><b>回望｜把六週收回來</b><span>線上作品分享與心得整理</span></div></div>
+      </div>
     </div>
 
-    <div class="section-title compact-title feature-heading">
-      <div class="eyebrow">WORKSHOP FEATURES</div>
-      <h2>這六週，練習把自己放回生活裡</h2>
-    </div>
-    <div class="feature-grid feature-grid-3">
-      <article class="feature"><div class="feature-num">01</div><h3>三位同行者，三種陪伴方式</h3><p>色彩視覺、自由書寫、繪畫創作從不同入口，陪你感受最近的情緒與心情。</p></article>
-      <article class="feature"><div class="feature-num">02</div><h3>課堂有實作，課後有 7 天自由練習</h3><p>每堂都會留下作品或練習；想繼續時，再把它輕輕帶回日常。沒有追進度，也不用補。</p></article>
-      <article class="feature"><div class="feature-num">03</div><h3>最後一起回望</h3><p>11/6 線上分享作品與心得，看看這段時間自己聽見了什麼，也一起選下一季。</p></article>
-    </div>
+    <div class="between-note"><b>每場之後：</b> 7 天自由練習（每天約 3–5 分鐘、自由參與） → 一週留白 → 再進入下一場。</div>
+
+    <details class="calendar-details">
+      <summary><span>查看詳細月曆與每天的自由練習</span><span>＋</span></summary>
+      <div class="calendar-body">
+        <div class="calendar-layout">
+          <div class="calendar-stack">
+            <div class="calendar-sheet"><div class="month-head"><h3>2026 · 9 月</h3><span>SEPTEMBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="sepDays"></div><div class="legend"><span><i style="background:var(--terra-pale)"></i>線上小聚</span><span><i style="background:var(--sage-pale)"></i>自由練習</span></div></div>
+            <div class="calendar-sheet"><div class="month-head"><h3>2026 · 10 月</h3><span>OCTOBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="octDays"></div><div class="legend"><span><i style="background:var(--terra-pale)"></i>線上小聚</span><span><i style="background:var(--sage-pale)"></i>自由練習</span><span><i style="border:1px solid rgba(195,154,92,.28)"></i>留白</span></div></div>
+            <div class="calendar-sheet"><div class="month-head"><h3>2026 · 11 月</h3><span>NOVEMBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="novDays"></div><div class="legend"><span><i style="background:var(--amber-pale)"></i>回望夜</span><span><i style="background:var(--rose-pale)"></i>自由聚餐</span></div></div>
+          </div>
+          <aside class="calendar-side"><div class="detail-card"><div class="detail-date" id="detailDate">點選有顏色的日期</div><h3 id="detailTitle">當天的課程／自由練習</h3><p id="detailDesc">點一下月曆中的日期，就能看到當天完整的引導。</p></div></aside>
+        </div>
+      </div>
+    </details>
   </div>
 </section>
 
-<section class="page" data-page="companions" id="page-companions">
-  <div class="shell">
-    <div class="section-title companions-heading">
-      <div class="eyebrow">YOUR COMPANIONS</div>
-      <h2>這六週，和三位同行者一起走</h2>
-      <p>我們不站在前面替你解讀自己，也不急著給答案。每個人只帶著自己熟悉的方法，陪你停一下、聽一下，讓你自己慢慢感覺。</p>
-    </div>
-    <div class="companion-grid">
-      <article class="companion-card">
-        <div class="companion-symbol terra">●</div>
-        <div class="companion-role">策展者・引導者</div>
-        <h3>青青</h3>
-        <p>負責策展這一季的主題與整體體驗，串連三種不同的創作方式。第一場從情緒色票、自我對話與 Canva 出發；課程之間，也在 VIP 小群用輕量提問與自由練習，引導大家把注意力帶回自己。</p>
-        <div class="companion-way">引導你的方式｜色彩・提問・課間練習・整季串連</div>
-      </article>
-      <article class="companion-card">
-        <div class="companion-symbol sage">◌</div>
-        <div class="companion-role">生命教練・自由書寫同行者</div>
-        <h3>NIKI</h3>
-        <p>用自由書寫與教練式提問，陪你把平常一閃而過、來不及整理的念頭寫下來。在文字裡，慢慢辨認哪些是應該、擔心，哪些更靠近自己真正的感受與需要。</p>
-        <div class="companion-way">陪你的方式｜自由書寫・教練式提問・內在梳理</div>
-      </article>
-      <article class="companion-card">
-        <div class="companion-symbol rose">✦</div>
-        <div class="companion-role">創作同行者</div>
-        <h3>宗芸</h3>
-        <p>用自由畫畫與自我對話，陪你讓還說不清楚的感受有一個出口。不追求畫得漂亮，只讓此刻的心情慢慢出現在畫面裡。</p>
-        <div class="companion-way">陪你的方式｜自由創作・色彩・自我對話</div>
-      </article>
-    </div>
-    <div class="companion-note">真正知道自己感受的人，始終是你。同行者只是提供不同的入口，陪你練習聽見。</div>
-  </div>
-</section>
-
-<section class="page" data-page="classes" id="page-classes">
-  <div class="shell">
-    <div class="section-title">
+<section class="page" id="page-gatherings" data-page="gatherings">
+  <div class="shell gatherings">
+    <div class="section-head narrow">
       <div class="eyebrow">3 HEART GATHERINGS</div>
       <h2>三場與心的小聚</h2>
-      <p>三位同行者不替你找答案，而是透過顏色、自由書寫與繪畫創作，陪你從不同方向感受自己、聽見自己。</p>
+      <p>課程主題是主角，同行者提供不同入口。每場都有實作，也會留下可以帶回生活的作品或紀錄。</p>
     </div>
-    <div class="workshop-grid">
-      <article class="workshop">
-        <div class="date">09.25 FRI · 20:00–22:00</div>
-        <div class="teacher">同行者｜青青</div>
-        <div class="angle-note">從顏色切入：先不用急著解釋情緒，讓一個有感的顏色幫你停下來看見現在。</div>
-        <h3>我的情緒，是什麼顏色？</h3>
-        <div class="question">這堂想陪你看見</div>
-        <p class="desc">最近的我，是什麼心情？如果先不用講道理，它會是什麼顏色？</p>
-        <div class="question">現場會做</div>
-        <p class="desc">從初心色譜選色、整理一句此刻想對自己說的話，再用 Canva 完成一張自己的情緒桌布。</p>
-        <div class="tags"><span class="tag">情緒色票</span><span class="tag">自我對話</span><span class="tag">Canva 實作</span></div>
-        <div class="result"><b>帶走</b>一張「現在的我」情緒桌布</div>
-      </article>
-      <article class="workshop">
-        <div class="date">10.09 FRI · 20:00–22:00</div>
-        <div class="teacher">同行者｜NIKI（生命教練・自由書寫）</div>
-        <div class="angle-note">從自由書寫切入：先讓腦中混在一起的想法落到紙上，再慢慢辨認哪些話真正屬於現在的自己。</div>
-        <h3>NIKI｜用自由書寫，聽見自己</h3>
-        <div class="question">這堂想陪你看見</div>
-        <p class="desc">當我不用急著把事情想清楚，寫下來之後，哪些話最接近我現在真正的感受？</p>
-        <div class="question">現場會做</div>
-        <p class="desc">由 NIKI 用自由書寫與教練式提問帶領，不需要文筆，也不用寫得漂亮；讓想法先落到紙上，再從文字裡找到現在最想聽見的一句話。</p>
-        <div class="tags"><span class="tag">自由書寫</span><span class="tag">教練式提問</span><span class="tag">內在梳理</span></div>
-        <div class="result"><b>帶走</b>一段屬於自己的自由書寫＋一張「內在聲音小卡」</div>
-      </article>
-      <article class="workshop">
-        <div class="date">10.23 FRI · 20:00–22:00</div>
-        <div class="teacher">同行者｜宗芸</div>
-        <div class="angle-note">從創作切入：有些感受不需要先說清楚，也可以透過顏色、線條與畫面慢慢被看見。</div>
-        <h3>不用說清楚，也可以畫出來</h3>
-        <div class="question">這堂想陪你看見</div>
-        <p class="desc">有些心情很難說完整，如果讓顏色、線條與直覺先說，會長成什麼樣子？</p>
-        <div class="question">現場會做</div>
-        <p class="desc">不追求畫得漂亮，從自由創作與自我對話出發，把這段時間的自己留在畫面裡。</p>
-        <div class="tags"><span class="tag">直覺創作</span><span class="tag">自我對話</span><span class="tag">自由畫畫</span></div>
-        <div class="result"><b>帶走</b>一幅屬於這段時間的自己的作品</div>
-      </article>
+    <div class="gathering-list narrow">
+      <details class="gathering">
+        <summary><div class="g-date">09.25</div><div><div class="g-name">青青｜策展者・引導者</div><div class="g-topic">我的情緒，是什麼顏色？</div></div><div class="plus">＋</div></summary>
+        <div class="gathering-detail"><p class="intro">從初心色譜選出此刻有感覺的顏色，整理一句現在想對自己說的話，再用 Canva 做成自己的情緒桌布。</p><div class="detail-grid"><div class="detail-block"><b>這場想陪你看見</b><p>最近的我，是什麼心情？如果先不用講道理，它會是什麼顏色？</p></div><div class="detail-block"><b>現場會做</b><p>情緒色票選色、自我對話、Canva 美感實作。</p></div></div><div class="takeaway"><b>帶走｜</b>一張「現在的我」情緒桌布。</div></div>
+      </details>
+      <details class="gathering">
+        <summary><div class="g-date">10.09</div><div><div class="g-name">NIKI｜生命教練・自由書寫同行者</div><div class="g-topic">用自由書寫，聽見自己</div></div><div class="plus">＋</div></summary>
+        <div class="gathering-detail"><p class="intro">不用會寫，也不用寫得漂亮。讓腦中混在一起的想法先落到紙上，再透過教練式提問，慢慢辨認哪些話更接近現在的自己。</p><div class="detail-grid"><div class="detail-block"><b>這場想陪你看見</b><p>當我不用急著把事情想清楚，寫下來之後，哪些話最接近我現在真正的感受？</p></div><div class="detail-block"><b>現場會做</b><p>自由書寫、教練式提問、圈出反覆出現的詞與一句最想聽見的話。</p></div></div><div class="takeaway"><b>帶走｜</b>一段屬於自己的自由書寫＋一張內在聲音小卡。</div></div>
+      </details>
+      <details class="gathering">
+        <summary><div class="g-date">10.23</div><div><div class="g-name">宗芸｜創作同行者</div><div class="g-topic">不用說清楚，也可以畫出來</div></div><div class="plus">＋</div></summary>
+        <div class="gathering-detail"><p class="intro">不追求畫得漂亮。從顏色、線條與直覺創作開始，讓還說不清楚的感受先被看見、被留下。</p><div class="detail-grid"><div class="detail-block"><b>這場想陪你感受</b><p>有些心情如果不必用語言解釋，會長成什麼樣子？</p></div><div class="detail-block"><b>現場會做</b><p>自由畫畫、自我對話、作品命名與簡單回看。</p></div></div><div class="takeaway"><b>帶走｜</b>一幅屬於此刻自己的自我對話創作。</div></div>
+      </details>
     </div>
-    <section class="closing-card">
-      <div>
-        <div class="date">11.06 FRI · 20:00–21:15</div>
-      </div>
-      <div>
-        <div class="teacher">三位同行者與大家一起回望</div>
-        <h3>心練習回望夜｜分享作品，也整理這六週的自己</h3>
-        <p>不再上新內容。把情緒桌布、自由書寫與創作帶回來，彼此分享最有感的一段經驗；最後一起票選下一季想體驗的方向。</p>
+  </div>
+</section>
+
+<section class="page" id="page-companions" data-page="companions">
+  <div class="shell companions">
+    <div class="section-head narrow">
+      <div class="eyebrow">YOUR COMPANIONS</div>
+      <h2>三位同行者，三種陪伴方式</h2>
+      <p>我們不替你解讀自己，也不急著給答案。每個人只帶著自己熟悉的方法，陪你多感受一點。</p>
+    </div>
+    <div class="companion-grid">
+      <article class="companion"><div class="companion-symbol">●</div><div class="companion-role">策展者・引導者</div><h3>青青</h3><p>策展整季主題與體驗路徑，第一場從顏色與視覺出發；課程之間也會在 VIP 小群用輕量提問與自由練習，把注意力帶回自己。</p><div class="companion-way">色彩・提問・課間引導・整季串連</div></article>
+      <article class="companion"><div class="companion-symbol">◌</div><div class="companion-role">生命教練・自由書寫同行者</div><h3>NIKI</h3><p>用自由書寫與教練式提問，陪你把一閃而過、來不及整理的念頭寫下來，在文字裡辨認更靠近自己的感受與需要。</p><div class="companion-way">自由書寫・教練式提問・內在梳理</div></article>
+      <article class="companion"><div class="companion-symbol">✦</div><div class="companion-role">創作同行者</div><h3>宗芸</h3><p>用畫畫、顏色與直覺創作陪你和此刻的自己連結。不要求畫得好，只讓感受有一個可以被留下的位置。</p><div class="companion-way">繪畫創作・自我對話・直覺感受</div></article>
+    </div>
+    <div class="companion-note narrow">真正知道自己感受的人，始終是你。同行者只是提供不同入口，陪你練習靠近。</div>
+  </div>
+</section>
+
+<section class="page" id="page-info" data-page="info">
+  <div class="shell info">
+    <div class="section-head narrow">
+      <div class="eyebrow">FOUNDING SEASON</div>
+      <h2>第一季創始價</h2>
+      <p>先用一個低門檻的價格，完整走過這六週。</p>
+    </div>
+    <div class="price-block narrow">
+      <div class="price-big"><div class="price-label">完整一季</div><div class="price">NT$888 <small>／人</small></div><div class="opening"><b>6 人開班｜最多 12 人</b><br>維持可以看見彼此的精緻小群。</div></div>
+      <div><div class="includes"><div class="include"><span class="tick">✓</span><span>3 場週五晚上的線上小聚＋課程回放</span></div><div class="include"><span class="tick">✓</span><span>每場課後 7 天自由練習＋六週學員 VIP 群</span></div><div class="include"><span class="tick">✓</span><span>每天約 3–5 分鐘，自由參與、不需補進度</span></div><div class="include"><span class="tick">✓</span><span>11/6 線上心練習回望夜</span></div><div class="include"><span class="tick">✓</span><span>11/13 自由實體聚餐（餐費自付）</span></div></div><p class="info-note">分享完全自願。不需要公開私人經歷，也不需要解釋情緒原因。</p></div>
+    </div>
+
+    <section class="faq narrow">
+      <div class="section-head"><div class="eyebrow">FAQ</div><h2>報名前，可能會想知道</h2></div>
+      <div class="faq-list">
+        <details class="faq-item"><summary><span>如果其中一場無法參加直播呢？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">三場線上小聚都會提供課程回放，可以依自己的時間補上內容。</div></details>
+        <details class="faq-item"><summary><span>7 天自由練習一定要每天做嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">不用。每天會有一個約 3–5 分鐘的小題目，但完全自由參與，不需要跟進度，也不用補。</div></details>
+        <details class="faq-item"><summary><span>一定要在群組分享自己的情緒或作品嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">不用。你可以只自己記錄；分享完全自願，也不需要公開私人經歷或說明情緒原因。</div></details>
+        <details class="faq-item"><summary><span>VIP 群組會怎麼運作？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">這是本季學員專屬的小群。三位同行者主要負責各自的課程；課程之間由青青擔任策展者與引導者，提供自由練習與作品交流空間。</div></details>
+        <details class="faq-item"><summary><span>完全不會 Canva、自由書寫或畫畫也能參加嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">可以。三場都以新手能進入的方式設計，不追求作品技巧，而是把創作當成靠近自己的媒介。</div></details>
+        <details class="faq-item"><summary><span>這是心理治療或情緒分析課嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">不是。初星心練習不進行心理治療、診斷或替你解讀情緒，而是提供顏色、書寫與創作等方式，讓你自己觀察現在的狀態。</div></details>
+        <details class="faq-item"><summary><span>同行者會推銷後續服務嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">每位同行者可以在課程最後簡短提供想繼續深入的人後續選項，但完全自由選擇，不影響本季課程的完整性。</div></details>
       </div>
     </section>
   </div>
 </section>
-
-<section class="page" data-page="calendar" id="page-calendar">
-  <div class="shell">
-    <div class="section-title">
-      <div class="eyebrow">CALENDAR</div>
-      <h2>六週行事曆</h2>
-      <p>每堂課後都有 7 天自由練習，每天一個延續當堂內容的小題目；不用跟進度，也不用補。11/6 再用一場線上回望夜正式收尾。點月曆日期可查看完整內容。</p>
-    </div>
-    <div class="calendar-layout">
-      <div>
-        <div class="calendar-sheet">
-          <div class="month-head"><h3>2026 · 9 月</h3><span>SEPTEMBER</span></div>
-          <div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div>
-          <div class="days" id="sepDays"></div>
-          <div class="legend"><span><i style="background:var(--terra-soft)"></i>線上小聚</span><span><i style="background:var(--sage-soft)"></i>7 天自由練習</span><span><i style="border:1px solid rgba(196,155,88,.4)"></i>留白週</span></div>
-        </div>
-        <div class="calendar-sheet">
-          <div class="month-head"><h3>2026 · 10 月</h3><span>OCTOBER</span></div>
-          <div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div>
-          <div class="days" id="octDays"></div>
-          <div class="legend"><span><i style="background:var(--terra-soft)"></i>線上小聚</span><span><i style="background:var(--sage-soft)"></i>7 天自由練習</span><span><i style="border:1px solid rgba(196,155,88,.4)"></i>留白週</span><span><i style="background:var(--amber-soft)"></i>線上回望夜</span></div>
-        </div>
-        <div class="calendar-sheet">
-          <div class="month-head"><h3>2026 · 11 月</h3><span>NOVEMBER</span></div>
-          <div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div>
-          <div class="days" id="novDays"></div>
-          <div class="legend"><span><i style="background:var(--rose-soft)"></i>自由聚餐（餐費自付）</span></div>
-        </div>
-      </div>
-      <aside class="calendar-side">
-        <div class="detail-card" id="detailCard">
-          <div class="detail-date" id="detailDate">點選有顏色的日期</div>
-          <h3 id="detailTitle">查看當天的課程／自由練習</h3>
-          <p id="detailDesc">月曆上會直接標出每天的短主題，點一下可看完整引導；每題都可自由參與。</p>
-        </div>
-        <div class="rhythm-card">
-          <h3>固定兩週節奏</h3>
-          <div class="rhythm-row"><b>週五</b><span>上課，現場完成第一版作品／練習。</span></div>
-          <div class="rhythm-row"><b>接著 7 天</b><span>每天一個延續課程的輕量練習；想做再做，不需補進度。</span></div>
-          <div class="rhythm-row"><b>第二週</b><span>完全留白，休息、沉澱、自由完成作品。</span></div>
-          <div class="rhythm-row"><b>11/6</b><span>線上心練習回望夜，分享作品與心得，正式收尾。</span></div>
-          <div class="rhythm-row"><b>11/13</b><span>自由實體聚餐，單純見面聊天，餐費自付。</span></div>
-        </div>
-      </aside>
-    </div>
-  </div>
-</section>
-
-<section class="page" data-page="price" id="page-price">
-  <div class="shell">
-    <div class="section-title">
-      <div class="eyebrow">FOUNDING SEASON</div>
-      <h2>第一季創始價</h2>
-      <p>三場與心的小聚、三段課後延伸，加上一場共同回望。</p>
-    </div>
-    <div class="price-layout">
-      <div class="price-box">
-        <div class="price-label">完整一季</div>
-        <div class="price">NT$ 888 <small>／人</small></div>
-        <div class="opening-note"><span>✦</span><span><b>6 人開班｜最多 12 人</b>｜維持可以看見彼此的精緻小群。</span></div>
-        <div class="includes">
-          <div class="include"><span class="checkmark">✓</span><span>3 場週五晚上的線上「與心小聚」＋課程回放</span></div>
-          <div class="include"><span class="checkmark">✓</span><span>每場課後 7 天自由練習＋VIP 群課後延伸（每天約 3–5 分鐘，自由參與）</span></div>
-          <div class="include"><span class="checkmark">✓</span><span>留下 3 份成果：情緒桌布、自由書寫／內在聲音小卡、自我對話畫作</span></div>
-          <div class="include"><span class="checkmark">✓</span><span>11/6 線上「心練習回望夜」</span></div>
-          <div class="include"><span class="checkmark">✓</span><span>11/13 自由參加實體聚餐（餐費自付）</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="page" data-page="faq" id="page-faq">
-  <div class="shell">
-    <div class="faq-wrap">
-      <div class="section-title compact-title">
-        <div class="eyebrow">BEFORE YOU JOIN</div>
-        <h2>報名前，可能會想知道</h2>
-        <p>把參與方式說清楚，讓你可以按照自己的步調加入。</p>
-      </div>
-      <div class="faq-list">
-        <details class="faq-item">
-          <summary>課後 7 天練習一定每天都要完成嗎？</summary>
-          <div class="faq-answer"><b>不用。</b> 每堂課後會有 7 天延伸題目，每天大約 3–5 分鐘。沒有一定要跟上進度，也不用補；想練習、想記錄的時候再加入就好。</div>
-        </details>
-        <details class="faq-item">
-          <summary>一定要在群組分享自己的情緒或作品嗎？</summary>
-          <div class="faq-answer"><b>不用，分享完全自願。</b> 你可以只把題目留給自己，也可以選擇分享作品、心得或當下的觀察。不需要公開私人經歷，也不會要求說明情緒背後的原因。</div>
-        </details>
-        <details class="faq-item">
-          <summary>如果其中一場無法參加直播怎麼辦？</summary>
-          <div class="faq-answer">三場線上小聚都會提供<b>課程回放</b>，可以依自己的時間補上內容。VIP 群的自由練習也不要求跟直播進度，不需要補作業。</div>
-        </details>
-        <details class="faq-item">
-          <summary>這是心理治療、情緒診斷或療癒課程嗎？</summary>
-          <div class="faq-answer"><b>不是。</b> 初星心練習不替你分析、診斷或解釋情緒。這一季只是透過顏色、自由書寫與創作，提供三種觀察當下狀態的入口；真正怎麼理解自己的感受，仍由你自己決定。</div>
-        </details>
-        <details class="faq-item">
-          <summary>課程之間的 VIP 群組是什麼？</summary>
-          <div class="faq-answer">這是<b>本季課程學員專屬的 VIP 小群組</b>。三場小聚之間，青青會放入簡短的課後延伸題目與作品分享空間，讓課堂不會下課就斷掉；參與程度由你自己決定。</div>
-        </details>
-        <details class="faq-item">
-          <summary>三位同行者會一直在 VIP 群組裡嗎？</summary>
-          <div class="faq-answer">不會。三位同行者主要負責各自的小聚；課程之間的 VIP 群由<b>青青陪伴</b>，提供自由練習題目與作品分享空間。NIKI、宗芸若有額外回應會視個人安排，不作為固定服務承諾。</div>
-        </details>
-        <details class="faq-item">
-          <summary>這一季會有多少人？</summary>
-          <div class="faq-answer"><b>6 人開班，最多 12 人。</b> 希望維持一個可以看見彼此、又不會太有壓力的精緻小群。</div>
-        </details>
-        <details class="faq-item">
-          <summary>完全沒有 Canva、自由書寫或畫畫經驗，也可以參加嗎？</summary>
-          <div class="faq-answer">可以。三場都以<b>第一次也能進入</b>為設計前提，不要求技巧，也不是作品競賽。重點是透過不同方式多認識自己一點。</div>
-        </details>
-        <details class="faq-item">
-          <summary>三場小聚是彼此獨立的嗎？</summary>
-          <div class="faq-answer">每位同行者會用自己熟悉的方式陪伴，但三場都圍繞同一件事：<b>從不同角度理解最近的情緒、心情與當下狀態。</b> 顏色、自由書寫與創作是三個不同入口，不需要用同一套方法。</div>
-        </details>
-        <details class="faq-item">
-          <summary>小聚中會一直介紹同行者的後續服務嗎？</summary>
-          <div class="faq-answer">不會。每一場小聚本身都會完成當天的體驗與成果；同行者若有適合繼續深入的服務，課末只會簡短提供選項。<b>是否購買完全自由</b>，不影響本季任何內容與參與權益。</div>
-        </details>
-        <details class="faq-item">
-          <summary>11/6 的「心練習回望夜」會做什麼？</summary>
-          <div class="faq-answer">這是六週的線上收尾時間。大家可以自由分享這段時間留下的作品與心得，也會一起回顧最有感的發現，並票選下一季想參與的主題。</div>
-        </details>
-      </div>
-    </div>
-  </div>
-</section>
-
 </main>
 
-<footer class="footer"><div class="shell">初星心練習 · 聽見自己的心聲</div></footer>
+<footer>初星心練習 · 用創作，聽見現在的自己</footer>
 
 <script>
-const pageIds=['home','features','companions','classes','calendar','price','faq'];
-const tabs=[...document.querySelectorAll('.tab')];
+const navButtons=[...document.querySelectorAll('.nav-btn')];
 const pages=[...document.querySelectorAll('.page')];
-const mobileSelect=document.getElementById('mobileSelect');
 function showPage(id,push=true){
-  if(!pageIds.includes(id)) id='home';
   pages.forEach(p=>p.classList.toggle('active',p.dataset.page===id));
-  tabs.forEach(t=>t.classList.toggle('active',t.dataset.page===id));
-  mobileSelect.value=id;
+  navButtons.forEach(b=>b.classList.toggle('active',b.dataset.page===id));
   if(push) history.replaceState(null,'','#'+id);
-  window.scrollTo({top:0,behavior:'smooth'});
+  window.scrollTo({top:0,behavior:'instant'});
 }
-tabs.forEach(t=>t.addEventListener('click',()=>showPage(t.dataset.page)));
-mobileSelect.addEventListener('change',()=>showPage(mobileSelect.value));
-document.querySelectorAll('[data-route]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();showPage(a.dataset.route)}));
+navButtons.forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.go)));
 
 const events={
- '2026-09-25':{type:'course',label:'第1場',title:'第一場｜我的情緒，是什麼顏色？',desc:'20:00–22:00。用情緒色票找出此刻有感的顏色，整理一句現在想對自己說的話，並做出自己的情緒桌布。'},
+ '2026-09-25':{type:'course',label:'第1場',title:'我的情緒，是什麼顏色？',desc:'20:00–22:00。用情緒色票找出此刻有感的顏色，整理一句現在想對自己說的話，並做出自己的情緒桌布。'},
  '2026-09-26':{type:'check',label:'換上桌布',title:'Day 1｜讓作品進入生活',desc:'把昨天完成的情緒桌布換上手機。今天第一次看到它時，你最先冒出的感受是什麼？用一句話記下來。'},
  '2026-09-27':{type:'check',label:'今天的色',title:'Day 2｜今天的情緒，是什麼顏色？',desc:'再次打開情緒色票，直覺選一個今天最有感的顏色。不用解釋對錯，只寫：今天的我比較像＿＿＿＿。'},
  '2026-09-28':{type:'check',label:'一句有感',title:'Day 3｜哪一句話今天最靠近我？',desc:'看看自己的桌布。今天哪一個字、哪一句話最有感？如果沒有感覺，也可以如實寫「今天沒有特別感覺」。'},
@@ -1193,7 +505,7 @@ const events={
  '2026-09-30':{type:'check',label:'想改什麼',title:'Day 5｜如果現在重做一次',desc:'看著桌布，你會想改顏色、文字，還是保持原樣？選一個最想調整的地方，或回答「我想保留現在的版本」。'},
  '2026-10-01':{type:'check',label:'完成版本',title:'Day 6｜完成自己的情緒桌布',desc:'花 10–20 分鐘做最後微調。願意的話，把完成版放進群組；不用追求漂亮，只要是現在的你願意留下的版本。'},
  '2026-10-02':{type:'check',label:'一週回顧',title:'Day 7｜這一週，我看見自己什麼？',desc:'回頭看第一天到今天：顏色、句子或心情有沒有變？用一句「這週我比較注意到自己＿＿＿＿」做收尾。'},
- '2026-10-09':{type:'course',label:'第2場',title:'第二場｜NIKI｜用自由書寫，聽見自己',desc:'20:00–22:00。透過自由書寫與教練式提問，讓腦中混在一起的想法先落到紙上，再慢慢聽見現在真正想說的話。'},
+ '2026-10-09':{type:'course',label:'第2場',title:'NIKI｜用自由書寫，聽見自己',desc:'20:00–22:00。透過自由書寫與教練式提問，讓腦中混在一起的想法先落到紙上，再慢慢聽見現在真正想說的話。'},
  '2026-10-10':{type:'check',label:'不停筆',title:'Day 1｜先寫三分鐘',desc:'找一個安靜的三分鐘，不停筆寫下：最近腦中最常出現的是什麼？不用整理，也不用寫得好。'},
  '2026-10-11':{type:'check',label:'現在想說',title:'Day 2｜如果不用寫得好',desc:'今天只寫一句開頭：如果不用顧慮別人，我現在最想說的是＿＿＿＿。接著自由寫五分鐘。'},
  '2026-10-12':{type:'check',label:'三個詞',title:'Day 3｜圈出三個有感的詞',desc:'回頭看前兩天寫下的文字，圈出三個讓你停一下的詞。先不要解釋，只看看它們為什麼被你注意到。'},
@@ -1201,7 +513,7 @@ const events={
  '2026-10-14':{type:'check',label:'寫給自己',title:'Day 5｜寫一小段給現在的自己',desc:'以「我想讓你知道……」開頭，寫五分鐘。可以很普通、很零碎，只要是現在真正想對自己說的。'},
  '2026-10-15':{type:'check',label:'留一句話',title:'Day 6｜留下最想聽見的一句話',desc:'從這幾天的文字裡挑一句最有感的，或重新寫一句。它不用勵志，只要是你現在願意相信或陪伴自己的話。'},
  '2026-10-16':{type:'check',label:'一週回顧',title:'Day 7｜這週，我開始聽見什麼？',desc:'回頭看這七天的文字：哪個主題重複出現？用一句話整理：「這週，我開始聽見自己＿＿＿＿。」'},
- '2026-10-23':{type:'course',label:'第3場',title:'第三場｜宗芸｜不用說清楚，也可以畫出來',desc:'20:00–22:00。從顏色、線條與自由創作出發，把這段時間還說不清楚的感受，留在一幅作品裡。'},
+ '2026-10-23':{type:'course',label:'第3場',title:'宗芸｜不用說清楚，也可以畫出來',desc:'20:00–22:00。從顏色、線條與自由創作出發，把這段時間還說不清楚的感受，留在一幅作品裡。'},
  '2026-10-24':{type:'check',label:'先看作品',title:'Day 1｜隔一天，再看看它',desc:'今天再看昨天的作品，不急著改。你的視線第一個停在哪裡？只記下那個地方與感覺。'},
  '2026-10-25':{type:'check',label:'今天的色',title:'Day 2｜今天想靠近哪個顏色？',desc:'如果今天要從作品裡挑一個最有感的顏色，會是哪個？它讓你想到什麼？'},
  '2026-10-26':{type:'check',label:'像我的地方',title:'Day 3｜哪一部分最像現在的我？',desc:'線條、留白、顏色、形狀都可以。選一個你覺得「很像現在的我」的地方，寫一句原因。'},
@@ -1212,38 +524,12 @@ const events={
  '2026-11-06':{type:'reflect',label:'回望夜',title:'心練習回望夜｜分享作品，也整理這六週的自己',desc:'20:00–21:15。不是第四堂課，也不再上新內容。彼此分享情緒桌布、自由書寫或創作，整理這六週最有感的發現，最後一起票選下一季。'},
  '2026-11-13':{type:'dinner',label:'一起吃飯',title:'季後聚餐｜一起吃飯、聊天',desc:'自由參加，餐費自付。這不是成果發表，就是讓線上一起走過這一季的人，輕鬆見面、吃飯、聊天。'}
 };
-function addRange(start,end){
-  let d=new Date(start+'T00:00:00'); const e=new Date(end+'T00:00:00');
-  while(d<=e){const k=d.toISOString().slice(0,10); if(!events[k]) events[k]={type:'rest',label:'留白',title:'留白週',desc:'今天沒有安排練習。休息、生活、自由完成作品，準備進入下一堂小聚。'}; d.setDate(d.getDate()+1)}
-}
-addRange('2026-10-03','2026-10-08');
-addRange('2026-10-17','2026-10-22');
-addRange('2026-10-31','2026-11-05');
-
-function buildMonth(year,month,containerId){
-  const box=document.getElementById(containerId); box.innerHTML='';
-  const first=new Date(year,month-1,1); const total=new Date(year,month,0).getDate();
-  for(let i=0;i<first.getDay();i++){const blank=document.createElement('div');blank.className='day';box.appendChild(blank)}
-  for(let day=1;day<=total;day++){
-    const k=`${year}-${String(month).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
-    const e=events[k];
-    const cell=document.createElement('div'); cell.className='day'+(e?` event ${e.type}`:'');
-    const dot=document.createElement('div'); dot.className='date-dot'; dot.textContent=day; cell.appendChild(dot);
-    if(e){
-      const label=document.createElement('div'); label.className='day-label'; label.textContent=e.label||''; cell.appendChild(label);
-      cell.setAttribute('role','button');cell.tabIndex=0;cell.setAttribute('aria-label',`${month}月${day}日 ${e.title}`);
-      const handler=()=>showDetail(month,day,e); cell.addEventListener('click',handler); cell.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();handler()}})
-    }
-    box.appendChild(cell);
-  }
-}
-function showDetail(month,day,e){
-  document.getElementById('detailDate').textContent=`2026.${String(month).padStart(2,'0')}.${String(day).padStart(2,'0')}`;
-  document.getElementById('detailTitle').textContent=e.title;
-  document.getElementById('detailDesc').textContent=e.desc;
-}
-buildMonth(2026,9,'sepDays'); buildMonth(2026,10,'octDays'); buildMonth(2026,11,'novDays');
-const initial=location.hash.replace('#',''); showPage(pageIds.includes(initial)?initial:'home',false);
+function addRange(start,end){let d=new Date(start+'T00:00:00'),e=new Date(end+'T00:00:00');while(d<=e){const k=d.toISOString().slice(0,10);if(!events[k])events[k]={type:'rest',label:'留白',title:'留白週',desc:'今天沒有安排練習。休息、生活、自由完成作品，準備進入下一場小聚。'};d.setDate(d.getDate()+1)}}
+addRange('2026-10-03','2026-10-08');addRange('2026-10-17','2026-10-22');addRange('2026-10-31','2026-11-05');
+function buildMonth(year,month,containerId){const box=document.getElementById(containerId);box.innerHTML='';const first=new Date(year,month-1,1),total=new Date(year,month,0).getDate();for(let i=0;i<first.getDay();i++){const blank=document.createElement('div');blank.className='day';box.appendChild(blank)}for(let day=1;day<=total;day++){const k=`${year}-${String(month).padStart(2,'0')}-${String(day).padStart(2,'0')}`,e=events[k];const cell=document.createElement('div');cell.className='day'+(e?` event ${e.type}`:'');const dot=document.createElement('div');dot.className='date-dot';dot.textContent=day;cell.appendChild(dot);if(e){const label=document.createElement('div');label.className='day-label';label.textContent=e.label||'';cell.appendChild(label);cell.tabIndex=0;cell.setAttribute('role','button');const handler=()=>showDetail(month,day,e);cell.addEventListener('click',handler);cell.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();handler()}})}box.appendChild(cell)}}
+function showDetail(month,day,e){document.getElementById('detailDate').textContent=`2026.${String(month).padStart(2,'0')}.${String(day).padStart(2,'0')}`;document.getElementById('detailTitle').textContent=e.title;document.getElementById('detailDesc').textContent=e.desc}
+buildMonth(2026,9,'sepDays');buildMonth(2026,10,'octDays');buildMonth(2026,11,'novDays');
+const hash=location.hash.slice(1);if(['home','journey','gatherings','companions','info'].includes(hash))showPage(hash,false);
 </script>
 </body>
 </html>
