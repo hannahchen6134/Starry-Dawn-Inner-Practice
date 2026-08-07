@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>初星心練習｜用創作，聽見現在的自己</title>
+<title>初星心練習｜第一季｜用創作，看見現在的自己</title>
 <meta name="description" content="初星心練習：六週，用顏色、自由書寫與繪畫創作，練習停下來感受自己、聽見現在的自己。" />
 <style>
 :root{
@@ -309,6 +309,577 @@ footer{padding:70px 0 40px;text-align:center;font-size:11px;color:#94857b;letter
   .faq-answer{font-size:12.5px;padding-right:12px}
 }
 @media(max-width:390px){.shell{padding-inline:22px}.nav{gap:15px}.nav-btn{font-size:10.5px}}
+
+/* ===== Mobile editorial redesign ===== */
+@media(max-width:680px){
+  body{
+    background:
+      radial-gradient(28rem 22rem at 12% 0%, rgba(243,205,183,.28), transparent 68%),
+      radial-gradient(24rem 19rem at 104% 18%, rgba(247,224,186,.23), transparent 70%),
+      radial-gradient(22rem 18rem at 0% 72%, rgba(234,215,219,.13), transparent 72%),
+      linear-gradient(180deg,#fffaf6 0%,#fbf6ef 53%,#f8f1e8 100%);
+  }
+  .shell{padding-inline:34px}
+  .narrow{width:100%;max-width:none}
+  main{padding-bottom:84px}
+
+  /* header: generous inset + horizontal scroll nav */
+  .topbar{background:rgba(255,251,246,.90);backdrop-filter:blur(20px)}
+  .topbar .shell{padding-inline:30px}
+  .topbar-inner{display:block;padding:17px 0 0;min-height:auto}
+  .brand{font-size:12.5px;letter-spacing:.09em;padding-bottom:13px}
+  .brand-dot{width:8px;height:8px;box-shadow:0 0 0 5px rgba(211,170,105,.10)}
+  .nav{
+    margin-left:0;
+    width:100%;
+    gap:24px;
+    overflow-x:auto;
+    padding:0 0 11px;
+    scroll-snap-type:x proximity;
+    -webkit-overflow-scrolling:touch;
+  }
+  .nav-btn{
+    flex:0 0 auto;
+    scroll-snap-align:start;
+    padding:8px 0 9px;
+    font-size:11.5px;
+    letter-spacing:.07em;
+    font-weight:650;
+  }
+
+  /* global type */
+  h1{font-size:27px;line-height:1.58;letter-spacing:.095em;margin:13px 0 13px}
+  h2{font-size:21px;line-height:1.62;letter-spacing:.06em}
+  h3{font-size:17px;line-height:1.58}
+  .eyebrow{font-size:9px;letter-spacing:.17em}
+  .lead{font-size:13px;line-height:2.05;max-width:29em}
+  .section-head{margin-bottom:30px}
+  .section-head p{font-size:12.5px;line-height:1.95;max-width:30em}
+
+  /* home */
+  .hero{padding:70px 0 46px}
+  .hero:after{right:-120px;top:8px;width:280px;height:220px;opacity:.75}
+  .hero-sub{font-size:18px;line-height:1.85;letter-spacing:.075em;margin-bottom:18px;max-width:16em}
+  .meta-row{gap:8px 16px;margin-top:24px;font-size:10.5px;line-height:1.8}
+  .meta-row span{padding-left:11px}
+  .hero-links{margin-top:28px;gap:28px}
+  .text-link{font-size:12px;padding-bottom:7px}
+  .home-block{padding:76px 0}
+  .soft-state{display:block;margin-top:22px}
+  .state-line{padding:20px 0;border-top:1px solid rgba(65,55,48,.09)!important}
+  .state-line:first-child{border-top:0!important;padding-top:0}
+  .state-line b{font-size:15.5px;line-height:1.6;margin-bottom:6px}
+  .state-line span{font-size:12px;line-height:1.85}
+
+  .three-cards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:26px}
+  .mode-card{padding:23px 21px 22px;border-radius:24px;min-height:0;box-shadow:none}
+  .mode-icon{width:28px;height:28px;margin-bottom:15px}
+  .mode-card h3{font-size:16.5px;margin-bottom:7px}
+  .mode-card p{font-size:12px;line-height:1.9}
+  .outcomes{display:block;margin-top:16px}
+  .outcome{padding:21px 0;border-top:1px solid rgba(65,55,48,.09)!important}
+  .outcome:first-child{border-top:0!important}
+  .outcome small{font-size:8.5px;margin-bottom:6px}
+  .outcome h3{font-size:15.5px;margin-bottom:6px}
+  .outcome p{font-size:12px;line-height:1.85}
+
+  /* journey */
+  .journey-wrap,.gatherings,.companions,.info{padding-top:68px}
+  .timeline{margin:30px 0 42px}
+  .timeline-track{padding-left:18px}
+  .timeline-track:before{left:13px}
+  .milestone{grid-template-columns:30px 1fr;gap:14px;padding-bottom:24px}
+  .milestone-dot{width:28px;height:28px;font-size:8.5px;margin:0}
+  .milestone time{font-size:9.5px}
+  .milestone b{font-size:15px;margin:3px 0 3px}
+  .milestone span{font-size:10.5px;line-height:1.65}
+  .between-note{margin:0 0 40px;padding:16px 0;font-size:11.5px;line-height:1.85;text-align:left}
+  .calendar-details>summary{font-size:12.5px;padding:16px 0}
+  .calendar-body{padding-top:20px}
+  .calendar-sheet{padding:19px 14px 16px;border-radius:22px}
+  .calendar-sheet + .calendar-sheet{margin-top:14px}
+  .month-head{margin-bottom:12px}
+  .month-head h3{font-size:16px}
+  .month-head span{font-size:8px}
+  .week div{font-size:9px}
+  .days{gap:4px}
+  .day{min-height:55px;padding:5px 2px;border-radius:14px;gap:3px}
+  .date-dot{width:23px;height:23px;font-size:9.5px}
+  .day-label{font-size:7px;line-height:1.15}
+  .legend{font-size:8.5px;gap:7px 11px}
+  .detail-card{padding:16px 15px;border-radius:20px;margin-top:14px}
+  .detail-date{font-size:8.5px}
+  .detail-card h3{font-size:15px;margin:5px 0 4px}
+  .detail-card p{font-size:11.5px;line-height:1.8}
+
+  /* gatherings: date becomes kicker, not left column */
+  .gathering-list{gap:16px;margin-top:24px}
+  .gathering{border-radius:25px}
+  .gathering summary{
+    grid-template-columns:1fr auto;
+    gap:8px 14px;
+    padding:23px 21px 22px;
+    align-items:start;
+  }
+  .g-date{grid-column:1 / -1;font-size:9px;letter-spacing:.13em;margin-bottom:3px}
+  .g-name{font-size:11.5px;margin-bottom:6px;color:#76675e}
+  .g-topic{font-size:17px;line-height:1.55;letter-spacing:.02em;padding-right:2px}
+  .plus{font-size:20px;align-self:center;margin-top:10px}
+  .gathering-detail{padding:0 21px 24px}
+  .gathering-detail .intro{font-size:11.8px;line-height:1.95}
+  .detail-grid{grid-template-columns:1fr;gap:12px;margin-top:16px}
+  .detail-block{padding-top:11px}
+  .detail-block b{font-size:9.5px}
+  .detail-block p{font-size:11.7px;line-height:1.85}
+  .takeaway{font-size:11.8px;margin-top:16px}
+
+  /* companions */
+  .companion-grid{gap:16px;margin-top:24px}
+  .companion{padding:23px 21px;border-radius:25px;min-height:0}
+  .companion-symbol{width:29px;height:29px;margin-bottom:17px}
+  .companion-role{font-size:9px;margin-bottom:6px}
+  .companion h3{font-size:22px;margin-bottom:10px}
+  .companion p{font-size:11.8px;line-height:1.9}
+  .companion-way{font-size:10px;padding-top:15px;margin-top:18px}
+  .companion-note{margin-top:34px;padding:18px 0;font-size:14.5px;line-height:1.9}
+
+  /* price / faq */
+  .price-block{display:block;margin-top:24px}
+  .price-big{padding-bottom:22px}
+  .price-label{font-size:9px}
+  .price{font-size:43px;margin:8px 0 5px}
+  .price small{font-size:12px}
+  .opening{font-size:11px}
+  .include{grid-template-columns:20px 1fr;gap:9px;padding:14px 0;font-size:11.8px;line-height:1.75}
+  .tick{width:18px;height:18px;font-size:9px}
+  .info-note{font-size:10.5px;line-height:1.75}
+  .faq{margin-top:52px}
+  .faq-item summary{font-size:12.5px;line-height:1.7;padding:17px 0}
+  .faq-answer{font-size:11.8px;line-height:1.85;padding:0 10px 18px 0}
+  footer{padding:56px 0 34px;font-size:10px}
+}
+@media(max-width:390px){
+  .shell{padding-inline:30px}
+  .topbar .shell{padding-inline:27px}
+  h1{font-size:25px}
+  .hero-sub{font-size:17px}
+}
+
+
+/* ===== Final mobile spacing & hierarchy pass ===== */
+@media(max-width:680px){
+  .shell{padding-inline:36px}
+  .topbar .shell{padding-inline:32px}
+
+  .topbar-inner{padding-top:18px}
+  .brand{padding-bottom:14px}
+
+  /* 導覽不擠滿整排，保留左右空間與滑動感 */
+  .nav{
+    gap:28px;
+    padding:0 18px 12px 0;
+    max-width:100%;
+  }
+  .nav-btn{
+    font-size:11px;
+    padding:7px 0 10px;
+  }
+
+  /* 首屏閱讀欄更窄 */
+  .hero-inner,
+  .section-head{
+    max-width:300px;
+  }
+  .hero{padding-top:74px}
+  .hero-sub{max-width:14.5em}
+  .lead{max-width:27em}
+
+  /* 各段真正拉開 */
+  .home-block{padding:82px 0}
+  .journey-wrap,.gatherings,.companions,.info{padding-top:74px}
+
+  /* 所有主要卡片比內容欄再內縮一點 */
+  .mode-card,
+  .gathering,
+  .companion,
+  .calendar-sheet,
+  .detail-card{
+    width:calc(100% - 4px);
+    margin-inline:auto;
+  }
+
+  /* 三場小聚：日期 → 同行者 → 主題，層級更清楚 */
+  .gathering summary{
+    grid-template-columns:1fr auto;
+    gap:7px 16px;
+    padding:24px 22px 23px;
+  }
+  .g-date{
+    grid-column:1 / -1;
+    margin-bottom:7px;
+    color:#a07f6c;
+  }
+  .g-name{
+    font-size:11px;
+    letter-spacing:.04em;
+    font-weight:700;
+    color:#816f64;
+    margin-bottom:8px;
+  }
+  .g-topic{
+    font-size:16.5px;
+    line-height:1.62;
+    letter-spacing:.025em;
+  }
+  .plus{
+    font-size:18px;
+    margin-top:16px;
+    color:#ad9b90;
+  }
+
+  /* 首頁 CTA 不要貼成一排 */
+  .hero-links{
+    gap:20px 26px;
+  }
+
+  /* FAQ、費用改成閱讀感，不碰邊 */
+  .includes,.faq-list{
+    width:calc(100% - 2px);
+    margin-inline:auto;
+  }
+}
+
+@media(max-width:390px){
+  .shell{padding-inline:34px}
+  .topbar .shell{padding-inline:30px}
+  .hero-inner,.section-head{max-width:292px}
+}
+
+
+/* ===== 2026-08 mobile-first final spacing pass ===== */
+.hero-sub{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 .22em}
+.hero-season,.hero-sub-main{display:inline-block}
+.calendar-visible{margin-top:54px}
+.calendar-title-row{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:22px;padding-top:8px}
+.calendar-title-row h3{font-size:24px;margin-top:6px}
+.calendar-title-row p{max-width:420px;font-size:12.5px;line-height:1.8;color:var(--muted);text-align:right}
+
+@media(max-width:680px){
+  .shell{padding-left:32px!important;padding-right:32px!important}
+  .topbar .shell{padding-left:28px!important;padding-right:28px!important}
+  .topbar-inner{padding-top:16px!important;padding-bottom:10px!important}
+  .brand{margin-bottom:12px!important}
+  .nav{margin-left:0!important;width:100%!important;padding:0 14px 10px 0!important;gap:24px!important;overflow-x:auto!important}
+  .nav-btn{flex:0 0 auto!important;padding:8px 0 10px!important;font-size:11px!important}
+
+  .hero{padding-top:60px!important;padding-bottom:40px!important}
+  .hero-inner,.section-head{max-width:none!important;width:100%!important}
+  h1{font-size:27px!important;line-height:1.5!important;letter-spacing:.10em!important}
+  .hero-sub{font-size:21px!important;line-height:1.65!important;letter-spacing:.055em!important;gap:0 .18em!important;margin-top:10px!important}
+  .hero-season{white-space:nowrap}
+  .hero-sub-main{white-space:nowrap}
+  .lead{font-size:13.5px!important;line-height:2!important;max-width:none!important}
+  .meta-row{gap:8px 14px!important}
+
+  .home-block,.journey-wrap,.gatherings,.companions,.info{padding-top:66px!important}
+  .three-cards,.gathering-list,.companion-grid,.faq-list,.includes{width:100%!important;margin-left:auto!important;margin-right:auto!important}
+  .mode-card,.gathering,.companion,.calendar-sheet,.detail-card,.rhythm-card{width:100%!important;max-width:100%!important;margin-left:auto!important;margin-right:auto!important}
+  .mode-card{padding:24px 22px!important}
+  .gathering summary{padding:24px 22px!important}
+  .companion{padding:26px 22px!important}
+
+  .timeline{margin-top:34px!important}
+  .between-note{margin-top:30px!important;line-height:1.9!important}
+  .calendar-visible{margin-top:46px!important}
+  .calendar-title-row{display:block!important;margin-bottom:18px!important}
+  .calendar-title-row h3{font-size:20px!important}
+  .calendar-title-row p{margin-top:8px!important;text-align:left!important;font-size:12px!important;line-height:1.85!important}
+  .calendar-body{padding-top:0!important}
+  .calendar-layout{display:block!important}
+  .calendar-stack{gap:16px!important}
+  .calendar-sheet{padding:20px 16px 18px!important;border-radius:26px!important}
+  .calendar-side{position:static!important;margin-top:16px!important}
+  .detail-card{padding:18px 18px 16px!important;border-radius:22px!important}
+  .detail-card h3{font-size:16px!important;line-height:1.55!important}
+  .detail-card p{font-size:12.5px!important;line-height:1.8!important}
+}
+@media(max-width:390px){
+  .shell{padding-left:30px!important;padding-right:30px!important}
+  .topbar .shell{padding-left:26px!important;padding-right:26px!important}
+  .hero-sub{font-size:20px!important}
+  .hero-sub-main{white-space:normal!important;display:block!important;width:100%!important}
+}
+
+
+/* ===== Responsive layout hard fix: no horizontal overflow ===== */
+html, body{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
+}
+img, svg, video, canvas{
+  max-width:100%;
+  height:auto;
+}
+.shell{
+  width:100%;
+  max-width:var(--content);
+  margin-inline:auto;
+  padding-inline:clamp(32px,5.5vw,62px);
+}
+.narrow{
+  width:100%;
+  max-width:var(--narrow);
+  margin-inline:auto;
+}
+.page,
+.journey-wrap,
+.timeline,
+.timeline-track,
+.calendar-visible,
+.calendar-body,
+.calendar-layout,
+.calendar-stack,
+.calendar-sheet,
+.calendar-side,
+.week,
+.days,
+.milestone,
+.milestone-copy{
+  min-width:0;
+  max-width:100%;
+}
+
+/* timeline desktop */
+.timeline{
+  width:100%;
+  max-width:920px;
+  margin:44px auto 54px;
+  padding-inline:8px;
+}
+.timeline-track{
+  width:100%;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+}
+.milestone b,
+.milestone span{
+  overflow-wrap:anywhere;
+}
+.between-note{
+  max-width:880px;
+  margin-inline:auto;
+  padding-inline:20px;
+  text-align:center;
+  overflow-wrap:anywhere;
+}
+
+/* calendar never exceeds parent */
+.calendar-body{
+  width:100%;
+  overflow:hidden;
+}
+.calendar-layout{
+  width:100%;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(220px,280px);
+  gap:26px;
+  align-items:start;
+}
+.calendar-stack{
+  width:100%;
+}
+.calendar-sheet{
+  width:100%;
+  max-width:100%;
+  overflow:hidden;
+  padding:26px 24px 22px;
+}
+.month-head{
+  min-width:0;
+  gap:16px;
+}
+.month-head h3,
+.month-head span{
+  min-width:0;
+}
+.week,
+.days{
+  width:100%;
+  grid-template-columns:repeat(7,minmax(0,1fr));
+}
+.week > div,
+.day{
+  min-width:0;
+}
+.day-label{
+  width:100%;
+  overflow-wrap:anywhere;
+}
+.calendar-side{
+  width:100%;
+  max-width:280px;
+}
+
+/* medium screens: stack timeline and calendar before they get cramped */
+@media(max-width:920px){
+  .shell{
+    padding-inline:clamp(32px,6vw,52px);
+  }
+  .timeline-track{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:30px 22px;
+  }
+  .timeline-track:before{
+    display:none;
+  }
+  .calendar-layout{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+  .calendar-side{
+    position:static;
+    max-width:none;
+  }
+}
+
+/* phone */
+@media(max-width:680px){
+  .shell,
+  .topbar .shell{
+    padding-inline:34px !important;
+  }
+
+  /* timeline becomes a vertical editorial list */
+  .timeline{
+    padding-inline:0;
+    margin:34px 0 42px;
+  }
+  .timeline-track{
+    display:block;
+  }
+  .milestone{
+    display:grid;
+    grid-template-columns:38px minmax(0,1fr);
+    gap:0 16px;
+    text-align:left;
+    padding:0 0 26px;
+  }
+  .milestone + .milestone{
+    padding-top:2px;
+  }
+  .milestone-dot{
+    grid-column:1;
+    grid-row:1 / span 3;
+    width:32px;
+    height:32px;
+    margin:0;
+  }
+  .milestone-copy{
+    grid-column:2;
+  }
+  .milestone time{
+    font-size:10px;
+    margin-top:0;
+  }
+  .milestone b{
+    font-size:16px;
+    margin:4px 0 3px;
+  }
+  .milestone span{
+    font-size:11.5px;
+  }
+  .between-note{
+    margin:0 0 48px;
+    padding:18px 0;
+    text-align:left;
+    border-top:1px solid rgba(65,55,48,.09);
+    border-bottom:1px solid rgba(65,55,48,.09);
+  }
+
+  .calendar-title-row{
+    display:block;
+    margin-bottom:20px;
+  }
+  .calendar-title-row p{
+    margin-top:8px;
+  }
+  .calendar-body{
+    overflow:visible;
+  }
+  .calendar-layout{
+    display:block;
+    width:100%;
+  }
+  .calendar-sheet{
+    width:100%;
+    padding:20px 15px 17px;
+    border-radius:25px;
+  }
+  .calendar-sheet + .calendar-sheet{
+    margin-top:18px;
+  }
+  .month-head{
+    align-items:center;
+    margin-bottom:15px;
+  }
+  .month-head h3{
+    font-size:18px;
+  }
+  .month-head span{
+    font-size:8px;
+    letter-spacing:.09em;
+  }
+  .week{
+    gap:0;
+  }
+  .week div{
+    font-size:9px;
+  }
+  .days{
+    gap:3px;
+  }
+  .day{
+    min-height:55px;
+    padding:5px 1px 4px;
+    border-radius:13px;
+    gap:2px;
+  }
+  .date-dot{
+    width:23px;
+    height:23px;
+    font-size:9.5px;
+  }
+  .day-label{
+    font-size:6.9px;
+    line-height:1.15;
+    word-break:break-word;
+  }
+  .legend{
+    gap:7px 12px;
+    font-size:8.8px;
+  }
+  .calendar-side{
+    margin-top:16px;
+    width:100%;
+  }
+  .detail-card{
+    width:100%;
+  }
+}
+
+@media(max-width:390px){
+  .shell,
+  .topbar .shell{
+    padding-inline:30px !important;
+  }
+  .calendar-sheet{
+    padding-inline:13px;
+  }
+  .day-label{
+    font-size:6.5px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -330,11 +901,11 @@ footer{padding:70px 0 40px;text-align:center;font-size:11px;color:#94857b;letter
   <div class="shell">
     <section class="hero narrow">
       <div class="hero-inner">
-        <div class="eyebrow">2026 秋季 · 第一季</div>
+        <div class="eyebrow">2026 秋季</div>
         <h1>初星心練習</h1>
-        <div class="hero-sub">用創作，聽見現在的自己</div>
+        <div class="hero-sub"><span class="hero-season">第一季｜</span><span class="hero-sub-main">用創作，看見現在的自己</span></div>
         <p class="lead">生活一直往前，我們常常在處理事情，卻很少留一點時間給自己。這六週，用顏色、自由書寫與繪畫創作，練習停下來感受自己，也多聽見現在的自己一點。</p>
-        <div class="meta-row"><span>6 週</span><span>3 場線上小聚＋1 次回望夜</span><span>6–12 人精緻小群</span></div>
+        <div class="meta-row"><span>6 週</span><span>3 場線上小聚＋1 次圓滿分享會</span><span>6–12 人精緻小群</span></div>
         <div class="hero-links"><button class="text-link primary" data-go="journey">看看這六週怎麼走</button><button class="text-link" data-go="gatherings">看看三場小聚</button></div>
       </div>
     </section>
@@ -384,7 +955,7 @@ footer{padding:70px 0 40px;text-align:center;font-size:11px;color:#94857b;letter
     <div class="section-head narrow">
       <div class="eyebrow">THE 6-WEEK RHYTHM</div>
       <h2>六週怎麼走</h2>
-      <p>每兩週一場小聚。課後有 7 天自由練習，接著留一週空白，讓體驗真正有時間進入生活。</p>
+      <p>每兩週一場小聚。課後有 一週沉澱及群組交流，接著留一週空白，讓體驗真正有時間進入生活。</p>
     </div>
 
     <div class="timeline">
@@ -392,25 +963,25 @@ footer{padding:70px 0 40px;text-align:center;font-size:11px;color:#94857b;letter
         <div class="milestone"><div class="milestone-dot">01</div><div class="milestone-copy"><time>09.25 FRI</time><b>顏色｜看見自己</b><span>情緒色票 × Canva 情緒桌布</span></div></div>
         <div class="milestone"><div class="milestone-dot">02</div><div class="milestone-copy"><time>10.09 FRI</time><b>自由書寫｜聽見自己</b><span>NIKI 自由書寫 × 教練式提問</span></div></div>
         <div class="milestone"><div class="milestone-dot">03</div><div class="milestone-copy"><time>10.23 FRI</time><b>創作｜與自己連結</b><span>宗芸 自我對話繪畫創作</span></div></div>
-        <div class="milestone"><div class="milestone-dot">04</div><div class="milestone-copy"><time>11.06 FRI</time><b>回望｜把六週收回來</b><span>線上作品分享與心得整理</span></div></div>
+        <div class="milestone"><div class="milestone-dot">04</div><div class="milestone-copy"><time>11.06 FRI</time><b>圓滿｜分享六週收穫</b><span>分享作品、心得與六週收穫</span></div></div>
       </div>
     </div>
 
-    <div class="between-note"><b>每場之後：</b> 7 天自由練習（每天約 3–5 分鐘、自由參與） → 一週留白 → 再進入下一場。</div>
+    <div class="between-note"><b>每場之後：</b> 一週沉澱及群組交流（每天約 3–5 分鐘、自由參與） → 一週留白 → 再進入下一場。</div>
 
-    <details class="calendar-details">
-      <summary><span>查看詳細月曆與每天的自由練習</span><span>＋</span></summary>
+    <section class="calendar-visible">
+      <div class="calendar-title-row"><div><div class="eyebrow">CALENDAR</div><h3>詳細月曆</h3></div><p>每天的群組提問都直接放在月曆裡，點日期可查看完整內容。</p></div>
       <div class="calendar-body">
         <div class="calendar-layout">
           <div class="calendar-stack">
-            <div class="calendar-sheet"><div class="month-head"><h3>2026 · 9 月</h3><span>SEPTEMBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="sepDays"></div><div class="legend"><span><i style="background:var(--terra-pale)"></i>線上小聚</span><span><i style="background:var(--sage-pale)"></i>自由練習</span></div></div>
-            <div class="calendar-sheet"><div class="month-head"><h3>2026 · 10 月</h3><span>OCTOBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="octDays"></div><div class="legend"><span><i style="background:var(--terra-pale)"></i>線上小聚</span><span><i style="background:var(--sage-pale)"></i>自由練習</span><span><i style="border:1px solid rgba(195,154,92,.28)"></i>留白</span></div></div>
-            <div class="calendar-sheet"><div class="month-head"><h3>2026 · 11 月</h3><span>NOVEMBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="novDays"></div><div class="legend"><span><i style="background:var(--amber-pale)"></i>回望夜</span><span><i style="background:var(--rose-pale)"></i>自由聚餐</span></div></div>
+            <div class="calendar-sheet"><div class="month-head"><h3>2026 · 9 月</h3><span>SEPTEMBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="sepDays"></div><div class="legend"><span><i style="background:var(--terra-pale)"></i>線上小聚</span><span><i style="background:var(--sage-pale)"></i>群組交流</span></div></div>
+            <div class="calendar-sheet"><div class="month-head"><h3>2026 · 10 月</h3><span>OCTOBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="octDays"></div><div class="legend"><span><i style="background:var(--terra-pale)"></i>線上小聚</span><span><i style="background:var(--sage-pale)"></i>群組交流</span><span><i style="border:1px solid rgba(195,154,92,.28)"></i>一週留白</span></div></div>
+            <div class="calendar-sheet"><div class="month-head"><h3>2026 · 11 月</h3><span>NOVEMBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="novDays"></div><div class="legend"><span><i style="background:var(--amber-pale)"></i>圓滿分享會</span><span><i style="background:var(--rose-pale)"></i>自由聚餐</span></div></div>
           </div>
-          <aside class="calendar-side"><div class="detail-card"><div class="detail-date" id="detailDate">點選有顏色的日期</div><h3 id="detailTitle">當天的課程／自由練習</h3><p id="detailDesc">點一下月曆中的日期，就能看到當天完整的引導。</p></div></aside>
+          <aside class="calendar-side"><div class="detail-card"><div class="detail-date" id="detailDate">點選有顏色的日期</div><h3 id="detailTitle">當天的課程／群組交流</h3><p id="detailDesc">點一下月曆中的日期，就能看到當天完整的引導。</p></div></aside>
         </div>
       </div>
-    </details>
+    </section>
   </div>
 </section>
 
@@ -423,7 +994,7 @@ footer{padding:70px 0 40px;text-align:center;font-size:11px;color:#94857b;letter
     </div>
     <div class="gathering-list narrow">
       <details class="gathering">
-        <summary><div class="g-date">09.25</div><div><div class="g-name">青青｜策展者・引導者</div><div class="g-topic">我的情緒，是什麼顏色？</div></div><div class="plus">＋</div></summary>
+        <summary><div class="g-date">09.25</div><div><div class="g-name">青青｜社群主理人・色彩同行者</div><div class="g-topic">我的情緒，是什麼顏色？</div></div><div class="plus">＋</div></summary>
         <div class="gathering-detail"><p class="intro">從初心色譜選出此刻有感覺的顏色，整理一句現在想對自己說的話，再用 Canva 做成自己的情緒桌布。</p><div class="detail-grid"><div class="detail-block"><b>這場想陪你看見</b><p>最近的我，是什麼心情？如果先不用講道理，它會是什麼顏色？</p></div><div class="detail-block"><b>現場會做</b><p>情緒色票選色、自我對話、Canva 美感實作。</p></div></div><div class="takeaway"><b>帶走｜</b>一張「現在的我」情緒桌布。</div></div>
       </details>
       <details class="gathering">
@@ -446,7 +1017,7 @@ footer{padding:70px 0 40px;text-align:center;font-size:11px;color:#94857b;letter
       <p>我們不替你解讀自己，也不急著給答案。每個人只帶著自己熟悉的方法，陪你多感受一點。</p>
     </div>
     <div class="companion-grid">
-      <article class="companion"><div class="companion-symbol">●</div><div class="companion-role">策展者・引導者</div><h3>青青</h3><p>策展整季主題與體驗路徑，第一場從顏色與視覺出發；課程之間也會在 VIP 小群用輕量提問與自由練習，把注意力帶回自己。</p><div class="companion-way">色彩・提問・課間引導・整季串連</div></article>
+      <article class="companion"><div class="companion-symbol">●</div><div class="companion-role">社群主理人・色彩同行者</div><h3>青青</h3><p>策展整季主題與體驗路徑，第一場從顏色與視覺出發；課程之間也會在 VIP 小群用輕量提問與群組交流，把注意力帶回自己。</p><div class="companion-way">色彩・社群陪伴・課間引導・整季串連</div></article>
       <article class="companion"><div class="companion-symbol">◌</div><div class="companion-role">生命教練・自由書寫同行者</div><h3>NIKI</h3><p>用自由書寫與教練式提問，陪你把一閃而過、來不及整理的念頭寫下來，在文字裡辨認更靠近自己的感受與需要。</p><div class="companion-way">自由書寫・教練式提問・內在梳理</div></article>
       <article class="companion"><div class="companion-symbol">✦</div><div class="companion-role">創作同行者</div><h3>宗芸</h3><p>用畫畫、顏色與直覺創作陪你和此刻的自己連結。不要求畫得好，只讓感受有一個可以被留下的位置。</p><div class="companion-way">繪畫創作・自我對話・直覺感受</div></article>
     </div>
@@ -463,16 +1034,16 @@ footer{padding:70px 0 40px;text-align:center;font-size:11px;color:#94857b;letter
     </div>
     <div class="price-block narrow">
       <div class="price-big"><div class="price-label">完整一季</div><div class="price">NT$888 <small>／人</small></div><div class="opening"><b>6 人開班｜最多 12 人</b><br>維持可以看見彼此的精緻小群。</div></div>
-      <div><div class="includes"><div class="include"><span class="tick">✓</span><span>3 場週五晚上的線上小聚＋課程回放</span></div><div class="include"><span class="tick">✓</span><span>每場課後 7 天自由練習＋六週學員 VIP 群</span></div><div class="include"><span class="tick">✓</span><span>每天約 3–5 分鐘，自由參與、不需補進度</span></div><div class="include"><span class="tick">✓</span><span>11/6 線上心練習回望夜</span></div><div class="include"><span class="tick">✓</span><span>11/13 自由實體聚餐（餐費自付）</span></div></div><p class="info-note">分享完全自願。不需要公開私人經歷，也不需要解釋情緒原因。</p></div>
+      <div><div class="includes"><div class="include"><span class="tick">✓</span><span>3 場週五晚上的線上小聚＋課程回放</span></div><div class="include"><span class="tick">✓</span><span>每場課後一週沉澱及群組交流＋六週學員 VIP 群</span></div><div class="include"><span class="tick">✓</span><span>群組提問每天約 3–5 分鐘，自由參與、不需補進度</span></div><div class="include"><span class="tick">✓</span><span>11/6 線上圓滿分享會</span></div><div class="include"><span class="tick">✓</span><span>11/13 自由實體聚餐（餐費自付）</span></div></div><p class="info-note">分享完全自願。不需要公開私人經歷，也不需要解釋情緒原因。</p></div>
     </div>
 
     <section class="faq narrow">
       <div class="section-head"><div class="eyebrow">FAQ</div><h2>報名前，可能會想知道</h2></div>
       <div class="faq-list">
         <details class="faq-item"><summary><span>如果其中一場無法參加直播呢？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">三場線上小聚都會提供課程回放，可以依自己的時間補上內容。</div></details>
-        <details class="faq-item"><summary><span>7 天自由練習一定要每天做嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">不用。每天會有一個約 3–5 分鐘的小題目，但完全自由參與，不需要跟進度，也不用補。</div></details>
+        <details class="faq-item"><summary><span>一週沉澱及群組交流一定要每天參與嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">不用。群組每天會有一個約 3–5 分鐘的小提問，但完全自由參與，不需要跟進度，也不用補。</div></details>
         <details class="faq-item"><summary><span>一定要在群組分享自己的情緒或作品嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">不用。你可以只自己記錄；分享完全自願，也不需要公開私人經歷或說明情緒原因。</div></details>
-        <details class="faq-item"><summary><span>VIP 群組會怎麼運作？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">這是本季學員專屬的小群。三位同行者主要負責各自的課程；課程之間由青青擔任策展者與引導者，提供自由練習與作品交流空間。</div></details>
+        <details class="faq-item"><summary><span>VIP 群組會怎麼運作？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">這是本季學員專屬的小群。三位同行者主要負責各自的課程；課程之間由青青在群組中陪伴交流，提供輕量提問、作品分享與沉澱空間。</div></details>
         <details class="faq-item"><summary><span>完全不會 Canva、自由書寫或畫畫也能參加嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">可以。三場都以新手能進入的方式設計，不追求作品技巧，而是把創作當成靠近自己的媒介。</div></details>
         <details class="faq-item"><summary><span>這是心理治療或情緒分析課嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">不是。初星心練習不進行心理治療、診斷或替你解讀情緒，而是提供顏色、書寫與創作等方式，讓你自己觀察現在的狀態。</div></details>
         <details class="faq-item"><summary><span>同行者會推銷後續服務嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">每位同行者可以在課程最後簡短提供想繼續深入的人後續選項，但完全自由選擇，不影響本季課程的完整性。</div></details>
@@ -482,7 +1053,7 @@ footer{padding:70px 0 40px;text-align:center;font-size:11px;color:#94857b;letter
 </section>
 </main>
 
-<footer>初星心練習 · 用創作，聽見現在的自己</footer>
+<footer>初星心練習 · 第一季｜用創作，看見現在的自己</footer>
 
 <script>
 const navButtons=[...document.querySelectorAll('.nav-btn')];
@@ -521,7 +1092,7 @@ const events={
  '2026-10-28':{type:'check',label:'加或不加',title:'Day 5｜我還想加什麼？',desc:'你可以花 10 分鐘繼續畫，也可以決定不再修改。今天的重點不是完成度，而是知道自己想留下什麼。'},
  '2026-10-29':{type:'check',label:'為它命名',title:'Day 6｜替作品取一個名字',desc:'替這幅作品取一個現在覺得合適的名字。不需要解釋得很完整，讓名字成為這段時間的一個小標記。'},
  '2026-10-30':{type:'check',label:'一週回顧',title:'Day 7｜這幅作品讓我看見什麼？',desc:'分享完成版或局部都可以，再寫一句：這一週，這幅作品讓我更注意到自己＿＿＿＿。'},
- '2026-11-06':{type:'reflect',label:'回望夜',title:'心練習回望夜｜分享作品，也整理這六週的自己',desc:'20:00–21:15。不是第四堂課，也不再上新內容。彼此分享情緒桌布、自由書寫或創作，整理這六週最有感的發現，最後一起票選下一季。'},
+ '2026-11-06':{type:'reflect',label:'圓滿分享會',title:'圓滿｜分享六週收穫',desc:'20:00–21:15。不是第四堂課，也不再上新內容。彼此分享情緒桌布、自由書寫或創作，整理這六週最有感的收穫，最後一起票選下一季。'},
  '2026-11-13':{type:'dinner',label:'一起吃飯',title:'季後聚餐｜一起吃飯、聊天',desc:'自由參加，餐費自付。這不是成果發表，就是讓線上一起走過這一季的人，輕鬆見面、吃飯、聊天。'}
 };
 function addRange(start,end){let d=new Date(start+'T00:00:00'),e=new Date(end+'T00:00:00');while(d<=e){const k=d.toISOString().slice(0,10);if(!events[k])events[k]={type:'rest',label:'留白',title:'留白週',desc:'今天沒有安排練習。休息、生活、自由完成作品，準備進入下一場小聚。'};d.setDate(d.getDate()+1)}}
