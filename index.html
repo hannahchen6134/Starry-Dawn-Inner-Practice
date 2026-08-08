@@ -11,8 +11,8 @@
   --paper:#fffdfa;
   --ink:#523b30;
   --heading:#5b3f33;
-  --text:#6b574e;
-  --muted:#8f7c72;
+  --text:#604c43;
+  --muted:#806d63;
   --line:rgba(64,53,47,.10);
 
   --peach:#f1d6c7;
@@ -201,6 +201,7 @@ h1,h2,h3{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-weight:56
 .calendar-heading{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:23px}
 .calendar-heading h2{font-size:30px;letter-spacing:.04em}
 .calendar-heading p{font-size:12px;color:var(--text);max-width:520px;text-align:right;text-wrap:pretty}
+.month-tabs{display:none}
 .calendar-layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:26px;align-items:start}
 .calendar-stack{display:grid;gap:18px;min-width:0}
 .month-card{background:#fffdfa;border:1px solid rgba(64,53,47,.07);border-radius:var(--radius-lg);padding:24px 21px 20px;box-shadow:0 12px 34px rgba(83,62,49,.04);min-width:0}
@@ -339,7 +340,7 @@ footer{padding:60px 0 38px;text-align:center;font-size:10px;color:#95867c;letter
 .language-card,.companion{height:100%}
 .state h3,.language-card h3,.outcome h3{text-wrap:balance}
 .section-head h2,.page-hero h1,.page-hero h2{text-wrap:balance}
-.section{padding:74px 0}
+.section{padding:68px 0}
 .language-card{box-shadow:0 10px 30px rgba(83,62,49,.04);border-radius:20px}
 .closing-cta{padding:62px 0;background:linear-gradient(135deg,#f7e7dd,#f3eddf);border-top:1px solid rgba(64,53,47,.07)}
 .closing-cta-inner{display:flex;align-items:center;justify-content:space-between;gap:36px}
@@ -400,7 +401,7 @@ footer{padding:60px 0 38px;text-align:center;font-size:10px;color:#95867c;letter
   .decision-item strong{font-size:13px}
   .decision-item span{font-size:9px}
 
-  .section{padding:58px 0}
+  .section{padding:52px 0}
   .section-head{margin-bottom:28px}
   .section-head h2{font-size:21px;line-height:1.6;margin-bottom:10px}
   .section-head p{font-size:12.8px;line-height:1.95}
@@ -434,6 +435,18 @@ footer{padding:60px 0 38px;text-align:center;font-size:10px;color:#95867c;letter
   .calendar-heading{display:block;margin-bottom:18px}
   .calendar-heading h2{font-size:22px}
   .calendar-heading p{text-align:left;margin-top:7px;font-size:11.5px}
+  .month-tabs{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:5px;
+    margin:0 0 14px;padding:4px;border:1px solid var(--line);
+    border-radius:999px;background:rgba(255,253,250,.8)
+  }
+  .month-tab{
+    min-height:38px;padding:7px 10px;border:0;border-radius:999px;background:transparent;
+    color:var(--muted);font-size:11px;font-weight:760;letter-spacing:.04em;cursor:pointer
+  }
+  .month-tab.active{background:#5b493f;color:#fffdfa;box-shadow:0 5px 14px rgba(83,62,49,.13)}
+  .calendar-stack .month-card{display:none}
+  .calendar-stack .month-card.active{display:block}
   .month-card{padding:20px 15px 17px;border-radius:24px}
   .month-head h3{font-size:18px}
   .month-head span{font-size:8px}
@@ -570,10 +583,10 @@ p,.intro,.opening,.info-note,.include span,.faq-answer,.detail-card p,.g-topic{t
           <div class="hero-panel-label">這一季，你會一起完成</div>
           <h2>三種創作語言<br>三份自己的作品</h2>
           <div class="hero-meta">
-            <div class="hero-meta-row"><span>時間</span><strong>09.25–11.06｜週五晚間</strong></div>
+            <div class="hero-meta-row"><span>時間</span><strong>09.23–11.04｜週三晚間</strong></div>
             <div class="hero-meta-row"><span>形式</span><strong>3 場線上小聚＋課後陪跑</strong></div>
             <div class="hero-meta-row"><span>人數</span><strong>6 人開班｜最多 12 人</strong></div>
-            <div class="hero-meta-row"><span>費用</span><strong>第一季創始價 NT$888</strong></div>
+            <div class="hero-meta-row"><span>費用</span><strong>第一季創始價 NT$1,288</strong></div>
           </div>
           <button class="primary-btn route-btn" data-page="gatherings">看看三場會做什麼</button>
         </div>
@@ -661,20 +674,25 @@ p,.intro,.opening,.info-note,.include span,.faq-answer,.detail-card p,.g-topic{t
   <section class="section">
     <div class="container">
       <div class="timeline">
-        <div class="stop"><div class="stop-dot">01</div><time>09.25 FRI</time><h3>色彩視覺</h3><p>Canva 個人桌布</p></div>
-        <div class="stop"><div class="stop-dot">02</div><time>10.09 FRI</time><h3>自由書寫</h3><p>NIKI 文字創作</p></div>
-        <div class="stop"><div class="stop-dot">03</div><time>10.23 FRI</time><h3>繪畫創作</h3><p>宗芸自由繪畫</p></div>
-        <div class="stop"><div class="stop-dot">04</div><time>11.06 FRI</time><h3>圓滿分享</h3><p>分享六週作品與收穫</p></div>
+        <div class="stop"><div class="stop-dot">01</div><time>09.23 WED</time><h3>色彩視覺</h3><p>Canva 個人桌布</p></div>
+        <div class="stop"><div class="stop-dot">02</div><time>10.07 WED</time><h3>自由書寫</h3><p>NIKI 文字創作</p></div>
+        <div class="stop"><div class="stop-dot">03</div><time>10.21 WED</time><h3>繪畫創作</h3><p>宗芸自由繪畫</p></div>
+        <div class="stop"><div class="stop-dot">04</div><time>11.04 WED</time><h3>圓滿分享</h3><p>分享六週作品與收穫</p></div>
       </div>
-     <div class="calendar-heading">
+      <div class="calendar-heading">
         <div><div class="eyebrow">CALENDAR</div><h2>流程月曆</h2></div>
         <p>打卡題目直接放進月曆；點有顏色的日期，就能看到當天完整的創作與回看引導。</p>
       </div>
+      <div class="month-tabs" role="tablist" aria-label="選擇月份">
+        <button class="month-tab active" type="button" data-month="9" role="tab" aria-selected="true">9 月</button>
+        <button class="month-tab" type="button" data-month="10" role="tab" aria-selected="false">10 月</button>
+        <button class="month-tab" type="button" data-month="11" role="tab" aria-selected="false">11 月</button>
+      </div>
       <div class="calendar-layout">
         <div class="calendar-stack">
-          <div class="month-card"><div class="month-head"><h3>2026 · 9 月</h3><span>SEPTEMBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="sepDays"></div><div class="legend"><span><i style="background:var(--peach)"></i>線上小聚</span><span><i style="background:var(--sage)"></i>7 天打卡</span></div></div>
-          <div class="month-card"><div class="month-head"><h3>2026 · 10 月</h3><span>OCTOBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="octDays"></div><div class="legend"><span><i style="background:var(--peach)"></i>線上小聚</span><span><i style="background:var(--sage)"></i>7 天打卡</span><span><i style="border:1px solid rgba(185,147,84,.35)"></i>留白週</span></div></div>
-          <div class="month-card"><div class="month-head"><h3>2026 · 11 月</h3><span>NOVEMBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="novDays"></div><div class="legend"><span><i style="background:var(--amber)"></i>圓滿分享</span><span><i style="background:var(--rose)"></i>自由聚餐</span></div></div>
+          <div class="month-card active" data-month="9"><div class="month-head"><h3>2026 · 9 月</h3><span>SEPTEMBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="sepDays"></div><div class="legend"><span><i style="background:var(--peach)"></i>線上小聚</span><span><i style="background:var(--sage)"></i>7 天打卡</span></div></div>
+          <div class="month-card" data-month="10"><div class="month-head"><h3>2026 · 10 月</h3><span>OCTOBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="octDays"></div><div class="legend"><span><i style="background:var(--peach)"></i>線上小聚</span><span><i style="background:var(--sage)"></i>7 天打卡</span><span><i style="border:1px solid rgba(185,147,84,.35)"></i>留白週</span></div></div>
+          <div class="month-card" data-month="11"><div class="month-head"><h3>2026 · 11 月</h3><span>NOVEMBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="novDays"></div><div class="legend"><span><i style="background:var(--amber)"></i>圓滿分享</span><span><i style="background:var(--rose)"></i>自由聚餐</span></div></div>
         </div>
         <aside class="calendar-side"><div class="detail-card"><div class="detail-date" id="detailDate">點選有顏色的日期</div><h3 id="detailTitle">查看當天內容</h3><p id="detailDesc">每個有顏色的日期，都有一個可以點開的課程或創作打卡內容。</p></div></aside>
       </div>
@@ -694,15 +712,15 @@ p,.intro,.opening,.info-note,.include span,.faq-answer,.detail-card p,.g-topic{t
   <section class="section">
     <div class="container"><div class="gathering-list read">
       <details class="gathering">
-        <summary><div class="g-date">09.25</div><div><div class="g-name">青青｜社群主理人・色彩同行者</div><div class="g-topic">我的情緒，是什麼顏色？</div></div><div class="plus">＋</div></summary>
+        <summary><div class="g-date">09.23</div><div><div class="g-name">青青｜社群主理人・色彩同行者</div><div class="g-topic">我的情緒，是什麼顏色？</div></div><div class="plus">＋</div></summary>
         <div class="gathering-detail"><p class="intro">從一個有感覺的顏色開始，把一句話、色彩和版面組合起來。Canva 只是工具，真正要練習的是：不用先想完整，也可以開始做。</p><div class="detail-grid"><div class="detail-block"><b>創作起點</b><p>從初心色譜選色，再找一句現在想留下的話。</p></div><div class="detail-block"><b>現場會做</b><p>選色、文字整理、Canva 排版與個人化調整。</p></div></div><div class="takeaway"><b>帶走｜</b>一張只有你會做出的個人桌布。</div></div>
       </details>
       <details class="gathering">
-        <summary><div class="g-date">10.09</div><div><div class="g-name">NIKI｜生命教練・自由書寫同行者</div><div class="g-topic">用自由書寫，讓<span class="nowrap">腦中的東西</span>落到紙上</div></div><div class="plus">＋</div></summary>
+        <summary><div class="g-date">10.07</div><div><div class="g-name">NIKI｜生命教練・自由書寫同行者</div><div class="g-topic">用自由書寫，讓<span class="nowrap">腦中的東西</span>落到紙上</div></div><div class="plus">＋</div></summary>
         <div class="gathering-detail"><p class="intro">自由書寫不是作文。先把腦中的片段、念頭和句子寫下來，不修改、不評分，再從文字裡發現哪些語氣、詞和句子最像自己。</p><div class="detail-grid"><div class="detail-block"><b>創作起點</b><p>從短時間不停筆開始，讓文字先出現，再慢慢整理。</p></div><div class="detail-block"><b>現場會做</b><p>自由書寫、圈詞、句子重組與一張文字小卡。</p></div></div><div class="takeaway"><b>帶走｜</b>一段自己的自由書寫＋一張文字作品小卡。</div></div>
       </details>
       <details class="gathering">
-        <summary><div class="g-date">10.23</div><div><div class="g-name">宗芸｜創作同行者</div><div class="g-topic">不用說清楚，也可以<span class="nowrap">畫出來</span></div></div><div class="plus">＋</div></summary>
+        <summary><div class="g-date">10.21</div><div><div class="g-name">宗芸｜創作同行者</div><div class="g-topic">不用說清楚，也可以<span class="nowrap">畫出來</span></div></div><div class="plus">＋</div></summary>
         <div class="gathering-detail"><p class="intro">不追求畫得漂亮，也不用先想好「我要畫什麼」。從顏色、線條與形狀開始，讓畫面一點一點長出來。</p><div class="detail-grid"><div class="detail-block"><b>創作起點</b><p>給自己一些簡單限制，讓手先動起來。</p></div><div class="detail-block"><b>現場會做</b><p>自由繪畫、顏色與線條實驗、作品命名與回看。</p></div></div><div class="takeaway"><b>帶走｜</b>一幅屬於這段時間的自由創作。</div></div>
       </details>
     </div></div>
@@ -741,16 +759,16 @@ p,.intro,.opening,.info-note,.include span,.faq-answer,.detail-card p,.g-topic{t
       <div class="price-wrap read">
         <div>
           <div class="price-label">完整一季</div>
-          <div class="price">NT$888 <small>／人</small></div>
+          <div class="price">NT$1,288 <small>／人</small></div>
           <div class="opening"><b>6 人開班｜最多 12 人</b><br>維持可以看見彼此的精緻小群。</div>
         </div>
         <div>
           <div class="price-label">方案包含</div>
           <div class="includes">
-            <div class="include"><span class="tick">✓</span><span>3 場週五晚上的線上創作小聚＋課程回放</span></div>
+            <div class="include"><span class="tick">✓</span><span>3 場週三晚上的線上創作小聚＋課程回放</span></div>
             <div class="include"><span class="tick">✓</span><span>每場課後 7 天創作 × 自我覺察打卡</span></div>
             <div class="include"><span class="tick">✓</span><span>六週學員專屬 VIP 創作群</span></div>
-            <div class="include"><span class="tick">✓</span><span>11/6 線上圓滿分享會</span></div>
+            <div class="include"><span class="tick">✓</span><span>11/4 線上圓滿分享會</span></div>
             <div class="include"><span class="tick">✓</span><span>11/13 自由實體聚餐（餐費自付）</span></div>
           </div>
           <p class="info-note">打卡自由參與、不需補進度；作品與過程分享也完全自願。</p>
@@ -790,34 +808,34 @@ navButtons.forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
 routeButtons.forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
 
 const events={
- '2026-09-25':{type:'course',label:'第1場',title:'我的情緒，是什麼顏色？',desc:'20:00–22:00。從一個有感覺的顏色開始，加入一句想留下的話，再用 Canva 做成自己的個人桌布。'},
- '2026-09-26':{type:'check',label:'進入生活',title:'Day 1｜讓作品進入生活',desc:'把桌布換上手機；只注意第一眼最喜歡哪個地方。'},
- '2026-09-27':{type:'check',label:'加一個顏色',title:'Day 2｜替今天加一個顏色',desc:'再選一色，和原本配色放一起看看。'},
- '2026-09-28':{type:'check',label:'收集一句話',title:'Day 3｜收集一句話',desc:'從今天看到、想到或自己說過的話裡留一句。'},
- '2026-09-29':{type:'check',label:'生活採色',title:'Day 4｜生活採色',desc:'拍下一個吸引你的生活顏色，當成今日色票。'},
- '2026-09-30':{type:'check',label:'重新混搭',title:'Day 5｜重新混搭',desc:'只改桌布一件事：顏色、字體、句子或版面。'},
- '2026-10-01':{type:'check',label:'完成版本',title:'Day 6｜完成版本',desc:'花 10–20 分鐘微調，不追求完美。'},
- '2026-10-02':{type:'check',label:'創作回顧',title:'Day 7｜創作回顧',desc:'回看一週素材：原來我在視覺上很容易被＿＿吸引。'},
+ '2026-09-23':{type:'course',label:'第1場',title:'我的情緒，是什麼顏色？',desc:'20:00–22:00。從一個有感覺的顏色開始，加入一句想留下的話，再用 Canva 做成自己的個人桌布。'},
+ '2026-09-24':{type:'check',label:'進入生活',title:'Day 1｜讓作品進入生活',desc:'把桌布換上手機；只注意第一眼最喜歡哪個地方。'},
+ '2026-09-25':{type:'check',label:'加一個顏色',title:'Day 2｜替今天加一個顏色',desc:'再選一色，和原本配色放一起看看。'},
+ '2026-09-26':{type:'check',label:'收集一句話',title:'Day 3｜收集一句話',desc:'從今天看到、想到或自己說過的話裡留一句。'},
+ '2026-09-27':{type:'check',label:'生活採色',title:'Day 4｜生活採色',desc:'拍下一個吸引你的生活顏色，當成今日色票。'},
+ '2026-09-28':{type:'check',label:'重新混搭',title:'Day 5｜重新混搭',desc:'只改桌布一件事：顏色、字體、句子或版面。'},
+ '2026-09-29':{type:'check',label:'完成版本',title:'Day 6｜完成版本',desc:'花 10–20 分鐘微調，不追求完美。'},
+ '2026-09-30':{type:'check',label:'創作回顧',title:'Day 7｜創作回顧',desc:'回看一週素材：原來我在視覺上很容易被＿＿吸引。'},
 
- '2026-10-09':{type:'course',label:'第2場',title:'NIKI｜用自由書寫，讓腦中的東西落到紙上',desc:'20:00–22:00。不是作文課。讓零碎念頭先寫出來，再透過圈詞、重組與提問，完成一小段自己的文字作品。'},
- '2026-10-10':{type:'check',label:'先寫三分鐘',title:'Day 1｜先寫三分鐘',desc:'不停筆，不刪、不改，只讓文字出現。'},
- '2026-10-11':{type:'check',label:'五個碎片',title:'Day 2｜收集五個碎片',desc:'一個畫面、一句話、一個聲音、一個念頭、一個細節。'},
- '2026-10-12':{type:'check',label:'圈三個詞',title:'Day 3｜圈三個詞',desc:'從前兩天文字裡圈出三個，或許這是最近可留意的狀態。'},
- '2026-10-13':{type:'check',label:'內在感受',title:'Day 4｜聆聽內在感受',desc:'寫下自我對話。'},
- '2026-10-14':{type:'check',label:'換個視角',title:'Day 5｜換個視角',desc:'重新看自己昨天寫的文字，並寫下對這些文字的回覆。'},
- '2026-10-15':{type:'check',label:'做成小卡',title:'Day 6｜做成小卡',desc:'挑一句最喜歡的文字做延伸，寫成一段自我提醒的小卡片。'},
- '2026-10-16':{type:'check',label:'書寫回顧',title:'Day 7｜書寫回顧',desc:'感受近期的自己。'},
+ '2026-10-07':{type:'course',label:'第2場',title:'NIKI｜用自由書寫，讓腦中的東西落到紙上',desc:'20:00–22:00。不是作文課。讓零碎念頭先寫出來，再透過圈詞、重組與提問，完成一小段自己的文字作品。'},
+ '2026-10-08':{type:'check',label:'先寫三分鐘',title:'Day 1｜先寫三分鐘',desc:'不停筆，不刪、不改，只讓文字出現。'},
+ '2026-10-09':{type:'check',label:'五個碎片',title:'Day 2｜收集五個碎片',desc:'一個畫面、一句話、一個聲音、一個念頭、一個細節。'},
+ '2026-10-10':{type:'check',label:'圈三個詞',title:'Day 3｜圈三個詞',desc:'從前兩天文字裡圈出三個，或許這是最近可留意的狀態。'},
+ '2026-10-11':{type:'check',label:'內在感受',title:'Day 4｜聆聽內在感受',desc:'寫下自我對話。'},
+ '2026-10-12':{type:'check',label:'換個視角',title:'Day 5｜換個視角',desc:'重新看自己昨天寫的文字，並寫下對這些文字的回覆。'},
+ '2026-10-13':{type:'check',label:'做成小卡',title:'Day 6｜做成小卡',desc:'挑一句最喜歡的文字做延伸，寫成一段自我提醒的小卡片。'},
+ '2026-10-14':{type:'check',label:'書寫回顧',title:'Day 7｜書寫回顧',desc:'感受近期的自己。'},
 
- '2026-10-23':{type:'course',label:'第3場',title:'宗芸｜不用說清楚，也可以畫出來',desc:'20:00–22:00。從顏色、線條與形狀開始，不先決定畫什麼，讓作品一點一點長出來。'},
- '2026-10-24':{type:'check',label:'隔一天再看',title:'Day 1｜隔一天再看',desc:'不修改，只看視線第一個停在哪一塊。'},
- '2026-10-25':{type:'check',label:'玩一個顏色',title:'Day 2｜只玩一個顏色',desc:'挑作品一處，再做 5 分鐘小塗鴉。'},
- '2026-10-26':{type:'check',label:'裁一小塊',title:'Day 3｜裁一小塊',desc:'拍作品局部、重新裁切，看大作品裡藏著什麼畫面。'},
- '2026-10-27':{type:'check',label:'只加一筆',title:'Day 4｜只加一筆',desc:'加一條線、一個形狀，或蓋掉一小塊。'},
- '2026-10-28':{type:'check',label:'換種表達',title:'Day 5｜換種表達方式',desc:'試著用其他顏色、線條畫同一種主題，選出最喜歡的版本。'},
- '2026-10-29':{type:'check',label:'放進生活',title:'Day 6｜放進生活',desc:'讓作品出現在生活中：桌邊、牆上、筆記本或手機。'},
- '2026-10-30':{type:'check',label:'作品回顧',title:'Day 7｜作品回顧',desc:'哪一部分最有「我最喜歡」？思考為什麼？'},
+ '2026-10-21':{type:'course',label:'第3場',title:'宗芸｜不用說清楚，也可以畫出來',desc:'20:00–22:00。從顏色、線條與形狀開始，不先決定畫什麼，讓作品一點一點長出來。'},
+ '2026-10-22':{type:'check',label:'隔一天再看',title:'Day 1｜隔一天再看',desc:'不修改，只看視線第一個停在哪一塊。'},
+ '2026-10-23':{type:'check',label:'玩一個顏色',title:'Day 2｜只玩一個顏色',desc:'挑作品一處，再做 5 分鐘小塗鴉。'},
+ '2026-10-24':{type:'check',label:'裁一小塊',title:'Day 3｜裁一小塊',desc:'拍作品局部、重新裁切，看大作品裡藏著什麼畫面。'},
+ '2026-10-25':{type:'check',label:'只加一筆',title:'Day 4｜只加一筆',desc:'加一條線、一個形狀，或蓋掉一小塊。'},
+ '2026-10-26':{type:'check',label:'換種表達',title:'Day 5｜換種表達方式',desc:'試著用其他顏色、線條畫同一種主題，選出最喜歡的版本。'},
+ '2026-10-27':{type:'check',label:'放進生活',title:'Day 6｜放進生活',desc:'讓作品出現在生活中：桌邊、牆上、筆記本或手機。'},
+ '2026-10-28':{type:'check',label:'作品回顧',title:'Day 7｜作品回顧',desc:'哪一部分最有「我最喜歡」？思考為什麼？'},
 
- '2026-11-06':{type:'reflect',label:'圓滿分享',title:'圓滿｜分享六週作品與收穫',desc:'20:00–21:15。把三份作品放在一起，分享最喜歡的一件、最意外的一次，以及從三種創作裡多知道自己什麼。'},
+ '2026-11-04':{type:'reflect',label:'圓滿分享',title:'圓滿｜分享六週作品與收穫',desc:'20:00–21:15。把三份作品放在一起，分享最喜歡的一件、最意外的一次，以及從三種創作裡多知道自己什麼。'},
  '2026-11-13':{type:'dinner',label:'一起吃飯',title:'季後聚餐｜一起吃飯、聊天',desc:'自由參加，餐費自付。讓線上一起創作過的人輕鬆見面。'}
 };
 
@@ -829,9 +847,9 @@ function addRange(start,end){
     d.setDate(d.getDate()+1);
   }
 }
-addRange('2026-10-03','2026-10-08');
-addRange('2026-10-17','2026-10-22');
-addRange('2026-10-31','2026-11-05');
+addRange('2026-10-01','2026-10-06');
+addRange('2026-10-15','2026-10-20');
+addRange('2026-10-29','2026-11-03');
 
 function buildMonth(year,month,id){
   const box=document.getElementById(id); box.innerHTML='';
@@ -858,6 +876,18 @@ function showDetail(month,day,ev){
   document.getElementById('detailDesc').textContent=ev.desc;
 }
 buildMonth(2026,9,'sepDays'); buildMonth(2026,10,'octDays'); buildMonth(2026,11,'novDays');
+
+const monthTabs=[...document.querySelectorAll('.month-tab')];
+const monthCards=[...document.querySelectorAll('.month-card[data-month]')];
+function showCalendarMonth(month){
+  monthTabs.forEach(tab=>{
+    const selected=tab.dataset.month===String(month);
+    tab.classList.toggle('active',selected);
+    tab.setAttribute('aria-selected',String(selected));
+  });
+  monthCards.forEach(card=>card.classList.toggle('active',card.dataset.month===String(month)));
+}
+monthTabs.forEach(tab=>tab.addEventListener('click',()=>showCalendarMonth(tab.dataset.month)));
 
 const hash=location.hash.slice(1);
 if(['home','journey','gatherings','companions','info'].includes(hash)) showPage(hash);
