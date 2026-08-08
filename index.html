@@ -573,34 +573,47 @@ h1,h2,h3{font-weight:650}
 .page.active .hero-panel{
   animation:contentRise .66s .24s cubic-bezier(.16,1,.3,1) both
 }
-.page-hero-inner,.hero-copy{position:relative}
-.page-hero-inner::before,.home-hero .hero-copy::after{
-  content:"✦";position:absolute;pointer-events:none;
-  color:var(--terra);font-family:serif;font-size:16px;line-height:1;opacity:.58;
-  animation:starArrive .8s .28s cubic-bezier(.16,1,.3,1) both
-}
-.page-hero-inner::before{right:2px;top:8px}
-.home-hero .hero-copy::after{right:3%;top:23%}
-
 @keyframes pageReveal{from{opacity:.35}to{opacity:1}}
 @keyframes contentRise{from{opacity:0;transform:translateY(13px)}to{opacity:1;transform:none}}
-@keyframes starArrive{from{opacity:0;transform:scale(.45) rotate(-28deg)}to{opacity:.58;transform:scale(1) rotate(0)}}
 
 @media(max-width:680px){
   .page-hero h1{font-weight:740}
   .page-hero h2{font-weight:720}
   .section-head h2,.calendar-heading h2,.closing-cta h2{font-weight:700}
   .state h3,.language-card h3,.outcome h3,.stop h3,.g-topic,.companion h3{font-weight:680}
-  .page-hero-inner::before{right:0;top:-5px;font-size:14px}
-  .home-hero .hero-copy::after{right:2px;top:28%;font-size:14px}
 }
 
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .page.active,.page.active .page-hero .eyebrow,.page.active .page-hero .hero-season,
   .page.active .page-hero .kicker,.page.active .page-hero h1,.page.active .page-hero h2,
-  .page.active .page-hero .intro,.page.active .page-hero .hero-actions,.page.active .hero-panel,
-  .page-hero-inner::before,.home-hero .hero-copy::after{animation:none!important}
+  .page.active .page-hero .intro,.page.active .page-hero .hero-actions,.page.active .hero-panel{animation:none!important}
+}
+
+/* Mobile breathing room */
+@media(max-width:680px){
+  .container{
+    padding-left:max(34px,env(safe-area-inset-left));
+    padding-right:max(34px,env(safe-area-inset-right))
+  }
+  .header-inner{
+    padding-left:max(30px,env(safe-area-inset-left));
+    padding-right:max(30px,env(safe-area-inset-right))
+  }
+  .hero-panel{padding:23px 22px}
+  .language-card,.companion{padding:25px 24px}
+  .gathering summary{padding:24px}
+  .gathering-detail{padding:0 24px 24px}
+  .detail-card{padding:20px}
+  .calendar-layout{align-items:stretch}
+  .calendar-stack,.calendar-side,.month-tabs{width:100%}
+  .month-card{margin-inline:auto;width:100%}
+}
+@media(max-width:350px){
+  .container{
+    padding-left:max(32px,env(safe-area-inset-left));
+    padding-right:max(32px,env(safe-area-inset-right))
+  }
 }
 </style>
 </head>
