@@ -1,1108 +1,399 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>初星心練習｜第一季｜用創作，看見現在的自己</title>
-<meta name="description" content="初星心練習第一季：用顏色、自由書寫與繪畫三種創作語言，讓想像力有地方出去，也從作品裡多看見現在的自己一點。" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>初星心練習｜第一季｜用創作，看見自己</title>
+<meta name="description" content="初星心練習第一季：用色彩、自由書寫與繪畫三種創作語言，真的做出作品，也從創作裡多了解自己一點。">
 <style>
 :root{
   --bg:#fbf7f1;
-  --paper:#fffdf9;
-  --ink:#413730;
-  --muted:#7d7068;
-  --soft:#9b8b80;
-  --line:rgba(65,55,48,.10);
+  --paper:#fffdfa;
+  --ink:#40352f;
+  --text:#6f625a;
+  --muted:#95867c;
+  --line:rgba(64,53,47,.10);
+
+  --peach:#f1d6c7;
+  --peach-light:#fbede5;
+  --sage:#dbe7cf;
+  --sage-light:#f0f5ea;
+  --rose:#ead3da;
+  --rose-light:#f8ecef;
+  --amber:#f0dfb8;
+  --amber-light:#faf2df;
+
   --terra:#b97b66;
-  --terra-pale:#f4dfd5;
-  --sage:#899777;
-  --sage-pale:#e9eee2;
-  --rose:#a98b91;
-  --rose-pale:#f1e5e7;
-  --amber:#c39a5c;
-  --amber-pale:#f5ead3;
-  --shadow:0 22px 64px rgba(97,72,54,.065);
-  --radius:28px;
-  --content:1040px;
-  --narrow:820px;
+  --green:#82966f;
+  --wine:#9d7781;
+  --gold:#b99354;
+
+  --radius-xl:34px;
+  --radius-lg:26px;
+  --radius-md:20px;
+  --shadow:0 20px 55px rgba(83,62,49,.07);
+  --max:1080px;
+  --read:760px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
   color:var(--ink);
+  background:var(--bg);
   font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
   line-height:1.8;
-  background:
-    radial-gradient(46rem 34rem at -8% -3%, rgba(240,197,174,.30), transparent 69%),
-    radial-gradient(40rem 30rem at 106% 4%, rgba(248,221,173,.27), transparent 70%),
-    radial-gradient(34rem 28rem at 86% 66%, rgba(217,226,204,.15), transparent 74%),
-    radial-gradient(30rem 25rem at 10% 78%, rgba(236,209,214,.14), transparent 72%),
-    linear-gradient(180deg,#fffaf5 0%,#fbf7f1 48%,#f8f1e8 100%);
-}
-button,a{font:inherit;color:inherit}
-button{cursor:pointer}
-.shell{width:min(100%,var(--content));margin:0 auto;padding-inline:clamp(26px,5vw,58px)}
-.narrow{width:min(100%,var(--narrow));margin-inline:auto}
-
-/* top navigation */
-.topbar{
-  position:sticky;top:0;z-index:50;
-  background:rgba(255,250,245,.84);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid rgba(65,55,48,.055);
-}
-.topbar-inner{min-height:64px;display:flex;align-items:center;gap:30px}
-.brand{display:flex;align-items:center;gap:10px;white-space:nowrap;font-size:14px;font-weight:800;letter-spacing:.08em}
-.brand-dot{width:9px;height:9px;border-radius:50%;background:linear-gradient(145deg,#d6aa65,#b97b66);box-shadow:0 0 0 5px rgba(211,170,105,.12)}
-.nav{margin-left:auto;display:flex;gap:22px;overflow:auto;scrollbar-width:none;padding:0 1px}
-.nav::-webkit-scrollbar{display:none}
-.nav-btn{
-  appearance:none;border:0;background:transparent;padding:21px 0 17px;
-  color:#84766d;font-size:12px;font-weight:650;letter-spacing:.075em;
-  white-space:nowrap;border-bottom:1px solid transparent;transition:.2s ease;
-}
-.nav-btn:hover{color:var(--ink);border-bottom-color:rgba(185,123,102,.35)}
-.nav-btn.active{color:var(--ink);border-bottom-color:var(--terra)}
-
-main{padding:0 0 92px}
-.page{display:none;animation:fade .22s ease}
-.page.active{display:block}
-@keyframes fade{from{opacity:.2;transform:translateY(4px)}to{opacity:1;transform:none}}
-
-/* type */
-.eyebrow{font-size:10.5px;font-weight:850;letter-spacing:.18em;color:#9a7663;text-transform:uppercase}
-h1,h2,h3{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-weight:650;color:var(--ink)}
-h1{font-size:clamp(36px,5vw,58px);line-height:1.32;letter-spacing:.09em;margin:14px 0 12px}
-h2{font-size:clamp(27px,3.3vw,39px);line-height:1.42;letter-spacing:.045em;margin:8px 0 12px}
-h3{font-size:21px;line-height:1.5;letter-spacing:.025em;margin:0}
-p{margin:0}
-.lead{font-size:16px;line-height:2;color:#695e57;max-width:650px}
-.section-head{margin-bottom:38px}
-.section-head p{margin-top:10px;color:var(--muted);font-size:14px;line-height:1.95;max-width:680px}
-
-/* home */
-.hero{padding:92px 0 58px;position:relative}
-.hero:after{
-  content:"";position:absolute;right:-50px;top:26px;width:330px;height:250px;border-radius:50%;
-  background:radial-gradient(circle,rgba(248,219,177,.25),transparent 70%);pointer-events:none
-}
-.hero-inner{position:relative;z-index:1}
-.hero-sub{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-size:clamp(24px,3vw,34px);letter-spacing:.075em;line-height:1.5;color:#5e4e44;margin-bottom:22px}
-.meta-row{display:flex;flex-wrap:wrap;gap:12px 18px;margin-top:28px;font-size:12px;color:#756860}
-.meta-row span{position:relative;padding-left:13px}
-.meta-row span:before{content:"";position:absolute;left:0;top:.9em;width:4px;height:4px;border-radius:50%;background:var(--terra)}
-.hero-links{display:flex;flex-wrap:wrap;gap:22px;margin-top:34px}
-.text-link{border:0;background:transparent;padding:4px 0 5px;font-size:13px;font-weight:750;letter-spacing:.05em;border-bottom:1px solid rgba(65,55,48,.28)}
-.text-link.primary{border-bottom-color:var(--terra)}
-
-.home-block{padding:78px 0;border-top:1px solid rgba(65,55,48,.075)}
-.soft-state{display:grid;grid-template-columns:1fr 1fr;gap:18px 44px;margin-top:28px}
-.state-line{padding:17px 0;border-top:1px solid var(--line)}
-.state-line:nth-child(-n+2){border-top:0}
-.state-line b{display:block;font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-size:18px;letter-spacing:.025em;margin-bottom:5px}
-.state-line span{font-size:13px;color:var(--muted)}
-
-.three-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
-.mode-card{padding:28px 26px 26px;border-radius:26px;min-height:210px;border:1px solid rgba(65,55,48,.045)}
-.mode-card:nth-child(1){background:linear-gradient(155deg,rgba(247,228,218,.92),rgba(255,249,244,.82))}
-.mode-card:nth-child(2){background:linear-gradient(155deg,rgba(234,239,225,.94),rgba(251,252,247,.82))}
-.mode-card:nth-child(3){background:linear-gradient(155deg,rgba(241,226,230,.94),rgba(255,248,249,.82))}
-.mode-icon{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.68);margin-bottom:18px;font-size:14px}
-.mode-card h3{font-size:20px;margin-bottom:8px}
-.mode-card p{font-size:13px;color:#72665f;line-height:1.9}
-
-.outcomes{display:grid;grid-template-columns:1fr 1fr;gap:0 36px;margin-top:26px}
-.outcome{padding:24px 0;border-top:1px solid var(--line)}
-.outcome:nth-child(-n+2){border-top:0}
-.outcome small{display:block;font-size:9.5px;font-weight:850;letter-spacing:.16em;color:#a07d69;margin-bottom:8px}
-.outcome h3{font-size:18px;margin-bottom:7px}
-.outcome p{font-size:13px;color:var(--muted);line-height:1.9}
-
-/* journey */
-.journey-wrap{padding:80px 0 0}
-.timeline{margin:42px auto 60px;max-width:900px}
-.timeline-track{display:grid;grid-template-columns:repeat(4,1fr);position:relative;gap:18px}
-.timeline-track:before{content:"";position:absolute;top:17px;left:9%;right:9%;height:1px;background:rgba(65,55,48,.14)}
-.milestone{position:relative;z-index:1;text-align:center}
-.milestone-dot{width:35px;height:35px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;font-size:10px;font-weight:800;color:#6e584c;border:1px solid rgba(65,55,48,.08);background:var(--paper);box-shadow:0 8px 26px rgba(97,72,54,.06)}
-.milestone:nth-child(1) .milestone-dot{background:var(--terra-pale)}
-.milestone:nth-child(2) .milestone-dot{background:var(--sage-pale)}
-.milestone:nth-child(3) .milestone-dot{background:var(--rose-pale)}
-.milestone:nth-child(4) .milestone-dot{background:var(--amber-pale)}
-.milestone time{display:block;font-size:11px;font-weight:800;letter-spacing:.08em;color:#8d7668}
-.milestone b{display:block;font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-size:17px;line-height:1.5;margin:5px 0 5px}
-.milestone span{font-size:11.5px;color:var(--muted);line-height:1.65}
-.between-note{margin:0 auto 62px;max-width:700px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:13px;color:#776b63;text-align:center}
-.between-note b{color:var(--ink)}
-
-.calendar-details{margin-top:20px}
-.calendar-details > summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);cursor:pointer;font-weight:750;font-size:14px}
-.calendar-details > summary::-webkit-details-marker{display:none}
-.calendar-details > summary span:last-child{font-size:20px;font-weight:400;color:#9a897d;transition:.2s}
-.calendar-details[open] > summary span:last-child{transform:rotate(45deg)}
-.calendar-body{padding:34px 0 0}
-.calendar-layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:30px;align-items:start}
-.calendar-stack{display:grid;gap:18px}
-.calendar-sheet{background:rgba(255,253,249,.90);border:1px solid rgba(65,55,48,.065);border-radius:28px;padding:24px 22px 20px;box-shadow:0 16px 44px rgba(97,72,54,.04)}
-.month-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:16px}
-.month-head h3{font-size:20px}
-.month-head span{font-size:9.5px;letter-spacing:.14em;color:#a18f83}
-.week,.days{display:grid;grid-template-columns:repeat(7,1fr)}
-.week{margin-bottom:7px}
-.week div{text-align:center;font-size:10px;color:#9b8c82}
-.days{gap:7px}
-.day{min-height:65px;border-radius:18px;padding:7px 5px 5px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:4px;transition:.18s ease}
-.day.event{cursor:pointer}
-.day.event:hover{transform:translateY(-1px);background:rgba(255,255,255,.62)}
-.date-dot{width:27px;height:27px;border-radius:50%;display:grid;place-items:center;font-size:11px}
-.day.course .date-dot{background:var(--terra-pale)}
-.day.check .date-dot{background:var(--sage-pale)}
-.day.rest .date-dot{border:1px solid rgba(195,154,92,.25)}
-.day.reflect .date-dot{background:var(--amber-pale)}
-.day.dinner .date-dot{background:var(--rose-pale)}
-.day-label{font-size:8.5px;line-height:1.25;color:#807168;text-align:center}
-.legend{display:flex;flex-wrap:wrap;gap:9px 14px;margin-top:14px;font-size:9.5px;color:#8f8076}
-.legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;vertical-align:middle}
-.calendar-side{position:sticky;top:92px}
-.detail-card{padding:22px 20px;background:linear-gradient(145deg,rgba(255,253,249,.90),rgba(249,240,232,.78));border:1px solid rgba(65,55,48,.065);border-radius:24px}
-.detail-date{font-size:9.5px;font-weight:850;letter-spacing:.14em;color:#967b6a;text-transform:uppercase}
-.detail-card h3{font-size:18px;margin:7px 0 5px}
-.detail-card p{font-size:12.5px;color:var(--muted);line-height:1.85}
-
-/* gatherings */
-.gatherings{padding:80px 0 0}
-.gathering-list{display:grid;gap:18px;margin-top:34px}
-.gathering{border:1px solid rgba(65,55,48,.07);border-radius:28px;background:rgba(255,253,249,.78);overflow:hidden;box-shadow:0 16px 42px rgba(97,72,54,.045)}
-.gathering:nth-child(1){background:linear-gradient(150deg,rgba(255,253,249,.94),rgba(247,229,219,.55))}
-.gathering:nth-child(2){background:linear-gradient(150deg,rgba(255,253,249,.94),rgba(235,240,227,.58))}
-.gathering:nth-child(3){background:linear-gradient(150deg,rgba(255,253,249,.94),rgba(244,231,233,.58))}
-.gathering summary{list-style:none;display:grid;grid-template-columns:86px 1fr auto;gap:18px;align-items:center;padding:26px 28px;cursor:pointer}
-.gathering summary::-webkit-details-marker{display:none}
-.g-date{font-size:10px;font-weight:850;letter-spacing:.11em;color:#967d6d}
-.g-name{font-size:14px;font-weight:750;color:#6e5f57;margin-bottom:4px}
-.g-topic{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-size:24px;line-height:1.45;letter-spacing:.025em}
-.plus{font-size:22px;color:#9a897e;font-weight:300;transition:.2s}
-.gathering[open] .plus{transform:rotate(45deg)}
-.gathering-detail{padding:0 28px 28px 132px;border-top:1px solid rgba(65,55,48,.06)}
-.gathering-detail .intro{padding-top:20px;font-size:13px;color:#74675f;line-height:1.95}
-.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px}
-.detail-block{padding-top:14px;border-top:1px solid rgba(65,55,48,.08)}
-.detail-block b{display:block;font-size:11px;letter-spacing:.06em;color:#83695e;margin-bottom:7px}
-.detail-block p{font-size:13px;color:var(--muted);line-height:1.85}
-.takeaway{margin-top:22px;padding:15px 0 0;border-top:1px solid rgba(65,55,48,.08);font-size:13px}
-.takeaway b{color:#6c554a}
-
-/* companions */
-.companions{padding:80px 0 0}
-.companion-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
-.companion{padding:30px 26px;border-radius:28px;border:1px solid rgba(65,55,48,.055);min-height:330px;display:flex;flex-direction:column}
-.companion:nth-child(1){background:linear-gradient(155deg,rgba(255,253,249,.96),rgba(247,228,218,.58))}
-.companion:nth-child(2){background:linear-gradient(155deg,rgba(255,253,249,.96),rgba(234,239,225,.62))}
-.companion:nth-child(3){background:linear-gradient(155deg,rgba(255,253,249,.96),rgba(241,226,230,.62))}
-.companion-symbol{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.74);font-size:14px;margin-bottom:22px}
-.companion-role{font-size:10px;font-weight:800;letter-spacing:.08em;color:#917769;margin-bottom:8px}
-.companion h3{font-size:28px;margin-bottom:12px}
-.companion p{font-size:13px;color:#71645d;line-height:1.95}
-.companion-way{margin-top:auto;padding-top:18px;border-top:1px solid rgba(65,55,48,.08);font-size:11px;color:#85756b}
-.companion-note{margin-top:42px;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-size:18px;letter-spacing:.035em;color:#5f5148}
-
-/* info */
-.info{padding:80px 0 0}
-.price-block{display:grid;grid-template-columns:.8fr 1.2fr;gap:42px;align-items:start;margin-top:34px}
-.price-big{padding:6px 0}
-.price-label{font-size:10px;font-weight:850;letter-spacing:.13em;color:#9a7865}
-.price{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-size:54px;line-height:1.15;margin:10px 0 8px}
-.price small{font-size:14px;font-family:inherit;color:#8a7b71}
-.opening{font-size:12px;color:#746860}
-.includes{display:grid;gap:0;border-top:1px solid var(--line)}
-.include{display:grid;grid-template-columns:24px 1fr;gap:10px;padding:15px 0;border-bottom:1px solid var(--line);font-size:13px;color:#675b54}
-.tick{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:var(--sage-pale);font-size:10px;font-weight:900}
-.info-note{margin-top:22px;font-size:11.5px;color:#88786e;line-height:1.8}
-
-.faq{margin-top:76px}
-.faq-list{border-top:1px solid var(--line)}
-.faq-item{border-bottom:1px solid var(--line)}
-.faq-item summary{list-style:none;display:flex;justify-content:space-between;gap:18px;padding:20px 0;cursor:pointer;font-size:14px;font-weight:750}
-.faq-item summary::-webkit-details-marker{display:none}
-.faq-plus{font-size:20px;font-weight:300;color:#9a897e;transition:.2s}
-.faq-item[open] .faq-plus{transform:rotate(45deg)}
-.faq-answer{padding:0 32px 20px 0;font-size:13px;color:var(--muted);line-height:1.9}
-
-footer{padding:70px 0 40px;text-align:center;font-size:11px;color:#94857b;letter-spacing:.05em}
-
-/* responsive */
-@media(max-width:860px){
-  .topbar-inner{display:block;padding-top:14px}
-  .brand{padding-bottom:8px}
-  .nav{margin-left:0;gap:18px}
-  .nav-btn{padding:10px 0 12px;font-size:11px}
-  .three-cards,.companion-grid{grid-template-columns:1fr}
-  .mode-card{min-height:0}
-  .calendar-layout{grid-template-columns:1fr}
-  .calendar-side{position:static}
-  .price-block{grid-template-columns:1fr;gap:26px}
-  .timeline-track{grid-template-columns:1fr;gap:0;padding-left:24px}
-  .timeline-track:before{top:18px;bottom:18px;left:16px;right:auto;width:1px;height:auto}
-  .milestone{display:grid;grid-template-columns:36px 1fr;gap:16px;text-align:left;padding-bottom:28px}
-  .milestone-dot{margin:0}
-  .milestone-copy{padding-top:1px}
-}
-@media(max-width:680px){
-  .shell{padding-inline:25px}
-  main{padding-bottom:72px}
-  .topbar-inner{padding-inline:0}
-  .brand{font-size:13px}
-  h1{font-size:29px;line-height:1.48;letter-spacing:.10em}
-  h2{font-size:23px;line-height:1.55;letter-spacing:.055em}
-  h3{font-size:18px}
-  .eyebrow{font-size:9.5px}
-  .lead{font-size:13.5px;line-height:2}
-  .hero{padding:58px 0 38px}
-  .hero-sub{font-size:22px;line-height:1.65;letter-spacing:.08em;margin-bottom:18px}
-  .meta-row{gap:7px 14px;margin-top:22px;font-size:11px}
-  .hero-links{margin-top:26px}
-  .home-block{padding:62px 0}
-  .section-head{margin-bottom:28px}
-  .section-head p{font-size:13px}
-  .soft-state{grid-template-columns:1fr;gap:0}
-  .state-line{padding:18px 0;border-top:1px solid var(--line)!important}
-  .state-line:first-child{border-top:0!important}
-  .state-line b{font-size:16px}
-  .three-cards{gap:12px;margin-top:24px}
-  .mode-card{padding:21px 19px 20px;border-radius:22px}
-  .mode-card h3{font-size:17px}
-  .mode-card p{font-size:12.5px}
-  .outcomes{grid-template-columns:1fr;gap:0;margin-top:18px}
-  .outcome{padding:21px 0;border-top:1px solid var(--line)!important}
-  .outcome:first-child{border-top:0!important}
-  .journey-wrap,.gatherings,.companions,.info{padding-top:58px}
-  .timeline{margin-top:30px;margin-bottom:42px}
-  .between-note{margin-bottom:42px;font-size:12px;line-height:1.8}
-  .calendar-details > summary{font-size:13px;padding:17px 0}
-  .calendar-body{padding-top:24px}
-  .calendar-sheet{padding:20px 16px 17px;border-radius:24px}
-  .month-head h3{font-size:18px}
-  .days{gap:5px}
-  .day{min-height:60px;padding:6px 3px;border-radius:16px}
-  .date-dot{width:25px;height:25px;font-size:10.5px}
-  .day-label{font-size:7.8px}
-  .detail-card{padding:18px 16px;border-radius:21px}
-  .gathering-list{gap:14px;margin-top:26px}
-  .gathering{border-radius:24px}
-  .gathering summary{grid-template-columns:66px 1fr auto;gap:12px;padding:21px 19px}
-  .g-date{font-size:9.5px}
-  .g-name{font-size:12px}
-  .g-topic{font-size:19px;line-height:1.5}
-  .gathering-detail{padding:0 19px 22px 19px}
-  .gathering-detail .intro{font-size:12.5px}
-  .detail-grid{grid-template-columns:1fr;gap:12px}
-  .detail-block{padding-top:12px}
-  .companion-grid{gap:14px;margin-top:26px}
-  .companion{padding:23px 20px;border-radius:24px;min-height:0}
-  .companion h3{font-size:24px}
-  .companion p{font-size:12.5px}
-  .companion-note{font-size:16px;line-height:1.8;margin-top:32px}
-  .price{font-size:48px}
-  .faq{margin-top:56px}
-  .faq-item summary{font-size:13px;padding:18px 0}
-  .faq-answer{font-size:12.5px;padding-right:12px}
-}
-@media(max-width:390px){.shell{padding-inline:22px}.nav{gap:15px}.nav-btn{font-size:10.5px}}
-
-/* ===== Mobile editorial redesign ===== */
-@media(max-width:680px){
-  body{
-    background:
-      radial-gradient(28rem 22rem at 12% 0%, rgba(243,205,183,.28), transparent 68%),
-      radial-gradient(24rem 19rem at 104% 18%, rgba(247,224,186,.23), transparent 70%),
-      radial-gradient(22rem 18rem at 0% 72%, rgba(234,215,219,.13), transparent 72%),
-      linear-gradient(180deg,#fffaf6 0%,#fbf6ef 53%,#f8f1e8 100%);
-  }
-  .shell{padding-inline:34px}
-  .narrow{width:100%;max-width:none}
-  main{padding-bottom:84px}
-
-  /* header: generous inset + horizontal scroll nav */
-  .topbar{background:rgba(255,251,246,.90);backdrop-filter:blur(20px)}
-  .topbar .shell{padding-inline:30px}
-  .topbar-inner{display:block;padding:17px 0 0;min-height:auto}
-  .brand{font-size:12.5px;letter-spacing:.09em;padding-bottom:13px}
-  .brand-dot{width:8px;height:8px;box-shadow:0 0 0 5px rgba(211,170,105,.10)}
-  .nav{
-    margin-left:0;
-    width:100%;
-    gap:24px;
-    overflow-x:auto;
-    padding:0 0 11px;
-    scroll-snap-type:x proximity;
-    -webkit-overflow-scrolling:touch;
-  }
-  .nav-btn{
-    flex:0 0 auto;
-    scroll-snap-align:start;
-    padding:8px 0 9px;
-    font-size:11.5px;
-    letter-spacing:.07em;
-    font-weight:650;
-  }
-
-  /* global type */
-  h1{font-size:27px;line-height:1.58;letter-spacing:.095em;margin:13px 0 13px}
-  h2{font-size:21px;line-height:1.62;letter-spacing:.06em}
-  h3{font-size:17px;line-height:1.58}
-  .eyebrow{font-size:9px;letter-spacing:.17em}
-  .lead{font-size:13px;line-height:2.05;max-width:29em}
-  .section-head{margin-bottom:30px}
-  .section-head p{font-size:12.5px;line-height:1.95;max-width:30em}
-
-  /* home */
-  .hero{padding:70px 0 46px}
-  .hero:after{right:-120px;top:8px;width:280px;height:220px;opacity:.75}
-  .hero-sub{font-size:18px;line-height:1.85;letter-spacing:.075em;margin-bottom:18px;max-width:16em}
-  .meta-row{gap:8px 16px;margin-top:24px;font-size:10.5px;line-height:1.8}
-  .meta-row span{padding-left:11px}
-  .hero-links{margin-top:28px;gap:28px}
-  .text-link{font-size:12px;padding-bottom:7px}
-  .home-block{padding:76px 0}
-  .soft-state{display:block;margin-top:22px}
-  .state-line{padding:20px 0;border-top:1px solid rgba(65,55,48,.09)!important}
-  .state-line:first-child{border-top:0!important;padding-top:0}
-  .state-line b{font-size:15.5px;line-height:1.6;margin-bottom:6px}
-  .state-line span{font-size:12px;line-height:1.85}
-
-  .three-cards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:26px}
-  .mode-card{padding:23px 21px 22px;border-radius:24px;min-height:0;box-shadow:none}
-  .mode-icon{width:28px;height:28px;margin-bottom:15px}
-  .mode-card h3{font-size:16.5px;margin-bottom:7px}
-  .mode-card p{font-size:12px;line-height:1.9}
-  .outcomes{display:block;margin-top:16px}
-  .outcome{padding:21px 0;border-top:1px solid rgba(65,55,48,.09)!important}
-  .outcome:first-child{border-top:0!important}
-  .outcome small{font-size:8.5px;margin-bottom:6px}
-  .outcome h3{font-size:15.5px;margin-bottom:6px}
-  .outcome p{font-size:12px;line-height:1.85}
-
-  /* journey */
-  .journey-wrap,.gatherings,.companions,.info{padding-top:68px}
-  .timeline{margin:30px 0 42px}
-  .timeline-track{padding-left:18px}
-  .timeline-track:before{left:13px}
-  .milestone{grid-template-columns:30px 1fr;gap:14px;padding-bottom:24px}
-  .milestone-dot{width:28px;height:28px;font-size:8.5px;margin:0}
-  .milestone time{font-size:9.5px}
-  .milestone b{font-size:15px;margin:3px 0 3px}
-  .milestone span{font-size:10.5px;line-height:1.65}
-  .between-note{margin:0 0 40px;padding:16px 0;font-size:11.5px;line-height:1.85;text-align:left}
-  .calendar-details>summary{font-size:12.5px;padding:16px 0}
-  .calendar-body{padding-top:20px}
-  .calendar-sheet{padding:19px 14px 16px;border-radius:22px}
-  .calendar-sheet + .calendar-sheet{margin-top:14px}
-  .month-head{margin-bottom:12px}
-  .month-head h3{font-size:16px}
-  .month-head span{font-size:8px}
-  .week div{font-size:9px}
-  .days{gap:4px}
-  .day{min-height:55px;padding:5px 2px;border-radius:14px;gap:3px}
-  .date-dot{width:23px;height:23px;font-size:9.5px}
-  .day-label{font-size:7px;line-height:1.15}
-  .legend{font-size:8.5px;gap:7px 11px}
-  .detail-card{padding:16px 15px;border-radius:20px;margin-top:14px}
-  .detail-date{font-size:8.5px}
-  .detail-card h3{font-size:15px;margin:5px 0 4px}
-  .detail-card p{font-size:11.5px;line-height:1.8}
-
-  /* gatherings: date becomes kicker, not left column */
-  .gathering-list{gap:16px;margin-top:24px}
-  .gathering{border-radius:25px}
-  .gathering summary{
-    grid-template-columns:1fr auto;
-    gap:8px 14px;
-    padding:23px 21px 22px;
-    align-items:start;
-  }
-  .g-date{grid-column:1 / -1;font-size:9px;letter-spacing:.13em;margin-bottom:3px}
-  .g-name{font-size:11.5px;margin-bottom:6px;color:#76675e}
-  .g-topic{font-size:17px;line-height:1.55;letter-spacing:.02em;padding-right:2px}
-  .plus{font-size:20px;align-self:center;margin-top:10px}
-  .gathering-detail{padding:0 21px 24px}
-  .gathering-detail .intro{font-size:11.8px;line-height:1.95}
-  .detail-grid{grid-template-columns:1fr;gap:12px;margin-top:16px}
-  .detail-block{padding-top:11px}
-  .detail-block b{font-size:9.5px}
-  .detail-block p{font-size:11.7px;line-height:1.85}
-  .takeaway{font-size:11.8px;margin-top:16px}
-
-  /* companions */
-  .companion-grid{gap:16px;margin-top:24px}
-  .companion{padding:23px 21px;border-radius:25px;min-height:0}
-  .companion-symbol{width:29px;height:29px;margin-bottom:17px}
-  .companion-role{font-size:9px;margin-bottom:6px}
-  .companion h3{font-size:22px;margin-bottom:10px}
-  .companion p{font-size:11.8px;line-height:1.9}
-  .companion-way{font-size:10px;padding-top:15px;margin-top:18px}
-  .companion-note{margin-top:34px;padding:18px 0;font-size:14.5px;line-height:1.9}
-
-  /* price / faq */
-  .price-block{display:block;margin-top:24px}
-  .price-big{padding-bottom:22px}
-  .price-label{font-size:9px}
-  .price{font-size:43px;margin:8px 0 5px}
-  .price small{font-size:12px}
-  .opening{font-size:11px}
-  .include{grid-template-columns:20px 1fr;gap:9px;padding:14px 0;font-size:11.8px;line-height:1.75}
-  .tick{width:18px;height:18px;font-size:9px}
-  .info-note{font-size:10.5px;line-height:1.75}
-  .faq{margin-top:52px}
-  .faq-item summary{font-size:12.5px;line-height:1.7;padding:17px 0}
-  .faq-answer{font-size:11.8px;line-height:1.85;padding:0 10px 18px 0}
-  footer{padding:56px 0 34px;font-size:10px}
-}
-@media(max-width:390px){
-  .shell{padding-inline:30px}
-  .topbar .shell{padding-inline:27px}
-  h1{font-size:25px}
-  .hero-sub{font-size:17px}
-}
-
-
-/* ===== Final mobile spacing & hierarchy pass ===== */
-@media(max-width:680px){
-  .shell{padding-inline:36px}
-  .topbar .shell{padding-inline:32px}
-
-  .topbar-inner{padding-top:18px}
-  .brand{padding-bottom:14px}
-
-  /* 導覽不擠滿整排，保留左右空間與滑動感 */
-  .nav{
-    gap:28px;
-    padding:0 18px 12px 0;
-    max-width:100%;
-  }
-  .nav-btn{
-    font-size:11px;
-    padding:7px 0 10px;
-  }
-
-  /* 首屏閱讀欄更窄 */
-  .hero-inner,
-  .section-head{
-    max-width:300px;
-  }
-  .hero{padding-top:74px}
-  .hero-sub{max-width:14.5em}
-  .lead{max-width:27em}
-
-  /* 各段真正拉開 */
-  .home-block{padding:82px 0}
-  .journey-wrap,.gatherings,.companions,.info{padding-top:74px}
-
-  /* 所有主要卡片比內容欄再內縮一點 */
-  .mode-card,
-  .gathering,
-  .companion,
-  .calendar-sheet,
-  .detail-card{
-    width:calc(100% - 4px);
-    margin-inline:auto;
-  }
-
-  /* 三場小聚：日期 → 同行者 → 主題，層級更清楚 */
-  .gathering summary{
-    grid-template-columns:1fr auto;
-    gap:7px 16px;
-    padding:24px 22px 23px;
-  }
-  .g-date{
-    grid-column:1 / -1;
-    margin-bottom:7px;
-    color:#a07f6c;
-  }
-  .g-name{
-    font-size:11px;
-    letter-spacing:.04em;
-    font-weight:700;
-    color:#816f64;
-    margin-bottom:8px;
-  }
-  .g-topic{
-    font-size:16.5px;
-    line-height:1.62;
-    letter-spacing:.025em;
-  }
-  .plus{
-    font-size:18px;
-    margin-top:16px;
-    color:#ad9b90;
-  }
-
-  /* 首頁 CTA 不要貼成一排 */
-  .hero-links{
-    gap:20px 26px;
-  }
-
-  /* FAQ、費用改成閱讀感，不碰邊 */
-  .includes,.faq-list{
-    width:calc(100% - 2px);
-    margin-inline:auto;
-  }
-}
-
-@media(max-width:390px){
-  .shell{padding-inline:34px}
-  .topbar .shell{padding-inline:30px}
-  .hero-inner,.section-head{max-width:292px}
-}
-
-
-/* ===== 2026-08 mobile-first final spacing pass ===== */
-.hero-sub{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 .22em}
-.hero-season,.hero-sub-main{display:inline-block}
-.calendar-visible{margin-top:54px}
-.calendar-title-row{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:22px;padding-top:8px}
-.calendar-title-row h3{font-size:24px;margin-top:6px}
-.calendar-title-row p{max-width:420px;font-size:12.5px;line-height:1.8;color:var(--muted);text-align:right}
-
-@media(max-width:680px){
-  .shell{padding-left:32px!important;padding-right:32px!important}
-  .topbar .shell{padding-left:28px!important;padding-right:28px!important}
-  .topbar-inner{padding-top:16px!important;padding-bottom:10px!important}
-  .brand{margin-bottom:12px!important}
-  .nav{margin-left:0!important;width:100%!important;padding:0 14px 10px 0!important;gap:24px!important;overflow-x:auto!important}
-  .nav-btn{flex:0 0 auto!important;padding:8px 0 10px!important;font-size:11px!important}
-
-  .hero{padding-top:60px!important;padding-bottom:40px!important}
-  .hero-inner,.section-head{max-width:none!important;width:100%!important}
-  h1{font-size:27px!important;line-height:1.5!important;letter-spacing:.10em!important}
-  .hero-sub{font-size:21px!important;line-height:1.65!important;letter-spacing:.055em!important;gap:0 .18em!important;margin-top:10px!important}
-  .hero-season{white-space:nowrap}
-  .hero-sub-main{white-space:nowrap}
-  .lead{font-size:13.5px!important;line-height:2!important;max-width:none!important}
-  .meta-row{gap:8px 14px!important}
-
-  .home-block,.journey-wrap,.gatherings,.companions,.info{padding-top:66px!important}
-  .three-cards,.gathering-list,.companion-grid,.faq-list,.includes{width:100%!important;margin-left:auto!important;margin-right:auto!important}
-  .mode-card,.gathering,.companion,.calendar-sheet,.detail-card,.rhythm-card{width:100%!important;max-width:100%!important;margin-left:auto!important;margin-right:auto!important}
-  .mode-card{padding:24px 22px!important}
-  .gathering summary{padding:24px 22px!important}
-  .companion{padding:26px 22px!important}
-
-  .timeline{margin-top:34px!important}
-  .between-note{margin-top:30px!important;line-height:1.9!important}
-  .calendar-visible{margin-top:46px!important}
-  .calendar-title-row{display:block!important;margin-bottom:18px!important}
-  .calendar-title-row h3{font-size:20px!important}
-  .calendar-title-row p{margin-top:8px!important;text-align:left!important;font-size:12px!important;line-height:1.85!important}
-  .calendar-body{padding-top:0!important}
-  .calendar-layout{display:block!important}
-  .calendar-stack{gap:16px!important}
-  .calendar-sheet{padding:20px 16px 18px!important;border-radius:26px!important}
-  .calendar-side{position:static!important;margin-top:16px!important}
-  .detail-card{padding:18px 18px 16px!important;border-radius:22px!important}
-  .detail-card h3{font-size:16px!important;line-height:1.55!important}
-  .detail-card p{font-size:12.5px!important;line-height:1.8!important}
-}
-@media(max-width:390px){
-  .shell{padding-left:30px!important;padding-right:30px!important}
-  .topbar .shell{padding-left:26px!important;padding-right:26px!important}
-  .hero-sub{font-size:20px!important}
-  .hero-sub-main{white-space:normal!important;display:block!important;width:100%!important}
-}
-
-
-/* ===== Responsive layout hard fix: no horizontal overflow ===== */
-html, body{
-  width:100%;
-  max-width:100%;
   overflow-x:hidden;
 }
-img, svg, video, canvas{
-  max-width:100%;
-  height:auto;
-}
-.shell{
-  width:100%;
-  max-width:var(--content);
-  margin-inline:auto;
-  padding-inline:clamp(32px,5.5vw,62px);
-}
-.narrow{
-  width:100%;
-  max-width:var(--narrow);
-  margin-inline:auto;
-}
-.page,
-.journey-wrap,
-.timeline,
-.timeline-track,
-.calendar-visible,
-.calendar-body,
-.calendar-layout,
-.calendar-stack,
-.calendar-sheet,
-.calendar-side,
-.week,
-.days,
-.milestone,
-.milestone-copy{
-  min-width:0;
-  max-width:100%;
-}
+button{font:inherit;color:inherit}
+button:focus-visible,summary:focus-visible,.day:focus-visible{outline:2px solid rgba(185,123,102,.45);outline-offset:3px}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-weight:650}
+.container{width:min(100%,var(--max));margin:auto;padding-inline:clamp(40px,6vw,76px)}
+.read{max-width:var(--read);margin-inline:auto}
+.eyebrow{font-size:10px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:#9b7968}
+.kicker{font-size:12px;font-weight:800;letter-spacing:.12em;color:#765f52}
+.page{display:none}
+.page.active{display:block;animation:fade .2s ease}
+@keyframes fade{from{opacity:.25;transform:translateY(4px)}to{opacity:1;transform:none}}
 
-/* timeline desktop */
-.timeline{
-  width:100%;
-  max-width:920px;
-  margin:44px auto 54px;
-  padding-inline:8px;
+/* Header */
+.site-header{
+  position:sticky;top:0;z-index:40;
+  background:rgba(255,252,248,.91);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(64,53,47,.06);
 }
-.timeline-track{
-  width:100%;
-  grid-template-columns:repeat(4,minmax(0,1fr));
+.header-inner{padding-top:17px;padding-bottom:0}
+.brand-row{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:800;letter-spacing:.10em;white-space:nowrap}
+.brand-dot{width:9px;height:9px;border-radius:50%;background:linear-gradient(145deg,#d6aa65,#b97b66);box-shadow:0 0 0 5px rgba(211,170,105,.12)}
+.nav{display:flex;gap:25px;overflow:auto;scrollbar-width:none;padding:14px 0 12px}
+.nav::-webkit-scrollbar{display:none}
+.nav-btn{
+  flex:0 0 auto;border:0;background:transparent;padding:6px 0 9px;
+  font-size:12px;font-weight:680;letter-spacing:.055em;color:#84756c;
+  border-bottom:1px solid transparent;cursor:pointer;
 }
-.milestone b,
-.milestone span{
-  overflow-wrap:anywhere;
-}
-.between-note{
-  max-width:880px;
-  margin-inline:auto;
-  padding-inline:20px;
-  text-align:center;
-  overflow-wrap:anywhere;
-}
+.nav-btn.active{color:var(--ink);border-bottom-color:var(--terra)}
+.nav-btn:hover{color:var(--ink)}
 
-/* calendar never exceeds parent */
-.calendar-body{
-  width:100%;
+/* Shared page hero */
+.page-hero{
+  position:relative;
   overflow:hidden;
+  padding:78px 0 64px;
+  border-bottom:1px solid rgba(64,53,47,.05);
 }
-.calendar-layout{
-  width:100%;
-  display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(220px,280px);
-  gap:26px;
-  align-items:start;
+.page-hero:after{
+  content:"";position:absolute;width:420px;height:320px;border-radius:50%;
+  right:-130px;top:-90px;pointer-events:none;
 }
-.calendar-stack{
-  width:100%;
-}
-.calendar-sheet{
-  width:100%;
-  max-width:100%;
-  overflow:hidden;
-  padding:26px 24px 22px;
-}
-.month-head{
-  min-width:0;
-  gap:16px;
-}
-.month-head h3,
-.month-head span{
-  min-width:0;
-}
-.week,
-.days{
-  width:100%;
-  grid-template-columns:repeat(7,minmax(0,1fr));
-}
-.week > div,
-.day{
-  min-width:0;
-}
-.day-label{
-  width:100%;
-  overflow-wrap:anywhere;
-}
-.calendar-side{
-  width:100%;
-  max-width:280px;
-}
+.page-hero.peach{background:linear-gradient(180deg,#fff8f3 0%,#f9eee6 100%)}
+.page-hero.peach:after{background:radial-gradient(circle,rgba(238,184,155,.34),transparent 70%)}
+.page-hero.sage{background:linear-gradient(180deg,#fbfcf7 0%,#eef4e8 100%)}
+.page-hero.sage:after{background:radial-gradient(circle,rgba(184,205,165,.34),transparent 70%)}
+.page-hero.rose{background:linear-gradient(180deg,#fff9fa 0%,#f5e9ed 100%)}
+.page-hero.rose:after{background:radial-gradient(circle,rgba(213,176,187,.30),transparent 70%)}
+.page-hero.amber{background:linear-gradient(180deg,#fffaf0 0%,#f7edd6 100%)}
+.page-hero.amber:after{background:radial-gradient(circle,rgba(225,193,125,.32),transparent 70%)}
+.page-hero-inner{position:relative;z-index:1;max-width:800px}
+.page-hero .eyebrow{margin-bottom:16px}
+.page-hero h1{font-size:clamp(42px,6vw,72px);line-height:1.28;letter-spacing:.07em;margin-bottom:22px}
+.page-hero h2{font-size:clamp(32px,4vw,48px);line-height:1.4;letter-spacing:.055em;margin-bottom:18px}
+.page-hero .intro{font-size:15px;line-height:2;color:#6b5e56;max-width:670px}
+.facts{display:flex;flex-wrap:wrap;gap:22px 34px;margin-top:31px;padding-top:23px;border-top:1px solid rgba(64,53,47,.09)}
+.fact{display:flex;gap:8px;align-items:baseline}
+.fact strong{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-size:16px;font-weight:650}
+.fact span{font-size:11px;color:#8b7b72}
 
-/* medium screens: stack timeline and calendar before they get cramped */
-@media(max-width:920px){
-  .shell{
-    padding-inline:clamp(32px,6vw,52px);
-  }
-  .timeline-track{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:30px 22px;
-  }
-  .timeline-track:before{
-    display:none;
-  }
-  .calendar-layout{
-    grid-template-columns:1fr;
-    gap:18px;
-  }
-  .calendar-side{
-    position:static;
-    max-width:none;
-  }
-}
+/* Main section rhythm */
+.section{padding:86px 0}
+.section + .section{border-top:1px solid rgba(64,53,47,.06)}
+.section-head{max-width:730px;margin-bottom:38px}
+.section-head .eyebrow{margin-bottom:10px}
+.section-head h2{font-size:clamp(28px,3.8vw,42px);line-height:1.45;letter-spacing:.045em;margin-bottom:12px}
+.section-head p{font-size:14px;line-height:1.95;color:var(--text);max-width:650px}
+.section.soft-peach{background:linear-gradient(180deg,rgba(251,237,229,.72),rgba(255,253,249,.82))}
+.section.soft-sage{background:linear-gradient(180deg,rgba(238,245,233,.72),rgba(255,253,249,.84))}
+.section.soft-rose{background:linear-gradient(180deg,rgba(248,236,240,.72),rgba(255,253,249,.84))}
+.section.soft-amber{background:linear-gradient(180deg,rgba(249,241,222,.76),rgba(255,253,249,.84))}
 
-/* phone */
-@media(max-width:680px){
-  .shell,
-  .topbar .shell{
-    padding-inline:34px !important;
-  }
-
-  /* timeline becomes a vertical editorial list */
-  .timeline{
-    padding-inline:0;
-    margin:34px 0 42px;
-  }
-  .timeline-track{
-    display:block;
-  }
-  .milestone{
-    display:grid;
-    grid-template-columns:38px minmax(0,1fr);
-    gap:0 16px;
-    text-align:left;
-    padding:0 0 26px;
-  }
-  .milestone + .milestone{
-    padding-top:2px;
-  }
-  .milestone-dot{
-    grid-column:1;
-    grid-row:1 / span 3;
-    width:32px;
-    height:32px;
-    margin:0;
-  }
-  .milestone-copy{
-    grid-column:2;
-  }
-  .milestone time{
-    font-size:10px;
-    margin-top:0;
-  }
-  .milestone b{
-    font-size:16px;
-    margin:4px 0 3px;
-  }
-  .milestone span{
-    font-size:11.5px;
-  }
-  .between-note{
-    margin:0 0 48px;
-    padding:18px 0;
-    text-align:left;
-    border-top:1px solid rgba(65,55,48,.09);
-    border-bottom:1px solid rgba(65,55,48,.09);
-  }
-
-  .calendar-title-row{
-    display:block;
-    margin-bottom:20px;
-  }
-  .calendar-title-row p{
-    margin-top:8px;
-  }
-  .calendar-body{
-    overflow:visible;
-  }
-  .calendar-layout{
-    display:block;
-    width:100%;
-  }
-  .calendar-sheet{
-    width:100%;
-    padding:20px 15px 17px;
-    border-radius:25px;
-  }
-  .calendar-sheet + .calendar-sheet{
-    margin-top:18px;
-  }
-  .month-head{
-    align-items:center;
-    margin-bottom:15px;
-  }
-  .month-head h3{
-    font-size:18px;
-  }
-  .month-head span{
-    font-size:8px;
-    letter-spacing:.09em;
-  }
-  .week{
-    gap:0;
-  }
-  .week div{
-    font-size:9px;
-  }
-  .days{
-    gap:3px;
-  }
-  .day{
-    min-height:55px;
-    padding:5px 1px 4px;
-    border-radius:13px;
-    gap:2px;
-  }
-  .date-dot{
-    width:23px;
-    height:23px;
-    font-size:9.5px;
-  }
-  .day-label{
-    font-size:6.9px;
-    line-height:1.15;
-    word-break:break-word;
-  }
-  .legend{
-    gap:7px 12px;
-    font-size:8.8px;
-  }
-  .calendar-side{
-    margin-top:16px;
-    width:100%;
-  }
-  .detail-card{
-    width:100%;
-  }
-}
-
-@media(max-width:390px){
-  .shell,
-  .topbar .shell{
-    padding-inline:30px !important;
-  }
-  .calendar-sheet{
-    padding-inline:13px;
-  }
-  .day-label{
-    font-size:6.5px;
-  }
-}
-
-
-/* creative positioning */
+/* Home */
 .manifesto{
-  margin:6px auto 0;
-  padding:32px 0 6px;
-  border-top:1px solid rgba(65,55,48,.08);
-  border-bottom:1px solid rgba(65,55,48,.08);
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(34rem 22rem at 12% 20%, rgba(238,188,162,.30), transparent 68%),
+    radial-gradient(28rem 20rem at 86% 82%, rgba(232,209,184,.26), transparent 70%),
+    linear-gradient(180deg,#fbefe7 0%,#f7e8de 100%);
+  color:var(--ink);
+  padding:58px 0;
+  border-top:1px solid rgba(64,53,47,.055);
+  border-bottom:1px solid rgba(64,53,47,.055);
 }
+.manifesto .eyebrow{color:#a16f59;margin-bottom:13px}
 .manifesto-quote{
   font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;
-  font-size:clamp(24px,3.2vw,34px);
-  line-height:1.65;
-  letter-spacing:.07em;
-  color:#5a493f;
-  margin:0 0 12px;
+  font-size:clamp(25px,3.4vw,38px);
+  line-height:1.58;
+  letter-spacing:.065em;
+  margin-bottom:16px;
+  color:#57463d;
 }
 .manifesto p{
-  max-width:660px;
-  margin:0;
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.95;
+  font-size:13.5px;
+  line-height:2;
+  color:#75675f;
+  max-width:680px;
 }
+
+.state-list{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.state{
+  padding:24px 0 0;border-top:2px solid rgba(185,123,102,.38)
+}
+.state:nth-child(2){border-color:rgba(130,150,111,.42)}
+.state:nth-child(3){border-color:rgba(157,119,129,.42)}
+.state h3{font-size:20px;line-height:1.55;margin-bottom:8px}
+.state p{font-size:13px;color:var(--text)}
+
+.language-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.language-card{
+  border-radius:var(--radius-lg);padding:28px 25px;min-height:245px;
+  border:1px solid rgba(64,53,47,.06);box-shadow:var(--shadow)
+}
+.language-card:nth-child(1){background:linear-gradient(145deg,#f4d7c8 0%,#fbebe3 100%)}
+.language-card:nth-child(2){background:linear-gradient(145deg,#dbe8cf 0%,#eef4e8 100%)}
+.language-card:nth-child(3){background:linear-gradient(145deg,#e9d1d9 0%,#f7e8ed 100%)}
+.language-icon{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.68);margin-bottom:20px}
+.language-card h3{font-size:20px;line-height:1.55;margin-bottom:9px}
+.language-card p{font-size:13px;line-height:1.95;color:#675a53}
+
+.outcome-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 42px}
+.outcome{padding:25px 0;border-top:1px solid var(--line)}
+.outcome:nth-child(-n+2){border-top:0}
+.outcome small{display:block;font-size:9px;font-weight:850;letter-spacing:.16em;color:#a07d69;margin-bottom:8px}
+.outcome h3{font-size:18px;margin-bottom:7px}
+.outcome p{font-size:13px;line-height:1.9;color:var(--text)}
+
+/* Journey */
+.timeline{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:22px;
+  margin:46px 0 38px;position:relative
+}
+.timeline:before{content:"";position:absolute;left:8%;right:8%;top:17px;height:1px;background:rgba(64,53,47,.13)}
+.stop{position:relative;z-index:1;text-align:center}
+.stop-dot{width:36px;height:36px;margin:0 auto 15px;border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:800;border:1px solid rgba(64,53,47,.08)}
+.stop:nth-child(1) .stop-dot{background:var(--peach)}
+.stop:nth-child(2) .stop-dot{background:var(--sage)}
+.stop:nth-child(3) .stop-dot{background:var(--rose)}
+.stop:nth-child(4) .stop-dot{background:var(--amber)}
+.stop time{font-size:10px;font-weight:800;letter-spacing:.10em;color:#8c776a}
+.stop h3{font-size:17px;line-height:1.55;margin:5px 0}
+.stop p{font-size:11px;color:var(--muted)}
+.rhythm-note{
+  max-width:760px;margin:0 auto 66px;padding:19px 22px;border-radius:18px;
+  background:#fffdfa;border:1px solid rgba(64,53,47,.07);
+  font-size:13px;line-height:1.85;color:#6f625a;text-align:center
+}
+.calendar-heading{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:23px}
+.calendar-heading h2{font-size:30px;letter-spacing:.04em}
+.calendar-heading p{font-size:12px;color:var(--text);max-width:400px;text-align:right}
+.calendar-layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:26px;align-items:start}
+.calendar-stack{display:grid;gap:18px;min-width:0}
+.month-card{background:#fffdfa;border:1px solid rgba(64,53,47,.07);border-radius:var(--radius-lg);padding:24px 21px 20px;box-shadow:0 12px 34px rgba(83,62,49,.04);min-width:0}
+.month-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:16px}
+.month-head h3{font-size:20px}
+.month-head span{font-size:9px;letter-spacing:.13em;color:var(--muted)}
+.week,.days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));width:100%}
+.week{margin-bottom:6px}
+.week div{text-align:center;font-size:9px;color:#9b8b80}
+.days{gap:6px}
+.day{min-width:0;min-height:63px;border-radius:16px;padding:6px 2px;display:flex;flex-direction:column;align-items:center;gap:3px}
+.day.event{cursor:pointer}
+.day.event:hover{background:rgba(255,255,255,.65)}
+.date-dot{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:10px}
+.day.course .date-dot{background:var(--peach)}
+.day.check .date-dot{background:var(--sage)}
+.day.rest .date-dot{border:1px solid rgba(185,147,84,.24)}
+.day.reflect .date-dot{background:var(--amber)}
+.day.dinner .date-dot{background:var(--rose)}
+.day-label{font-size:7.6px;line-height:1.15;text-align:center;color:#7f7168;overflow-wrap:anywhere}
+.legend{display:flex;flex-wrap:wrap;gap:8px 12px;margin-top:13px;font-size:9px;color:#8c7c72}
+.legend i{display:inline-block;width:8px;height:8px;border-radius:50%;vertical-align:middle;margin-right:5px}
+.calendar-side{position:sticky;top:105px}
+.detail-card{border-radius:var(--radius-lg);padding:22px 20px;background:linear-gradient(145deg,#fff8f3,#f7ece4);border:1px solid rgba(64,53,47,.06)}
+.detail-date{font-size:9px;font-weight:850;letter-spacing:.14em;color:#9a7968}
+.detail-card h3{font-size:18px;line-height:1.55;margin:7px 0 5px}
+.detail-card p{font-size:12px;line-height:1.85;color:var(--text)}
+
+/* Gatherings */
+.gathering-list{display:grid;gap:18px}
+.gathering{border-radius:var(--radius-lg);overflow:hidden;border:1px solid rgba(64,53,47,.07);box-shadow:0 14px 40px rgba(83,62,49,.045)}
+.gathering:nth-child(1){background:linear-gradient(145deg,#fff8f4,#f2d7c8)}
+.gathering:nth-child(2){background:linear-gradient(145deg,#fbfdf8,#dce8d1)}
+.gathering:nth-child(3){background:linear-gradient(145deg,#fff9fb,#ead3da)}
+.gathering summary{list-style:none;display:grid;grid-template-columns:84px 1fr auto;gap:18px;align-items:center;padding:27px 28px;cursor:pointer}
+.gathering summary::-webkit-details-marker{display:none}
+.g-date{font-size:10px;font-weight:850;letter-spacing:.12em;color:#92786a}
+.g-name{font-size:13px;font-weight:800;color:#65574f;margin-bottom:4px}
+.g-topic{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-size:25px;line-height:1.45}
+.plus{font-size:22px;color:#9b897f;font-weight:300;transition:.2s}
+.gathering[open] .plus{transform:rotate(45deg)}
+.gathering-detail{padding:0 28px 28px 130px;border-top:1px solid rgba(64,53,47,.07)}
+.gathering-detail .intro{padding-top:20px;font-size:13px;line-height:1.95;color:#675a53}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:20px}
+.detail-block{padding-top:13px;border-top:1px solid rgba(64,53,47,.09)}
+.detail-block b{font-size:10px;letter-spacing:.08em;color:#80675c}
+.detail-block p{font-size:12.5px;line-height:1.85;color:var(--text);margin-top:6px}
+.takeaway{margin-top:20px;padding-top:14px;border-top:1px solid rgba(64,53,47,.09);font-size:13px}
+
+/* Companions */
+.companion-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.companion{border-radius:var(--radius-lg);padding:30px 26px;min-height:345px;display:flex;flex-direction:column;border:1px solid rgba(64,53,47,.06);box-shadow:var(--shadow)}
+.companion:nth-child(1){background:linear-gradient(150deg,#fff9f5,#f1d5c7)}
+.companion:nth-child(2){background:linear-gradient(150deg,#fcfdf9,#dbe7cf)}
+.companion:nth-child(3){background:linear-gradient(150deg,#fff9fb,#ead3da)}
+.companion-symbol{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.7);margin-bottom:20px}
+.companion-role{font-size:9px;font-weight:850;letter-spacing:.10em;color:#8a6f61;margin-bottom:8px}
+.companion h3{font-size:28px;margin-bottom:11px}
+.companion p{font-size:12.8px;line-height:1.95;color:#675a53}
+.companion-way{margin-top:auto;padding-top:17px;border-top:1px solid rgba(64,53,47,.09);font-size:10.5px;color:#806f65}
+
+/* Info */
+.price-wrap{display:grid;grid-template-columns:.82fr 1.18fr;gap:44px;align-items:start}
+.price-label{font-size:9px;font-weight:850;letter-spacing:.14em;color:#987664}
+.price{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-size:58px;line-height:1.1;margin:9px 0 8px}
+.price small{font-size:14px;color:#8a7a71}
+.opening{font-size:12px;color:#6f625a}
+.includes{border-top:1px solid var(--line)}
+.include{display:grid;grid-template-columns:20px 1fr;gap:10px;padding:15px 0;border-bottom:1px solid var(--line);font-size:13px;color:#62564f}
+.tick{width:18px;height:18px;border-radius:50%;display:grid;place-items:center;background:var(--sage);font-size:9px;font-weight:900}
+.info-note{font-size:11px;line-height:1.8;color:#88786e;margin-top:17px}
+.faq{margin-top:70px}
+.faq-list{border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item summary{list-style:none;display:flex;justify-content:space-between;gap:20px;padding:20px 0;cursor:pointer;font-size:14px;font-weight:760}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-plus{font-size:20px;font-weight:300;color:#9c8b80;transition:.2s}
+.faq-item[open] .faq-plus{transform:rotate(45deg)}
+.faq-answer{padding:0 34px 20px 0;font-size:12.8px;line-height:1.9;color:var(--text)}
+footer{padding:60px 0 38px;text-align:center;font-size:10px;color:#95867c;letter-spacing:.06em}
+
+/* Tablet */
+@media(max-width:900px){
+  .container{padding-inline:48px}
+  .state-list,.language-grid,.companion-grid{grid-template-columns:1fr}
+  .timeline{grid-template-columns:repeat(2,1fr)}
+  .timeline:before{display:none}
+  .calendar-layout{grid-template-columns:1fr}
+  .calendar-side{position:static}
+  .price-wrap{grid-template-columns:1fr;gap:28px}
+}
+
+/* Mobile */
 @media(max-width:680px){
-  .manifesto{padding:28px 0 4px}
-  .manifesto-quote{font-size:21px;line-height:1.75;letter-spacing:.075em}
-  .manifesto p{font-size:13px;line-height:2}
+  .container{padding-inline:32px}
+  .header-inner{padding-inline:30px}
+  .brand-row{padding-top:1px}
+  .brand{font-size:13px}
+  .nav{gap:22px;padding:12px 0 11px}
+  .nav-btn{font-size:11px}
+
+  .page-hero{padding:64px 0 50px}
+  .page-hero h1{font-size:36px;line-height:1.38;letter-spacing:.075em;margin-bottom:18px}
+  .page-hero h2{font-size:27px;line-height:1.5}
+  .page-hero .intro{font-size:13.5px;line-height:2}
+  .facts{display:grid;grid-template-columns:1fr;gap:9px;margin-top:26px;padding-top:18px}
+  .fact strong{font-size:14px}
+
+  .section{padding:70px 0}
+  .section-head{margin-bottom:28px}
+  .section-head h2{font-size:23px;line-height:1.55;margin-bottom:10px}
+  .section-head p{font-size:12.8px;line-height:1.95}
+  .manifesto{padding:42px 0}
+  .manifesto-quote{font-size:21px;line-height:1.75}
+  .manifesto p{font-size:12.8px;line-height:2}
+
+  .state-list{gap:0}
+  .state{padding:21px 0;border-top-width:1px!important}
+  .state:first-child{padding-top:0;border-top:0!important}
+  .state h3{font-size:17px}
+  .state p{font-size:12.5px;line-height:1.9}
+
+  .language-grid{gap:14px}
+  .language-card{padding:23px 21px;min-height:0;border-radius:24px}
+  .language-card h3{font-size:17px}
+  .language-card p{font-size:12.4px}
+
+  .outcome-grid{grid-template-columns:1fr;gap:0}
+  .outcome{padding:21px 0;border-top:1px solid var(--line)!important}
+  .outcome:first-child{border-top:0!important}
+  .outcome h3{font-size:16px}
+  .outcome p{font-size:12.4px}
+
+  .timeline{display:block;margin:33px 0 30px}
+  .stop{display:grid;grid-template-columns:36px 1fr;gap:0 15px;text-align:left;padding-bottom:25px}
+  .stop-dot{grid-row:1 / span 4;margin:0;width:32px;height:32px}
+  .stop h3{font-size:16px;margin:3px 0}
+  .stop p{font-size:11px}
+  .rhythm-note{margin-bottom:48px;padding:17px 18px;font-size:12px;text-align:left}
+  .calendar-heading{display:block;margin-bottom:18px}
+  .calendar-heading h2{font-size:22px}
+  .calendar-heading p{text-align:left;margin-top:7px;font-size:11.5px}
+  .month-card{padding:20px 15px 17px;border-radius:24px}
+  .month-head h3{font-size:18px}
+  .month-head span{font-size:8px}
+  .days{gap:3px}
+  .day{min-height:55px;padding:5px 1px;border-radius:13px}
+  .date-dot{width:23px;height:23px;font-size:9.5px}
+  .day-label{font-size:6.6px}
+  .legend{font-size:8.5px}
+  .detail-card{padding:17px 17px;border-radius:22px}
+  .detail-card h3{font-size:16px}
+  .detail-card p{font-size:12px}
+
+  .gathering-list{gap:15px}
+  .gathering{border-radius:24px}
+  .gathering summary{grid-template-columns:1fr auto;gap:7px 13px;padding:23px 21px}
+  .g-date{grid-column:1/-1;font-size:9px;margin-bottom:4px}
+  .g-name{font-size:11px;margin-bottom:7px}
+  .g-topic{font-size:18px;line-height:1.55}
+  .plus{font-size:18px;margin-top:13px}
+  .gathering-detail{padding:0 21px 23px}
+  .gathering-detail .intro{font-size:12px}
+  .detail-grid{grid-template-columns:1fr;gap:12px}
+  .detail-block p{font-size:12px}
+  .takeaway{font-size:12px}
+
+  .companion-grid{gap:15px}
+  .companion{padding:24px 21px;min-height:0;border-radius:24px}
+  .companion h3{font-size:23px}
+  .companion p{font-size:12.2px}
+  .companion-way{font-size:10px}
+
+  .price{font-size:48px}
+  .include{font-size:12px;line-height:1.75}
+  .faq{margin-top:55px}
+  .faq-item summary{font-size:12.8px;padding:18px 0}
+  .faq-answer{font-size:12px;padding-right:12px}
 }
-
-
-/* stronger color distinction for tinted cards */
-.mode-card:nth-child(1){
-  background:linear-gradient(155deg, rgba(246,220,208,.98), rgba(255,245,239,.92));
-  border-color:rgba(192,142,118,.14);
-}
-.mode-card:nth-child(2){
-  background:linear-gradient(155deg, rgba(225,236,213,.98), rgba(246,250,239,.92));
-  border-color:rgba(132,154,110,.14);
-}
-.mode-card:nth-child(3){
-  background:linear-gradient(155deg, rgba(238,220,226,.98), rgba(252,244,247,.92));
-  border-color:rgba(168,129,143,.14);
-}
-
-.gathering:nth-child(1){
-  background:linear-gradient(150deg, rgba(255,248,244,.95), rgba(244,221,210,.82));
-  border-color:rgba(191,145,121,.14);
-}
-.gathering:nth-child(2){
-  background:linear-gradient(150deg, rgba(252,254,249,.95), rgba(228,237,216,.84));
-  border-color:rgba(134,153,113,.14);
-}
-.gathering:nth-child(3){
-  background:linear-gradient(150deg, rgba(255,249,251,.95), rgba(239,223,228,.84));
-  border-color:rgba(169,131,145,.14);
-}
-
-.companion:nth-child(1){
-  background:linear-gradient(155deg, rgba(255,248,244,.96), rgba(243,220,209,.84));
-  border-color:rgba(191,145,121,.14);
-}
-.companion:nth-child(2){
-  background:linear-gradient(155deg, rgba(252,254,249,.96), rgba(227,236,214,.86));
-  border-color:rgba(134,153,113,.14);
-}
-.companion:nth-child(3){
-  background:linear-gradient(155deg, rgba(255,249,251,.96), rgba(238,221,227,.86));
-  border-color:rgba(169,131,145,.14);
-}
-
-.mode-icon,
-.companion-symbol{
-  background:rgba(255,255,255,.84);
-  box-shadow:0 4px 14px rgba(84,63,50,.05);
-}
-
-@media(max-width:680px){
-  .mode-card:nth-child(1),
-  .gathering:nth-child(1),
-  .companion:nth-child(1){
-    background:linear-gradient(160deg, rgba(255,249,246,.96), rgba(243,220,209,.82));
-  }
-  .mode-card:nth-child(2),
-  .gathering:nth-child(2),
-  .companion:nth-child(2){
-    background:linear-gradient(160deg, rgba(252,254,249,.96), rgba(227,236,214,.84));
-  }
-  .mode-card:nth-child(3),
-  .gathering:nth-child(3),
-  .companion:nth-child(3){
-    background:linear-gradient(160deg, rgba(255,249,251,.96), rgba(238,221,227,.84));
-  }
-}
-
-
-/* ===== Global safe-area refinement ===== */
-:root{
-  --page-gutter-desktop: clamp(42px, 6.5vw, 84px);
-  --page-gutter-mobile: 32px;
-}
-
-/* 全站外框不要貼邊 */
-.shell{
-  width:100%;
-  max-width:1100px;
-  margin-inline:auto;
-  padding-inline:var(--page-gutter-desktop) !important;
-}
-
-/* 主要閱讀區再收窄一點 */
-.narrow{
-  width:100%;
-  max-width:780px;
-  margin-inline:auto;
-}
-
-/* 卡片群組不要碰到 shell 邊界 */
-.three-cards,
-.companion-grid,
-.gathering-list,
-.outcomes,
-.timeline,
-.calendar-layout,
-.price-layout,
-.faq-list{
-  width:100%;
-  max-width:100%;
-  margin-inline:auto;
-}
-
-/* 頁首導覽也保留安全距離 */
-.topbar .shell{
-  padding-inline:var(--page-gutter-desktop) !important;
-}
-
-/* 桌機版內容不要拉太滿 */
-@media(min-width:1100px){
-  #page-home .shell,
-  #page-gatherings .shell,
-  #page-companions .shell,
-  #page-info .shell{
-    max-width:1060px;
-  }
-}
-
-/* 手機版：真正留出呼吸空間 */
-@media(max-width:680px){
-  .shell,
-  .topbar .shell{
-    padding-left:var(--page-gutter-mobile) !important;
-    padding-right:var(--page-gutter-mobile) !important;
-  }
-
-  .hero,
-  .home-block,
-  .journey-wrap,
-  .gatherings,
-  .companions,
-  .info{
-    width:100%;
-  }
-
-  .three-cards,
-  .companion-grid,
-  .gathering-list,
-  .outcomes,
-  .calendar-layout,
-  .price-layout,
-  .faq-list{
-    width:100%;
-    max-width:100%;
-  }
-
-  .mode-card,
-  .companion,
-  .gathering,
-  .calendar-sheet,
-  .detail-card,
-  .price-box,
-  .faq-item{
-    width:100%;
-    max-width:100%;
-    margin-inline:auto;
-  }
-
-  /* 卡片內部也增加安全距離 */
-  .mode-card{
-    padding:24px 22px;
-  }
-  .companion{
-    padding:26px 23px;
-  }
-  .gathering summary{
-    padding-left:22px;
-    padding-right:22px;
-  }
-  .gathering-detail{
-    padding-left:22px;
-    padding-right:22px;
-  }
-
-  /* 大段落和螢幕邊緣之間維持一致 */
-  .section-head,
-  .hero-inner,
-  .manifesto,
-  .between-note,
-  .calendar-title-row{
-    width:100%;
-    max-width:100%;
-  }
-}
-
-/* 小型手機仍至少保留 28px */
 @media(max-width:390px){
-  :root{ --page-gutter-mobile: 28px; }
+  .container{padding-inline:29px}
+  .header-inner{padding-inline:27px}
 }
 
+/* Hard overflow guard */
+html,body,.page,.container,.calendar-layout,.month-card,.week,.days{min-width:0;max-width:100%}
+img,svg,video{max-width:100%;height:auto}
 </style>
 </head>
 <body>
-<header class="topbar">
-  <div class="shell topbar-inner">
-    <div class="brand"><span class="brand-dot"></span><span>初星心練習</span></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand-row">
+      <div class="brand"><span class="brand-dot"></span><span>初星心練習</span></div>
+    </div>
     <nav class="nav" aria-label="網站導覽">
       <button class="nav-btn active" data-page="home">首頁</button>
       <button class="nav-btn" data-page="journey">六週怎麼走</button>
@@ -1114,112 +405,128 @@ img, svg, video, canvas{
 </header>
 
 <main>
-
-<section class="page active" id="page-home" data-page="home">
-  <div class="shell">
-    <section class="hero narrow">
-      <div class="hero-inner">
-        <div class="eyebrow">2026 秋季</div>
-        <h1>初星心練習</h1>
-        <div class="hero-sub"><span class="hero-season">第一季｜</span><span class="hero-sub-main">用創作，看見現在的自己</span></div>
-        <p class="lead">這六週，不急著找到答案，也不需要很會畫、很會寫。從顏色、自由書寫與繪畫開始，讓想像力有地方出去，也看看自己會做出什麼。</p>
-        <div class="meta-row"><span>6 週</span><span>3 場線上創作小聚＋1 次圓滿分享會</span><span>6–12 人精緻小群</span></div>
-        <div class="hero-links"><button class="text-link primary" data-go="journey">看看這六週怎麼走</button><button class="text-link" data-go="gatherings">看看三場創作小聚</button></div>
-      </div>
-    </section>
-
-    <section class="manifesto narrow">
-      <div class="eyebrow">A CREATIVE WAY OF BEING</div>
-      <p class="manifesto-quote">做自己，是一場持續進行的創作。</p>
-      <p>我們每天怎麼選、喜歡什麼、留下什麼，本來就在一點一點創作自己。初星心練習不是要教你成為藝術家，而是替創作留一個入口，讓你真的開始做，也從作品裡多看見自己一點。</p>
-    </section>
-
-    <section class="home-block narrow">
-      <div class="section-head">
-        <div class="eyebrow">MAYBE THIS IS YOU</div>
-        <h2>也許你只是想，重新把創作放回生活裡</h2>
-      </div>
-      <div class="soft-state">
-        <div class="state-line"><b>有很多想法，卻很少真的做出來</b><span>不是沒有創意，只是總覺得要等靈感、等時間、等自己準備好。</span></div>
-        <div class="state-line"><b>喜歡顏色、文字、畫面</b><span>但平常很少給自己一段時間，只為了玩、試、做一個自己的東西。</span></div>
-        <div class="state-line"><b>想看看自己會創作出什麼</b><span>不追求專業作品，只想多一點想像、多一點自由，也多看見自己一點。</span></div>
-      </div>
-    </section>
-
-    <section class="home-block">
-      <div class="section-head narrow">
-        <div class="eyebrow">3 CREATIVE LANGUAGES</div>
-        <h2>三種創作語言，三種開始的方式</h2>
-        <p>不用先證明自己有創意。給自己一個媒介、一點限制、一段時間，創作就可以開始。</p>
-      </div>
-      <div class="three-cards">
-        <article class="mode-card"><div class="mode-icon">●</div><h3>用顏色，把感覺做成畫面</h3><p>從一個有感覺的顏色開始，選字、排版、組合，完成一張屬於自己的桌布。</p></article>
-        <article class="mode-card"><div class="mode-icon">◌</div><h3>用文字，把腦中的東西寫下來</h3><p>不用文筆，也不急著整理。先讓片段、念頭和句子落到紙上，再看看哪些文字像你。</p></article>
-        <article class="mode-card"><div class="mode-icon">✦</div><h3>用繪畫，讓想像力自由長出來</h3><p>不追求畫得漂亮。從顏色、線條和形狀開始，讓畫面慢慢長成只有你會做出的樣子。</p></article>
-      </div>
-    </section>
-
-    <section class="home-block narrow">
-      <div class="section-head">
-        <div class="eyebrow">WHAT YOU CREATE</div>
-        <h2>六週後，你會留下什麼？</h2>
-        <p>最重要的不是「更懂自己多少」，而是你真的創作了，而且開始知道自己喜歡怎麼創作。</p>
-      </div>
-      <div class="outcomes">
-        <div class="outcome"><small>CREATE</small><h3>完成三份自己的作品</h3><p>一張色彩桌布、一段自由書寫，以及一幅繪畫創作。</p></div>
-        <div class="outcome"><small>START</small><h3>練習不用想完整，也能開始</h3><p>從小小的限制與提示開始，讓「我不知道要做什麼」變成「我先做一點看看」。</p></div>
-        <div class="outcome"><small>STYLE</small><h3>發現自己的創作偏好</h3><p>你可能開始注意到自己喜歡的顏色、文字節奏、畫面感，或最容易進入創作的方式。</p></div>
-        <div class="outcome"><small>SEE</small><h3>從作品裡，多看見自己一點</h3><p>不是替作品下結論，而是回頭看看：原來現在的我，會選這些、寫這些、畫出這些。</p></div>
-      </div>
-    </section>
-  </div>
-</section>
-
-
-<section class="page" id="page-journey" data-page="journey">
-  <div class="shell journey-wrap">
-    <div class="section-head narrow">
-      <div class="eyebrow">THE 6-WEEK RHYTHM</div>
-      <h2>六週怎麼走</h2>
-      <p>每兩週一場創作小聚。課後的一週，讓作品繼續長一點、玩一點、改一點，也可以在群組分享；下一週留白，再進入下一種創作語言。</p>
-    </div>
-
-    <div class="timeline">
-      <div class="timeline-track">
-        <div class="milestone"><div class="milestone-dot">01</div><div class="milestone-copy"><time>09.25 FRI</time><b>色彩視覺｜把感覺做成畫面</b><span>色彩 × Canva 個人桌布</span></div></div>
-        <div class="milestone"><div class="milestone-dot">02</div><div class="milestone-copy"><time>10.09 FRI</time><b>自由書寫｜讓念頭落到紙上</b><span>NIKI 自由書寫 × 教練式提問</span></div></div>
-        <div class="milestone"><div class="milestone-dot">03</div><div class="milestone-copy"><time>10.23 FRI</time><b>繪畫創作｜讓想像力長出來</b><span>宗芸 自由繪畫創作</span></div></div>
-        <div class="milestone"><div class="milestone-dot">04</div><div class="milestone-copy"><time>11.06 FRI</time><b>圓滿｜分享六週收穫</b><span>分享作品、心得與六週收穫</span></div></div>
-      </div>
-    </div>
-
-    <div class="between-note"><b>每場之後：</b> 一週沉澱及創作交流（每天一個 3–5 分鐘的創作延伸，自由參與） → 一週留白 → 再進入下一場。</div>
-
-    <section class="calendar-visible">
-      <div class="calendar-title-row"><div><div class="eyebrow">CALENDAR</div><h3>詳細月曆</h3></div><p>每堂後的一週都有輕量創作延伸，直接放進月曆裡；點日期就能看完整題目。</p></div>
-      <div class="calendar-body">
-        <div class="calendar-layout">
-          <div class="calendar-stack">
-            <div class="calendar-sheet"><div class="month-head"><h3>2026 · 9 月</h3><span>SEPTEMBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="sepDays"></div><div class="legend"><span><i style="background:var(--terra-pale)"></i>線上小聚</span><span><i style="background:var(--sage-pale)"></i>創作交流</span></div></div>
-            <div class="calendar-sheet"><div class="month-head"><h3>2026 · 10 月</h3><span>OCTOBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="octDays"></div><div class="legend"><span><i style="background:var(--terra-pale)"></i>線上小聚</span><span><i style="background:var(--sage-pale)"></i>創作交流</span><span><i style="border:1px solid rgba(195,154,92,.28)"></i>一週留白</span></div></div>
-            <div class="calendar-sheet"><div class="month-head"><h3>2026 · 11 月</h3><span>NOVEMBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="novDays"></div><div class="legend"><span><i style="background:var(--amber-pale)"></i>圓滿分享會</span><span><i style="background:var(--rose-pale)"></i>自由聚餐</span></div></div>
-          </div>
-          <aside class="calendar-side"><div class="detail-card"><div class="detail-date" id="detailDate">點選有顏色的日期</div><h3 id="detailTitle">當天的課程／創作交流</h3><p id="detailDesc">點一下月曆中的日期，就能看到當天完整的引導。</p></div></aside>
+<!-- HOME -->
+<section class="page active" data-page="home">
+  <section class="page-hero peach">
+    <div class="container">
+      <div class="page-hero-inner">
+        <div class="eyebrow">2026 秋季 · 第一季</div>
+        <div class="kicker">初星心練習</div>
+        <h1>用創作，看見自己</h1>
+        <p class="intro">給想做點什麼、希望更發揮創意，卻總被生活排到後面的人。六週，從色彩、自由書寫與繪畫開始，真的做出作品，也從創作裡多了解自己一點。</p>
+        <div class="facts">
+          <div class="fact"><strong>6 週</strong><span>一季</span></div>
+          <div class="fact"><strong>3 場</strong><span>線上創作小聚</span></div>
+          <div class="fact"><strong>6–12 人</strong><span>精緻小群</span></div>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
+
+  <section class="manifesto">
+    <div class="container">
+      <div class="read">
+        <div class="eyebrow">CREATION × SELF-AWARENESS</div>
+        <p class="manifesto-quote">做自己，是一場持續進行的創作。</p>
+        <p>我們每天怎麼選、喜歡什麼、留下什麼，本來就在一點一點創作自己。初星心練習替創作留一個入口：先做，再回頭看看自己的選擇、偏好、卡點與節奏。創作，也可以成為認識自己的一種方式。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head read">
+        <div class="eyebrow">MAYBE THIS IS YOU</div>
+        <h2>也許你一直想做點什麼</h2>
+        <p>不是沒有想法，只是生活總有更急的事。創作被放到最後，也很少有一段時間讓自己純粹地玩、試、做。</p>
+      </div>
+      <div class="state-list">
+        <article class="state"><h3>想創作，卻總是沒有真的開始</h3><p>想寫、想畫、想做點什麼，但一直等時間、等靈感、等自己準備好。</p></article>
+        <article class="state"><h3>希望自己更發揮創意</h3><p>想讓想像力多一點出口，也想試試不同媒介，不只停在腦中想。</p></article>
+        <article class="state"><h3>也想透過創作，多了解自己</h3><p>不做心理分析，只是回頭看看：原來我會這樣選、這樣寫、這樣創造。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft-peach">
+    <div class="container">
+      <div class="section-head read">
+        <div class="eyebrow">3 CREATIVE LANGUAGES</div>
+        <h2>三種創作語言，三種開始方式</h2>
+        <p>不用先證明自己有創意。給自己一個媒介、一點限制、一段時間，創作就可以開始。</p>
+      </div>
+      <div class="language-grid">
+        <article class="language-card"><div class="language-icon">●</div><h3>色彩視覺</h3><p>從一個有感覺的顏色開始，把一句話、色彩與版面組合成自己的畫面。</p></article>
+        <article class="language-card"><div class="language-icon">◌</div><h3>自由書寫</h3><p>不用文筆，讓片段、念頭與句子先落到紙上，再看看哪些文字最像自己。</p></article>
+        <article class="language-card"><div class="language-icon">✦</div><h3>繪畫創作</h3><p>不用先想好要畫什麼，從顏色、線條與形狀開始，讓畫面慢慢長出來。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head read">
+        <div class="eyebrow">WHAT YOU TAKE WITH YOU</div>
+        <h2>六週後，你會留下什麼？</h2>
+        <p>創作是主要體驗，自我覺察是回看。先真的做，再從作品與過程裡多認識自己一點。</p>
+      </div>
+      <div class="outcome-grid read">
+        <div class="outcome"><small>CREATE</small><h3>完成三份自己的作品</h3><p>一張色彩桌布、一段自由書寫，以及一幅繪畫創作。</p></div>
+        <div class="outcome"><small>START</small><h3>練習不用想完整，也能開始</h3><p>從小小的提示與限制開始，把「不知道做什麼」變成「先做一點看看」。</p></div>
+        <div class="outcome"><small>STYLE</small><h3>發現自己的創作偏好</h3><p>注意自己喜歡的顏色、文字節奏、畫面感，和最容易進入創作的方式。</p></div>
+        <div class="outcome"><small>NOTICE</small><h3>從創作裡，練習覺察自己</h3><p>回看自己的選擇、卡點與節奏：原來我會這樣創作，也原來這些很像我。</p></div>
+      </div>
+    </div>
+  </section>
 </section>
 
+<!-- JOURNEY -->
+<section class="page" data-page="journey">
+  <section class="page-hero sage">
+    <div class="container"><div class="page-hero-inner">
+      <div class="eyebrow">THE 6-WEEK RHYTHM</div>
+      <h2>六週怎麼走</h2>
+      <p class="intro">每兩週一場創作小聚。每場課後由青青帶 7 天創作打卡：每天一個小創作，再回看自己的選擇、偏好與節奏；下一週留白，再進入下一種創作語言。</p>
+    </div></div>
+  </section>
 
-<section class="page" id="page-gatherings" data-page="gatherings">
-  <div class="shell gatherings">
-    <div class="section-head narrow">
+  <section class="section">
+    <div class="container">
+      <div class="timeline">
+        <div class="stop"><div class="stop-dot">01</div><time>09.25 FRI</time><h3>色彩視覺</h3><p>Canva 個人桌布</p></div>
+        <div class="stop"><div class="stop-dot">02</div><time>10.09 FRI</time><h3>自由書寫</h3><p>NIKI 文字創作</p></div>
+        <div class="stop"><div class="stop-dot">03</div><time>10.23 FRI</time><h3>繪畫創作</h3><p>宗芸自由繪畫</p></div>
+        <div class="stop"><div class="stop-dot">04</div><time>11.06 FRI</time><h3>圓滿分享</h3><p>分享六週作品與收穫</p></div>
+      </div>
+      <div class="rhythm-note"><b>每場之後：</b> 7 天創作 × 自我覺察打卡（自由參與、不需補進度） → 一週留白 → 下一場。</div>
+
+      <div class="calendar-heading">
+        <div><div class="eyebrow">CALENDAR</div><h2>詳細月曆</h2></div>
+        <p>打卡題目直接放進月曆；點有顏色的日期，就能看到當天完整的創作與回看引導。</p>
+      </div>
+      <div class="calendar-layout">
+        <div class="calendar-stack">
+          <div class="month-card"><div class="month-head"><h3>2026 · 9 月</h3><span>SEPTEMBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="sepDays"></div><div class="legend"><span><i style="background:var(--peach)"></i>線上小聚</span><span><i style="background:var(--sage)"></i>7 天打卡</span></div></div>
+          <div class="month-card"><div class="month-head"><h3>2026 · 10 月</h3><span>OCTOBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="octDays"></div><div class="legend"><span><i style="background:var(--peach)"></i>線上小聚</span><span><i style="background:var(--sage)"></i>7 天打卡</span><span><i style="border:1px solid rgba(185,147,84,.35)"></i>留白週</span></div></div>
+          <div class="month-card"><div class="month-head"><h3>2026 · 11 月</h3><span>NOVEMBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="novDays"></div><div class="legend"><span><i style="background:var(--amber)"></i>圓滿分享</span><span><i style="background:var(--rose)"></i>自由聚餐</span></div></div>
+        </div>
+        <aside class="calendar-side"><div class="detail-card"><div class="detail-date" id="detailDate">點選有顏色的日期</div><h3 id="detailTitle">查看當天內容</h3><p id="detailDesc">每個有顏色的日期，都有一個可以點開的課程或創作打卡內容。</p></div></aside>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- GATHERINGS -->
+<section class="page" data-page="gatherings">
+  <section class="page-hero peach">
+    <div class="container"><div class="page-hero-inner">
       <div class="eyebrow">3 CREATIVE GATHERINGS</div>
       <h2>三場創作小聚</h2>
-      <p>不是技巧課，也不是作品評比。三位同行者各自帶一種創作語言，讓新手也能從一個小入口開始，真的做出自己的東西。</p>
-    </div>
-    <div class="gathering-list narrow">
+      <p class="intro">不是技巧課，也不是作品評比。三位同行者各帶一種創作語言，讓新手也能從一個小入口開始，真的做出自己的東西。</p>
+    </div></div>
+  </section>
+  <section class="section">
+    <div class="container"><div class="gathering-list read">
       <details class="gathering">
         <summary><div class="g-date">09.25</div><div><div class="g-name">青青｜社群主理人・色彩同行者</div><div class="g-topic">我的情緒，是什麼顏色？</div></div><div class="plus">＋</div></summary>
         <div class="gathering-detail"><p class="intro">從一個有感覺的顏色開始，把一句話、色彩和版面組合起來。Canva 只是工具，真正要練習的是：不用先想完整，也可以開始做。</p><div class="detail-grid"><div class="detail-block"><b>創作起點</b><p>從初心色譜選色，再找一句現在想留下的話。</p></div><div class="detail-block"><b>現場會做</b><p>選色、文字整理、Canva 排版與個人化調整。</p></div></div><div class="takeaway"><b>帶走｜</b>一張只有你會做出的個人桌布。</div></div>
@@ -1232,108 +539,159 @@ img, svg, video, canvas{
         <summary><div class="g-date">10.23</div><div><div class="g-name">宗芸｜創作同行者</div><div class="g-topic">不用說清楚，也可以畫出來</div></div><div class="plus">＋</div></summary>
         <div class="gathering-detail"><p class="intro">不追求畫得漂亮，也不用先想好「我要畫什麼」。從顏色、線條與形狀開始，讓畫面一點一點長出來。</p><div class="detail-grid"><div class="detail-block"><b>創作起點</b><p>給自己一些簡單限制，讓手先動起來。</p></div><div class="detail-block"><b>現場會做</b><p>自由繪畫、顏色與線條實驗、作品命名與回看。</p></div></div><div class="takeaway"><b>帶走｜</b>一幅屬於這段時間的自由創作。</div></div>
       </details>
-    </div>
-  </div>
+    </div></div>
+  </section>
 </section>
 
-
-
-<section class="page" id="page-companions" data-page="companions">
-  <div class="shell companions">
-    <div class="section-head narrow">
+<!-- COMPANIONS -->
+<section class="page" data-page="companions">
+  <section class="page-hero rose">
+    <div class="container"><div class="page-hero-inner">
       <div class="eyebrow">YOUR CREATIVE COMPANIONS</div>
       <h2>三位同行者，三種創作語言</h2>
-      <p>我們不替你定義作品，也不告訴你怎樣才算有創意。只是各自帶著熟悉的媒介，陪你找到一個比較容易開始的位置。</p>
-    </div>
-    <div class="companion-grid">
-      <article class="companion"><div class="companion-symbol">●</div><div class="companion-role">社群主理人・色彩同行者</div><h3>青青</h3><p>策展整季創作路徑，也負責第一場色彩與視覺創作。喜歡把抽象感覺變成看得見的東西，並在課程之間用輕量創作題目，陪大家讓作品繼續長出來。</p><div class="companion-way">色彩・視覺・創作引導・整季策展</div></article>
+      <p class="intro">我們不替你定義作品，也不告訴你怎樣才算有創意。只是各自帶著熟悉的媒介，陪你找到比較容易開始的位置。</p>
+    </div></div>
+  </section>
+  <section class="section soft-rose">
+    <div class="container"><div class="companion-grid">
+      <article class="companion"><div class="companion-symbol">●</div><div class="companion-role">社群主理人・色彩同行者</div><h3>青青</h3><p>策展整季創作路徑，也負責第一場色彩與視覺創作。三場課後的 7 天創作 × 自我覺察打卡，也由青青統一設計與引導。</p><div class="companion-way">色彩・視覺・創作引導・整季策展</div></article>
       <article class="companion"><div class="companion-symbol">◌</div><div class="companion-role">生命教練・自由書寫同行者</div><h3>NIKI</h3><p>把自由書寫當成一種創作語言。不是教你寫得漂亮，而是讓零碎念頭先落到紙上，再從文字裡慢慢找到自己的節奏與句子。</p><div class="companion-way">自由書寫・提問・文字創作</div></article>
-      <article class="companion"><div class="companion-symbol">✦</div><div class="companion-role">創作同行者</div><h3>宗芸</h3><p>用顏色、線條與自由繪畫陪大家開始創作。不需要畫技，也不要求作品一定要代表什麼；先讓想像力和手一起動起來。</p><div class="companion-way">繪畫・色彩・直覺創作</div></article>
-    </div>
-    <div class="companion-note narrow">作品不需要被解釋得很完整。你做出來的東西，本身就是一次和自己相遇。</div>
-  </div>
+      <article class="companion"><div class="companion-symbol">✦</div><div class="companion-role">創作同行者</div><h3>宗芸</h3><p>用顏色、線條與自由繪畫陪大家開始創作。不需要畫技，也不要求作品一定代表什麼；先讓想像力和手一起動起來。</p><div class="companion-way">繪畫・色彩・直覺創作</div></article>
+    </div></div>
+  </section>
 </section>
 
-
-<section class="page" id="page-info" data-page="info">
-  <div class="shell info">
-    <div class="section-head narrow">
+<!-- INFO -->
+<section class="page" data-page="info">
+  <section class="page-hero amber">
+    <div class="container"><div class="page-hero-inner">
       <div class="eyebrow">FOUNDING SEASON</div>
       <h2>第一季創始價</h2>
-      <p>先用一個低門檻的價格，完整走過這六週。</p>
-    </div>
-    <div class="price-block narrow">
-      <div class="price-big"><div class="price-label">完整一季</div><div class="price">NT$888 <small>／人</small></div><div class="opening"><b>6 人開班｜最多 12 人</b><br>維持可以看見彼此的精緻小群。</div></div>
-      <div><div class="includes"><div class="include"><span class="tick">✓</span><span>3 場週五晚上的線上創作小聚＋課程回放</span></div><div class="include"><span class="tick">✓</span><span>每場課後一週沉澱及創作交流＋六週學員 VIP 創作群</span></div><div class="include"><span class="tick">✓</span><span>群組每天一個約 3–5 分鐘的創作延伸，自由參與、不需補進度</span></div><div class="include"><span class="tick">✓</span><span>11/6 線上圓滿分享會</span></div><div class="include"><span class="tick">✓</span><span>11/13 自由實體聚餐（餐費自付）</span></div></div><p class="info-note">作品與過程分享完全自願。不需要解釋作品意義，也不會做作品評分。</p></div>
-    </div>
-
-    <section class="faq narrow">
-      <div class="section-head"><div class="eyebrow">FAQ</div><h2>報名前，可能會想知道</h2></div>
-      <div class="faq-list">
-        <details class="faq-item"><summary><span>如果其中一場無法參加直播呢？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">三場線上小聚都會提供課程回放，可以依自己的時間補上內容。</div></details>
-        <details class="faq-item"><summary><span>一週沉澱及創作交流一定要每天參與嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">不用。群組每天會有一個約 3–5 分鐘的小提問，但完全自由參與，不需要跟進度，也不用補。</div></details>
-        <details class="faq-item"><summary><span>一定要在群組分享自己的作品嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">不用。你可以只自己創作、自己留著；分享完全自願，也不需要解釋作品代表什麼。</div></details>
-        <details class="faq-item"><summary><span>VIP 群組會怎麼運作？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">這是本季學員專屬的小群。三位同行者主要負責各自的小聚；課程之間由青青提供輕量創作題目、作品分享與交流空間，讓創作不只停在上課當天。</div></details>
-        <details class="faq-item"><summary><span>完全不會 Canva、自由書寫或畫畫也能參加嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">可以。三場都以新手能進入的方式設計，不追求技巧，也不要求做得漂亮；重點是讓你真的開始創作。</div></details>
-        <details class="faq-item"><summary><span>這是藝術技巧課或心理療癒課嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">都不是。初星心練習不以技巧精進、作品評比或心理分析為目的，而是用不同創作媒介，讓人比較容易開始做、發揮想像，也從作品裡多看見自己一點。</div></details>
-        <details class="faq-item"><summary><span>同行者會推銷後續服務嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">每位同行者可以在課程最後簡短提供想繼續深入的人後續選項，但完全自由選擇，不影響本季課程的完整性。</div></details>
+      <p class="intro">先用一個低門檻的價格，完整走過六週：三場創作小聚、三段 7 天創作打卡，以及一場圓滿分享。</p>
+    </div></div>
+  </section>
+  <section class="section soft-amber">
+    <div class="container">
+      <div class="price-wrap read">
+        <div>
+          <div class="price-label">完整一季</div>
+          <div class="price">NT$888 <small>／人</small></div>
+          <div class="opening"><b>6 人開班｜最多 12 人</b><br>維持可以看見彼此的精緻小群。</div>
+        </div>
+        <div>
+          <div class="includes">
+            <div class="include"><span class="tick">✓</span><span>3 場週五晚上的線上創作小聚＋課程回放</span></div>
+            <div class="include"><span class="tick">✓</span><span>每場課後 7 天創作 × 自我覺察打卡</span></div>
+            <div class="include"><span class="tick">✓</span><span>六週學員專屬 VIP 創作群</span></div>
+            <div class="include"><span class="tick">✓</span><span>11/6 線上圓滿分享會</span></div>
+            <div class="include"><span class="tick">✓</span><span>11/13 自由實體聚餐（餐費自付）</span></div>
+          </div>
+          <p class="info-note">打卡自由參與、不需補進度；作品與過程分享也完全自願。</p>
+        </div>
       </div>
-    </section>
-  </div>
+
+      <section class="faq read">
+        <div class="section-head"><div class="eyebrow">FAQ</div><h2>報名前，可能會想知道</h2></div>
+        <div class="faq-list">
+          <details class="faq-item"><summary><span>如果其中一場無法參加直播呢？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">三場線上小聚都會提供課程回放，可以依自己的時間補上內容。</div></details>
+          <details class="faq-item"><summary><span>7 天創作打卡一定要每天完成嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">不用。每天都有一個約 3–5 分鐘的小創作＋回看題目，但完全自由參與，不需要跟進度，也不用補。</div></details>
+          <details class="faq-item"><summary><span>一定要在群組分享自己的作品嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">不用。你可以只自己創作、自己留著；分享完全自願，也不需要解釋作品代表什麼。</div></details>
+          <details class="faq-item"><summary><span>VIP 群組會怎麼運作？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">這是本季學員專屬的小群。課程之間由青青發布 7 天創作打卡題目，也可以自由分享作品與創作過程。</div></details>
+          <details class="faq-item"><summary><span>完全不會 Canva、自由書寫或畫畫也能參加嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">可以。三場都以新手能進入的方式設計，不追求技巧，也不要求做得漂亮；重點是讓你真的開始創作。</div></details>
+          <details class="faq-item"><summary><span>這是藝術技巧課或心理療癒課嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">都不是。創作是主要體驗，自我覺察是回看。重點是透過不同媒介開始做，再從自己的選擇、偏好、卡點與節奏裡多認識自己一點。</div></details>
+          <details class="faq-item"><summary><span>同行者會提供後續服務嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">每位同行者可以在課程最後簡短提供想繼續深入的人後續選項，但完全自由選擇，不影響本季課程完整性。</div></details>
+        </div>
+      </section>
+    </div>
+  </section>
 </section>
 </main>
 
-<footer>初星心練習 · 做自己，是一場持續進行的創作</footer>
+<footer>初星心練習 · 做自己，是一場持續進行的創作。</footer>
 
 <script>
 const navButtons=[...document.querySelectorAll('.nav-btn')];
 const pages=[...document.querySelectorAll('.page')];
-function showPage(id,push=true){
+function showPage(id){
   pages.forEach(p=>p.classList.toggle('active',p.dataset.page===id));
   navButtons.forEach(b=>b.classList.toggle('active',b.dataset.page===id));
-  if(push) history.replaceState(null,'','#'+id);
+  history.replaceState(null,'','#'+id);
   window.scrollTo({top:0,behavior:'instant'});
 }
 navButtons.forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
-document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.go)));
 
 const events={
  '2026-09-25':{type:'course',label:'第1場',title:'我的情緒，是什麼顏色？',desc:'20:00–22:00。從一個有感覺的顏色開始，加入一句想留下的話，再用 Canva 做成自己的個人桌布。'},
- '2026-09-26':{type:'check',label:'換上作品',title:'Day 1｜讓作品進入生活',desc:'把昨天完成的桌布換上手機。今天先不分析，只注意：第一眼最喜歡它的哪個地方？願意的話，截圖分享。'},
- '2026-09-27':{type:'check',label:'再選一色',title:'Day 2｜替今天加一個顏色',desc:'今天再挑一個有感覺的顏色。它可以和原本的桌布完全不同。把兩個顏色放在一起看看，會長出什麼新的配色？'},
- '2026-09-28':{type:'check',label:'收集一句',title:'Day 3｜今天想留下哪一句話？',desc:'從今天看到、想到或自己說過的話裡，收集一句你想留下的句子。不用勵志，只要你喜歡。'},
- '2026-09-29':{type:'check',label:'生活採色',title:'Day 4｜去生活裡撿一個顏色',desc:'今天拍下一個吸引你的顏色：招牌、天空、衣服、食物都可以。把它當成你的今日色票。'},
- '2026-09-30':{type:'check',label:'重新混搭',title:'Day 5｜如果重新做一次',desc:'如果今天重做桌布，你最想換哪一件事：顏色、字體、句子、版面？只改一個地方，看看作品會不會更像你。'},
- '2026-10-01':{type:'check',label:'完成版本',title:'Day 6｜把作品再完成一點',desc:'花 10–20 分鐘做最後微調。不是追求完美，只是把你現在最想保留的樣子留下來。'},
- '2026-10-02':{type:'check',label:'創作回顧',title:'Day 7｜這週，我發現自己喜歡什麼？',desc:'回頭看看這週選過的顏色、句子和桌布。用一句話記下：原來我在視覺上很容易被＿＿＿＿吸引。'},
+ '2026-09-26':{type:'check',label:'換上作品',title:'Day 1｜讓作品進入生活',desc:'把昨天完成的桌布換上手機。創作小練習：第一眼最喜歡它的哪個地方？回看自己：你通常會很快決定「喜歡」，還是會一直想改得更好？'},
+ '2026-09-27':{type:'check',label:'再選一色',title:'Day 2｜替今天加一個顏色',desc:'創作小練習：再挑一個有感覺的顏色，和原本配色放在一起。回看自己：你選色時靠直覺，還是會先想「這樣搭對不對」？'},
+ '2026-09-28':{type:'check',label:'收集一句',title:'Day 3｜今天想留下哪一句話？',desc:'創作小練習：從今天收集一句你想留下的話。回看自己：你比較容易被什麼樣的文字吸引？溫柔、直接、有趣，還是其他？'},
+ '2026-09-29':{type:'check',label:'生活採色',title:'Day 4｜去生活裡撿一個顏色',desc:'創作小練習：拍下一個今天吸引你的顏色。回看自己：這幾天你反覆注意到的色系，有沒有某種共同感覺？'},
+ '2026-09-30':{type:'check',label:'重新混搭',title:'Day 5｜如果重新做一次',desc:'創作小練習：只改桌布的一個元素。回看自己：你最想動的是顏色、文字還是版面？這可能就是你最在意的視覺元素。'},
+ '2026-10-01':{type:'check',label:'完成版本',title:'Day 6｜把作品再完成一點',desc:'創作小練習：花 10–20 分鐘微調。回看自己：你什麼時候會覺得「可以了」？還是很容易一直改下去？'},
+ '2026-10-02':{type:'check',label:'創作回顧',title:'Day 7｜這週，我發現自己喜歡什麼？',desc:'回看這週選過的顏色、句子和版面。完成一句：原來我的視覺偏好很容易被＿＿＿＿吸引。'},
 
- '2026-10-09':{type:'course',label:'第2場',title:'NIKI｜用自由書寫，讓腦中的東西落到紙上',desc:'20:00–22:00。不是作文課。讓零碎念頭先寫出來，再透過圈詞、重組與提問，完成一小段屬於自己的文字作品。'},
- '2026-10-10':{type:'check',label:'不停筆',title:'Day 1｜先寫三分鐘',desc:'設定三分鐘，不停筆。想到什麼就寫什麼，不刪、不改，也不用有主題。今天只練習讓文字出現。'},
- '2026-10-11':{type:'check',label:'撿五片',title:'Day 2｜收集今天的五個碎片',desc:'寫下今天的五個小片段：一個畫面、一句話、一個聲音、一個念頭、一個細節。它們不需要彼此有關。'},
- '2026-10-12':{type:'check',label:'圈三個詞',title:'Day 3｜圈出三個你喜歡的詞',desc:'回看前兩天寫的內容，圈出三個你就是喜歡的詞。不是最重要的，只是最想留下的。'},
- '2026-10-13':{type:'check',label:'一句三寫',title:'Day 4｜同一句話，寫三個版本',desc:'挑昨天的一句話，換三種方式重寫：更短、更怪、更像你。看看文字改變之後，感覺有什麼不同。'},
- '2026-10-14':{type:'check',label:'換個視角',title:'Day 5｜讓一個東西替你寫',desc:'挑身邊一個物件，用它的角度寫五分鐘。例如：「如果我的杯子會說話……」。讓想像力帶你走，不需要合理。'},
- '2026-10-15':{type:'check',label:'做成小卡',title:'Day 6｜把一句話變成小作品',desc:'從這週挑一句最喜歡的文字，手寫、排版或做成一張簡單文字卡。形式不重要，只要讓它從筆記變成一件作品。'},
- '2026-10-16':{type:'check',label:'文字回顧',title:'Day 7｜這週，哪些文字很像我？',desc:'回看七天的文字。挑一句、三個詞或一種語氣，記下：原來我寫東西的時候，很容易＿＿＿＿。'},
+ '2026-10-09':{type:'course',label:'第2場',title:'NIKI｜用自由書寫，讓腦中的東西落到紙上',desc:'20:00–22:00。不是作文課。讓零碎念頭先寫出來，再透過圈詞、重組與提問，完成一小段自己的文字作品。'},
+ '2026-10-10':{type:'check',label:'不停筆',title:'Day 1｜先寫三分鐘',desc:'創作小練習：三分鐘不停筆。回看自己：你有沒有很想刪掉、修正，或把它寫得「比較好」？'},
+ '2026-10-11':{type:'check',label:'撿五片',title:'Day 2｜收集今天的五個碎片',desc:'創作小練習：記下五個生活碎片。回看自己：你最常注意的是人、畫面、聲音、對話，還是自己的想法？'},
+ '2026-10-12':{type:'check',label:'圈三個詞',title:'Day 3｜圈出三個你喜歡的詞',desc:'創作小練習：圈出三個喜歡的詞。回看自己：你挑它們是因為意思、聲音、畫面感，還是某種說不上來的喜歡？'},
+ '2026-10-13':{type:'check',label:'一句三寫',title:'Day 4｜同一句話，寫三個版本',desc:'創作小練習：同一句重寫三次。回看自己：哪個版本最像你？你喜歡簡短、細膩、直接，還是繞一點？'},
+ '2026-10-14':{type:'check',label:'換個視角',title:'Day 5｜讓一個東西替你寫',desc:'創作小練習：用物件視角寫五分鐘。回看自己：當規則有點奇怪時，你覺得好玩，還是不知道怎麼辦？'},
+ '2026-10-15':{type:'check',label:'做成小卡',title:'Day 6｜把一句話變成小作品',desc:'創作小練習：把一句話做成小卡。回看自己：文字一旦變成畫面，你最在意的是內容、字體、留白還是整體氣氛？'},
+ '2026-10-16':{type:'check',label:'文字回顧',title:'Day 7｜哪些文字很像我？',desc:'回看七天文字，挑一句、三個詞或一種語氣。完成一句：原來我寫東西時，很容易＿＿＿＿。'},
 
  '2026-10-23':{type:'course',label:'第3場',title:'宗芸｜不用說清楚，也可以畫出來',desc:'20:00–22:00。從顏色、線條與形狀開始，不先決定畫什麼，讓作品一點一點長出來。'},
- '2026-10-24':{type:'check',label:'先看作品',title:'Day 1｜隔一天，再看看它',desc:'把作品放在看得到的地方。今天不修改，只看：你的視線第一個停在哪一小塊？'},
- '2026-10-25':{type:'check',label:'只玩一色',title:'Day 2｜挑一個顏色，再玩一次',desc:'從作品挑一個顏色，用它再做一張 5 分鐘小塗鴉。只用一個顏色也可以。'},
- '2026-10-26':{type:'check',label:'裁一小塊',title:'Day 3｜把作品切成另一張作品',desc:'用手機拍作品的一個局部，裁成你喜歡的構圖。看看原本的大作品裡，是不是藏著另一個畫面。'},
- '2026-10-27':{type:'check',label:'加一筆',title:'Day 4｜只加一筆，或拿掉一點',desc:'今天只做一個決定：加一條線、加一個形狀，或蓋掉一小塊。看看小小改變會讓作品往哪裡走。'},
- '2026-10-28':{type:'check',label:'換種語言',title:'Day 5｜把畫面翻成三個詞',desc:'如果這幅作品只能留下三個詞，你會選什麼？不用解釋，讓文字和畫面並排看看。'},
- '2026-10-29':{type:'check',label:'放進生活',title:'Day 6｜替作品找一個位置',desc:'把作品放到牆上、桌邊、筆記本裡，或拍成手機照片。讓它暫時住進你的生活。'},
- '2026-10-30':{type:'check',label:'作品回顧',title:'Day 7｜哪一部分最有「我的感覺」？',desc:'回頭看這週的原作、局部、顏色與三個詞。選一個你最想留下的部分：原來我很喜歡＿＿＿＿。'},
+ '2026-10-24':{type:'check',label:'先看作品',title:'Day 1｜隔一天，再看看它',desc:'創作小練習：只看作品，不修改。回看自己：你的視線第一個停在哪裡？你容易先看整體，還是細節？'},
+ '2026-10-25':{type:'check',label:'只玩一色',title:'Day 2｜挑一個顏色，再玩一次',desc:'創作小練習：只用一色做五分鐘小創作。回看自己：限制變多時，你比較安心，還是比較想突破？'},
+ '2026-10-26':{type:'check',label:'裁一小塊',title:'Day 3｜把作品切成另一張作品',desc:'創作小練習：裁一個局部成新構圖。回看自己：你選的地方有什麼共通特質？留白、密度、顏色、線條？'},
+ '2026-10-27':{type:'check',label:'加一筆',title:'Day 4｜只加一筆，或拿掉一點',desc:'創作小練習：只做一個改動。回看自己：你比較容易一直加東西，還是喜歡拿掉？'},
+ '2026-10-28':{type:'check',label:'換種語言',title:'Day 5｜把畫面翻成三個詞',desc:'創作小練習：為作品選三個詞。回看自己：這三個詞是描述畫面，還是其實也很像你最近的狀態？'},
+ '2026-10-29':{type:'check',label:'放進生活',title:'Day 6｜替作品找一個位置',desc:'創作小練習：把作品放進生活。回看自己：你想把它放在顯眼的地方，還是比較私人的角落？'},
+ '2026-10-30':{type:'check',label:'作品回顧',title:'Day 7｜哪一部分最有「我的感覺」？',desc:'回看原作、局部、顏色與三個詞。完成一句：這次創作讓我發現，我好像很喜歡／很容易＿＿＿＿。'},
 
- '2026-11-06':{type:'reflect',label:'圓滿分享會',title:'圓滿｜分享六週作品與收穫',desc:'20:00–21:15。不是第四堂課。把桌布、文字作品與繪畫放在一起，分享最喜歡的一件、最意外的一次，以及這六週發現的創作偏好。最後一起票選下一季。'},
- '2026-11-13':{type:'dinner',label:'一起吃飯',title:'季後聚餐｜一起吃飯、聊天',desc:'自由參加，餐費自付。這不是成果發表，就是讓線上一起創作過的人輕鬆見面、吃飯、聊天。'}
+ '2026-11-06':{type:'reflect',label:'圓滿分享',title:'圓滿｜分享六週作品與收穫',desc:'20:00–21:15。把三份作品放在一起，分享最喜歡的一件、最意外的一次，以及從三種創作裡多知道自己什麼。'},
+ '2026-11-13':{type:'dinner',label:'一起吃飯',title:'季後聚餐｜一起吃飯、聊天',desc:'自由參加，餐費自付。讓線上一起創作過的人輕鬆見面。'}
 };
-function addRange(start,end){let d=new Date(start+'T00:00:00'),e=new Date(end+'T00:00:00');while(d<=e){const k=d.toISOString().slice(0,10);if(!events[k])events[k]={type:'rest',label:'留白',title:'留白週',desc:'今天沒有安排練習。休息、生活、自由完成作品，準備進入下一場小聚。'};d.setDate(d.getDate()+1)}}
-addRange('2026-10-03','2026-10-08');addRange('2026-10-17','2026-10-22');addRange('2026-10-31','2026-11-05');
-function buildMonth(year,month,containerId){const box=document.getElementById(containerId);box.innerHTML='';const first=new Date(year,month-1,1),total=new Date(year,month,0).getDate();for(let i=0;i<first.getDay();i++){const blank=document.createElement('div');blank.className='day';box.appendChild(blank)}for(let day=1;day<=total;day++){const k=`${year}-${String(month).padStart(2,'0')}-${String(day).padStart(2,'0')}`,e=events[k];const cell=document.createElement('div');cell.className='day'+(e?` event ${e.type}`:'');const dot=document.createElement('div');dot.className='date-dot';dot.textContent=day;cell.appendChild(dot);if(e){const label=document.createElement('div');label.className='day-label';label.textContent=e.label||'';cell.appendChild(label);cell.tabIndex=0;cell.setAttribute('role','button');const handler=()=>showDetail(month,day,e);cell.addEventListener('click',handler);cell.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();handler()}})}box.appendChild(cell)}}
-function showDetail(month,day,e){document.getElementById('detailDate').textContent=`2026.${String(month).padStart(2,'0')}.${String(day).padStart(2,'0')}`;document.getElementById('detailTitle').textContent=e.title;document.getElementById('detailDesc').textContent=e.desc}
-buildMonth(2026,9,'sepDays');buildMonth(2026,10,'octDays');buildMonth(2026,11,'novDays');
-const hash=location.hash.slice(1);if(['home','journey','gatherings','companions','info'].includes(hash))showPage(hash,false);
+
+function addRange(start,end){
+  let d=new Date(start+'T00:00:00'),e=new Date(end+'T00:00:00');
+  while(d<=e){
+    const k=d.toISOString().slice(0,10);
+    if(!events[k]) events[k]={type:'rest',label:'留白',title:'留白週',desc:'今天沒有安排打卡。休息、生活、自由完成作品，準備進入下一場創作小聚。'};
+    d.setDate(d.getDate()+1);
+  }
+}
+addRange('2026-10-03','2026-10-08');
+addRange('2026-10-17','2026-10-22');
+addRange('2026-10-31','2026-11-05');
+
+function buildMonth(year,month,id){
+  const box=document.getElementById(id); box.innerHTML='';
+  const first=new Date(year,month-1,1), total=new Date(year,month,0).getDate();
+  for(let i=0;i<first.getDay();i++){const b=document.createElement('div');b.className='day';box.appendChild(b)}
+  for(let n=1;n<=total;n++){
+    const key=`${year}-${String(month).padStart(2,'0')}-${String(n).padStart(2,'0')}`;
+    const ev=events[key], cell=document.createElement('div');
+    cell.className='day'+(ev?` event ${ev.type}`:'');
+    const dot=document.createElement('div'); dot.className='date-dot'; dot.textContent=n; cell.appendChild(dot);
+    if(ev){
+      const label=document.createElement('div'); label.className='day-label'; label.textContent=ev.label; cell.appendChild(label);
+      cell.tabIndex=0; cell.setAttribute('role','button');
+      const open=()=>showDetail(month,n,ev);
+      cell.addEventListener('click',open);
+      cell.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}});
+    }
+    box.appendChild(cell);
+  }
+}
+function showDetail(month,day,ev){
+  document.getElementById('detailDate').textContent=`2026.${String(month).padStart(2,'0')}.${String(day).padStart(2,'0')}`;
+  document.getElementById('detailTitle').textContent=ev.title;
+  document.getElementById('detailDesc').textContent=ev.desc;
+}
+buildMonth(2026,9,'sepDays'); buildMonth(2026,10,'octDays'); buildMonth(2026,11,'novDays');
+
+const hash=location.hash.slice(1);
+if(['home','journey','gatherings','companions','info'].includes(hash)) showPage(hash);
 </script>
 </body>
 </html>
