@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>初星心練習｜第一季｜用創作，看見自己</title>
-<meta name="description" content="初星心練習第一季：用色彩、自由書寫與繪畫三種創作語言，真的做出作品，也從創作裡多了解自己一點。">
+<meta name="description" content="初星心練習第一季：用色彩與自由書寫完成兩份自己的作品，也從創作裡多了解自己一點。">
 <style>
 :root{
   --bg:#fbf7f1;
@@ -159,7 +159,7 @@ h1,h2,h3{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-weight:56
 .state h3{font-size:18px;line-height:1.6;margin-bottom:8px;font-weight:560}
 .state p{font-size:13px;color:var(--text)}
 
-.language-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.language-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:820px}
 .language-card{
   border-radius:var(--radius-lg);padding:28px 25px;min-height:245px;
   border:1px solid rgba(64,53,47,.06);box-shadow:var(--shadow)
@@ -180,7 +180,7 @@ h1,h2,h3{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-weight:56
 
 /* Journey */
 .timeline{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:22px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
   margin:46px 0 38px;position:relative
 }
 .timeline:before{content:"";position:absolute;left:8%;right:8%;top:17px;height:1px;background:rgba(64,53,47,.13)}
@@ -498,8 +498,8 @@ footer{padding:60px 0 38px;text-align:center;font-size:10px;color:#95867c;letter
 }
 
 /* Alignment and responsive hardening */
-.timeline{grid-template-columns:repeat(4,minmax(0,1fr))}
-.timeline:before{left:18px;right:calc(25% - 18px)}
+.timeline{grid-template-columns:repeat(3,minmax(0,1fr))}
+.timeline:before{left:18px;right:calc(33.333% - 18px)}
 .stop{text-align:left;min-width:0}
 .stop-dot{margin:0 0 15px}
 .rhythm-note{max-width:none;margin:0 0 66px;text-align:left}
@@ -574,7 +574,7 @@ h1,h2,h3{font-weight:650}
   animation:contentRise .66s .24s cubic-bezier(.16,1,.3,1) both
 }
 @keyframes pageReveal{from{opacity:.35}to{opacity:1}}
-@keyframes contentRise{from{opacity:0;transform:translateY(13px)}to{opacity:1;transform:none}}
+@keyframes contentRise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
 @media(max-width:680px){
   .page-hero h1{font-weight:740}
@@ -615,7 +615,128 @@ h1,h2,h3{font-weight:650}
     padding-right:max(32px,env(safe-area-inset-right))
   }
 }
-</style>
+
+/* Warm editorial refinement */
+:root{
+  --radius-xl:24px;
+  --radius-lg:20px;
+  --radius-md:16px;
+  --shadow:0 10px 28px rgba(83,62,49,.045)
+}
+body{letter-spacing:.005em;font-synthesis:weight}
+h1,h2,h3{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif}
+.page-hero{padding:64px 0 52px}
+.page-hero:after{display:none}
+.page-hero.peach{background:#fbf1ea}
+.page-hero.sage{background:#f2f5ed}
+.page-hero.rose{background:#f8eff2}
+.page-hero.amber{background:#faf2e1}
+.section.soft-peach{background:#fcf3ed}
+.section.soft-sage{background:#f5f7f1}
+.section.soft-rose{background:#faf3f5}
+.section.soft-amber{background:#faf5e9}
+.section{padding:64px 0}
+.section-head{margin-bottom:32px}
+.language-card,.gathering,.companion,.month-card,.detail-card,.hero-panel{
+  border-color:rgba(82,59,48,.09);
+  box-shadow:none
+}
+.language-card{border-radius:var(--radius-md)}
+.language-card:nth-child(1){background:#f8e5db}
+.language-card:nth-child(2){background:#eaf1e3}
+.language-card:nth-child(3){background:#f4e7ea}
+.gathering{border-radius:var(--radius-lg)}
+.gathering:nth-child(1){background:#fbebe2}
+.gathering:nth-child(2){background:#edf3e8}
+.gathering:nth-child(3){background:#f6ebee}
+.companion-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:820px}
+.companion{border-radius:var(--radius-lg)}
+.companion:nth-child(1){background:#fae9df}
+.companion:nth-child(2){background:#edf3e8}
+.month-card{border-radius:var(--radius-lg)}
+.detail-card{background:#fbf1eb;backdrop-filter:none}
+.hero-panel{border-radius:var(--radius-lg);background:rgba(255,253,250,.82)}
+.primary-btn{box-shadow:0 5px 14px rgba(64,53,47,.08)}
+.closing-cta{background:#f4e8df}
+.page.active .page-hero .eyebrow,.page.active .page-hero .hero-season,.page.active .page-hero .kicker{animation-duration:.46s}
+.page.active .page-hero h1,.page.active .page-hero h2{animation-duration:.5s;animation-delay:.08s}
+.page.active .page-hero .intro{animation-duration:.5s;animation-delay:.14s}
+.page.active .page-hero .hero-actions,.page.active .hero-panel{animation-duration:.52s;animation-delay:.2s}
+
+@media(max-width:680px){
+  .page-hero{padding:44px 0 36px}
+  .home-hero{padding:45px 0 38px}
+  .section{padding:48px 0}
+  .section-head{margin-bottom:24px}
+  .language-card,.companion{border-radius:var(--radius-lg)}
+  .gathering,.month-card{border-radius:var(--radius-lg)}
+  .companion-grid{grid-template-columns:1fr}
+}
+
+/* Warm gradients, soft shadows and restrained glow */
+.page-hero{isolation:isolate}
+.page-hero:after{
+  display:block;
+  width:430px;height:330px;right:-145px;top:-110px;
+  opacity:.72;filter:blur(2px)
+}
+.page-hero.peach{background:linear-gradient(145deg,#fff9f5 0%,#faeee6 58%,#f8e8dd 100%)}
+.page-hero.sage{background:linear-gradient(145deg,#fcfdf9 0%,#f0f5eb 58%,#eaf1e4 100%)}
+.page-hero.rose{background:linear-gradient(145deg,#fffafb 0%,#f8eef1 58%,#f4e7eb 100%)}
+.page-hero.amber{background:linear-gradient(145deg,#fffaf2 0%,#faf1df 58%,#f7e9ce 100%)}
+.page-hero.peach:after{background:radial-gradient(circle,rgba(226,157,123,.28),transparent 70%)}
+.page-hero.sage:after{background:radial-gradient(circle,rgba(151,181,126,.24),transparent 70%)}
+.page-hero.rose:after{background:radial-gradient(circle,rgba(191,132,151,.22),transparent 70%)}
+.page-hero.amber:after{background:radial-gradient(circle,rgba(213,171,88,.24),transparent 70%)}
+.hero-panel{
+  background:linear-gradient(145deg,rgba(255,255,255,.88),rgba(255,250,245,.72));
+  box-shadow:0 18px 44px rgba(91,63,48,.08),0 2px 8px rgba(91,63,48,.035)
+}
+.language-card,.gathering,.companion,.month-card,.detail-card{
+  box-shadow:0 15px 38px rgba(83,62,49,.065),0 2px 8px rgba(83,62,49,.025)
+}
+.language-card:nth-child(1),.gathering:nth-child(1),.companion:nth-child(1){background:linear-gradient(145deg,#fff9f5 0%,#f7dfd2 100%)}
+.language-card:nth-child(2),.gathering:nth-child(2),.companion:nth-child(2){background:linear-gradient(145deg,#fbfdf9 0%,#e2ecd9 100%)}
+.month-card{background:linear-gradient(160deg,#fffefa 0%,#fdf8f2 100%)}
+.detail-card{background:linear-gradient(145deg,#fff9f5 0%,#f7e9e1 100%);box-shadow:0 12px 30px rgba(83,62,49,.065)}
+.primary-btn{box-shadow:0 9px 22px rgba(82,59,48,.16),0 2px 6px rgba(82,59,48,.08)}
+.month-tab.active{box-shadow:0 7px 18px rgba(83,62,49,.17)}
+.closing-cta{background:linear-gradient(135deg,#f8ece4 0%,#f3e7db 55%,#f2eadc 100%)}
+@media(max-width:680px){
+  .page-hero:after{width:260px;height:230px;right:-115px;top:-80px;opacity:.58}
+  .language-card,.gathering,.companion,.month-card,.detail-card{
+    box-shadow:0 11px 28px rgba(83,62,49,.06),0 2px 6px rgba(83,62,49,.025)
+  }
+}
+/* Reading rhythm refinement */
+:root{--read:700px}
+.page-hero-inner{max-width:720px}
+.page-hero .intro{max-width:620px;font-size:15.5px;line-height:1.9}
+.section-head.read{max-width:700px}
+.section-head p{max-width:620px;font-size:14.5px;line-height:1.9}
+.state p,.language-card p,.outcome p{font-size:13.5px;line-height:1.85}
+.gathering-detail .intro,.detail-block p{font-size:13.5px;line-height:1.85}
+.companion p{font-size:13.5px;line-height:1.9}
+.include{font-size:13.5px;line-height:1.8}
+.faq-answer{font-size:13.5px;line-height:1.85;max-width:680px}
+.info-note,.opening{font-size:12.5px;line-height:1.85}
+.section-head h2{margin-bottom:14px}
+.state h3,.language-card h3,.outcome h3{margin-bottom:10px}
+.gathering-list.read,.price-wrap.read,.faq.read{max-width:820px}
+@media(max-width:680px){
+  .nowrap{white-space:normal}
+  .page-hero .intro{font-size:14.5px;line-height:1.85}
+  .section-head p{font-size:14px;line-height:1.85}
+  .state p{font-size:13.5px;line-height:1.85}
+  .language-card p,.outcome p{font-size:13.2px;line-height:1.85}
+  .gathering-detail .intro,.detail-block p{font-size:13.2px;line-height:1.85}
+  .companion p{font-size:13.3px;line-height:1.9}
+  .include{font-size:13px;line-height:1.8}
+  .faq-item summary{font-size:13.5px;line-height:1.65;padding:20px 0}
+  .faq-answer{font-size:13.2px;line-height:1.85;padding-bottom:22px}
+  .decision-item span{font-size:10px;line-height:1.6}
+  .opening,.info-note{font-size:12.5px;line-height:1.85}
+}</style>
 </head>
 <body>
 <header class="site-header">
@@ -641,25 +762,25 @@ h1,h2,h3{font-weight:650}
     <div class="container">
       <div class="hero-layout">
         <div class="hero-copy">
-          <div class="hero-season">2026 秋季第一季・6 週線上創作練習</div>
+          <div class="hero-season">2026 秋季第一季・4 週線上創作練習</div>
           <div class="kicker">初星心練習</div>
           <h1>用創作，<br>看見自己</h1>
-          <p class="intro"><span class="nowrap">替創作在生活中留一個位子，</span><br>從色彩、自由書寫到繪畫，完成三份作品，也重新認識自己的情緒與想法。</p>
+          <p class="intro"><span class="nowrap">替創作在生活中留一個位子，</span><br>從色彩到自由書寫，完成兩份作品，也重新認識自己的情緒與想法。</p>
           <div class="hero-actions">
             <button class="primary-btn route-btn" data-page="info">查看費用與名額</button>
-            <button class="secondary-btn route-btn" data-page="journey">先看六週流程</button>
+            <button class="secondary-btn route-btn" data-page="journey">先看四週流程</button>
           </div>
         </div>
         <aside class="hero-panel" aria-label="活動重點">
           <div class="hero-panel-label">這一季，你會一起完成</div>
-          <h2>三種創作語言<br>三份自己的作品</h2>
+          <h2>兩種創作語言<br>兩份自己的作品</h2>
           <div class="hero-meta">
-            <div class="hero-meta-row"><span>時間</span><strong>09.23–11.04｜週三晚間</strong></div>
-            <div class="hero-meta-row"><span>形式</span><strong>3 場線上小聚＋課後陪跑</strong></div>
+            <div class="hero-meta-row"><span>時間</span><strong>09.23–10.21｜週三晚間</strong></div>
+            <div class="hero-meta-row"><span>形式</span><strong>2 場線上小聚＋課後陪跑</strong></div>
             <div class="hero-meta-row"><span>人數</span><strong>6 人開班｜最多 12 人</strong></div>
-            <div class="hero-meta-row"><span>費用</span><strong>第一季創始價 NT$1,288</strong></div>
+            <div class="hero-meta-row"><span>費用</span><strong>第一季創始價 NT$888</strong></div>
           </div>
-          <button class="primary-btn route-btn" data-page="gatherings">看看三場會做什麼</button>
+          <button class="primary-btn route-btn" data-page="gatherings">看看兩場會做什麼</button>
         </div>
       </div>
     </div>
@@ -668,7 +789,7 @@ h1,h2,h3{font-weight:650}
   <section class="decision-bar" aria-label="活動摘要">
     <div class="container decision-grid">
       <div class="decision-item"><small>適合誰</small><strong>想創作卻很難開始</strong><span>零基礎也可以參加</span></div>
-      <div class="decision-item"><small>你會做</small><strong>色彩・文字・繪畫</strong><span>每一場都完成一份作品</span></div>
+      <div class="decision-item"><small>你會做</small><strong>色彩・自由書寫</strong><span>每一場都完成一份作品</span></div>
       <div class="decision-item"><small>課後節奏</small><strong>7 天小練習</strong><span>自由參與，不需補進度</span></div>
       <div class="decision-item"><small>這不是</small><strong>技巧課或作品評比</strong><span>先做，再回看自己</span></div>
     </div>
@@ -692,14 +813,13 @@ h1,h2,h3{font-weight:650}
   <section class="section soft-peach">
     <div class="container">
       <div class="section-head read">
-        <div class="eyebrow">3 CREATIVE LANGUAGES</div>
-        <h2>三種創作語言，三種開始方式</h2>
+        <div class="eyebrow">2 CREATIVE LANGUAGES</div>
+        <h2>兩種創作語言，兩種開始方式</h2>
         <p>給自己一個媒介、一點限制、一段時間，創作就可以開始。</p>
       </div>
       <div class="language-grid">
         <article class="language-card"><div class="language-icon">●</div><h3>色彩視覺</h3><p>從一個有感覺的顏色開始，把一句話、色彩與版面組合成自己的畫面。</p></article>
         <article class="language-card"><div class="language-icon">◌</div><h3>自由書寫</h3><p>不用文筆，讓片段、念頭與句子先落到紙上，再看看哪些文字最像自己。</p></article>
-        <article class="language-card"><div class="language-icon">✦</div><h3>繪畫創作</h3><p>不用先想好要畫什麼，從顏色、線條與形狀開始，讓畫面慢慢長出來。</p></article>
       </div>
     </div>
   </section>
@@ -708,11 +828,11 @@ h1,h2,h3{font-weight:650}
     <div class="container">
       <div class="section-head read">
         <div class="eyebrow">WHAT YOU TAKE WITH YOU</div>
-        <h2>六週後，你會留下什麼？</h2>
+        <h2>四週後，你會留下什麼？</h2>
         <p>創作是主要體驗，自我覺察是回看。先真的做，再從作品與過程裡多認識自己一點。</p>
       </div>
       <div class="outcome-grid read">
-        <div class="outcome"><small>CREATE</small><h3>完成三份自己的作品</h3><p>一張色彩桌布、一段自由書寫，以及一幅繪畫創作。</p></div>
+        <div class="outcome"><small>CREATE</small><h3>完成兩份自己的作品</h3><p>一張色彩桌布，以及一段屬於自己的自由書寫。</p></div>
         <div class="outcome"><small>START</small><h3>練習不用想完整，也能開始</h3><p>從小小的提示與限制開始，把「不知道做什麼」<span class="nowrap">變成「先做一點看看」。</span></p></div>
         <div class="outcome"><small>STYLE</small><h3>發現自己的創作偏好</h3><p>注意自己喜歡的顏色、文字節奏、畫面感，和<span class="nowrap">最容易進入創作的方式。</span></p></div>
         <div class="outcome"><small>NOTICE</small><h3>從創作裡，練習覺察自己</h3><p>回看自己的選擇、卡點與節奏：原來我會這樣創作，<span class="nowrap">也原來這些很像我。</span></p></div>
@@ -725,7 +845,7 @@ h1,h2,h3{font-weight:650}
       <div>
         <div class="eyebrow">READY WHEN YOU ARE</div>
         <h2>不用準備好，也能開始。</h2>
-        <p>先看看完整費用與常見問題，判斷這六週是不是現在的你需要的節奏。</p>
+        <p>先看看完整費用與常見問題，判斷這四週是不是現在的你需要的節奏。</p>
       </div>
       <button class="primary-btn route-btn" data-page="info">查看費用與報名資訊</button>
     </div>
@@ -736,9 +856,9 @@ h1,h2,h3{font-weight:650}
 <section class="page" data-page="journey">
   <section class="page-hero sage">
     <div class="container"><div class="page-hero-inner">
-      <div class="eyebrow">THE 6-WEEK RHYTHM</div>
-      <h2>六週怎麼走</h2>
-      <p class="intro">每兩週一場創作小聚。每場課後由青青帶 7 天創作打卡：每天一個小創作，再回看自己的選擇、偏好與節奏；下一週留白，再進入下一種創作語言。</p>
+      <div class="eyebrow">THE 4-WEEK RHYTHM</div>
+      <h2>四週怎麼走</h2>
+      <p class="intro">兩場創作小聚各自帶你從色彩與自由書寫開始。每場課後由青青帶 7 天創作打卡；中間留一週空白，最後一起回看兩份作品與四週收穫。</p>
     </div></div>
   </section>
 
@@ -747,8 +867,7 @@ h1,h2,h3{font-weight:650}
       <div class="timeline">
         <div class="stop"><div class="stop-dot">01</div><time>09.23 WED</time><h3>色彩視覺</h3><p>Canva 個人桌布</p></div>
         <div class="stop"><div class="stop-dot">02</div><time>10.07 WED</time><h3>自由書寫</h3><p>NIKI 文字創作</p></div>
-        <div class="stop"><div class="stop-dot">03</div><time>10.21 WED</time><h3>繪畫創作</h3><p>宗芸自由繪畫</p></div>
-        <div class="stop"><div class="stop-dot">04</div><time>11.04 WED</time><h3>圓滿分享</h3><p>分享六週作品與收穫</p></div>
+        <div class="stop"><div class="stop-dot">03</div><time>10.21 WED</time><h3>圓滿分享</h3><p>分享四週作品與收穫</p></div>
       </div>
       <div class="calendar-heading">
         <div><div class="eyebrow">CALENDAR</div><h2>流程月曆</h2></div>
@@ -762,8 +881,8 @@ h1,h2,h3{font-weight:650}
       <div class="calendar-layout">
         <div class="calendar-stack">
           <div class="month-card active" data-month="9"><div class="month-head"><h3>2026 · 9 月</h3><span>SEPTEMBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="sepDays"></div><div class="legend"><span><i style="background:var(--peach)"></i>線上小聚</span><span><i style="background:var(--sage)"></i>7 天打卡</span></div></div>
-          <div class="month-card" data-month="10"><div class="month-head"><h3>2026 · 10 月</h3><span>OCTOBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="octDays"></div><div class="legend"><span><i style="background:var(--peach)"></i>線上小聚</span><span><i style="background:var(--sage)"></i>7 天打卡</span><span><i style="border:1px solid rgba(185,147,84,.35)"></i>留白週</span></div></div>
-          <div class="month-card" data-month="11"><div class="month-head"><h3>2026 · 11 月</h3><span>NOVEMBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="novDays"></div><div class="legend"><span><i style="background:var(--amber)"></i>圓滿分享</span><span><i style="background:var(--rose)"></i>自由聚餐</span></div></div>
+          <div class="month-card" data-month="10"><div class="month-head"><h3>2026 · 10 月</h3><span>OCTOBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="octDays"></div><div class="legend"><span><i style="background:var(--peach)"></i>線上小聚</span><span><i style="background:var(--sage)"></i>7 天打卡</span><span><i style="background:var(--amber)"></i>圓滿分享</span><span><i style="border:1px solid rgba(185,147,84,.35)"></i>留白週</span></div></div>
+          <div class="month-card" data-month="11"><div class="month-head"><h3>2026 · 11 月</h3><span>NOVEMBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="novDays"></div><div class="legend"><span><i style="background:var(--rose)"></i>自由聚餐</span></div></div>
         </div>
         <aside class="calendar-side"><div class="detail-card"><div class="detail-date" id="detailDate">點選有顏色的日期</div><h3 id="detailTitle">查看當天內容</h3><p id="detailDesc">每個有顏色的日期，都有一個可以點開的課程或創作打卡內容。</p></div></aside>
       </div>
@@ -775,9 +894,9 @@ h1,h2,h3{font-weight:650}
 <section class="page" data-page="gatherings">
   <section class="page-hero peach">
     <div class="container"><div class="page-hero-inner">
-      <div class="eyebrow">3 CREATIVE GATHERINGS</div>
-      <h2>三場創作小聚</h2>
-      <p class="intro">不是技巧課，也不是作品評比。三位同行者<span class="nowrap">各帶一種創作語言</span>，讓新手也能從一個小入口開始，<span class="nowrap">真的做出自己的東西。</span></p>
+      <div class="eyebrow">2 CREATIVE GATHERINGS</div>
+      <h2>兩場創作小聚</h2>
+      <p class="intro">不是技巧課，也不是作品評比。兩位同行者分別帶你從色彩與自由書寫開始，讓新手也能從一個小入口，<span class="nowrap">真的做出自己的東西。</span></p>
     </div></div>
   </section>
   <section class="section">
@@ -790,10 +909,6 @@ h1,h2,h3{font-weight:650}
         <summary><div class="g-date">10.07</div><div><div class="g-name">NIKI｜生命教練・自由書寫同行者</div><div class="g-topic">用自由書寫，讓<span class="nowrap">腦中的東西</span>落到紙上</div></div><div class="plus">＋</div></summary>
         <div class="gathering-detail"><p class="intro">自由書寫不是作文。先把腦中的片段、念頭和句子寫下來，不修改、不評分，再從文字裡發現哪些語氣、詞和句子最像自己。</p><div class="detail-grid"><div class="detail-block"><b>創作起點</b><p>從短時間不停筆開始，讓文字先出現，再慢慢整理。</p></div><div class="detail-block"><b>現場會做</b><p>自由書寫、圈詞、句子重組與一張文字小卡。</p></div></div><div class="takeaway"><b>帶走｜</b>一段自己的自由書寫＋一張文字作品小卡。</div></div>
       </details>
-      <details class="gathering">
-        <summary><div class="g-date">10.21</div><div><div class="g-name">宗芸｜創作同行者</div><div class="g-topic">不用說清楚，也可以<span class="nowrap">畫出來</span></div></div><div class="plus">＋</div></summary>
-        <div class="gathering-detail"><p class="intro">不追求畫得漂亮，也不用先想好「我要畫什麼」。從顏色、線條與形狀開始，讓畫面一點一點長出來。</p><div class="detail-grid"><div class="detail-block"><b>創作起點</b><p>給自己一些簡單限制，讓手先動起來。</p></div><div class="detail-block"><b>現場會做</b><p>自由繪畫、顏色與線條實驗、作品命名與回看。</p></div></div><div class="takeaway"><b>帶走｜</b>一幅屬於這段時間的自由創作。</div></div>
-      </details>
     </div></div>
   </section>
 </section>
@@ -803,15 +918,14 @@ h1,h2,h3{font-weight:650}
   <section class="page-hero rose">
     <div class="container"><div class="page-hero-inner">
       <div class="eyebrow">YOUR CREATIVE COMPANIONS</div>
-      <h2>三位同行者，三種創作語言</h2>
-      <p class="intro">我們不替你定義作品，也不告訴你怎樣才算有創意。只是各自帶著熟悉的媒介，陪你找到<span class="nowrap">比較容易開始的位置。</span></p>
+      <h2>兩位同行者，陪你走過兩段創作</h2>
+      <p class="intro">我們不替你定義作品，也不告訴你怎樣才算有創意。各自帶著熟悉的媒介陪你開始，讓色彩與文字成為兩個容易進入的創作入口。</p>
     </div></div>
   </section>
   <section class="section soft-rose">
     <div class="container"><div class="companion-grid">
-      <article class="companion"><div class="companion-symbol">●</div><div class="companion-role">社群主理人・色彩同行者</div><h3>青青</h3><p>策展整季創作路徑，也負責第一場色彩與視覺創作。三場課後的 7 天創作 × 自我覺察打卡，也由青青統一設計與引導。</p><div class="companion-way">色彩・視覺・創作引導・整季策展</div></article>
+      <article class="companion"><div class="companion-symbol">●</div><div class="companion-role">社群主理人・色彩同行者</div><h3>青青</h3><p>策展整季創作路徑，也負責第一場色彩與視覺創作。兩場課後的 7 天創作 × 自我覺察打卡，也由青青統一設計與引導。</p><div class="companion-way">色彩・視覺・創作引導・整季策展</div></article>
       <article class="companion"><div class="companion-symbol">◌</div><div class="companion-role">生命教練・自由書寫同行者</div><h3>NIKI</h3><p>把自由書寫當成一種創作語言。不是教你寫得漂亮，而是讓零碎念頭先落到紙上，再從文字裡慢慢找到自己的節奏與句子。</p><div class="companion-way">自由書寫・提問・文字創作</div></article>
-      <article class="companion"><div class="companion-symbol">✦</div><div class="companion-role">創作同行者</div><h3>宗芸</h3><p>用顏色、線條與自由繪畫陪大家開始創作。不需要畫技，也不要求作品一定代表什麼；先讓想像力和手一起動起來。</p><div class="companion-way">繪畫・色彩・直覺創作</div></article>
     </div></div>
   </section>
 </section>
@@ -822,7 +936,7 @@ h1,h2,h3{font-weight:650}
     <div class="container"><div class="page-hero-inner">
       <div class="eyebrow">FOUNDING SEASON</div>
       <h2>第一季創始價</h2>
-      <p class="intro">先用一個低門檻的價格，完整走過六週：<span class="nowrap">三場創作小聚</span>、三段 7 天創作打卡，以及一場圓滿分享。</p>
+      <p class="intro">先用一個低門檻的價格，完整走過四週：<span class="nowrap">兩場創作小聚</span>、兩段 7 天創作打卡，以及一場圓滿分享。</p>
     </div></div>
   </section>
   <section class="section soft-amber">
@@ -830,16 +944,16 @@ h1,h2,h3{font-weight:650}
       <div class="price-wrap read">
         <div>
           <div class="price-label">完整一季</div>
-          <div class="price">NT$1,288 <small>／人</small></div>
+          <div class="price">NT$888 <small>／人</small></div>
           <div class="opening"><b>6 人開班｜最多 12 人</b><br>維持可以看見彼此的精緻小群。</div>
         </div>
         <div>
           <div class="price-label">方案包含</div>
           <div class="includes">
-            <div class="include"><span class="tick">✓</span><span>3 場週三晚上的線上創作小聚＋課程回放</span></div>
+            <div class="include"><span class="tick">✓</span><span>2 場週三晚上的線上創作小聚＋課程回放</span></div>
             <div class="include"><span class="tick">✓</span><span>每場課後 7 天創作 × 自我覺察打卡</span></div>
-            <div class="include"><span class="tick">✓</span><span>六週學員專屬 VIP 創作群</span></div>
-            <div class="include"><span class="tick">✓</span><span>11/4 線上圓滿分享會</span></div>
+            <div class="include"><span class="tick">✓</span><span>四週學員專屬 VIP 創作群</span></div>
+            <div class="include"><span class="tick">✓</span><span>10/21 線上圓滿分享會</span></div>
             <div class="include"><span class="tick">✓</span><span>11/13 自由實體聚餐（餐費自付）</span></div>
           </div>
           <p class="info-note">打卡自由參與、不需補進度；作品與過程分享也完全自願。</p>
@@ -849,11 +963,11 @@ h1,h2,h3{font-weight:650}
       <section class="faq read">
         <div class="section-head"><div class="eyebrow">FAQ</div><h2>報名前，可能會想知道</h2></div>
         <div class="faq-list">
-          <details class="faq-item"><summary><span>如果其中一場無法參加直播呢？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">三場線上小聚都會提供課程回放，可以依自己的時間補上內容。</div></details>
+          <details class="faq-item"><summary><span>如果其中一場無法參加直播呢？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">兩場線上小聚都會提供課程回放，可以依自己的時間補上內容。</div></details>
           <details class="faq-item"><summary><span>7 天創作打卡一定要每天完成嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">不用。每天都有一個約 3–5 分鐘的小創作＋回看題目，但完全自由參與，不需要跟進度，也不用補。</div></details>
           <details class="faq-item"><summary><span>一定要在群組分享自己的作品嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">不用。你可以只自己創作、自己留著；分享完全自願，也不需要解釋作品代表什麼。</div></details>
           <details class="faq-item"><summary><span>VIP 群組會怎麼運作？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">這是本季學員專屬的小群。課程之間由青青發布 7 天創作打卡題目，也可以自由分享作品與創作過程。</div></details>
-          <details class="faq-item"><summary><span>完全不會 Canva、自由書寫或畫畫也能參加嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">可以。三場都以新手能進入的方式設計，不追求技巧，也不要求做得漂亮；重點是讓你真的開始創作。</div></details>
+          <details class="faq-item"><summary><span>完全不會 Canva 或自由書寫也能參加嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">可以。兩場都以新手能進入的方式設計，不追求技巧，也不要求做得漂亮；重點是讓你真的開始創作。</div></details>
           <details class="faq-item"><summary><span>這是藝術技巧課或心理療癒課嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">都不是。創作是主要體驗，自我覺察是回看。重點是透過不同媒介開始做，再從自己的選擇、偏好、卡點與節奏裡多認識自己一點。</div></details>
           <details class="faq-item"><summary><span>同行者會提供後續服務嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">每位同行者可以在課程最後簡短提供想繼續深入的人後續選項，但完全自由選擇，不影響本季課程完整性。</div></details>
         </div>
@@ -897,16 +1011,7 @@ const events={
  '2026-10-13':{type:'check',label:'做成小卡',title:'Day 6｜做成小卡',desc:'挑一句最喜歡的文字做延伸，寫成一段自我提醒的小卡片。'},
  '2026-10-14':{type:'check',label:'書寫回顧',title:'Day 7｜書寫回顧',desc:'感受近期的自己。'},
 
- '2026-10-21':{type:'course',label:'第3場',title:'宗芸｜不用說清楚，也可以畫出來',desc:'20:00–22:00。從顏色、線條與形狀開始，不先決定畫什麼，讓作品一點一點長出來。'},
- '2026-10-22':{type:'check',label:'隔一天再看',title:'Day 1｜隔一天再看',desc:'不修改，只看視線第一個停在哪一塊。'},
- '2026-10-23':{type:'check',label:'玩一個顏色',title:'Day 2｜只玩一個顏色',desc:'挑作品一處，再做 5 分鐘小塗鴉。'},
- '2026-10-24':{type:'check',label:'裁一小塊',title:'Day 3｜裁一小塊',desc:'拍作品局部、重新裁切，看大作品裡藏著什麼畫面。'},
- '2026-10-25':{type:'check',label:'只加一筆',title:'Day 4｜只加一筆',desc:'加一條線、一個形狀，或蓋掉一小塊。'},
- '2026-10-26':{type:'check',label:'換種表達',title:'Day 5｜換種表達方式',desc:'試著用其他顏色、線條畫同一種主題，選出最喜歡的版本。'},
- '2026-10-27':{type:'check',label:'放進生活',title:'Day 6｜放進生活',desc:'讓作品出現在生活中：桌邊、牆上、筆記本或手機。'},
- '2026-10-28':{type:'check',label:'作品回顧',title:'Day 7｜作品回顧',desc:'哪一部分最有「我最喜歡」？思考為什麼？'},
-
- '2026-11-04':{type:'reflect',label:'圓滿分享',title:'圓滿｜分享六週作品與收穫',desc:'20:00–21:15。把三份作品放在一起，分享最喜歡的一件、最意外的一次，以及從三種創作裡多知道自己什麼。'},
+ '2026-10-21':{type:'reflect',label:'圓滿分享',title:'圓滿｜分享四週作品與收穫',desc:'20:00–21:15。把兩份作品放在一起，分享最喜歡的一件、最意外的一次，以及從色彩與文字裡多知道自己什麼。'},
  '2026-11-13':{type:'dinner',label:'一起吃飯',title:'季後聚餐｜一起吃飯、聊天',desc:'自由參加，餐費自付。讓線上一起創作過的人輕鬆見面。'}
 };
 
@@ -920,7 +1025,6 @@ function addRange(start,end){
 }
 addRange('2026-10-01','2026-10-06');
 addRange('2026-10-15','2026-10-20');
-addRange('2026-10-29','2026-11-03');
 
 function buildMonth(year,month,id){
   const box=document.getElementById(id); box.innerHTML='';
