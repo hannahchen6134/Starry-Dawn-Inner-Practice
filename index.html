@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>初星心練習｜第一季｜用創作，看見現在的自己</title>
-<meta name="description" content="初星心練習：六週，用顏色、自由書寫與繪畫創作，練習停下來感受自己、聽見現在的自己。" />
+<meta name="description" content="初星心練習第一季：用顏色、自由書寫與繪畫三種創作語言，讓想像力有地方出去，也從作品裡多看見現在的自己一點。" />
 <style>
 :root{
   --bg:#fbf7f1;
@@ -880,6 +880,223 @@ img, svg, video, canvas{
   }
 }
 
+
+/* creative positioning */
+.manifesto{
+  margin:6px auto 0;
+  padding:32px 0 6px;
+  border-top:1px solid rgba(65,55,48,.08);
+  border-bottom:1px solid rgba(65,55,48,.08);
+}
+.manifesto-quote{
+  font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;
+  font-size:clamp(24px,3.2vw,34px);
+  line-height:1.65;
+  letter-spacing:.07em;
+  color:#5a493f;
+  margin:0 0 12px;
+}
+.manifesto p{
+  max-width:660px;
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.95;
+}
+@media(max-width:680px){
+  .manifesto{padding:28px 0 4px}
+  .manifesto-quote{font-size:21px;line-height:1.75;letter-spacing:.075em}
+  .manifesto p{font-size:13px;line-height:2}
+}
+
+
+/* stronger color distinction for tinted cards */
+.mode-card:nth-child(1){
+  background:linear-gradient(155deg, rgba(246,220,208,.98), rgba(255,245,239,.92));
+  border-color:rgba(192,142,118,.14);
+}
+.mode-card:nth-child(2){
+  background:linear-gradient(155deg, rgba(225,236,213,.98), rgba(246,250,239,.92));
+  border-color:rgba(132,154,110,.14);
+}
+.mode-card:nth-child(3){
+  background:linear-gradient(155deg, rgba(238,220,226,.98), rgba(252,244,247,.92));
+  border-color:rgba(168,129,143,.14);
+}
+
+.gathering:nth-child(1){
+  background:linear-gradient(150deg, rgba(255,248,244,.95), rgba(244,221,210,.82));
+  border-color:rgba(191,145,121,.14);
+}
+.gathering:nth-child(2){
+  background:linear-gradient(150deg, rgba(252,254,249,.95), rgba(228,237,216,.84));
+  border-color:rgba(134,153,113,.14);
+}
+.gathering:nth-child(3){
+  background:linear-gradient(150deg, rgba(255,249,251,.95), rgba(239,223,228,.84));
+  border-color:rgba(169,131,145,.14);
+}
+
+.companion:nth-child(1){
+  background:linear-gradient(155deg, rgba(255,248,244,.96), rgba(243,220,209,.84));
+  border-color:rgba(191,145,121,.14);
+}
+.companion:nth-child(2){
+  background:linear-gradient(155deg, rgba(252,254,249,.96), rgba(227,236,214,.86));
+  border-color:rgba(134,153,113,.14);
+}
+.companion:nth-child(3){
+  background:linear-gradient(155deg, rgba(255,249,251,.96), rgba(238,221,227,.86));
+  border-color:rgba(169,131,145,.14);
+}
+
+.mode-icon,
+.companion-symbol{
+  background:rgba(255,255,255,.84);
+  box-shadow:0 4px 14px rgba(84,63,50,.05);
+}
+
+@media(max-width:680px){
+  .mode-card:nth-child(1),
+  .gathering:nth-child(1),
+  .companion:nth-child(1){
+    background:linear-gradient(160deg, rgba(255,249,246,.96), rgba(243,220,209,.82));
+  }
+  .mode-card:nth-child(2),
+  .gathering:nth-child(2),
+  .companion:nth-child(2){
+    background:linear-gradient(160deg, rgba(252,254,249,.96), rgba(227,236,214,.84));
+  }
+  .mode-card:nth-child(3),
+  .gathering:nth-child(3),
+  .companion:nth-child(3){
+    background:linear-gradient(160deg, rgba(255,249,251,.96), rgba(238,221,227,.84));
+  }
+}
+
+
+/* ===== Global safe-area refinement ===== */
+:root{
+  --page-gutter-desktop: clamp(42px, 6.5vw, 84px);
+  --page-gutter-mobile: 32px;
+}
+
+/* 全站外框不要貼邊 */
+.shell{
+  width:100%;
+  max-width:1100px;
+  margin-inline:auto;
+  padding-inline:var(--page-gutter-desktop) !important;
+}
+
+/* 主要閱讀區再收窄一點 */
+.narrow{
+  width:100%;
+  max-width:780px;
+  margin-inline:auto;
+}
+
+/* 卡片群組不要碰到 shell 邊界 */
+.three-cards,
+.companion-grid,
+.gathering-list,
+.outcomes,
+.timeline,
+.calendar-layout,
+.price-layout,
+.faq-list{
+  width:100%;
+  max-width:100%;
+  margin-inline:auto;
+}
+
+/* 頁首導覽也保留安全距離 */
+.topbar .shell{
+  padding-inline:var(--page-gutter-desktop) !important;
+}
+
+/* 桌機版內容不要拉太滿 */
+@media(min-width:1100px){
+  #page-home .shell,
+  #page-gatherings .shell,
+  #page-companions .shell,
+  #page-info .shell{
+    max-width:1060px;
+  }
+}
+
+/* 手機版：真正留出呼吸空間 */
+@media(max-width:680px){
+  .shell,
+  .topbar .shell{
+    padding-left:var(--page-gutter-mobile) !important;
+    padding-right:var(--page-gutter-mobile) !important;
+  }
+
+  .hero,
+  .home-block,
+  .journey-wrap,
+  .gatherings,
+  .companions,
+  .info{
+    width:100%;
+  }
+
+  .three-cards,
+  .companion-grid,
+  .gathering-list,
+  .outcomes,
+  .calendar-layout,
+  .price-layout,
+  .faq-list{
+    width:100%;
+    max-width:100%;
+  }
+
+  .mode-card,
+  .companion,
+  .gathering,
+  .calendar-sheet,
+  .detail-card,
+  .price-box,
+  .faq-item{
+    width:100%;
+    max-width:100%;
+    margin-inline:auto;
+  }
+
+  /* 卡片內部也增加安全距離 */
+  .mode-card{
+    padding:24px 22px;
+  }
+  .companion{
+    padding:26px 23px;
+  }
+  .gathering summary{
+    padding-left:22px;
+    padding-right:22px;
+  }
+  .gathering-detail{
+    padding-left:22px;
+    padding-right:22px;
+  }
+
+  /* 大段落和螢幕邊緣之間維持一致 */
+  .section-head,
+  .hero-inner,
+  .manifesto,
+  .between-note,
+  .calendar-title-row{
+    width:100%;
+    max-width:100%;
+  }
+}
+
+/* 小型手機仍至少保留 28px */
+@media(max-width:390px){
+  :root{ --page-gutter-mobile: 28px; }
+}
+
 </style>
 </head>
 <body>
@@ -897,6 +1114,7 @@ img, svg, video, canvas{
 </header>
 
 <main>
+
 <section class="page active" id="page-home" data-page="home">
   <div class="shell">
     <section class="hero narrow">
@@ -904,126 +1122,138 @@ img, svg, video, canvas{
         <div class="eyebrow">2026 秋季</div>
         <h1>初星心練習</h1>
         <div class="hero-sub"><span class="hero-season">第一季｜</span><span class="hero-sub-main">用創作，看見現在的自己</span></div>
-        <p class="lead">生活一直往前，我們常常在處理事情，卻很少留一點時間給自己。這六週，用顏色、自由書寫與繪畫創作，練習停下來感受自己，也多聽見現在的自己一點。</p>
-        <div class="meta-row"><span>6 週</span><span>3 場線上小聚＋1 次圓滿分享會</span><span>6–12 人精緻小群</span></div>
-        <div class="hero-links"><button class="text-link primary" data-go="journey">看看這六週怎麼走</button><button class="text-link" data-go="gatherings">看看三場小聚</button></div>
+        <p class="lead">這六週，不急著找到答案，也不需要很會畫、很會寫。從顏色、自由書寫與繪畫開始，讓想像力有地方出去，也看看自己會做出什麼。</p>
+        <div class="meta-row"><span>6 週</span><span>3 場線上創作小聚＋1 次圓滿分享會</span><span>6–12 人精緻小群</span></div>
+        <div class="hero-links"><button class="text-link primary" data-go="journey">看看這六週怎麼走</button><button class="text-link" data-go="gatherings">看看三場創作小聚</button></div>
       </div>
+    </section>
+
+    <section class="manifesto narrow">
+      <div class="eyebrow">A CREATIVE WAY OF BEING</div>
+      <p class="manifesto-quote">做自己，是一場持續進行的創作。</p>
+      <p>我們每天怎麼選、喜歡什麼、留下什麼，本來就在一點一點創作自己。初星心練習不是要教你成為藝術家，而是替創作留一個入口，讓你真的開始做，也從作品裡多看見自己一點。</p>
     </section>
 
     <section class="home-block narrow">
       <div class="section-head">
-        <div class="eyebrow">IS THIS FOR YOU?</div>
-        <h2>也許你最近只是……</h2>
+        <div class="eyebrow">MAYBE THIS IS YOU</div>
+        <h2>也許你只是想，重新把創作放回生活裡</h2>
       </div>
       <div class="soft-state">
-        <div class="state-line"><b>常常在處理事情</b><span>事情一件接一件，很少停下來感受自己。</span></div>
-        <div class="state-line"><b>有些心情說不上來</b><span>沒有發生什麼大事，但最近好像有點滿、有點亂。</span></div>
-        <div class="state-line"><b>想更了解自己</b><span>卻不想把自我探索做得很沉重。</span></div>
+        <div class="state-line"><b>有很多想法，卻很少真的做出來</b><span>不是沒有創意，只是總覺得要等靈感、等時間、等自己準備好。</span></div>
+        <div class="state-line"><b>喜歡顏色、文字、畫面</b><span>但平常很少給自己一段時間，只為了玩、試、做一個自己的東西。</span></div>
+        <div class="state-line"><b>想看看自己會創作出什麼</b><span>不追求專業作品，只想多一點想像、多一點自由，也多看見自己一點。</span></div>
       </div>
     </section>
 
     <section class="home-block">
       <div class="section-head narrow">
-        <div class="eyebrow">3 CREATIVE WAYS</div>
-        <h2>不急著找答案，先用三種創作方式陪自己停一下</h2>
+        <div class="eyebrow">3 CREATIVE LANGUAGES</div>
+        <h2>三種創作語言，三種開始的方式</h2>
+        <p>不用先證明自己有創意。給自己一個媒介、一點限制、一段時間，創作就可以開始。</p>
       </div>
       <div class="three-cards">
-        <article class="mode-card"><div class="mode-icon">●</div><h3>用顏色，看見自己</h3><p>從一個此刻有感覺的顏色開始，看看現在的心情想讓你注意什麼。</p></article>
-        <article class="mode-card"><div class="mode-icon">◌</div><h3>用自由書寫，聽見自己</h3><p>讓腦中的念頭先落到紙上，在文字裡慢慢辨認自己的感受與需要。</p></article>
-        <article class="mode-card"><div class="mode-icon">✦</div><h3>用創作，與自己連結</h3><p>不一定要先說清楚，讓線條、顏色與畫面替此刻的自己留下一點痕跡。</p></article>
+        <article class="mode-card"><div class="mode-icon">●</div><h3>用顏色，把感覺做成畫面</h3><p>從一個有感覺的顏色開始，選字、排版、組合，完成一張屬於自己的桌布。</p></article>
+        <article class="mode-card"><div class="mode-icon">◌</div><h3>用文字，把腦中的東西寫下來</h3><p>不用文筆，也不急著整理。先讓片段、念頭和句子落到紙上，再看看哪些文字像你。</p></article>
+        <article class="mode-card"><div class="mode-icon">✦</div><h3>用繪畫，讓想像力自由長出來</h3><p>不追求畫得漂亮。從顏色、線條和形狀開始，讓畫面慢慢長成只有你會做出的樣子。</p></article>
       </div>
     </section>
 
     <section class="home-block narrow">
       <div class="section-head">
-        <div class="eyebrow">WHAT YOU TAKE WITH YOU</div>
-        <h2>六週後，你會帶走什麼？</h2>
-        <p>不一定得到一個標準答案，但會多一些線索，知道最近的自己正在感受什麼、需要什麼。</p>
+        <div class="eyebrow">WHAT YOU CREATE</div>
+        <h2>六週後，你會留下什麼？</h2>
+        <p>最重要的不是「更懂自己多少」，而是你真的創作了，而且開始知道自己喜歡怎麼創作。</p>
       </div>
       <div class="outcomes">
-        <div class="outcome"><small>NOTICE</small><h3>更能說出最近的狀態</h3><p>從「我也不知道怎麼了」，慢慢比較能辨認自己的情緒、心情與需要。</p></div>
-        <div class="outcome"><small>3 WAYS</small><h3>練習三種靠近自己的方式</h3><p>親自練習色彩視覺、自由書寫與繪畫創作，看看哪一種方式自己最有感。</p></div>
-        <div class="outcome"><small>CREATE</small><h3>留下三份自己的紀錄</h3><p>一張情緒桌布、一段自由書寫，以及一幅自我對話創作。</p></div>
-        <div class="outcome"><small>LOOK BACK</small><h3>完成一次六週回望</h3><p>最後一起整理：這段時間，我多知道自己一點什麼？</p></div>
+        <div class="outcome"><small>CREATE</small><h3>完成三份自己的作品</h3><p>一張色彩桌布、一段自由書寫，以及一幅繪畫創作。</p></div>
+        <div class="outcome"><small>START</small><h3>練習不用想完整，也能開始</h3><p>從小小的限制與提示開始，讓「我不知道要做什麼」變成「我先做一點看看」。</p></div>
+        <div class="outcome"><small>STYLE</small><h3>發現自己的創作偏好</h3><p>你可能開始注意到自己喜歡的顏色、文字節奏、畫面感，或最容易進入創作的方式。</p></div>
+        <div class="outcome"><small>SEE</small><h3>從作品裡，多看見自己一點</h3><p>不是替作品下結論，而是回頭看看：原來現在的我，會選這些、寫這些、畫出這些。</p></div>
       </div>
     </section>
   </div>
 </section>
+
 
 <section class="page" id="page-journey" data-page="journey">
   <div class="shell journey-wrap">
     <div class="section-head narrow">
       <div class="eyebrow">THE 6-WEEK RHYTHM</div>
       <h2>六週怎麼走</h2>
-      <p>每兩週一場小聚。課後有 一週沉澱及群組交流，接著留一週空白，讓體驗真正有時間進入生活。</p>
+      <p>每兩週一場創作小聚。課後的一週，讓作品繼續長一點、玩一點、改一點，也可以在群組分享；下一週留白，再進入下一種創作語言。</p>
     </div>
 
     <div class="timeline">
       <div class="timeline-track">
-        <div class="milestone"><div class="milestone-dot">01</div><div class="milestone-copy"><time>09.25 FRI</time><b>顏色｜看見自己</b><span>情緒色票 × Canva 情緒桌布</span></div></div>
-        <div class="milestone"><div class="milestone-dot">02</div><div class="milestone-copy"><time>10.09 FRI</time><b>自由書寫｜聽見自己</b><span>NIKI 自由書寫 × 教練式提問</span></div></div>
-        <div class="milestone"><div class="milestone-dot">03</div><div class="milestone-copy"><time>10.23 FRI</time><b>創作｜與自己連結</b><span>宗芸 自我對話繪畫創作</span></div></div>
+        <div class="milestone"><div class="milestone-dot">01</div><div class="milestone-copy"><time>09.25 FRI</time><b>色彩視覺｜把感覺做成畫面</b><span>色彩 × Canva 個人桌布</span></div></div>
+        <div class="milestone"><div class="milestone-dot">02</div><div class="milestone-copy"><time>10.09 FRI</time><b>自由書寫｜讓念頭落到紙上</b><span>NIKI 自由書寫 × 教練式提問</span></div></div>
+        <div class="milestone"><div class="milestone-dot">03</div><div class="milestone-copy"><time>10.23 FRI</time><b>繪畫創作｜讓想像力長出來</b><span>宗芸 自由繪畫創作</span></div></div>
         <div class="milestone"><div class="milestone-dot">04</div><div class="milestone-copy"><time>11.06 FRI</time><b>圓滿｜分享六週收穫</b><span>分享作品、心得與六週收穫</span></div></div>
       </div>
     </div>
 
-    <div class="between-note"><b>每場之後：</b> 一週沉澱及群組交流（每天約 3–5 分鐘、自由參與） → 一週留白 → 再進入下一場。</div>
+    <div class="between-note"><b>每場之後：</b> 一週沉澱及創作交流（每天一個 3–5 分鐘的創作延伸，自由參與） → 一週留白 → 再進入下一場。</div>
 
     <section class="calendar-visible">
-      <div class="calendar-title-row"><div><div class="eyebrow">CALENDAR</div><h3>詳細月曆</h3></div><p>每天的群組提問都直接放在月曆裡，點日期可查看完整內容。</p></div>
+      <div class="calendar-title-row"><div><div class="eyebrow">CALENDAR</div><h3>詳細月曆</h3></div><p>每堂後的一週都有輕量創作延伸，直接放進月曆裡；點日期就能看完整題目。</p></div>
       <div class="calendar-body">
         <div class="calendar-layout">
           <div class="calendar-stack">
-            <div class="calendar-sheet"><div class="month-head"><h3>2026 · 9 月</h3><span>SEPTEMBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="sepDays"></div><div class="legend"><span><i style="background:var(--terra-pale)"></i>線上小聚</span><span><i style="background:var(--sage-pale)"></i>群組交流</span></div></div>
-            <div class="calendar-sheet"><div class="month-head"><h3>2026 · 10 月</h3><span>OCTOBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="octDays"></div><div class="legend"><span><i style="background:var(--terra-pale)"></i>線上小聚</span><span><i style="background:var(--sage-pale)"></i>群組交流</span><span><i style="border:1px solid rgba(195,154,92,.28)"></i>一週留白</span></div></div>
+            <div class="calendar-sheet"><div class="month-head"><h3>2026 · 9 月</h3><span>SEPTEMBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="sepDays"></div><div class="legend"><span><i style="background:var(--terra-pale)"></i>線上小聚</span><span><i style="background:var(--sage-pale)"></i>創作交流</span></div></div>
+            <div class="calendar-sheet"><div class="month-head"><h3>2026 · 10 月</h3><span>OCTOBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="octDays"></div><div class="legend"><span><i style="background:var(--terra-pale)"></i>線上小聚</span><span><i style="background:var(--sage-pale)"></i>創作交流</span><span><i style="border:1px solid rgba(195,154,92,.28)"></i>一週留白</span></div></div>
             <div class="calendar-sheet"><div class="month-head"><h3>2026 · 11 月</h3><span>NOVEMBER</span></div><div class="week"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="days" id="novDays"></div><div class="legend"><span><i style="background:var(--amber-pale)"></i>圓滿分享會</span><span><i style="background:var(--rose-pale)"></i>自由聚餐</span></div></div>
           </div>
-          <aside class="calendar-side"><div class="detail-card"><div class="detail-date" id="detailDate">點選有顏色的日期</div><h3 id="detailTitle">當天的課程／群組交流</h3><p id="detailDesc">點一下月曆中的日期，就能看到當天完整的引導。</p></div></aside>
+          <aside class="calendar-side"><div class="detail-card"><div class="detail-date" id="detailDate">點選有顏色的日期</div><h3 id="detailTitle">當天的課程／創作交流</h3><p id="detailDesc">點一下月曆中的日期，就能看到當天完整的引導。</p></div></aside>
         </div>
       </div>
     </section>
   </div>
 </section>
 
+
 <section class="page" id="page-gatherings" data-page="gatherings">
   <div class="shell gatherings">
     <div class="section-head narrow">
-      <div class="eyebrow">3 HEART GATHERINGS</div>
-      <h2>三場與心的小聚</h2>
-      <p>課程主題是主角，同行者提供不同入口。每場都有實作，也會留下可以帶回生活的作品或紀錄。</p>
+      <div class="eyebrow">3 CREATIVE GATHERINGS</div>
+      <h2>三場創作小聚</h2>
+      <p>不是技巧課，也不是作品評比。三位同行者各自帶一種創作語言，讓新手也能從一個小入口開始，真的做出自己的東西。</p>
     </div>
     <div class="gathering-list narrow">
       <details class="gathering">
         <summary><div class="g-date">09.25</div><div><div class="g-name">青青｜社群主理人・色彩同行者</div><div class="g-topic">我的情緒，是什麼顏色？</div></div><div class="plus">＋</div></summary>
-        <div class="gathering-detail"><p class="intro">從初心色譜選出此刻有感覺的顏色，整理一句現在想對自己說的話，再用 Canva 做成自己的情緒桌布。</p><div class="detail-grid"><div class="detail-block"><b>這場想陪你看見</b><p>最近的我，是什麼心情？如果先不用講道理，它會是什麼顏色？</p></div><div class="detail-block"><b>現場會做</b><p>情緒色票選色、自我對話、Canva 美感實作。</p></div></div><div class="takeaway"><b>帶走｜</b>一張「現在的我」情緒桌布。</div></div>
+        <div class="gathering-detail"><p class="intro">從一個有感覺的顏色開始，把一句話、色彩和版面組合起來。Canva 只是工具，真正要練習的是：不用先想完整，也可以開始做。</p><div class="detail-grid"><div class="detail-block"><b>創作起點</b><p>從初心色譜選色，再找一句現在想留下的話。</p></div><div class="detail-block"><b>現場會做</b><p>選色、文字整理、Canva 排版與個人化調整。</p></div></div><div class="takeaway"><b>帶走｜</b>一張只有你會做出的個人桌布。</div></div>
       </details>
       <details class="gathering">
-        <summary><div class="g-date">10.09</div><div><div class="g-name">NIKI｜生命教練・自由書寫同行者</div><div class="g-topic">用自由書寫，聽見自己</div></div><div class="plus">＋</div></summary>
-        <div class="gathering-detail"><p class="intro">不用會寫，也不用寫得漂亮。讓腦中混在一起的想法先落到紙上，再透過教練式提問，慢慢辨認哪些話更接近現在的自己。</p><div class="detail-grid"><div class="detail-block"><b>這場想陪你看見</b><p>當我不用急著把事情想清楚，寫下來之後，哪些話最接近我現在真正的感受？</p></div><div class="detail-block"><b>現場會做</b><p>自由書寫、教練式提問、圈出反覆出現的詞與一句最想聽見的話。</p></div></div><div class="takeaway"><b>帶走｜</b>一段屬於自己的自由書寫＋一張內在聲音小卡。</div></div>
+        <summary><div class="g-date">10.09</div><div><div class="g-name">NIKI｜生命教練・自由書寫同行者</div><div class="g-topic">用自由書寫，讓腦中的東西落到紙上</div></div><div class="plus">＋</div></summary>
+        <div class="gathering-detail"><p class="intro">自由書寫不是作文。先把腦中的片段、念頭和句子寫下來，不修改、不評分，再從文字裡發現哪些語氣、詞和句子最像自己。</p><div class="detail-grid"><div class="detail-block"><b>創作起點</b><p>從短時間不停筆開始，讓文字先出現，再慢慢整理。</p></div><div class="detail-block"><b>現場會做</b><p>自由書寫、圈詞、句子重組與一張文字小卡。</p></div></div><div class="takeaway"><b>帶走｜</b>一段自己的自由書寫＋一張文字作品小卡。</div></div>
       </details>
       <details class="gathering">
         <summary><div class="g-date">10.23</div><div><div class="g-name">宗芸｜創作同行者</div><div class="g-topic">不用說清楚，也可以畫出來</div></div><div class="plus">＋</div></summary>
-        <div class="gathering-detail"><p class="intro">不追求畫得漂亮。從顏色、線條與直覺創作開始，讓還說不清楚的感受先被看見、被留下。</p><div class="detail-grid"><div class="detail-block"><b>這場想陪你感受</b><p>有些心情如果不必用語言解釋，會長成什麼樣子？</p></div><div class="detail-block"><b>現場會做</b><p>自由畫畫、自我對話、作品命名與簡單回看。</p></div></div><div class="takeaway"><b>帶走｜</b>一幅屬於此刻自己的自我對話創作。</div></div>
+        <div class="gathering-detail"><p class="intro">不追求畫得漂亮，也不用先想好「我要畫什麼」。從顏色、線條與形狀開始，讓畫面一點一點長出來。</p><div class="detail-grid"><div class="detail-block"><b>創作起點</b><p>給自己一些簡單限制，讓手先動起來。</p></div><div class="detail-block"><b>現場會做</b><p>自由繪畫、顏色與線條實驗、作品命名與回看。</p></div></div><div class="takeaway"><b>帶走｜</b>一幅屬於這段時間的自由創作。</div></div>
       </details>
     </div>
   </div>
 </section>
 
+
+
 <section class="page" id="page-companions" data-page="companions">
   <div class="shell companions">
     <div class="section-head narrow">
-      <div class="eyebrow">YOUR COMPANIONS</div>
-      <h2>三位同行者，三種陪伴方式</h2>
-      <p>我們不替你解讀自己，也不急著給答案。每個人只帶著自己熟悉的方法，陪你多感受一點。</p>
+      <div class="eyebrow">YOUR CREATIVE COMPANIONS</div>
+      <h2>三位同行者，三種創作語言</h2>
+      <p>我們不替你定義作品，也不告訴你怎樣才算有創意。只是各自帶著熟悉的媒介，陪你找到一個比較容易開始的位置。</p>
     </div>
     <div class="companion-grid">
-      <article class="companion"><div class="companion-symbol">●</div><div class="companion-role">社群主理人・色彩同行者</div><h3>青青</h3><p>策展整季主題與體驗路徑，第一場從顏色與視覺出發；課程之間也會在 VIP 小群用輕量提問與群組交流，把注意力帶回自己。</p><div class="companion-way">色彩・社群陪伴・課間引導・整季串連</div></article>
-      <article class="companion"><div class="companion-symbol">◌</div><div class="companion-role">生命教練・自由書寫同行者</div><h3>NIKI</h3><p>用自由書寫與教練式提問，陪你把一閃而過、來不及整理的念頭寫下來，在文字裡辨認更靠近自己的感受與需要。</p><div class="companion-way">自由書寫・教練式提問・內在梳理</div></article>
-      <article class="companion"><div class="companion-symbol">✦</div><div class="companion-role">創作同行者</div><h3>宗芸</h3><p>用畫畫、顏色與直覺創作陪你和此刻的自己連結。不要求畫得好，只讓感受有一個可以被留下的位置。</p><div class="companion-way">繪畫創作・自我對話・直覺感受</div></article>
+      <article class="companion"><div class="companion-symbol">●</div><div class="companion-role">社群主理人・色彩同行者</div><h3>青青</h3><p>策展整季創作路徑，也負責第一場色彩與視覺創作。喜歡把抽象感覺變成看得見的東西，並在課程之間用輕量創作題目，陪大家讓作品繼續長出來。</p><div class="companion-way">色彩・視覺・創作引導・整季策展</div></article>
+      <article class="companion"><div class="companion-symbol">◌</div><div class="companion-role">生命教練・自由書寫同行者</div><h3>NIKI</h3><p>把自由書寫當成一種創作語言。不是教你寫得漂亮，而是讓零碎念頭先落到紙上，再從文字裡慢慢找到自己的節奏與句子。</p><div class="companion-way">自由書寫・提問・文字創作</div></article>
+      <article class="companion"><div class="companion-symbol">✦</div><div class="companion-role">創作同行者</div><h3>宗芸</h3><p>用顏色、線條與自由繪畫陪大家開始創作。不需要畫技，也不要求作品一定要代表什麼；先讓想像力和手一起動起來。</p><div class="companion-way">繪畫・色彩・直覺創作</div></article>
     </div>
-    <div class="companion-note narrow">真正知道自己感受的人，始終是你。同行者只是提供不同入口，陪你練習靠近。</div>
+    <div class="companion-note narrow">作品不需要被解釋得很完整。你做出來的東西，本身就是一次和自己相遇。</div>
   </div>
 </section>
+
 
 <section class="page" id="page-info" data-page="info">
   <div class="shell info">
@@ -1034,18 +1264,18 @@ img, svg, video, canvas{
     </div>
     <div class="price-block narrow">
       <div class="price-big"><div class="price-label">完整一季</div><div class="price">NT$888 <small>／人</small></div><div class="opening"><b>6 人開班｜最多 12 人</b><br>維持可以看見彼此的精緻小群。</div></div>
-      <div><div class="includes"><div class="include"><span class="tick">✓</span><span>3 場週五晚上的線上小聚＋課程回放</span></div><div class="include"><span class="tick">✓</span><span>每場課後一週沉澱及群組交流＋六週學員 VIP 群</span></div><div class="include"><span class="tick">✓</span><span>群組提問每天約 3–5 分鐘，自由參與、不需補進度</span></div><div class="include"><span class="tick">✓</span><span>11/6 線上圓滿分享會</span></div><div class="include"><span class="tick">✓</span><span>11/13 自由實體聚餐（餐費自付）</span></div></div><p class="info-note">分享完全自願。不需要公開私人經歷，也不需要解釋情緒原因。</p></div>
+      <div><div class="includes"><div class="include"><span class="tick">✓</span><span>3 場週五晚上的線上創作小聚＋課程回放</span></div><div class="include"><span class="tick">✓</span><span>每場課後一週沉澱及創作交流＋六週學員 VIP 創作群</span></div><div class="include"><span class="tick">✓</span><span>群組每天一個約 3–5 分鐘的創作延伸，自由參與、不需補進度</span></div><div class="include"><span class="tick">✓</span><span>11/6 線上圓滿分享會</span></div><div class="include"><span class="tick">✓</span><span>11/13 自由實體聚餐（餐費自付）</span></div></div><p class="info-note">作品與過程分享完全自願。不需要解釋作品意義，也不會做作品評分。</p></div>
     </div>
 
     <section class="faq narrow">
       <div class="section-head"><div class="eyebrow">FAQ</div><h2>報名前，可能會想知道</h2></div>
       <div class="faq-list">
         <details class="faq-item"><summary><span>如果其中一場無法參加直播呢？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">三場線上小聚都會提供課程回放，可以依自己的時間補上內容。</div></details>
-        <details class="faq-item"><summary><span>一週沉澱及群組交流一定要每天參與嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">不用。群組每天會有一個約 3–5 分鐘的小提問，但完全自由參與，不需要跟進度，也不用補。</div></details>
-        <details class="faq-item"><summary><span>一定要在群組分享自己的情緒或作品嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">不用。你可以只自己記錄；分享完全自願，也不需要公開私人經歷或說明情緒原因。</div></details>
-        <details class="faq-item"><summary><span>VIP 群組會怎麼運作？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">這是本季學員專屬的小群。三位同行者主要負責各自的課程；課程之間由青青在群組中陪伴交流，提供輕量提問、作品分享與沉澱空間。</div></details>
-        <details class="faq-item"><summary><span>完全不會 Canva、自由書寫或畫畫也能參加嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">可以。三場都以新手能進入的方式設計，不追求作品技巧，而是把創作當成靠近自己的媒介。</div></details>
-        <details class="faq-item"><summary><span>這是心理治療或情緒分析課嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">不是。初星心練習不進行心理治療、診斷或替你解讀情緒，而是提供顏色、書寫與創作等方式，讓你自己觀察現在的狀態。</div></details>
+        <details class="faq-item"><summary><span>一週沉澱及創作交流一定要每天參與嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">不用。群組每天會有一個約 3–5 分鐘的小提問，但完全自由參與，不需要跟進度，也不用補。</div></details>
+        <details class="faq-item"><summary><span>一定要在群組分享自己的作品嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">不用。你可以只自己創作、自己留著；分享完全自願，也不需要解釋作品代表什麼。</div></details>
+        <details class="faq-item"><summary><span>VIP 群組會怎麼運作？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">這是本季學員專屬的小群。三位同行者主要負責各自的小聚；課程之間由青青提供輕量創作題目、作品分享與交流空間，讓創作不只停在上課當天。</div></details>
+        <details class="faq-item"><summary><span>完全不會 Canva、自由書寫或畫畫也能參加嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">可以。三場都以新手能進入的方式設計，不追求技巧，也不要求做得漂亮；重點是讓你真的開始創作。</div></details>
+        <details class="faq-item"><summary><span>這是藝術技巧課或心理療癒課嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">都不是。初星心練習不以技巧精進、作品評比或心理分析為目的，而是用不同創作媒介，讓人比較容易開始做、發揮想像，也從作品裡多看見自己一點。</div></details>
         <details class="faq-item"><summary><span>同行者會推銷後續服務嗎？</span><span class="faq-plus">＋</span></summary><div class="faq-answer">每位同行者可以在課程最後簡短提供想繼續深入的人後續選項，但完全自由選擇，不影響本季課程的完整性。</div></details>
       </div>
     </section>
@@ -1053,7 +1283,7 @@ img, svg, video, canvas{
 </section>
 </main>
 
-<footer>初星心練習 · 第一季｜用創作，看見現在的自己</footer>
+<footer>初星心練習 · 做自己，是一場持續進行的創作</footer>
 
 <script>
 const navButtons=[...document.querySelectorAll('.nav-btn')];
@@ -1068,32 +1298,35 @@ navButtons.forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
 document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.go)));
 
 const events={
- '2026-09-25':{type:'course',label:'第1場',title:'我的情緒，是什麼顏色？',desc:'20:00–22:00。用情緒色票找出此刻有感的顏色，整理一句現在想對自己說的話，並做出自己的情緒桌布。'},
- '2026-09-26':{type:'check',label:'換上桌布',title:'Day 1｜讓作品進入生活',desc:'把昨天完成的情緒桌布換上手機。今天第一次看到它時，你最先冒出的感受是什麼？用一句話記下來。'},
- '2026-09-27':{type:'check',label:'今天的色',title:'Day 2｜今天的情緒，是什麼顏色？',desc:'再次打開情緒色票，直覺選一個今天最有感的顏色。不用解釋對錯，只寫：今天的我比較像＿＿＿＿。'},
- '2026-09-28':{type:'check',label:'一句有感',title:'Day 3｜哪一句話今天最靠近我？',desc:'看看自己的桌布。今天哪一個字、哪一句話最有感？如果沒有感覺，也可以如實寫「今天沒有特別感覺」。'},
- '2026-09-29':{type:'check',label:'感受在哪',title:'Day 4｜這個心情落在哪裡？',desc:'今天的情緒比較像輕、重、鬆、緊、熱、冷，還是其他感覺？不用分析原因，只觀察現在。'},
- '2026-09-30':{type:'check',label:'想改什麼',title:'Day 5｜如果現在重做一次',desc:'看著桌布，你會想改顏色、文字，還是保持原樣？選一個最想調整的地方，或回答「我想保留現在的版本」。'},
- '2026-10-01':{type:'check',label:'完成版本',title:'Day 6｜完成自己的情緒桌布',desc:'花 10–20 分鐘做最後微調。願意的話，把完成版放進群組；不用追求漂亮，只要是現在的你願意留下的版本。'},
- '2026-10-02':{type:'check',label:'一週回顧',title:'Day 7｜這一週，我看見自己什麼？',desc:'回頭看第一天到今天：顏色、句子或心情有沒有變？用一句「這週我比較注意到自己＿＿＿＿」做收尾。'},
- '2026-10-09':{type:'course',label:'第2場',title:'NIKI｜用自由書寫，聽見自己',desc:'20:00–22:00。透過自由書寫與教練式提問，讓腦中混在一起的想法先落到紙上，再慢慢聽見現在真正想說的話。'},
- '2026-10-10':{type:'check',label:'不停筆',title:'Day 1｜先寫三分鐘',desc:'找一個安靜的三分鐘，不停筆寫下：最近腦中最常出現的是什麼？不用整理，也不用寫得好。'},
- '2026-10-11':{type:'check',label:'現在想說',title:'Day 2｜如果不用寫得好',desc:'今天只寫一句開頭：如果不用顧慮別人，我現在最想說的是＿＿＿＿。接著自由寫五分鐘。'},
- '2026-10-12':{type:'check',label:'三個詞',title:'Day 3｜圈出三個有感的詞',desc:'回頭看前兩天寫下的文字，圈出三個讓你停一下的詞。先不要解釋，只看看它們為什麼被你注意到。'},
- '2026-10-13':{type:'check',label:'應該／想要',title:'Day 4｜分一分「應該」和「想要」',desc:'各寫三句：「我覺得我應該＿＿＿」和「如果不用證明，我其實想＿＿＿」。不用立刻做決定。'},
- '2026-10-14':{type:'check',label:'寫給自己',title:'Day 5｜寫一小段給現在的自己',desc:'以「我想讓你知道……」開頭，寫五分鐘。可以很普通、很零碎，只要是現在真正想對自己說的。'},
- '2026-10-15':{type:'check',label:'留一句話',title:'Day 6｜留下最想聽見的一句話',desc:'從這幾天的文字裡挑一句最有感的，或重新寫一句。它不用勵志，只要是你現在願意相信或陪伴自己的話。'},
- '2026-10-16':{type:'check',label:'一週回顧',title:'Day 7｜這週，我開始聽見什麼？',desc:'回頭看這七天的文字：哪個主題重複出現？用一句話整理：「這週，我開始聽見自己＿＿＿＿。」'},
- '2026-10-23':{type:'course',label:'第3場',title:'宗芸｜不用說清楚，也可以畫出來',desc:'20:00–22:00。從顏色、線條與自由創作出發，把這段時間還說不清楚的感受，留在一幅作品裡。'},
- '2026-10-24':{type:'check',label:'先看作品',title:'Day 1｜隔一天，再看看它',desc:'今天再看昨天的作品，不急著改。你的視線第一個停在哪裡？只記下那個地方與感覺。'},
- '2026-10-25':{type:'check',label:'今天的色',title:'Day 2｜今天想靠近哪個顏色？',desc:'如果今天要從作品裡挑一個最有感的顏色，會是哪個？它讓你想到什麼？'},
- '2026-10-26':{type:'check',label:'像我的地方',title:'Day 3｜哪一部分最像現在的我？',desc:'線條、留白、顏色、形狀都可以。選一個你覺得「很像現在的我」的地方，寫一句原因。'},
- '2026-10-27':{type:'check',label:'作品說話',title:'Day 4｜如果作品可以說一句話',desc:'不要想太久。如果這幅作品今天可以對你說一句話，它會說什麼？'},
- '2026-10-28':{type:'check',label:'加或不加',title:'Day 5｜我還想加什麼？',desc:'你可以花 10 分鐘繼續畫，也可以決定不再修改。今天的重點不是完成度，而是知道自己想留下什麼。'},
- '2026-10-29':{type:'check',label:'為它命名',title:'Day 6｜替作品取一個名字',desc:'替這幅作品取一個現在覺得合適的名字。不需要解釋得很完整，讓名字成為這段時間的一個小標記。'},
- '2026-10-30':{type:'check',label:'一週回顧',title:'Day 7｜這幅作品讓我看見什麼？',desc:'分享完成版或局部都可以，再寫一句：這一週，這幅作品讓我更注意到自己＿＿＿＿。'},
- '2026-11-06':{type:'reflect',label:'圓滿分享會',title:'圓滿｜分享六週收穫',desc:'20:00–21:15。不是第四堂課，也不再上新內容。彼此分享情緒桌布、自由書寫或創作，整理這六週最有感的收穫，最後一起票選下一季。'},
- '2026-11-13':{type:'dinner',label:'一起吃飯',title:'季後聚餐｜一起吃飯、聊天',desc:'自由參加，餐費自付。這不是成果發表，就是讓線上一起走過這一季的人，輕鬆見面、吃飯、聊天。'}
+ '2026-09-25':{type:'course',label:'第1場',title:'我的情緒，是什麼顏色？',desc:'20:00–22:00。從一個有感覺的顏色開始，加入一句想留下的話，再用 Canva 做成自己的個人桌布。'},
+ '2026-09-26':{type:'check',label:'換上作品',title:'Day 1｜讓作品進入生活',desc:'把昨天完成的桌布換上手機。今天先不分析，只注意：第一眼最喜歡它的哪個地方？願意的話，截圖分享。'},
+ '2026-09-27':{type:'check',label:'再選一色',title:'Day 2｜替今天加一個顏色',desc:'今天再挑一個有感覺的顏色。它可以和原本的桌布完全不同。把兩個顏色放在一起看看，會長出什麼新的配色？'},
+ '2026-09-28':{type:'check',label:'收集一句',title:'Day 3｜今天想留下哪一句話？',desc:'從今天看到、想到或自己說過的話裡，收集一句你想留下的句子。不用勵志，只要你喜歡。'},
+ '2026-09-29':{type:'check',label:'生活採色',title:'Day 4｜去生活裡撿一個顏色',desc:'今天拍下一個吸引你的顏色：招牌、天空、衣服、食物都可以。把它當成你的今日色票。'},
+ '2026-09-30':{type:'check',label:'重新混搭',title:'Day 5｜如果重新做一次',desc:'如果今天重做桌布，你最想換哪一件事：顏色、字體、句子、版面？只改一個地方，看看作品會不會更像你。'},
+ '2026-10-01':{type:'check',label:'完成版本',title:'Day 6｜把作品再完成一點',desc:'花 10–20 分鐘做最後微調。不是追求完美，只是把你現在最想保留的樣子留下來。'},
+ '2026-10-02':{type:'check',label:'創作回顧',title:'Day 7｜這週，我發現自己喜歡什麼？',desc:'回頭看看這週選過的顏色、句子和桌布。用一句話記下：原來我在視覺上很容易被＿＿＿＿吸引。'},
+
+ '2026-10-09':{type:'course',label:'第2場',title:'NIKI｜用自由書寫，讓腦中的東西落到紙上',desc:'20:00–22:00。不是作文課。讓零碎念頭先寫出來，再透過圈詞、重組與提問，完成一小段屬於自己的文字作品。'},
+ '2026-10-10':{type:'check',label:'不停筆',title:'Day 1｜先寫三分鐘',desc:'設定三分鐘，不停筆。想到什麼就寫什麼，不刪、不改，也不用有主題。今天只練習讓文字出現。'},
+ '2026-10-11':{type:'check',label:'撿五片',title:'Day 2｜收集今天的五個碎片',desc:'寫下今天的五個小片段：一個畫面、一句話、一個聲音、一個念頭、一個細節。它們不需要彼此有關。'},
+ '2026-10-12':{type:'check',label:'圈三個詞',title:'Day 3｜圈出三個你喜歡的詞',desc:'回看前兩天寫的內容，圈出三個你就是喜歡的詞。不是最重要的，只是最想留下的。'},
+ '2026-10-13':{type:'check',label:'一句三寫',title:'Day 4｜同一句話，寫三個版本',desc:'挑昨天的一句話，換三種方式重寫：更短、更怪、更像你。看看文字改變之後，感覺有什麼不同。'},
+ '2026-10-14':{type:'check',label:'換個視角',title:'Day 5｜讓一個東西替你寫',desc:'挑身邊一個物件，用它的角度寫五分鐘。例如：「如果我的杯子會說話……」。讓想像力帶你走，不需要合理。'},
+ '2026-10-15':{type:'check',label:'做成小卡',title:'Day 6｜把一句話變成小作品',desc:'從這週挑一句最喜歡的文字，手寫、排版或做成一張簡單文字卡。形式不重要，只要讓它從筆記變成一件作品。'},
+ '2026-10-16':{type:'check',label:'文字回顧',title:'Day 7｜這週，哪些文字很像我？',desc:'回看七天的文字。挑一句、三個詞或一種語氣，記下：原來我寫東西的時候，很容易＿＿＿＿。'},
+
+ '2026-10-23':{type:'course',label:'第3場',title:'宗芸｜不用說清楚，也可以畫出來',desc:'20:00–22:00。從顏色、線條與形狀開始，不先決定畫什麼，讓作品一點一點長出來。'},
+ '2026-10-24':{type:'check',label:'先看作品',title:'Day 1｜隔一天，再看看它',desc:'把作品放在看得到的地方。今天不修改，只看：你的視線第一個停在哪一小塊？'},
+ '2026-10-25':{type:'check',label:'只玩一色',title:'Day 2｜挑一個顏色，再玩一次',desc:'從作品挑一個顏色，用它再做一張 5 分鐘小塗鴉。只用一個顏色也可以。'},
+ '2026-10-26':{type:'check',label:'裁一小塊',title:'Day 3｜把作品切成另一張作品',desc:'用手機拍作品的一個局部，裁成你喜歡的構圖。看看原本的大作品裡，是不是藏著另一個畫面。'},
+ '2026-10-27':{type:'check',label:'加一筆',title:'Day 4｜只加一筆，或拿掉一點',desc:'今天只做一個決定：加一條線、加一個形狀，或蓋掉一小塊。看看小小改變會讓作品往哪裡走。'},
+ '2026-10-28':{type:'check',label:'換種語言',title:'Day 5｜把畫面翻成三個詞',desc:'如果這幅作品只能留下三個詞，你會選什麼？不用解釋，讓文字和畫面並排看看。'},
+ '2026-10-29':{type:'check',label:'放進生活',title:'Day 6｜替作品找一個位置',desc:'把作品放到牆上、桌邊、筆記本裡，或拍成手機照片。讓它暫時住進你的生活。'},
+ '2026-10-30':{type:'check',label:'作品回顧',title:'Day 7｜哪一部分最有「我的感覺」？',desc:'回頭看這週的原作、局部、顏色與三個詞。選一個你最想留下的部分：原來我很喜歡＿＿＿＿。'},
+
+ '2026-11-06':{type:'reflect',label:'圓滿分享會',title:'圓滿｜分享六週作品與收穫',desc:'20:00–21:15。不是第四堂課。把桌布、文字作品與繪畫放在一起，分享最喜歡的一件、最意外的一次，以及這六週發現的創作偏好。最後一起票選下一季。'},
+ '2026-11-13':{type:'dinner',label:'一起吃飯',title:'季後聚餐｜一起吃飯、聊天',desc:'自由參加，餐費自付。這不是成果發表，就是讓線上一起創作過的人輕鬆見面、吃飯、聊天。'}
 };
 function addRange(start,end){let d=new Date(start+'T00:00:00'),e=new Date(end+'T00:00:00');while(d<=e){const k=d.toISOString().slice(0,10);if(!events[k])events[k]={type:'rest',label:'留白',title:'留白週',desc:'今天沒有安排練習。休息、生活、自由完成作品，準備進入下一場小聚。'};d.setDate(d.getDate()+1)}}
 addRange('2026-10-03','2026-10-08');addRange('2026-10-17','2026-10-22');addRange('2026-10-31','2026-11-05');
