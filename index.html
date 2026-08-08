@@ -9,9 +9,10 @@
 :root{
   --bg:#fbf7f1;
   --paper:#fffdfa;
-  --ink:#40352f;
-  --text:#6f625a;
-  --muted:#95867c;
+  --ink:#523b30;
+  --heading:#5b3f33;
+  --text:#6b574e;
+  --muted:#8f7c72;
   --line:rgba(64,53,47,.10);
 
   --peach:#f1d6c7;
@@ -48,11 +49,12 @@ body{
 button{font:inherit;color:inherit}
 button:focus-visible,summary:focus-visible,.day:focus-visible{outline:2px solid rgba(185,123,102,.45);outline-offset:3px}
 h1,h2,h3,p{margin:0}
-h1,h2,h3{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-weight:650}
+h1,h2,h3{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-weight:560;color:var(--heading)}
+.brand,.g-topic,.price,.manifesto-quote{color:var(--heading)}
 .container{width:min(100%,var(--max));margin:auto;padding-inline:clamp(40px,6vw,76px)}
-.read{max-width:var(--read);margin-inline:auto}
-.eyebrow{font-size:10px;font-weight:850;letter-spacing:.18em;text-transform:uppercase;color:#9b7968}
-.kicker{font-size:12px;font-weight:800;letter-spacing:.12em;color:#765f52}
+.read{max-width:var(--read);margin-left:0;margin-right:0}
+.eyebrow{font-size:9px;font-weight:760;letter-spacing:.20em;text-transform:uppercase;color:#9b7968}
+.kicker{font-size:11px;font-weight:720;letter-spacing:.14em;color:#765f52}
 .page{display:none}
 .page.active{display:block;animation:fade .2s ease}
 @keyframes fade{from{opacity:.25;transform:translateY(4px)}to{opacity:1;transform:none}}
@@ -99,8 +101,8 @@ h1,h2,h3{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-weight:65
 .page-hero.amber:after{background:radial-gradient(circle,rgba(225,193,125,.32),transparent 70%)}
 .page-hero-inner{position:relative;z-index:1;max-width:800px}
 .page-hero .eyebrow{margin-bottom:16px}
-.page-hero h1{font-size:clamp(42px,6vw,72px);line-height:1.28;letter-spacing:.07em;margin-bottom:22px}
-.page-hero h2{font-size:clamp(32px,4vw,48px);line-height:1.4;letter-spacing:.055em;margin-bottom:18px}
+.page-hero h1{font-size:clamp(36px,4.5vw,56px);line-height:1.34;letter-spacing:.055em;margin-bottom:20px;font-weight:520}
+.page-hero h2{font-size:clamp(27px,3vw,36px);line-height:1.46;letter-spacing:.05em;margin-bottom:16px;font-weight:540}
 .page-hero .intro{font-size:15px;line-height:2;color:#6b5e56;max-width:670px}
 .facts{display:flex;flex-wrap:wrap;gap:22px 34px;margin-top:31px;padding-top:23px;border-top:1px solid rgba(64,53,47,.09)}
 .fact{display:flex;gap:8px;align-items:baseline}
@@ -112,7 +114,7 @@ h1,h2,h3{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-weight:65
 .section + .section{border-top:1px solid rgba(64,53,47,.06)}
 .section-head{max-width:730px;margin-bottom:38px}
 .section-head .eyebrow{margin-bottom:10px}
-.section-head h2{font-size:clamp(28px,3.8vw,42px);line-height:1.45;letter-spacing:.045em;margin-bottom:12px}
+.section-head h2{font-size:clamp(25px,3vw,34px);line-height:1.5;letter-spacing:.055em;margin-bottom:11px;font-weight:540}
 .section-head p{font-size:14px;line-height:1.95;color:var(--text);max-width:650px}
 .section.soft-peach{background:linear-gradient(180deg,rgba(251,237,229,.72),rgba(255,253,249,.82))}
 .section.soft-sage{background:linear-gradient(180deg,rgba(238,245,233,.72),rgba(255,253,249,.84))}
@@ -154,7 +156,7 @@ h1,h2,h3{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-weight:65
 }
 .state:nth-child(2){border-color:rgba(130,150,111,.42)}
 .state:nth-child(3){border-color:rgba(157,119,129,.42)}
-.state h3{font-size:20px;line-height:1.55;margin-bottom:8px}
+.state h3{font-size:18px;line-height:1.6;margin-bottom:8px;font-weight:560}
 .state p{font-size:13px;color:var(--text)}
 
 .language-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -166,14 +168,14 @@ h1,h2,h3{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-weight:65
 .language-card:nth-child(2){background:linear-gradient(145deg,#dbe8cf 0%,#eef4e8 100%)}
 .language-card:nth-child(3){background:linear-gradient(145deg,#e9d1d9 0%,#f7e8ed 100%)}
 .language-icon{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.68);margin-bottom:20px}
-.language-card h3{font-size:20px;line-height:1.55;margin-bottom:9px}
+.language-card h3{font-size:18px;line-height:1.6;margin-bottom:9px;font-weight:560}
 .language-card p{font-size:13px;line-height:1.95;color:#675a53}
 
 .outcome-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 42px}
 .outcome{padding:25px 0;border-top:1px solid var(--line)}
 .outcome:nth-child(-n+2){border-top:0}
 .outcome small{display:block;font-size:9px;font-weight:850;letter-spacing:.16em;color:#a07d69;margin-bottom:8px}
-.outcome h3{font-size:18px;margin-bottom:7px}
+.outcome h3{font-size:17px;margin-bottom:7px;font-weight:560}
 .outcome p{font-size:13px;line-height:1.9;color:var(--text)}
 
 /* Journey */
@@ -198,7 +200,7 @@ h1,h2,h3{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-weight:65
 }
 .calendar-heading{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:23px}
 .calendar-heading h2{font-size:30px;letter-spacing:.04em}
-.calendar-heading p{font-size:12px;color:var(--text);max-width:400px;text-align:right}
+.calendar-heading p{font-size:12px;color:var(--text);max-width:520px;text-align:right;text-wrap:pretty}
 .calendar-layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:26px;align-items:start}
 .calendar-stack{display:grid;gap:18px;min-width:0}
 .month-card{background:#fffdfa;border:1px solid rgba(64,53,47,.07);border-radius:var(--radius-lg);padding:24px 21px 20px;box-shadow:0 12px 34px rgba(83,62,49,.04);min-width:0}
@@ -237,7 +239,7 @@ h1,h2,h3{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-weight:65
 .gathering summary::-webkit-details-marker{display:none}
 .g-date{font-size:10px;font-weight:850;letter-spacing:.12em;color:#92786a}
 .g-name{font-size:13px;font-weight:800;color:#65574f;margin-bottom:4px}
-.g-topic{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-size:25px;line-height:1.45}
+.g-topic{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-size:22px;line-height:1.55;font-weight:520}
 .plus{font-size:22px;color:#9b897f;font-weight:300;transition:.2s}
 .gathering[open] .plus{transform:rotate(45deg)}
 .gathering-detail{padding:0 28px 28px 130px;border-top:1px solid rgba(64,53,47,.07)}
@@ -256,17 +258,17 @@ h1,h2,h3{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-weight:65
 .companion:nth-child(3){background:linear-gradient(150deg,#fff9fb,#ead3da)}
 .companion-symbol{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.7);margin-bottom:20px}
 .companion-role{font-size:9px;font-weight:850;letter-spacing:.10em;color:#8a6f61;margin-bottom:8px}
-.companion h3{font-size:28px;margin-bottom:11px}
+.companion h3{font-size:24px;margin-bottom:11px;font-weight:540}
 .companion p{font-size:12.8px;line-height:1.95;color:#675a53}
 .companion-way{margin-top:auto;padding-top:17px;border-top:1px solid rgba(64,53,47,.09);font-size:10.5px;color:#806f65}
 
 /* Info */
 .price-wrap{display:grid;grid-template-columns:.82fr 1.18fr;gap:44px;align-items:start}
 .price-label{font-size:9px;font-weight:850;letter-spacing:.14em;color:#987664}
-.price{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-size:58px;line-height:1.1;margin:9px 0 8px}
+.price{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-size:52px;line-height:1.12;margin:9px 0 8px;font-weight:500}
 .price small{font-size:14px;color:#8a7a71}
 .opening{font-size:12px;color:#6f625a}
-.includes{border-top:1px solid var(--line)}
+.includes{border-top:1px solid var(--line);margin-top:9px}
 .include{display:grid;grid-template-columns:20px 1fr;gap:10px;padding:15px 0;border-bottom:1px solid var(--line);font-size:13px;color:#62564f}
 .tick{width:18px;height:18px;border-radius:50%;display:grid;place-items:center;background:var(--sage);font-size:9px;font-weight:900}
 .info-note{font-size:11px;line-height:1.8;color:#88786e;margin-top:17px}
@@ -280,15 +282,93 @@ h1,h2,h3{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-weight:65
 .faq-answer{padding:0 34px 20px 0;font-size:12.8px;line-height:1.9;color:var(--text)}
 footer{padding:60px 0 38px;text-align:center;font-size:10px;color:#95867c;letter-spacing:.06em}
 
+/* 2026 UI/UX clarity refresh */
+.brand-row{min-height:36px}
+.header-cta{
+  border:1px solid rgba(64,53,47,.12);background:var(--ink);color:#fffdfa;
+  border-radius:999px;padding:8px 15px;font-size:11px;font-weight:760;
+  letter-spacing:.04em;cursor:pointer;transition:transform .18s ease,background .18s ease
+}
+.header-cta:hover{background:#594940;transform:translateY(-1px)}
+.home-hero{padding:68px 0 62px}
+.hero-layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:64px;align-items:center}
+.hero-copy{max-width:710px}
+.hero-season{display:inline-flex;align-items:center;gap:8px;margin-bottom:19px;padding:7px 11px;border:1px solid rgba(185,123,102,.18);border-radius:999px;background:rgba(255,253,250,.55);font-size:10px;font-weight:820;letter-spacing:.10em;color:#8c6757}
+.hero-season:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--terra)}
+.home-hero h1{font-size:clamp(38px,4.4vw,52px);margin-bottom:17px;letter-spacing:.045em;font-weight:500}
+.home-hero .intro{max-width:690px;font-size:15px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:28px}
+.primary-btn,.secondary-btn{
+  min-height:41px;border-radius:999px;padding:9px 18px;font-size:11px;font-weight:700;
+  letter-spacing:.035em;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease
+}
+.primary-btn{border:1px solid #594940;background:#594940;color:#fffdfa;box-shadow:0 8px 20px rgba(64,53,47,.10)}
+.secondary-btn{border:1px solid rgba(64,53,47,.16);background:rgba(255,253,250,.6);color:var(--ink)}
+.primary-btn:hover,.secondary-btn:hover{transform:translateY(-2px)}
+.primary-btn.disabled{opacity:.58;cursor:not-allowed;box-shadow:none}
+.primary-btn.disabled:hover{transform:none}
+.hero-panel{
+  padding:24px 23px 21px;border:1px solid rgba(64,53,47,.085);border-radius:22px;
+  background:rgba(255,253,250,.74);box-shadow:0 18px 45px rgba(83,62,49,.055);
+  backdrop-filter:blur(12px)
+}
+.hero-panel-label{font-size:9px;font-weight:850;letter-spacing:.14em;color:#9b7968;margin-bottom:13px}
+.hero-panel h2{font-size:19px;line-height:1.65;letter-spacing:.05em;margin-bottom:14px;font-weight:540}
+.hero-meta{border-top:1px solid var(--line)}
+.hero-meta-row{display:grid;grid-template-columns:54px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.hero-meta-row span{font-size:9px;font-weight:820;letter-spacing:.08em;color:var(--muted)}
+.hero-meta-row strong{font-size:12.5px;font-weight:700;color:#5d5049}
+.hero-panel .primary-btn{width:100%;margin-top:17px}
+.decision-bar{background:#fffdfa;border-top:1px solid rgba(64,53,47,.07);border-bottom:1px solid rgba(64,53,47,.07)}
+.decision-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.decision-item{padding:21px 24px;border-left:1px solid var(--line)}
+.decision-item:first-child{border-left:0;padding-left:0}
+.decision-item small{display:block;font-size:8px;font-weight:850;letter-spacing:.14em;color:#a07d69;margin-bottom:4px}
+.decision-item strong{display:block;font-family:"Noto Serif TC","Songti TC","PMingLiU",serif;font-size:15px;font-weight:650}
+.decision-item span{display:block;margin-top:2px;font-size:10px;color:var(--muted)}
+.manifesto{padding:48px 0}
+.manifesto-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:54px;align-items:start}
+.manifesto-grid{max-width:none}
+.manifesto-quote{margin-bottom:0}
+.manifesto-copy p + p{margin-top:10px}
+.section-head.read{max-width:730px}
+.outcome-grid.read{max-width:840px}
+.gathering-list.read{max-width:860px}
+.price-wrap.read,.signup-panel.read,.faq.read{max-width:860px}
+.state-list,.language-grid,.companion-grid{align-items:stretch}
+.language-card,.companion{height:100%}
+.state h3,.language-card h3,.outcome h3{text-wrap:balance}
+.section-head h2,.page-hero h1,.page-hero h2{text-wrap:balance}
+.section{padding:74px 0}
+.language-card{box-shadow:0 10px 30px rgba(83,62,49,.04);border-radius:20px}
+.closing-cta{padding:62px 0;background:linear-gradient(135deg,#f7e7dd,#f3eddf);border-top:1px solid rgba(64,53,47,.07)}
+.closing-cta-inner{display:flex;align-items:center;justify-content:space-between;gap:36px}
+.closing-cta h2{font-size:clamp(23px,2.5vw,30px);line-height:1.55;margin:8px 0;font-weight:530}
+.closing-cta p{font-size:13px;color:var(--text)}
+.signup-panel{margin-top:38px;padding:25px 27px;border-radius:22px;background:#fffdfa;border:1px solid rgba(64,53,47,.09);display:flex;align-items:center;justify-content:space-between;gap:24px}
+.signup-panel h3{font-size:19px;margin-bottom:5px}
+.signup-panel p{font-size:11.5px;color:var(--text)}
+
 /* Tablet */
 @media(max-width:900px){
   .container{padding-inline:48px}
+  .page-hero h1{font-size:34px}
+  .page-hero h2{font-size:29px;line-height:1.45}
+  .home-hero h1{font-size:37px}
+  .page-hero .intro{max-width:640px}
+  .hero-layout{grid-template-columns:1fr;gap:30px}
+  .hero-panel{max-width:560px}
+  .decision-grid{grid-template-columns:repeat(2,1fr)}
+  .decision-item:nth-child(3){border-left:0;border-top:1px solid var(--line);padding-left:0}
+  .decision-item:nth-child(4){border-top:1px solid var(--line)}
+  .manifesto-grid{grid-template-columns:1fr;gap:18px}
   .state-list,.language-grid,.companion-grid{grid-template-columns:1fr}
   .timeline{grid-template-columns:repeat(2,1fr)}
   .timeline:before{display:none}
   .calendar-layout{grid-template-columns:1fr}
   .calendar-side{position:static}
   .price-wrap{grid-template-columns:1fr;gap:28px}
+  .gathering-list.read,.price-wrap.read,.signup-panel.read,.faq.read,.outcome-grid.read{max-width:none}
 }
 
 /* Mobile */
@@ -297,33 +377,46 @@ footer{padding:60px 0 38px;text-align:center;font-size:10px;color:#95867c;letter
   .header-inner{padding-inline:30px}
   .brand-row{padding-top:1px}
   .brand{font-size:13px}
+  .header-cta{padding:7px 12px;font-size:10px}
   .nav{gap:22px;padding:12px 0 11px}
   .nav-btn{font-size:11px}
 
-  .page-hero{padding:64px 0 50px}
-  .page-hero h1{font-size:36px;line-height:1.38;letter-spacing:.075em;margin-bottom:18px}
-  .page-hero h2{font-size:27px;line-height:1.5}
+  .page-hero{padding:54px 0 44px}
+  .home-hero{padding:47px 0 40px}
+  .page-hero h1{font-size:28px;line-height:1.42;letter-spacing:.05em;margin-bottom:16px}
+  .page-hero h2{font-size:23px;line-height:1.5;letter-spacing:.04em}
   .page-hero .intro{font-size:13.5px;line-height:2}
+  .hero-season{margin-bottom:14px;font-size:9px}
+  .home-hero h1{font-size:30px;line-height:1.38;letter-spacing:.045em}
+  .hero-actions{display:grid;grid-template-columns:1fr 1fr;margin-top:22px}
+  .primary-btn,.secondary-btn{padding:9px 13px;font-size:11px}
+  .hero-panel{padding:21px 19px;border-radius:22px}
+  .hero-panel h2{font-size:19px}
   .facts{display:grid;grid-template-columns:1fr;gap:9px;margin-top:26px;padding-top:18px}
   .fact strong{font-size:14px}
 
-  .section{padding:70px 0}
+  .decision-grid{grid-template-columns:1fr 1fr}
+  .decision-item{padding:17px 18px}
+  .decision-item strong{font-size:13px}
+  .decision-item span{font-size:9px}
+
+  .section{padding:58px 0}
   .section-head{margin-bottom:28px}
-  .section-head h2{font-size:23px;line-height:1.55;margin-bottom:10px}
+  .section-head h2{font-size:21px;line-height:1.6;margin-bottom:10px}
   .section-head p{font-size:12.8px;line-height:1.95}
-  .manifesto{padding:42px 0}
+  .manifesto{padding:38px 0}
   .manifesto-quote{font-size:21px;line-height:1.75}
   .manifesto p{font-size:12.8px;line-height:2}
 
   .state-list{gap:0}
   .state{padding:21px 0;border-top-width:1px!important}
   .state:first-child{padding-top:0;border-top:0!important}
-  .state h3{font-size:17px}
+  .state h3{font-size:16px}
   .state p{font-size:12.5px;line-height:1.9}
 
   .language-grid{gap:14px}
   .language-card{padding:23px 21px;min-height:0;border-radius:24px}
-  .language-card h3{font-size:17px}
+  .language-card h3{font-size:16px}
   .language-card p{font-size:12.4px}
 
   .outcome-grid{grid-template-columns:1fr;gap:0}
@@ -358,7 +451,7 @@ footer{padding:60px 0 38px;text-align:center;font-size:10px;color:#95867c;letter
   .gathering summary{grid-template-columns:1fr auto;gap:7px 13px;padding:23px 21px}
   .g-date{grid-column:1/-1;font-size:9px;margin-bottom:4px}
   .g-name{font-size:11px;margin-bottom:7px}
-  .g-topic{font-size:18px;line-height:1.55}
+  .g-topic{font-size:17px;line-height:1.6}
   .plus{font-size:18px;margin-top:13px}
   .gathering-detail{padding:0 21px 23px}
   .gathering-detail .intro{font-size:12px}
@@ -368,24 +461,76 @@ footer{padding:60px 0 38px;text-align:center;font-size:10px;color:#95867c;letter
 
   .companion-grid{gap:15px}
   .companion{padding:24px 21px;min-height:0;border-radius:24px}
-  .companion h3{font-size:23px}
+  .companion h3{font-size:21px}
   .companion p{font-size:12.2px}
   .companion-way{font-size:10px}
 
-  .price{font-size:48px}
+  .price{font-size:42px}
   .include{font-size:12px;line-height:1.75}
   .faq{margin-top:55px}
   .faq-item summary{font-size:12.8px;padding:18px 0}
   .faq-answer{font-size:12px;padding-right:12px}
+  .closing-cta{padding:47px 0}
+  .closing-cta-inner{display:block}
+  .closing-cta .primary-btn{width:100%;margin-top:20px}
+  .signup-panel{display:block;padding:21px 20px}
+  .signup-panel .primary-btn{width:100%;margin-top:16px}
 }
 @media(max-width:390px){
   .container{padding-inline:29px}
   .header-inner{padding-inline:27px}
+  .home-hero h1{font-size:29px}
+  .page-hero h2{font-size:22px}
+  .section-head h2{font-size:20px}
 }
 
+/* Alignment and responsive hardening */
+.timeline{grid-template-columns:repeat(4,minmax(0,1fr))}
+.timeline:before{left:18px;right:calc(25% - 18px)}
+.stop{text-align:left;min-width:0}
+.stop-dot{margin:0 0 15px}
+.rhythm-note{max-width:none;margin:0 0 66px;text-align:left}
+.page-hero h1,.page-hero h2,.section-head h2,.state h3,.language-card h3,.outcome h3,.g-topic,.companion h3{line-break:strict}
+@media(max-width:900px){
+  .timeline:before{display:none}
+}
+@media(max-width:680px){
+  .container{padding-left:max(30px,env(safe-area-inset-left));padding-right:max(30px,env(safe-area-inset-right))}
+  .header-inner{padding-left:max(28px,env(safe-area-inset-left));padding-right:max(28px,env(safe-area-inset-right))}
+  .rhythm-note{margin-bottom:48px}
+}
+@media(max-width:390px){
+  .container{padding-left:max(29px,env(safe-area-inset-left));padding-right:max(29px,env(safe-area-inset-right))}
+}
+/* Readability and touch refinement */
+.nav-btn{min-height:40px}
+.nav-btn,.header-cta,.primary-btn,.secondary-btn,.day.event,.gathering summary,.faq-item summary{touch-action:manipulation}
+@media(max-width:680px){
+  .nav{padding-top:8px;padding-bottom:7px}
+  .nav-btn{min-height:42px;padding:10px 0 11px}
+  .calendar-layout{display:flex;flex-direction:column}
+  .calendar-side{order:-1;position:sticky;top:108px;z-index:12;margin-bottom:14px}
+  .detail-card{background:rgba(255,248,243,.96);box-shadow:0 10px 28px rgba(83,62,49,.07);backdrop-filter:blur(14px)}
+  .month-card{padding:19px 15px 16px}
+  .days{gap:5px 3px}
+  .day{min-height:44px;justify-content:center;padding:4px 1px}
+  .date-dot{width:28px;height:28px;font-size:10px}
+  .day-label{display:none}
+  .week div{font-size:9px}
+  .legend{margin-top:10px;font-size:9px}
+}
+/* Narrow-screen line-break polish */
+.nowrap{white-space:nowrap}
+@media(max-width:680px){
+  .nav{gap:16px;justify-content:space-between}
+  .decision-item{padding:16px 10px}
+  .decision-item strong{font-size:12px;white-space:nowrap}
+}
+@media(max-width:390px){.nav{gap:11px}.nav-btn{font-size:10.5px}}
 /* Hard overflow guard */
 html,body,.page,.container,.calendar-layout,.month-card,.week,.days{min-width:0;max-width:100%}
 img,svg,video{max-width:100%;height:auto}
+p,.intro,.opening,.info-note,.include span,.faq-answer,.detail-card p,.g-topic{text-wrap:pretty}
 </style>
 </head>
 <body>
@@ -393,13 +538,14 @@ img,svg,video{max-width:100%;height:auto}
   <div class="container header-inner">
     <div class="brand-row">
       <div class="brand"><span class="brand-dot"></span><span>初星心練習</span></div>
+      <button class="header-cta route-btn" data-page="info">查看費用</button>
     </div>
     <nav class="nav" aria-label="網站導覽">
-      <button class="nav-btn active" data-page="home">首頁</button>
-      <button class="nav-btn" data-page="journey">六週怎麼走</button>
-      <button class="nav-btn" data-page="gatherings">三場小聚</button>
-      <button class="nav-btn" data-page="companions">三位同行者</button>
-      <button class="nav-btn" data-page="info">費用與 FAQ</button>
+      <button class="nav-btn active" data-page="home">介紹</button>
+      <button class="nav-btn" data-page="journey">活動流程</button>
+      <button class="nav-btn" data-page="gatherings">創作小聚</button>
+      <button class="nav-btn" data-page="companions">同行者</button>
+      <button class="nav-btn" data-page="info">費用・FAQ</button>
     </nav>
   </div>
 </header>
@@ -407,29 +553,40 @@ img,svg,video{max-width:100%;height:auto}
 <main>
 <!-- HOME -->
 <section class="page active" data-page="home">
-  <section class="page-hero peach">
+  <section class="page-hero peach home-hero">
     <div class="container">
-      <div class="page-hero-inner">
-        <div class="eyebrow">2026 秋季 · 第一季</div>
-        <div class="kicker">初星心練習</div>
-        <h1>用創作，看見自己</h1>
-        <p class="intro">給想做點什麼、希望更發揮創意，卻總被生活排到後面的人。六週，從色彩、自由書寫與繪畫開始，真的做出作品，也從創作裡多了解自己一點。</p>
-        <div class="facts">
-          <div class="fact"><strong>6 週</strong><span>一季</span></div>
-          <div class="fact"><strong>3 場</strong><span>線上創作小聚</span></div>
-          <div class="fact"><strong>6–12 人</strong><span>精緻小群</span></div>
+      <div class="hero-layout">
+        <div class="hero-copy">
+          <div class="hero-season">2026 秋季第一季・6 週線上創作練習</div>
+          <div class="kicker">初星心練習</div>
+          <h1>用創作，<br>看見自己</h1>
+          <p class="intro"><span class="nowrap">替創作在生活中留一個位子，</span><br>從色彩、自由書寫到繪畫，完成三份作品，也重新認識自己的情緒與想法。</p>
+          <div class="hero-actions">
+            <button class="primary-btn route-btn" data-page="info">查看費用與名額</button>
+            <button class="secondary-btn route-btn" data-page="journey">先看六週流程</button>
+          </div>
+        </div>
+        <aside class="hero-panel" aria-label="活動重點">
+          <div class="hero-panel-label">這一季，你會一起完成</div>
+          <h2>三種創作語言<br>三份自己的作品</h2>
+          <div class="hero-meta">
+            <div class="hero-meta-row"><span>時間</span><strong>09.25–11.06｜週五晚間</strong></div>
+            <div class="hero-meta-row"><span>形式</span><strong>3 場線上小聚＋課後陪跑</strong></div>
+            <div class="hero-meta-row"><span>人數</span><strong>6 人開班｜最多 12 人</strong></div>
+            <div class="hero-meta-row"><span>費用</span><strong>第一季創始價 NT$888</strong></div>
+          </div>
+          <button class="primary-btn route-btn" data-page="gatherings">看看三場會做什麼</button>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="manifesto">
-    <div class="container">
-      <div class="read">
-        <div class="eyebrow">CREATION × SELF-AWARENESS</div>
-        <p class="manifesto-quote">做自己，是一場持續進行的創作。</p>
-        <p>我們每天怎麼選、喜歡什麼、留下什麼，本來就在一點一點創作自己。初星心練習替創作留一個入口：先做，再回頭看看自己的選擇、偏好、卡點與節奏。創作，也可以成為認識自己的一種方式。</p>
-      </div>
+  <section class="decision-bar" aria-label="活動摘要">
+    <div class="container decision-grid">
+      <div class="decision-item"><small>適合誰</small><strong>想創作卻很難開始</strong><span>零基礎也可以參加</span></div>
+      <div class="decision-item"><small>你會做</small><strong>色彩・文字・繪畫</strong><span>每一場都完成一份作品</span></div>
+      <div class="decision-item"><small>課後節奏</small><strong>7 天小練習</strong><span>自由參與，不需補進度</span></div>
+      <div class="decision-item"><small>這不是</small><strong>技巧課或作品評比</strong><span>先做，再回看自己</span></div>
     </div>
   </section>
 
@@ -438,12 +595,12 @@ img,svg,video{max-width:100%;height:auto}
       <div class="section-head read">
         <div class="eyebrow">MAYBE THIS IS YOU</div>
         <h2>也許你一直想做點什麼</h2>
-        <p>不是沒有想法，只是生活總有更急的事。創作被放到最後，也很少有一段時間讓自己純粹地玩、試、做。</p>
+        <p>不是沒有想法，只是生活總有更急的事。<span class="nowrap">創作被放到最後</span>，也很少有一段時間讓自己純粹地玩、試、做。</p>
       </div>
       <div class="state-list">
-        <article class="state"><h3>想創作，卻總是沒有真的開始</h3><p>想寫、想畫、想做點什麼，但一直等時間、等靈感、等自己準備好。</p></article>
-        <article class="state"><h3>希望自己更發揮創意</h3><p>想讓想像力多一點出口，也想試試不同媒介，不只停在腦中想。</p></article>
-        <article class="state"><h3>也想透過創作，多了解自己</h3><p>不做心理分析，只是回頭看看：原來我會這樣選、這樣寫、這樣創造。</p></article>
+        <article class="state"><h3>想創作，還在等一個開始</h3><p>想寫、想畫、想做點什麼，<span class="nowrap">但一直等時間、等靈感、等自己準備好。</span></p></article>
+        <article class="state"><h3>希望自己更發揮創意</h3><p>想讓想像力多一點出口，也想試試不同媒介，<span class="nowrap">不只停在腦中想。</span></p></article>
+        <article class="state"><h3>也想透過創作，多了解自己</h3><p>不做心理分析，只是回頭看看：原來我會這樣選、<span class="nowrap">這樣寫、這樣創造。</span></p></article>
       </div>
     </div>
   </section>
@@ -453,7 +610,7 @@ img,svg,video{max-width:100%;height:auto}
       <div class="section-head read">
         <div class="eyebrow">3 CREATIVE LANGUAGES</div>
         <h2>三種創作語言，三種開始方式</h2>
-        <p>不用先證明自己有創意。給自己一個媒介、一點限制、一段時間，創作就可以開始。</p>
+        <p>給自己一個媒介、一點限制、一段時間，創作就可以開始。</p>
       </div>
       <div class="language-grid">
         <article class="language-card"><div class="language-icon">●</div><h3>色彩視覺</h3><p>從一個有感覺的顏色開始，把一句話、色彩與版面組合成自己的畫面。</p></article>
@@ -472,10 +629,21 @@ img,svg,video{max-width:100%;height:auto}
       </div>
       <div class="outcome-grid read">
         <div class="outcome"><small>CREATE</small><h3>完成三份自己的作品</h3><p>一張色彩桌布、一段自由書寫，以及一幅繪畫創作。</p></div>
-        <div class="outcome"><small>START</small><h3>練習不用想完整，也能開始</h3><p>從小小的提示與限制開始，把「不知道做什麼」變成「先做一點看看」。</p></div>
-        <div class="outcome"><small>STYLE</small><h3>發現自己的創作偏好</h3><p>注意自己喜歡的顏色、文字節奏、畫面感，和最容易進入創作的方式。</p></div>
-        <div class="outcome"><small>NOTICE</small><h3>從創作裡，練習覺察自己</h3><p>回看自己的選擇、卡點與節奏：原來我會這樣創作，也原來這些很像我。</p></div>
+        <div class="outcome"><small>START</small><h3>練習不用想完整，也能開始</h3><p>從小小的提示與限制開始，把「不知道做什麼」<span class="nowrap">變成「先做一點看看」。</span></p></div>
+        <div class="outcome"><small>STYLE</small><h3>發現自己的創作偏好</h3><p>注意自己喜歡的顏色、文字節奏、畫面感，和<span class="nowrap">最容易進入創作的方式。</span></p></div>
+        <div class="outcome"><small>NOTICE</small><h3>從創作裡，練習覺察自己</h3><p>回看自己的選擇、卡點與節奏：原來我會這樣創作，<span class="nowrap">也原來這些很像我。</span></p></div>
       </div>
+    </div>
+  </section>
+
+  <section class="closing-cta">
+    <div class="container closing-cta-inner">
+      <div>
+        <div class="eyebrow">READY WHEN YOU ARE</div>
+        <h2>不用準備好，也能開始。</h2>
+        <p>先看看完整費用與常見問題，判斷這六週是不是現在的你需要的節奏。</p>
+      </div>
+      <button class="primary-btn route-btn" data-page="info">查看費用與報名資訊</button>
     </div>
   </section>
 </section>
@@ -498,10 +666,8 @@ img,svg,video{max-width:100%;height:auto}
         <div class="stop"><div class="stop-dot">03</div><time>10.23 FRI</time><h3>繪畫創作</h3><p>宗芸自由繪畫</p></div>
         <div class="stop"><div class="stop-dot">04</div><time>11.06 FRI</time><h3>圓滿分享</h3><p>分享六週作品與收穫</p></div>
       </div>
-      <div class="rhythm-note"><b>每場之後：</b> 7 天創作 × 自我覺察打卡（自由參與、不需補進度） → 一週留白 → 下一場。</div>
-
-      <div class="calendar-heading">
-        <div><div class="eyebrow">CALENDAR</div><h2>詳細月曆</h2></div>
+     <div class="calendar-heading">
+        <div><div class="eyebrow">CALENDAR</div><h2>流程月曆</h2></div>
         <p>打卡題目直接放進月曆；點有顏色的日期，就能看到當天完整的創作與回看引導。</p>
       </div>
       <div class="calendar-layout">
@@ -522,7 +688,7 @@ img,svg,video{max-width:100%;height:auto}
     <div class="container"><div class="page-hero-inner">
       <div class="eyebrow">3 CREATIVE GATHERINGS</div>
       <h2>三場創作小聚</h2>
-      <p class="intro">不是技巧課，也不是作品評比。三位同行者各帶一種創作語言，讓新手也能從一個小入口開始，真的做出自己的東西。</p>
+      <p class="intro">不是技巧課，也不是作品評比。三位同行者<span class="nowrap">各帶一種創作語言</span>，讓新手也能從一個小入口開始，<span class="nowrap">真的做出自己的東西。</span></p>
     </div></div>
   </section>
   <section class="section">
@@ -532,11 +698,11 @@ img,svg,video{max-width:100%;height:auto}
         <div class="gathering-detail"><p class="intro">從一個有感覺的顏色開始，把一句話、色彩和版面組合起來。Canva 只是工具，真正要練習的是：不用先想完整，也可以開始做。</p><div class="detail-grid"><div class="detail-block"><b>創作起點</b><p>從初心色譜選色，再找一句現在想留下的話。</p></div><div class="detail-block"><b>現場會做</b><p>選色、文字整理、Canva 排版與個人化調整。</p></div></div><div class="takeaway"><b>帶走｜</b>一張只有你會做出的個人桌布。</div></div>
       </details>
       <details class="gathering">
-        <summary><div class="g-date">10.09</div><div><div class="g-name">NIKI｜生命教練・自由書寫同行者</div><div class="g-topic">用自由書寫，讓腦中的東西落到紙上</div></div><div class="plus">＋</div></summary>
+        <summary><div class="g-date">10.09</div><div><div class="g-name">NIKI｜生命教練・自由書寫同行者</div><div class="g-topic">用自由書寫，讓<span class="nowrap">腦中的東西</span>落到紙上</div></div><div class="plus">＋</div></summary>
         <div class="gathering-detail"><p class="intro">自由書寫不是作文。先把腦中的片段、念頭和句子寫下來，不修改、不評分，再從文字裡發現哪些語氣、詞和句子最像自己。</p><div class="detail-grid"><div class="detail-block"><b>創作起點</b><p>從短時間不停筆開始，讓文字先出現，再慢慢整理。</p></div><div class="detail-block"><b>現場會做</b><p>自由書寫、圈詞、句子重組與一張文字小卡。</p></div></div><div class="takeaway"><b>帶走｜</b>一段自己的自由書寫＋一張文字作品小卡。</div></div>
       </details>
       <details class="gathering">
-        <summary><div class="g-date">10.23</div><div><div class="g-name">宗芸｜創作同行者</div><div class="g-topic">不用說清楚，也可以畫出來</div></div><div class="plus">＋</div></summary>
+        <summary><div class="g-date">10.23</div><div><div class="g-name">宗芸｜創作同行者</div><div class="g-topic">不用說清楚，也可以<span class="nowrap">畫出來</span></div></div><div class="plus">＋</div></summary>
         <div class="gathering-detail"><p class="intro">不追求畫得漂亮，也不用先想好「我要畫什麼」。從顏色、線條與形狀開始，讓畫面一點一點長出來。</p><div class="detail-grid"><div class="detail-block"><b>創作起點</b><p>給自己一些簡單限制，讓手先動起來。</p></div><div class="detail-block"><b>現場會做</b><p>自由繪畫、顏色與線條實驗、作品命名與回看。</p></div></div><div class="takeaway"><b>帶走｜</b>一幅屬於這段時間的自由創作。</div></div>
       </details>
     </div></div>
@@ -549,7 +715,7 @@ img,svg,video{max-width:100%;height:auto}
     <div class="container"><div class="page-hero-inner">
       <div class="eyebrow">YOUR CREATIVE COMPANIONS</div>
       <h2>三位同行者，三種創作語言</h2>
-      <p class="intro">我們不替你定義作品，也不告訴你怎樣才算有創意。只是各自帶著熟悉的媒介，陪你找到比較容易開始的位置。</p>
+      <p class="intro">我們不替你定義作品，也不告訴你怎樣才算有創意。只是各自帶著熟悉的媒介，陪你找到<span class="nowrap">比較容易開始的位置。</span></p>
     </div></div>
   </section>
   <section class="section soft-rose">
@@ -567,7 +733,7 @@ img,svg,video{max-width:100%;height:auto}
     <div class="container"><div class="page-hero-inner">
       <div class="eyebrow">FOUNDING SEASON</div>
       <h2>第一季創始價</h2>
-      <p class="intro">先用一個低門檻的價格，完整走過六週：三場創作小聚、三段 7 天創作打卡，以及一場圓滿分享。</p>
+      <p class="intro">先用一個低門檻的價格，完整走過六週：<span class="nowrap">三場創作小聚</span>、三段 7 天創作打卡，以及一場圓滿分享。</p>
     </div></div>
   </section>
   <section class="section soft-amber">
@@ -579,6 +745,7 @@ img,svg,video{max-width:100%;height:auto}
           <div class="opening"><b>6 人開班｜最多 12 人</b><br>維持可以看見彼此的精緻小群。</div>
         </div>
         <div>
+          <div class="price-label">方案包含</div>
           <div class="includes">
             <div class="include"><span class="tick">✓</span><span>3 場週五晚上的線上創作小聚＋課程回放</span></div>
             <div class="include"><span class="tick">✓</span><span>每場課後 7 天創作 × 自我覺察打卡</span></div>
@@ -611,6 +778,7 @@ img,svg,video{max-width:100%;height:auto}
 
 <script>
 const navButtons=[...document.querySelectorAll('.nav-btn')];
+const routeButtons=[...document.querySelectorAll('.route-btn')];
 const pages=[...document.querySelectorAll('.page')];
 function showPage(id){
   pages.forEach(p=>p.classList.toggle('active',p.dataset.page===id));
@@ -619,34 +787,35 @@ function showPage(id){
   window.scrollTo({top:0,behavior:'instant'});
 }
 navButtons.forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+routeButtons.forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
 
 const events={
  '2026-09-25':{type:'course',label:'第1場',title:'我的情緒，是什麼顏色？',desc:'20:00–22:00。從一個有感覺的顏色開始，加入一句想留下的話，再用 Canva 做成自己的個人桌布。'},
- '2026-09-26':{type:'check',label:'換上作品',title:'Day 1｜讓作品進入生活',desc:'把昨天完成的桌布換上手機。創作小練習：第一眼最喜歡它的哪個地方？回看自己：你通常會很快決定「喜歡」，還是會一直想改得更好？'},
- '2026-09-27':{type:'check',label:'再選一色',title:'Day 2｜替今天加一個顏色',desc:'創作小練習：再挑一個有感覺的顏色，和原本配色放在一起。回看自己：你選色時靠直覺，還是會先想「這樣搭對不對」？'},
- '2026-09-28':{type:'check',label:'收集一句',title:'Day 3｜今天想留下哪一句話？',desc:'創作小練習：從今天收集一句你想留下的話。回看自己：你比較容易被什麼樣的文字吸引？溫柔、直接、有趣，還是其他？'},
- '2026-09-29':{type:'check',label:'生活採色',title:'Day 4｜去生活裡撿一個顏色',desc:'創作小練習：拍下一個今天吸引你的顏色。回看自己：這幾天你反覆注意到的色系，有沒有某種共同感覺？'},
- '2026-09-30':{type:'check',label:'重新混搭',title:'Day 5｜如果重新做一次',desc:'創作小練習：只改桌布的一個元素。回看自己：你最想動的是顏色、文字還是版面？這可能就是你最在意的視覺元素。'},
- '2026-10-01':{type:'check',label:'完成版本',title:'Day 6｜把作品再完成一點',desc:'創作小練習：花 10–20 分鐘微調。回看自己：你什麼時候會覺得「可以了」？還是很容易一直改下去？'},
- '2026-10-02':{type:'check',label:'創作回顧',title:'Day 7｜這週，我發現自己喜歡什麼？',desc:'回看這週選過的顏色、句子和版面。完成一句：原來我的視覺偏好很容易被＿＿＿＿吸引。'},
+ '2026-09-26':{type:'check',label:'進入生活',title:'Day 1｜讓作品進入生活',desc:'把桌布換上手機；只注意第一眼最喜歡哪個地方。'},
+ '2026-09-27':{type:'check',label:'加一個顏色',title:'Day 2｜替今天加一個顏色',desc:'再選一色，和原本配色放一起看看。'},
+ '2026-09-28':{type:'check',label:'收集一句話',title:'Day 3｜收集一句話',desc:'從今天看到、想到或自己說過的話裡留一句。'},
+ '2026-09-29':{type:'check',label:'生活採色',title:'Day 4｜生活採色',desc:'拍下一個吸引你的生活顏色，當成今日色票。'},
+ '2026-09-30':{type:'check',label:'重新混搭',title:'Day 5｜重新混搭',desc:'只改桌布一件事：顏色、字體、句子或版面。'},
+ '2026-10-01':{type:'check',label:'完成版本',title:'Day 6｜完成版本',desc:'花 10–20 分鐘微調，不追求完美。'},
+ '2026-10-02':{type:'check',label:'創作回顧',title:'Day 7｜創作回顧',desc:'回看一週素材：原來我在視覺上很容易被＿＿吸引。'},
 
  '2026-10-09':{type:'course',label:'第2場',title:'NIKI｜用自由書寫，讓腦中的東西落到紙上',desc:'20:00–22:00。不是作文課。讓零碎念頭先寫出來，再透過圈詞、重組與提問，完成一小段自己的文字作品。'},
- '2026-10-10':{type:'check',label:'不停筆',title:'Day 1｜先寫三分鐘',desc:'創作小練習：三分鐘不停筆。回看自己：你有沒有很想刪掉、修正，或把它寫得「比較好」？'},
- '2026-10-11':{type:'check',label:'撿五片',title:'Day 2｜收集今天的五個碎片',desc:'創作小練習：記下五個生活碎片。回看自己：你最常注意的是人、畫面、聲音、對話，還是自己的想法？'},
- '2026-10-12':{type:'check',label:'圈三個詞',title:'Day 3｜圈出三個你喜歡的詞',desc:'創作小練習：圈出三個喜歡的詞。回看自己：你挑它們是因為意思、聲音、畫面感，還是某種說不上來的喜歡？'},
- '2026-10-13':{type:'check',label:'一句三寫',title:'Day 4｜同一句話，寫三個版本',desc:'創作小練習：同一句重寫三次。回看自己：哪個版本最像你？你喜歡簡短、細膩、直接，還是繞一點？'},
- '2026-10-14':{type:'check',label:'換個視角',title:'Day 5｜讓一個東西替你寫',desc:'創作小練習：用物件視角寫五分鐘。回看自己：當規則有點奇怪時，你覺得好玩，還是不知道怎麼辦？'},
- '2026-10-15':{type:'check',label:'做成小卡',title:'Day 6｜把一句話變成小作品',desc:'創作小練習：把一句話做成小卡。回看自己：文字一旦變成畫面，你最在意的是內容、字體、留白還是整體氣氛？'},
- '2026-10-16':{type:'check',label:'文字回顧',title:'Day 7｜哪些文字很像我？',desc:'回看七天文字，挑一句、三個詞或一種語氣。完成一句：原來我寫東西時，很容易＿＿＿＿。'},
+ '2026-10-10':{type:'check',label:'先寫三分鐘',title:'Day 1｜先寫三分鐘',desc:'不停筆，不刪、不改，只讓文字出現。'},
+ '2026-10-11':{type:'check',label:'五個碎片',title:'Day 2｜收集五個碎片',desc:'一個畫面、一句話、一個聲音、一個念頭、一個細節。'},
+ '2026-10-12':{type:'check',label:'圈三個詞',title:'Day 3｜圈三個詞',desc:'從前兩天文字裡圈出三個，或許這是最近可留意的狀態。'},
+ '2026-10-13':{type:'check',label:'內在感受',title:'Day 4｜聆聽內在感受',desc:'寫下自我對話。'},
+ '2026-10-14':{type:'check',label:'換個視角',title:'Day 5｜換個視角',desc:'重新看自己昨天寫的文字，並寫下對這些文字的回覆。'},
+ '2026-10-15':{type:'check',label:'做成小卡',title:'Day 6｜做成小卡',desc:'挑一句最喜歡的文字做延伸，寫成一段自我提醒的小卡片。'},
+ '2026-10-16':{type:'check',label:'書寫回顧',title:'Day 7｜書寫回顧',desc:'感受近期的自己。'},
 
  '2026-10-23':{type:'course',label:'第3場',title:'宗芸｜不用說清楚，也可以畫出來',desc:'20:00–22:00。從顏色、線條與形狀開始，不先決定畫什麼，讓作品一點一點長出來。'},
- '2026-10-24':{type:'check',label:'先看作品',title:'Day 1｜隔一天，再看看它',desc:'創作小練習：只看作品，不修改。回看自己：你的視線第一個停在哪裡？你容易先看整體，還是細節？'},
- '2026-10-25':{type:'check',label:'只玩一色',title:'Day 2｜挑一個顏色，再玩一次',desc:'創作小練習：只用一色做五分鐘小創作。回看自己：限制變多時，你比較安心，還是比較想突破？'},
- '2026-10-26':{type:'check',label:'裁一小塊',title:'Day 3｜把作品切成另一張作品',desc:'創作小練習：裁一個局部成新構圖。回看自己：你選的地方有什麼共通特質？留白、密度、顏色、線條？'},
- '2026-10-27':{type:'check',label:'加一筆',title:'Day 4｜只加一筆，或拿掉一點',desc:'創作小練習：只做一個改動。回看自己：你比較容易一直加東西，還是喜歡拿掉？'},
- '2026-10-28':{type:'check',label:'換種語言',title:'Day 5｜把畫面翻成三個詞',desc:'創作小練習：為作品選三個詞。回看自己：這三個詞是描述畫面，還是其實也很像你最近的狀態？'},
- '2026-10-29':{type:'check',label:'放進生活',title:'Day 6｜替作品找一個位置',desc:'創作小練習：把作品放進生活。回看自己：你想把它放在顯眼的地方，還是比較私人的角落？'},
- '2026-10-30':{type:'check',label:'作品回顧',title:'Day 7｜哪一部分最有「我的感覺」？',desc:'回看原作、局部、顏色與三個詞。完成一句：這次創作讓我發現，我好像很喜歡／很容易＿＿＿＿。'},
+ '2026-10-24':{type:'check',label:'隔一天再看',title:'Day 1｜隔一天再看',desc:'不修改，只看視線第一個停在哪一塊。'},
+ '2026-10-25':{type:'check',label:'玩一個顏色',title:'Day 2｜只玩一個顏色',desc:'挑作品一處，再做 5 分鐘小塗鴉。'},
+ '2026-10-26':{type:'check',label:'裁一小塊',title:'Day 3｜裁一小塊',desc:'拍作品局部、重新裁切，看大作品裡藏著什麼畫面。'},
+ '2026-10-27':{type:'check',label:'只加一筆',title:'Day 4｜只加一筆',desc:'加一條線、一個形狀，或蓋掉一小塊。'},
+ '2026-10-28':{type:'check',label:'換種表達',title:'Day 5｜換種表達方式',desc:'試著用其他顏色、線條畫同一種主題，選出最喜歡的版本。'},
+ '2026-10-29':{type:'check',label:'放進生活',title:'Day 6｜放進生活',desc:'讓作品出現在生活中：桌邊、牆上、筆記本或手機。'},
+ '2026-10-30':{type:'check',label:'作品回顧',title:'Day 7｜作品回顧',desc:'哪一部分最有「我最喜歡」？思考為什麼？'},
 
  '2026-11-06':{type:'reflect',label:'圓滿分享',title:'圓滿｜分享六週作品與收穫',desc:'20:00–21:15。把三份作品放在一起，分享最喜歡的一件、最意外的一次，以及從三種創作裡多知道自己什麼。'},
  '2026-11-13':{type:'dinner',label:'一起吃飯',title:'季後聚餐｜一起吃飯、聊天',desc:'自由參加，餐費自付。讓線上一起創作過的人輕鬆見面。'}
