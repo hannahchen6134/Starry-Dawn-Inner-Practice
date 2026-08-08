@@ -544,6 +544,64 @@ footer{padding:60px 0 38px;text-align:center;font-size:10px;color:#95867c;letter
 html,body,.page,.container,.calendar-layout,.month-card,.week,.days{min-width:0;max-width:100%}
 img,svg,video{max-width:100%;height:auto}
 p,.intro,.opening,.info-note,.include span,.faq-answer,.detail-card p,.g-topic{text-wrap:pretty}
+
+/* Typography hierarchy + quiet page motion */
+h1,h2,h3{font-weight:650}
+.page-hero h1{font-weight:720}
+.page-hero h2{font-weight:700}
+.home-hero h1{font-weight:720}
+.section-head h2,.calendar-heading h2,.closing-cta h2{font-weight:680}
+.state h3,.language-card h3,.outcome h3,.stop h3,.month-head h3,
+.detail-card h3,.g-topic,.companion h3,.signup-panel h3{font-weight:650}
+.price{font-weight:620}
+.page-hero .intro,.section-head p{font-weight:400}
+
+.page.active{animation:pageReveal .42s cubic-bezier(.16,1,.3,1)}
+.page.active .page-hero .eyebrow,
+.page.active .page-hero .hero-season,
+.page.active .page-hero .kicker{
+  animation:contentRise .54s .04s cubic-bezier(.16,1,.3,1) both
+}
+.page.active .page-hero h1,
+.page.active .page-hero h2{
+  animation:contentRise .62s .10s cubic-bezier(.16,1,.3,1) both
+}
+.page.active .page-hero .intro{
+  animation:contentRise .62s .17s cubic-bezier(.16,1,.3,1) both
+}
+.page.active .page-hero .hero-actions,
+.page.active .hero-panel{
+  animation:contentRise .66s .24s cubic-bezier(.16,1,.3,1) both
+}
+.page-hero-inner,.hero-copy{position:relative}
+.page-hero-inner::before,.home-hero .hero-copy::after{
+  content:"✦";position:absolute;pointer-events:none;
+  color:var(--terra);font-family:serif;font-size:16px;line-height:1;opacity:.58;
+  animation:starArrive .8s .28s cubic-bezier(.16,1,.3,1) both
+}
+.page-hero-inner::before{right:2px;top:8px}
+.home-hero .hero-copy::after{right:3%;top:23%}
+
+@keyframes pageReveal{from{opacity:.35}to{opacity:1}}
+@keyframes contentRise{from{opacity:0;transform:translateY(13px)}to{opacity:1;transform:none}}
+@keyframes starArrive{from{opacity:0;transform:scale(.45) rotate(-28deg)}to{opacity:.58;transform:scale(1) rotate(0)}}
+
+@media(max-width:680px){
+  .page-hero h1{font-weight:740}
+  .page-hero h2{font-weight:720}
+  .section-head h2,.calendar-heading h2,.closing-cta h2{font-weight:700}
+  .state h3,.language-card h3,.outcome h3,.stop h3,.g-topic,.companion h3{font-weight:680}
+  .page-hero-inner::before{right:0;top:-5px;font-size:14px}
+  .home-hero .hero-copy::after{right:2px;top:28%;font-size:14px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .page.active,.page.active .page-hero .eyebrow,.page.active .page-hero .hero-season,
+  .page.active .page-hero .kicker,.page.active .page-hero h1,.page.active .page-hero h2,
+  .page.active .page-hero .intro,.page.active .page-hero .hero-actions,.page.active .hero-panel,
+  .page-hero-inner::before,.home-hero .hero-copy::after{animation:none!important}
+}
 </style>
 </head>
 <body>
